@@ -1,7 +1,7 @@
 # Sorva Marketing Website
 
 ## Overview
-A visually impressive marketing website promoting Sorva, a privacy-focused AI data sovereignty app. The site emphasizes privacy features and encourages downloads from App Store and Google Play.
+A visually impressive marketing website promoting Sorva, a privacy-focused AI librarian app that triages Gmail, WhatsApp, and Telegram messages into organized notes, tasks, and events. Emphasizes zero inbox, distraction management, and data sovereignty. Available on App Store and Google Play.
 
 ## Architecture
 - **Frontend**: React + Vite + Tailwind CSS + Framer Motion
@@ -18,12 +18,13 @@ A visually impressive marketing website promoting Sorva, a privacy-focused AI da
 
 ## Key Sections
 1. **Navbar** - Fixed glassmorphism navbar with smooth scroll navigation
-2. **Hero** - Bold headline with gradient text, App Store/Play Store CTAs
-3. **Features** - 6 feature cards with icons showcasing privacy & AI capabilities
-4. **Stats** - Key metrics (encryption, data collection, processing, rating)
-5. **Privacy** - Detailed privacy commitments with SOC 2 certification
-6. **Download** - App store cards with badges
-7. **Footer** - Product, Company, Legal links
+2. **Hero** - "Triage. Organize. Focus." with Gmail/WhatsApp/Telegram icons and App Store/Play Store CTAs
+3. **How It Works** - 4-step process: Connect Channels, AI Triage, Organize, Zero Inbox
+4. **Features** - 6 feature cards: Zero Inbox Engine, AI Librarian, Smart Task Extraction, Event Detection, Distraction Management, Unified Messaging
+5. **Stats** - Key metrics (3 platforms, 0 inbox, 100% triaged, 4.9 rating)
+6. **Privacy** - Data sovereignty with SOC 2 certification, Unipile secure API
+7. **Download** - App store cards with badges
+8. **Footer** - Product, Company, Legal links
 
 ## Color Palette
 - Primary: #6366F1 (indigo)

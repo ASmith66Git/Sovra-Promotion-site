@@ -3,21 +3,27 @@ import {
   Shield,
   Lock,
   Eye,
-  Server,
   Smartphone,
-  Fingerprint,
   ArrowRight,
   ChevronDown,
   Sparkles,
-  Database,
   Wifi,
-  KeyRound,
   CheckCircle2,
   Zap,
   Brain,
   Globe,
+  Inbox,
+  BookOpen,
+  CalendarCheck,
+  ListTodo,
+  BellOff,
+  MessageSquare,
+  Mail,
+  ScanSearch,
+  Layers,
+  Focus,
 } from "lucide-react";
-import { SiApple, SiGoogleplay } from "react-icons/si";
+import { SiApple, SiGoogleplay, SiGmail, SiWhatsapp, SiTelegram } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import sorvaLogo from "@assets/Sovra_Icon_1771782361082.png";
 
@@ -74,6 +80,14 @@ function Navbar() {
           </span>
         </div>
         <div className="hidden md:flex items-center gap-8">
+          <button
+            onClick={() => scrollTo("how-it-works")}
+            className="text-sm cursor-pointer bg-transparent border-none"
+            style={{ color: COLORS.muted }}
+            data-testid="link-nav-how"
+          >
+            How It Works
+          </button>
           <button
             onClick={() => scrollTo("features")}
             className="text-sm cursor-pointer bg-transparent border-none"
@@ -151,9 +165,9 @@ function HeroSection() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8"
           style={{ border: `1px solid ${COLORS.primary}30`, backgroundColor: `${COLORS.primary}0A` }}
         >
-          <Sparkles className="w-4 h-4" style={{ color: COLORS.primary }} />
+          <BookOpen className="w-4 h-4" style={{ color: COLORS.primary }} />
           <span className="text-sm font-medium" style={{ color: COLORS.primary }} data-testid="text-hero-badge">
-            Privacy-First AI Technology
+            Your AI Librarian
           </span>
         </motion.div>
 
@@ -163,16 +177,16 @@ function HeroSection() {
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] mb-6"
           data-testid="text-hero-title"
         >
-          <span className="text-white">Your AI.</span>
+          <span className="text-white">Triage.</span>
           <br />
           <span
             className="bg-clip-text text-transparent"
             style={{ backgroundImage: `linear-gradient(to right, ${COLORS.primary}, ${COLORS.secondary}, ${COLORS.highlight})` }}
           >
-            Your Data.
+            Organize.
           </span>
           <br />
-          <span className="text-white">Your Control.</span>
+          <span className="text-white">Focus.</span>
         </motion.h1>
 
         <motion.p
@@ -182,8 +196,9 @@ function HeroSection() {
           style={{ color: COLORS.muted }}
           data-testid="text-hero-description"
         >
-          Sorva delivers powerful AI capabilities while keeping your data completely private.
-          No cloud storage. No data mining. Just intelligent assistance that respects your sovereignty.
+          Sorva is your AI librarian that pulls in Gmail, WhatsApp, and Telegram
+          to organize your notes, tasks, and events. Reach zero inbox and take back
+          control of your attention.
         </motion.p>
 
         <motion.div variants={fadeUp} custom={3} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
@@ -211,25 +226,42 @@ function HeroSection() {
         </motion.div>
 
         <motion.div variants={fadeUp} custom={4} className="flex flex-wrap items-center justify-center gap-6 text-sm" style={{ color: COLORS.dimmed }}>
-          <div className="flex items-center gap-2" data-testid="text-hero-encrypted">
+          <div className="flex items-center gap-2" data-testid="text-hero-zero-inbox">
             <CheckCircle2 className="w-4 h-4" style={{ color: COLORS.accent }} />
-            <span>End-to-end encrypted</span>
+            <span>Zero Inbox</span>
           </div>
-          <div className="flex items-center gap-2" data-testid="text-hero-no-data">
+          <div className="flex items-center gap-2" data-testid="text-hero-ai-triage">
             <CheckCircle2 className="w-4 h-4" style={{ color: COLORS.accent }} />
-            <span>No data collection</span>
+            <span>AI-Powered Triage</span>
           </div>
-          <div className="flex items-center gap-2" data-testid="text-hero-open-source">
+          <div className="flex items-center gap-2" data-testid="text-hero-privacy">
             <CheckCircle2 className="w-4 h-4" style={{ color: COLORS.accent }} />
-            <span>Open source</span>
+            <span>Privacy First</span>
           </div>
         </motion.div>
 
-        <motion.div variants={fadeUp} custom={5} className="mt-16">
+        <motion.div variants={fadeUp} custom={5} className="mt-12">
+          <div className="flex items-center justify-center gap-8">
+            <div className="flex items-center gap-2" style={{ color: COLORS.dimmed }}>
+              <SiGmail className="w-5 h-5" style={{ color: "#EA4335" }} />
+              <span className="text-sm">Gmail</span>
+            </div>
+            <div className="flex items-center gap-2" style={{ color: COLORS.dimmed }}>
+              <SiWhatsapp className="w-5 h-5" style={{ color: "#25D366" }} />
+              <span className="text-sm">WhatsApp</span>
+            </div>
+            <div className="flex items-center gap-2" style={{ color: COLORS.dimmed }}>
+              <SiTelegram className="w-5 h-5" style={{ color: "#26A5E4" }} />
+              <span className="text-sm">Telegram</span>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div variants={fadeUp} custom={6} className="mt-10">
           <button
-            onClick={() => document.getElementById("features")?.scrollIntoView({ behavior: "smooth" })}
+            onClick={() => document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" })}
             className="inline-flex items-center justify-center cursor-pointer bg-transparent border-none"
-            data-testid="button-scroll-features"
+            data-testid="button-scroll-how"
           >
             <ChevronDown className="w-6 h-6 animate-bounce" style={{ color: COLORS.dimmed }} />
           </button>
@@ -239,41 +271,164 @@ function HeroSection() {
   );
 }
 
+function HowItWorksSection() {
+  const steps = [
+    {
+      icon: MessageSquare,
+      title: "Connect Your Channels",
+      description: "Link your Gmail, WhatsApp, and Telegram accounts. Sorva uses Unipile to securely pull in messages from all your communication channels.",
+      color: COLORS.highlight,
+      badge: "Step 1",
+    },
+    {
+      icon: ScanSearch,
+      title: "AI Triage & Sorting",
+      description: "Sorva's AI librarian reads, categorizes, and prioritizes every message. It extracts tasks, events, and important notes so nothing falls through the cracks.",
+      color: COLORS.primary,
+      badge: "Step 2",
+    },
+    {
+      icon: Layers,
+      title: "Organize Into Notes, Tasks & Events",
+      description: "Messages are automatically transformed into actionable items: notes for reference, tasks for your to-do list, and events for your calendar.",
+      color: COLORS.secondary,
+      badge: "Step 3",
+    },
+    {
+      icon: Focus,
+      title: "Reach Zero Inbox",
+      description: "Every message is processed and filed. Your inbox is cleared. Distractions are managed. You focus only on what matters right now.",
+      color: COLORS.accent,
+      badge: "Step 4",
+    },
+  ];
+
+  return (
+    <section id="how-it-works" className="relative py-32 px-6" data-testid="section-how-it-works">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={stagger}
+          className="text-center mb-20"
+        >
+          <motion.div
+            variants={fadeUp}
+            custom={0}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
+            style={{ border: `1px solid ${COLORS.highlight}30`, backgroundColor: `${COLORS.highlight}0A` }}
+          >
+            <Sparkles className="w-4 h-4" style={{ color: COLORS.highlight }} />
+            <span className="text-sm font-medium" style={{ color: COLORS.highlight }}>
+              How It Works
+            </span>
+          </motion.div>
+          <motion.h2
+            variants={fadeUp}
+            custom={1}
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight mb-6"
+            data-testid="text-how-title"
+          >
+            From chaos to{" "}
+            <span
+              className="bg-clip-text text-transparent"
+              style={{ backgroundImage: `linear-gradient(to right, ${COLORS.highlight}, ${COLORS.accent})` }}
+            >
+              clarity
+            </span>
+          </motion.h2>
+          <motion.p variants={fadeUp} custom={2} className="text-lg max-w-2xl mx-auto" style={{ color: COLORS.muted }} data-testid="text-how-subtitle">
+            Sorva connects to your messaging platforms and transforms the noise into organized, actionable information.
+          </motion.p>
+        </motion.div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={stagger}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto"
+        >
+          {steps.map((step, i) => (
+            <motion.div
+              key={step.title}
+              variants={fadeUp}
+              custom={i}
+              className="relative rounded-2xl p-8 transition-all duration-300"
+              style={{
+                backgroundColor: COLORS.cardBg,
+                border: `1px solid ${COLORS.cardBorder}`,
+                backdropFilter: "blur(12px)",
+              }}
+              data-testid={`card-step-${i}`}
+            >
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-5">
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center"
+                    style={{ backgroundColor: `${step.color}15` }}
+                  >
+                    <step.icon className="w-6 h-6" style={{ color: step.color }} />
+                  </div>
+                  <span
+                    className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full"
+                    style={{ color: step.color, backgroundColor: `${step.color}15` }}
+                    data-testid={`text-step-badge-${i}`}
+                  >
+                    {step.badge}
+                  </span>
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3" data-testid={`text-step-title-${i}`}>
+                  {step.title}
+                </h3>
+                <p className="leading-relaxed" style={{ color: COLORS.muted }} data-testid={`text-step-desc-${i}`}>
+                  {step.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 const features = [
   {
-    icon: Lock,
-    title: "On-Device Processing",
-    description: "All AI computations happen directly on your device. Your prompts and responses never touch our servers.",
+    icon: Inbox,
+    title: "Zero Inbox Engine",
+    description: "Every message gets processed, categorized, and cleared. Achieve inbox zero across Gmail, WhatsApp, and Telegram simultaneously.",
     color: COLORS.primary,
-  },
-  {
-    icon: Shield,
-    title: "Zero-Knowledge Architecture",
-    description: "We can't read your data even if we wanted to. Built on zero-knowledge encryption principles from the ground up.",
-    color: COLORS.secondary,
   },
   {
     icon: Brain,
-    title: "Advanced AI Models",
-    description: "Access state-of-the-art language models optimized for on-device inference with no compromise in quality.",
+    title: "AI Librarian",
+    description: "Like a personal librarian, Sorva reads, understands, and files every piece of information so you can retrieve it when you need it.",
+    color: COLORS.secondary,
+  },
+  {
+    icon: ListTodo,
+    title: "Smart Task Extraction",
+    description: "AI automatically identifies action items buried in conversations and turns them into structured tasks with deadlines and priorities.",
     color: COLORS.highlight,
   },
   {
-    icon: Database,
-    title: "Local Data Storage",
-    description: "All your conversations and data are stored locally in encrypted containers that only you can unlock.",
+    icon: CalendarCheck,
+    title: "Event Detection",
+    description: "Meeting invites, appointment mentions, and date references are automatically captured and added to your calendar.",
     color: COLORS.accent,
   },
   {
-    icon: Fingerprint,
-    title: "Biometric Security",
-    description: "Protect your AI assistant with Face ID, Touch ID, or fingerprint authentication for an extra layer of security.",
+    icon: BellOff,
+    title: "Distraction Management",
+    description: "Sorva filters noise from signal. Low-priority messages are batched and summarized so you stay focused on what matters.",
     color: COLORS.primary,
   },
   {
-    icon: Zap,
-    title: "Lightning Fast",
-    description: "Optimized neural networks deliver near-instant responses without the latency of cloud-based solutions.",
+    icon: Mail,
+    title: "Unified Messaging",
+    description: "Gmail, WhatsApp, and Telegram unified in one triaged view. No more jumping between apps to stay on top of conversations.",
     color: COLORS.secondary,
   },
 ];
@@ -306,18 +461,16 @@ function FeaturesSection() {
             className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight mb-6"
             data-testid="text-features-title"
           >
-            AI that works{" "}
+            Your AI librarian{" "}
             <span
               className="bg-clip-text text-transparent"
               style={{ backgroundImage: `linear-gradient(to right, ${COLORS.accent}, ${COLORS.primary})` }}
             >
-              for you,
+              that never sleeps
             </span>
-            <br />
-            not against you
           </motion.h2>
           <motion.p variants={fadeUp} custom={2} className="text-lg max-w-2xl mx-auto" style={{ color: COLORS.muted }} data-testid="text-features-subtitle">
-            Every feature is designed with privacy as the foundation, not an afterthought.
+            Sorva triages your messages, extracts what matters, and keeps your digital life organized while you focus on living it.
           </motion.p>
         </motion.div>
 
@@ -366,23 +519,23 @@ function FeaturesSection() {
 const privacyPoints = [
   {
     icon: Eye,
-    title: "No Tracking",
-    description: "We don't track your usage, collect analytics, or build profiles. Your activity stays between you and your device.",
+    title: "No Message Logging",
+    description: "Sorva processes your messages to extract tasks and events, but never stores or logs raw message content on external servers.",
   },
   {
-    icon: Server,
-    title: "No Cloud Storage",
-    description: "Your conversations and data never leave your device. There's no server to hack, no database to breach.",
+    icon: Lock,
+    title: "Encrypted Pipeline",
+    description: "All data flowing between your messaging platforms and Sorva is encrypted end-to-end. Your conversations remain private.",
   },
   {
-    icon: KeyRound,
-    title: "Encryption by Default",
-    description: "Military-grade AES-256 encryption protects your data at rest. Only your biometrics can unlock it.",
+    icon: Shield,
+    title: "On-Device Intelligence",
+    description: "Core AI processing happens on your device. Your notes, tasks, and events stay locally encrypted and under your control.",
   },
   {
     icon: Globe,
-    title: "No Third-Party Sharing",
-    description: "We never sell, share, or monetize your data. Our business model is built on trust, not exploitation.",
+    title: "No Third-Party Data Sharing",
+    description: "We never sell, share, or monetize your data. Sorva's business model is built on trust and subscriptions, not data exploitation.",
   },
 ];
 
@@ -426,13 +579,13 @@ function PrivacySection() {
               className="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-6"
               data-testid="text-privacy-title"
             >
-              Privacy isn't a feature.
+              Your messages.
               <br />
               <span
                 className="bg-clip-text text-transparent"
                 style={{ backgroundImage: `linear-gradient(to right, ${COLORS.secondary}, ${COLORS.primary})` }}
               >
-                It's a right.
+                Your rules.
               </span>
             </motion.h2>
             <motion.p
@@ -442,8 +595,9 @@ function PrivacySection() {
               style={{ color: COLORS.muted }}
               data-testid="text-privacy-description"
             >
-              In a world where AI companies harvest your most intimate thoughts and conversations,
-              Sorva takes a radically different approach. We believe your data belongs to you and only you.
+              Sorva connects to your messaging platforms through Unipile's secure API,
+              but your raw messages are never stored on our servers. We extract the signal,
+              discard the noise, and keep your data sovereignty intact.
             </motion.p>
             <motion.div variants={fadeUp} custom={3}>
               <div
@@ -514,9 +668,9 @@ function PrivacySection() {
 
 function StatsSection() {
   const stats = [
-    { value: "256-bit", label: "AES Encryption" },
-    { value: "0", label: "Data Collected" },
-    { value: "100%", label: "On-Device Processing" },
+    { value: "3", label: "Platforms Unified" },
+    { value: "0", label: "Target Inbox Count" },
+    { value: "100%", label: "Messages Triaged" },
     { value: "4.9", label: "App Store Rating" },
   ];
 
@@ -595,13 +749,14 @@ function DownloadSection() {
           className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight mb-6"
           data-testid="text-download-title"
         >
-          Take back control of{" "}
+          Reach{" "}
           <span
             className="bg-clip-text text-transparent"
             style={{ backgroundImage: `linear-gradient(to right, ${COLORS.highlight}, ${COLORS.primary}, ${COLORS.secondary})` }}
           >
-            your data
+            zero inbox
           </span>
+          {" "}today
         </motion.h2>
 
         <motion.p
@@ -611,8 +766,9 @@ function DownloadSection() {
           style={{ color: COLORS.muted }}
           data-testid="text-download-description"
         >
-          Download Sorva today and experience AI the way it should be:
-          powerful, private, and completely under your control.
+          Download Sorva and let your AI librarian handle the chaos.
+          Connect your Gmail, WhatsApp, and Telegram, and watch your
+          distractions transform into organized action.
         </motion.p>
 
         <motion.div variants={fadeUp} custom={3} className="grid sm:grid-cols-2 gap-6 max-w-xl mx-auto mb-16">
@@ -727,13 +883,18 @@ function Footer() {
               <span className="text-lg font-bold tracking-tight text-white">Sorva</span>
             </div>
             <p className="text-sm leading-relaxed" style={{ color: COLORS.dimmed }} data-testid="text-footer-tagline">
-              Privacy-first AI that puts you in complete control of your data and digital life.
+              Your AI librarian that triages Gmail, WhatsApp, and Telegram into organized notes, tasks, and events.
             </p>
           </div>
 
           <div>
             <h4 className="text-sm font-semibold text-white mb-4">Product</h4>
             <ul className="space-y-3">
+              <li>
+                <a href="#how-it-works" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-how">
+                  How It Works
+                </a>
+              </li>
               <li>
                 <a href="#features" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-features">
                   Features
@@ -747,11 +908,6 @@ function Footer() {
               <li>
                 <a href="#download" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-download">
                   Download
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-pricing">
-                  Pricing
                 </a>
               </li>
             </ul>
@@ -831,6 +987,7 @@ export default function Landing() {
     <div className="min-h-screen text-slate-100" style={{ backgroundColor: COLORS.bg, fontFamily: "Inter, sans-serif" }}>
       <Navbar />
       <HeroSection />
+      <HowItWorksSection />
       <FeaturesSection />
       <StatsSection />
       <PrivacySection />
