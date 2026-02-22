@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { SiApple, SiGoogleplay } from "react-icons/si";
 import { Button } from "@/components/ui/button";
+import sorvaLogo from "@assets/Sovra_Icon_1771782361082.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -67,12 +68,7 @@ function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
         <div className="flex items-center gap-2.5" data-testid="nav-logo">
-          <div
-            className="w-8 h-8 rounded-md flex items-center justify-center"
-            style={{ background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.secondary})` }}
-          >
-            <Shield className="w-4 h-4 text-white" />
-          </div>
+          <img src={sorvaLogo} alt="Sorva logo" className="w-8 h-8 rounded-md object-cover" />
           <span className="text-lg font-bold tracking-tight text-white" data-testid="text-logo">
             Sorva
           </span>
@@ -727,12 +723,7 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-1">
             <div className="flex items-center gap-2.5 mb-4" data-testid="footer-logo">
-              <div
-                className="w-8 h-8 rounded-md flex items-center justify-center"
-                style={{ background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.secondary})` }}
-              >
-                <Shield className="w-4 h-4 text-white" />
-              </div>
+              <img src={sorvaLogo} alt="Sorva logo" className="w-8 h-8 rounded-md object-cover" />
               <span className="text-lg font-bold tracking-tight text-white">Sorva</span>
             </div>
             <p className="text-sm leading-relaxed" style={{ color: COLORS.dimmed }} data-testid="text-footer-tagline">
