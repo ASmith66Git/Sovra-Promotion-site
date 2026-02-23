@@ -1,0 +1,71 @@
+The information you've provided for **Sorva** describes a powerful, privacy-first "Personal Intelligence" tool. It addresses a major modern pain point: the feeling of being overwhelmed by fragmented data across too many apps.
+
+Based on the core points you provided, here is a breakdown of how to improve the marketing page to convert visitors into users.
+
+### 1. Define a Clear "Hero" Value Proposition
+
+The current description is very technical. You need a "hook" at the top of the page that summarizes everything in one sentence.
+
+* **Draft Idea:** *"The AI-powered second brain that stays on your device—and out of the cloud."*
+* **Alternative:** *"Triage your digital life with a private, on-device librarian."*
+
+### 2. Restructure the Content (The "So What?" Method)
+
+Instead of leading with technical specs (12-word phrases, vectorization), lead with the **benefit to the user**, then explain how Sorva achieves it.
+
+#### **Point 1: Privacy & Sovereignty**
+
+* **Marketing Angle:** "Your data is nobody's business."
+* **Improvement:** Use visual icons for "Local Storage," "FaceID Protected," and "Zero-Knowledge."
+* **The AI Hook:** Explicitly mention that while other apps use your notes to train their global AI models, Sorva’s AI belongs *only* to you. It learns from you, but stays with you.
+
+#### **Point 2: "The Death of the Filing Cabinet"**
+
+* **Marketing Angle:** "Stop organizing. Start capturing."
+* **Improvement:** This is your strongest feature. Focus on the **"Secret Librarian"** concept.
+* *Copy:* "Traditional apps force you to pick a folder or a tag. Sorva just wants the information. Our on-device SLM (Small Language Model) categorizes and connects your snippets in the background so you can find anything by just asking."
+
+
+* **Visual Idea:** A graphic showing a messy pile of notes/tasks being "scanned" into an organized, searchable map.
+
+#### **Point 3: Seamless & Secure Sync**
+
+* **Marketing Angle:** "Multi-device convenience, zero-risk privacy."
+* **Improvement:** Users are often skeptical of "local storage" if they want to use it on a phone and a laptop.
+* *Clarification:* Clearly state: "We use end-to-end encryption with keys *only you* hold. Even if our servers were breached, your data looks like gibberish to the world."
+
+
+
+#### **Point 4: Triage & Focus (The "Anti-Distraction" Engine)**
+
+* **Marketing Angle:** "Take back your attention from the noise."
+* **Improvement:** The "Email as a task manager for other people" is a fantastic line—**keep it.**
+* *The "Focus Flow":* Show a 3-step visual: 1. Bombarded (Email/WhatsApp/Telegram) -> 2. Triage (AI identifies importance) -> 3. Action (Archived in the source, live as a task in Sorva).
+
+
+
+#### **Point 5: Frictionless Input**
+
+* **Marketing Angle:** "Input at the speed of thought."
+* **Improvement:** Highlight the "Talk, don't Type" philosophy.
+* *Copy:* "Don't struggle with a keyboard. Just tell Sorva what's on your mind. The AI handles the 'where' and 'how' of storing it."
+
+
+
+### 3. Visual & Technical Polish
+
+* **The "Local AI" Edge:** Emphasize that because the AI runs on the device's "Neural Engine," it works **offline**. This is a huge selling point for privacy-conscious users and travelers.
+* **Pricing Transparency:** Since it's a subscription, explain the "Value Exchange." You aren't selling user data to survive; the subscription pays for the constant R&D required to keep the local AI models at the cutting edge.
+* **Social Proof/Trust:** Mention the specific encryption standards (AES-256, 12-word seed phrases) in a "Technical Deep Dive" section for power users, but keep the main page focused on the "Zen-like" experience of an organized life.
+
+### 4. Suggested Page Layout
+
+1. **Hero:** Big headline + "Download Now" button + a clean screenshot of the Triage screen.
+2. **The Problem:** "Apps are loud. Your brain is full."
+3. **The Solution (The Librarian):** How the local AI automates the "boring work" of filing.
+4. **The Privacy Guarantee:** "No Cloud Training. No Data Harvesting. Your device is your vault."
+5. **The Triage Feature:** Showcase the Email/WhatsApp/Telegram integration.
+6. **Pricing:** Simple, clear tiers.
+7. **FAQ:** Address the 12-word phrase (what happens if I lose it?) and device compatibility.
+
+**One final suggestion:** If you haven't already, ensure the website has a "Dark Mode" option. The demographic for "Privacy/Crypto-adjacent/AI" tools overwhelmingly prefers dark, high-contrast aesthetics.
