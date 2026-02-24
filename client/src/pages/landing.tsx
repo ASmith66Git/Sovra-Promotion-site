@@ -665,46 +665,18 @@ function Footer() {
   return (
     <footer className="relative py-16 px-6" style={{ borderTop: `1px solid ${COLORS.cardBorder}` }} data-testid="section-footer">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          <div className="md:col-span-1">
-            <div className="flex items-center gap-2.5 mb-4" data-testid="footer-logo">
-              <img src={sorvaLogo} alt="Sorva logo" className="w-8 h-8 rounded-md object-cover" />
-              <span className="text-lg font-bold tracking-tight text-white">Sorva</span>
-            </div>
-            <p className="text-sm leading-relaxed" style={{ color: COLORS.dimmed }} data-testid="text-footer-tagline">
-              Your private AI second brain. Triages Gmail, WhatsApp, and Telegram into organized notes, tasks, and events. All on your device.
-            </p>
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 mb-12">
+          <div className="flex items-center gap-2.5" data-testid="footer-logo">
+            <img src={sorvaLogo} alt="Sorva logo" className="w-8 h-8 rounded-md object-cover" />
+            <span className="text-lg font-bold tracking-tight text-white">Sorva</span>
           </div>
-
-          <div>
-            <h4 className="text-sm font-semibold text-white mb-4">Product</h4>
-            <ul className="space-y-3">
-              <li><a href="#problem" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-problem">Why Sorva</a></li>
-              <li><a href="#how-it-works" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-how">How It Works</a></li>
-              <li><a href="#features" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-features">Features</a></li>
-              <li><a href="#download" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-download">Download</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-semibold text-white mb-4">Company</h4>
-            <ul className="space-y-3">
-              <li><a href="#" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-about">About</a></li>
-              <li><a href="#" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-blog">Blog</a></li>
-              <li><a href="#" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-careers">Careers</a></li>
-              <li><a href="#" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-contact">Contact</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-semibold text-white mb-4">Legal</h4>
-            <ul className="space-y-3">
-              <li><a href="#" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-privacy-policy">Privacy Policy</a></li>
-              <li><a href="#" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-terms">Terms of Service</a></li>
-              <li><a href="#" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-security">Security</a></li>
-              <li><a href="#" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-compliance">Compliance</a></li>
-            </ul>
-          </div>
+          <nav className="flex flex-wrap items-center gap-6">
+            <a href="#problem" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-problem">Why Sorva</a>
+            <a href="#how-it-works" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-how">How It Works</a>
+            <a href="#features" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-features">Features</a>
+            <a href="#privacy" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-privacy">Privacy</a>
+            <a href="#download" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-download">Download</a>
+          </nav>
         </div>
 
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderTop: `1px solid ${COLORS.cardBorder}` }}>
