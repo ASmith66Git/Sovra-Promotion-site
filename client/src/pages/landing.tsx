@@ -21,6 +21,9 @@ import {
   WifiOff,
   Cpu,
   ArrowDown,
+  RefreshCw,
+  Download,
+  CloudOff,
 } from "lucide-react";
 import { SiApple, SiGoogleplay, SiGmail, SiWhatsapp, SiTelegram } from "react-icons/si";
 import { Button } from "@/components/ui/button";
@@ -409,10 +412,10 @@ const features = [
     color: COLORS.primary,
   },
   {
-    icon: WifiOff,
-    title: "Works Offline",
-    subtitle: "Your AI runs on your Neural Engine.",
-    description: "Because the AI runs on your device's Neural Engine, it works without internet. Perfect for flights, subways, or anywhere you need focus without connectivity. No cloud required.",
+    icon: RefreshCw,
+    title: "Multi-Device Sync",
+    subtitle: "Multi-device convenience, zero-risk privacy.",
+    description: "Use Sorva on your phone, tablet, and laptop. Sync happens through the cloud but is 100% zero-knowledge encrypted—even our developers can't see your data. Works offline too, powered by your device's Neural Engine.",
     color: COLORS.secondary,
   },
 ];
@@ -497,6 +500,11 @@ const privacyPoints = [
     icon: Eye,
     title: "Zero-Knowledge Architecture",
     description: "We can't read your data even if we wanted to. Your encryption keys belong only to you, protected by biometric authentication on your device.",
+  },
+  {
+    icon: CloudOff,
+    title: "Zero-Knowledge Sync",
+    description: "Sync across all your devices through the cloud without compromising privacy. Data stored for syncing is 100% encrypted with keys only you hold. Our servers see nothing but gibberish.",
   },
   {
     icon: Globe,
@@ -623,14 +631,18 @@ function DownloadSection() {
           </a>
         </motion.div>
 
-        <motion.div variants={fadeUp} custom={4} className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
-          <div className="flex items-center justify-center gap-3 p-4 rounded-xl" style={{ backgroundColor: "rgba(30, 41, 59, 0.3)", border: `1px solid ${COLORS.cardBorder}` }} data-testid="badge-offline">
-            <Wifi className="w-5 h-5" style={{ color: COLORS.accent }} />
-            <span className="text-sm" style={{ color: "#CBD5E1" }}>Works Offline</span>
+        <motion.div variants={fadeUp} custom={4} className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
+          <div className="flex items-center justify-center gap-3 p-4 rounded-xl" style={{ backgroundColor: "rgba(30, 41, 59, 0.3)", border: `1px solid ${COLORS.cardBorder}` }} data-testid="badge-sync">
+            <RefreshCw className="w-5 h-5" style={{ color: COLORS.highlight }} />
+            <span className="text-sm" style={{ color: "#CBD5E1" }}>Multi-Device Sync</span>
           </div>
           <div className="flex items-center justify-center gap-3 p-4 rounded-xl" style={{ backgroundColor: "rgba(30, 41, 59, 0.3)", border: `1px solid ${COLORS.cardBorder}` }} data-testid="badge-encrypted">
             <Lock className="w-5 h-5" style={{ color: COLORS.primary }} />
             <span className="text-sm" style={{ color: "#CBD5E1" }}>AES-256 Encrypted</span>
+          </div>
+          <div className="flex items-center justify-center gap-3 p-4 rounded-xl" style={{ backgroundColor: "rgba(30, 41, 59, 0.3)", border: `1px solid ${COLORS.cardBorder}` }} data-testid="badge-backup">
+            <Download className="w-5 h-5" style={{ color: COLORS.accent }} />
+            <span className="text-sm" style={{ color: "#CBD5E1" }}>Full Backup & Export</span>
           </div>
           <div className="flex items-center justify-center gap-3 p-4 rounded-xl" style={{ backgroundColor: "rgba(30, 41, 59, 0.3)", border: `1px solid ${COLORS.cardBorder}` }} data-testid="badge-platforms">
             <Smartphone className="w-5 h-5" style={{ color: COLORS.secondary }} />
