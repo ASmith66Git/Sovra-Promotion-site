@@ -412,11 +412,18 @@ const features = [
     color: COLORS.primary,
   },
   {
-    icon: RefreshCw,
-    title: "Multi-Device Sync",
-    subtitle: "Multi-device convenience, zero-risk privacy.",
-    description: "Use Sorva on your phone, tablet, and laptop. Sync happens through the cloud but is 100% zero-knowledge encrypted—even our developers can't see your data. Works offline too, powered by your device's Neural Engine.",
+    icon: WifiOff,
+    title: "Works Offline",
+    subtitle: "Your AI runs on your Neural Engine.",
+    description: "Because the AI runs on your device's Neural Engine, it works without internet. Perfect for flights, subways, or anywhere you need focus without connectivity. No cloud required.",
     color: COLORS.secondary,
+  },
+  {
+    icon: RefreshCw,
+    title: "Multi-Device Sync & Backup",
+    subtitle: "Your data, everywhere you need it.",
+    description: "Using multiple devices? Zero-knowledge encrypted sync keeps everything in perfect harmony across your phone, tablet, and laptop. Full backup and export ensures your data is always recoverable and never trapped. Even our developers can't see what's synced.",
+    color: COLORS.highlight,
   },
 ];
 
