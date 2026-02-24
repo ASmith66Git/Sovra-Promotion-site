@@ -128,7 +128,7 @@ function HeroSection() {
         </motion.h1>
 
         <motion.p variants={fadeUp} custom={2} className="text-lg sm:text-xl max-w-2xl mx-auto mb-4 leading-relaxed" style={{ color: COLORS.muted }} data-testid="text-hero-description">
-          Sorva is the AI-powered second brain that triages your Gmail, WhatsApp, and Telegram into organized notes, tasks, and events.
+          Sorva is your AI-powered second brain. Capture your own notes, tasks, projects, and events—plus triage Gmail, WhatsApp, and Telegram so nothing important slips through.
         </motion.p>
 
         <motion.p variants={fadeUp} custom={2.5} className="text-lg sm:text-xl max-w-xl mx-auto mb-10 font-medium" style={{ color: COLORS.text }} data-testid="text-hero-hook">
