@@ -392,9 +392,9 @@ const features = [
   },
   {
     icon: Mic,
-    title: "Input at the Speed of Thought",
-    subtitle: "Talk, don't type.",
-    description: "Don't struggle with a keyboard. Just tell Sorva what's on your mind. The AI handles the 'where' and 'how' of storing it—whether it's a note, a task, or an event.",
+    title: "Capture Everything, Effortlessly",
+    subtitle: "Talk, snap, or type.",
+    description: "Speak your thoughts, snap a photo of a document or whiteboard, or just type. Sorva's AI extracts text and data from images, stores the original photo, and files everything for you—note, task, or event.",
     color: COLORS.highlight,
   },
   {
