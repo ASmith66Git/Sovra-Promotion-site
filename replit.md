@@ -1,7 +1,7 @@
-# Sorva Marketing Website
+# Sovra Marketing Website
 
 ## Overview
-A visually impressive marketing website promoting Sorva, a privacy-focused AI librarian app that triages Gmail, WhatsApp, and Telegram messages into organized notes, tasks, and events. Emphasizes zero inbox, distraction management, and data sovereignty. Available on App Store and Google Play.
+A visually impressive marketing website promoting Sovra, a privacy-focused AI librarian app that triages Gmail, WhatsApp, and Telegram messages into organized notes, tasks, and events. Emphasizes zero inbox, distraction management, and data sovereignty. Available on App Store and Google Play.
 
 ## Architecture
 - **Frontend**: React + Vite + Tailwind CSS + Framer Motion

@@ -27,7 +27,7 @@ import {
 } from "lucide-react";
 import { SiApple, SiGoogleplay, SiGmail, SiWhatsapp, SiTelegram } from "react-icons/si";
 import { Button } from "@/components/ui/button";
-import sorvaLogo from "@assets/Sovra_Icon_1771782361082.png";
+import sovraLogo from "@assets/Sovra_Icon_1771782361082.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -76,13 +76,13 @@ function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
         <div className="flex items-center gap-2.5" data-testid="nav-logo">
-          <img src={sorvaLogo} alt="Sorva logo" className="w-8 h-8 rounded-md object-cover" />
+          <img src={sovraLogo} alt="Sovra logo" className="w-8 h-8 rounded-md object-cover" />
           <span className="text-lg font-bold tracking-tight text-white" data-testid="text-logo">
-            Sorva
+            Sovra
           </span>
         </div>
         <div className="hidden md:flex items-center gap-8">
-          <button onClick={() => scrollTo("problem")} className="text-sm cursor-pointer bg-transparent border-none" style={{ color: COLORS.muted }} data-testid="link-nav-problem">Why Sorva</button>
+          <button onClick={() => scrollTo("problem")} className="text-sm cursor-pointer bg-transparent border-none" style={{ color: COLORS.muted }} data-testid="link-nav-problem">Why Sovra</button>
           <button onClick={() => scrollTo("how-it-works")} className="text-sm cursor-pointer bg-transparent border-none" style={{ color: COLORS.muted }} data-testid="link-nav-how">How It Works</button>
           <button onClick={() => scrollTo("features")} className="text-sm cursor-pointer bg-transparent border-none" style={{ color: COLORS.muted }} data-testid="link-nav-features">Features</button>
           <button onClick={() => scrollTo("privacy")} className="text-sm cursor-pointer bg-transparent border-none" style={{ color: COLORS.muted }} data-testid="link-nav-privacy">Privacy</button>
@@ -128,7 +128,7 @@ function HeroSection() {
         </motion.h1>
 
         <motion.p variants={fadeUp} custom={2} className="text-lg sm:text-xl max-w-2xl mx-auto mb-4 leading-relaxed" style={{ color: COLORS.muted }} data-testid="text-hero-description">
-          Sorva is your AI-powered second brain. Capture your own notes, tasks, projects, and events—plus triage Gmail, WhatsApp, and Telegram so nothing important slips through.
+          Sovra is your AI-powered second brain. Capture your own notes, tasks, projects, and events—plus triage Gmail, WhatsApp, and Telegram so nothing important slips through.
         </motion.p>
 
         <motion.p variants={fadeUp} custom={2.5} className="text-lg sm:text-xl max-w-xl mx-auto mb-10 font-medium" style={{ color: COLORS.text }} data-testid="text-hero-hook">
@@ -269,7 +269,7 @@ function TriageFlowSection() {
               <Brain className="w-7 h-7 text-white" />
             </div>
             <h3 className="text-xl font-bold text-white mb-2">AI Triage</h3>
-            <p className="text-sm" style={{ color: COLORS.muted }}>Sorva's on-device AI reads, categorizes, and extracts what matters. Noise is filtered. Signal is preserved.</p>
+            <p className="text-sm" style={{ color: COLORS.muted }}>Sovra's on-device AI reads, categorizes, and extracts what matters. Noise is filtered. Signal is preserved.</p>
           </motion.div>
 
           <motion.div variants={fadeUp} custom={3} className="flex flex-col items-center my-2">
@@ -305,7 +305,7 @@ function HowItWorksSection() {
     {
       icon: Mail,
       title: "Connect Your Channels",
-      description: "Link your Gmail, WhatsApp, and Telegram. Sorva uses Unipile's secure API to pull in messages without storing them on external servers.",
+      description: "Link your Gmail, WhatsApp, and Telegram. Sovra uses Unipile's secure API to pull in messages without storing them on external servers.",
       color: COLORS.highlight,
       badge: "Step 1",
     },
@@ -319,7 +319,7 @@ function HowItWorksSection() {
     {
       icon: BookOpen,
       title: "Notes, Tasks & Events Appear",
-      description: "Stop organizing. Start capturing. Sorva transforms conversations into structured notes, actionable tasks with deadlines, and calendar events.",
+      description: "Stop organizing. Start capturing. Sovra transforms conversations into structured notes, actionable tasks with deadlines, and calendar events.",
       color: COLORS.secondary,
       badge: "Step 3",
     },
@@ -347,7 +347,7 @@ function HowItWorksSection() {
             </span>
           </motion.h2>
           <motion.p variants={fadeUp} custom={2} className="text-lg max-w-2xl mx-auto" style={{ color: COLORS.muted }} data-testid="text-how-subtitle">
-            Traditional apps force you to pick a folder or a tag. Sorva just wants the information.
+            Traditional apps force you to pick a folder or a tag. Sovra just wants the information.
             The AI handles the "where" and "how" of storing it.
           </motion.p>
         </motion.div>
@@ -380,21 +380,21 @@ const features = [
     icon: Inbox,
     title: "Zero Inbox Engine",
     subtitle: "Clear the noise. Keep the signal.",
-    description: "Every message gets processed, categorized, and cleared. Achieve inbox zero across Gmail, WhatsApp, and Telegram simultaneously. Email is a task manager for other people—Sorva takes it back for you.",
+    description: "Every message gets processed, categorized, and cleared. Achieve inbox zero across Gmail, WhatsApp, and Telegram simultaneously. Email is a task manager for other people—Sovra takes it back for you.",
     color: COLORS.primary,
   },
   {
     icon: Brain,
     title: "The Secret Librarian",
     subtitle: "Stop organizing. Start capturing.",
-    description: "Traditional apps force you to pick a folder or a tag. Sorva just wants the information. The on-device AI categorizes and connects your snippets in the background so you can find anything by just asking.",
+    description: "Traditional apps force you to pick a folder or a tag. Sovra just wants the information. The on-device AI categorizes and connects your snippets in the background so you can find anything by just asking.",
     color: COLORS.secondary,
   },
   {
     icon: Mic,
     title: "Capture Everything, Effortlessly",
     subtitle: "Talk, snap, or type.",
-    description: "Speak your thoughts, snap a photo of a document or whiteboard, or just type. Sorva's AI extracts text and data from images, stores the original photo, and files everything for you—note, task, or event.",
+    description: "Speak your thoughts, snap a photo of a document or whiteboard, or just type. Sovra's AI extracts text and data from images, stores the original photo, and files everything for you—note, task, or event.",
     color: COLORS.highlight,
   },
   {
@@ -408,7 +408,7 @@ const features = [
     icon: BellOff,
     title: "Anti-Distraction Engine",
     subtitle: "Take back your attention from the noise.",
-    description: "Low-priority messages are batched and summarized. Sorva filters noise from signal so you stay in flow. No more context-switching between apps to check if something important arrived.",
+    description: "Low-priority messages are batched and summarized. Sovra filters noise from signal so you stay in flow. No more context-switching between apps to check if something important arrived.",
     color: COLORS.primary,
   },
   {
@@ -443,7 +443,7 @@ function FeaturesSection() {
             </span>
           </motion.h2>
           <motion.p variants={fadeUp} custom={2} className="text-lg max-w-2xl mx-auto" style={{ color: COLORS.muted }} data-testid="text-features-subtitle">
-            Other apps use your notes to train their global AI models. Sorva's AI belongs only to you. It learns from you, but stays with you.
+            Other apps use your notes to train their global AI models. Sovra's AI belongs only to you. It learns from you, but stays with you.
           </motion.p>
         </motion.div>
 
@@ -496,7 +496,7 @@ const privacyPoints = [
   {
     icon: Cpu,
     title: "On-Device AI Processing",
-    description: "Sorva's AI runs on your device's Neural Engine. Your messages are processed locally—never uploaded to our servers for analysis. Other AI apps train on your data. Ours doesn't.",
+    description: "Sovra's AI runs on your device's Neural Engine. Your messages are processed locally—never uploaded to our servers for analysis. Other AI apps train on your data. Ours doesn't.",
   },
   {
     icon: Lock,
@@ -546,7 +546,7 @@ function PrivacySection() {
             </motion.h2>
             <motion.p variants={fadeUp} custom={2} className="text-lg leading-relaxed mb-8" style={{ color: COLORS.muted }} data-testid="text-privacy-description">
               While other AI apps harvest your most intimate thoughts to train their global models,
-              Sorva's AI belongs only to you. It learns from you, but stays with you.
+              Sovra's AI belongs only to you. It learns from you, but stays with you.
               Connected through Unipile's secure API, your raw messages are never stored externally.
             </motion.p>
             <motion.div variants={fadeUp} custom={3}>
@@ -604,7 +604,7 @@ function DownloadSection() {
         </motion.h2>
 
         <motion.p variants={fadeUp} custom={2} className="text-lg max-w-2xl mx-auto mb-12" style={{ color: COLORS.muted }} data-testid="text-download-description">
-          Download Sorva and let your private AI librarian handle the chaos.
+          Download Sovra and let your private AI librarian handle the chaos.
           Connect your channels and watch your distractions transform into organized action.
         </motion.p>
 
@@ -667,11 +667,11 @@ function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 mb-12">
           <div className="flex items-center gap-2.5" data-testid="footer-logo">
-            <img src={sorvaLogo} alt="Sorva logo" className="w-8 h-8 rounded-md object-cover" />
-            <span className="text-lg font-bold tracking-tight text-white">Sorva</span>
+            <img src={sovraLogo} alt="Sovra logo" className="w-8 h-8 rounded-md object-cover" />
+            <span className="text-lg font-bold tracking-tight text-white">Sovra</span>
           </div>
           <nav className="flex flex-wrap items-center gap-6">
-            <a href="#problem" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-problem">Why Sorva</a>
+            <a href="#problem" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-problem">Why Sovra</a>
             <a href="#how-it-works" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-how">How It Works</a>
             <a href="#features" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-features">Features</a>
             <a href="#privacy" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-privacy">Privacy</a>
@@ -680,7 +680,7 @@ function Footer() {
         </div>
 
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderTop: `1px solid ${COLORS.cardBorder}` }}>
-          <p className="text-sm" style={{ color: "#475569" }} data-testid="text-copyright">&copy; {new Date().getFullYear()} Sorva. All rights reserved.</p>
+          <p className="text-sm" style={{ color: "#475569" }} data-testid="text-copyright">&copy; {new Date().getFullYear()} Sovra. All rights reserved.</p>
           <p className="text-sm" style={{ color: "#475569" }} data-testid="text-footer-built">Your device is your vault.</p>
         </div>
       </div>
