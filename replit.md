@@ -12,7 +12,8 @@ A visually impressive marketing website promoting Sovra, a privacy-focused AI se
 
 ## Project Structure
 - `client/src/pages/landing.tsx` - Main landing page with all sections
-- `client/src/App.tsx` - App router
+- `client/src/pages/philosophy.tsx` - Our Philosophy page (developer rant on tech, data, AI, privacy)
+- `client/src/App.tsx` - App router (routes: / and /philosophy)
 - `client/src/index.css` - Theme tokens (unchanged from template)
 - `server/routes.ts` - API routes (none needed for static marketing site)
 
