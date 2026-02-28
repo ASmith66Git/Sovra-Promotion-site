@@ -148,6 +148,29 @@ export default function Philosophy() {
       <main className="pt-32 pb-32 px-6">
         <div className="max-w-3xl mx-auto">
           <motion.div initial="hidden" animate="visible" variants={stagger}>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="flex justify-center mb-12"
+              data-testid="img-philosophy-logo"
+            >
+              <motion.img
+                src={sovraLogo}
+                alt="Sovra logo"
+                className="w-28 h-28 rounded-3xl object-cover"
+                animate={{
+                  y: [0, -8, 0],
+                  filter: [
+                    "drop-shadow(0 0 16px rgba(99,102,241,0.3))",
+                    "drop-shadow(0 0 32px rgba(99,102,241,0.6))",
+                    "drop-shadow(0 0 16px rgba(99,102,241,0.3))",
+                  ],
+                }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              />
+            </motion.div>
+
             <motion.div variants={fadeUp} custom={0} className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8" style={{ border: `1px solid ${COLORS.primary}30`, backgroundColor: `${COLORS.primary}0A` }}>
               <Shield className="w-4 h-4" style={{ color: COLORS.primary }} />
               <span className="text-sm font-medium" style={{ color: COLORS.primary }}>From the people who built this</span>
