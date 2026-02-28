@@ -369,8 +369,7 @@ function HowItWorksSection() {
             </span>
           </motion.h2>
           <motion.p variants={fadeUp} custom={2} className="text-lg max-w-2xl mx-auto" style={{ color: COLORS.muted }} data-testid="text-how-subtitle">
-            Traditional apps force you to pick a folder or a tag. Sovra just wants the information.
-            The AI handles the "where" and "how" of storing it.
+            No folders. No tags. No filing cabinets. Sovra just wants the information — the AI handles everything else.
           </motion.p>
         </motion.div>
 
@@ -408,8 +407,8 @@ const features = [
   {
     icon: Brain,
     title: "The Secret Librarian",
-    subtitle: "Stop organizing. Start capturing.",
-    description: "Traditional apps force you to pick a folder or a tag. Sovra just wants the information. The on-device AI categorizes and connects your snippets in the background so you can find anything by just asking.",
+    subtitle: "The filing cabinet is dead.",
+    description: "Folders, tags, and notebooks all have the same flaw — you have to know where to put things before you know why they matter. Sovra buries the filing cabinet. Just capture the information; the AI organises, connects, and surfaces it exactly when you need it.",
     color: COLORS.secondary,
   },
   {
