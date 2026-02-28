@@ -1,7 +1,7 @@
 # Sovra Marketing Website
 
 ## Overview
-A visually impressive marketing website promoting Sovra, a privacy-focused AI librarian app that triages Gmail, WhatsApp, and Telegram messages into organized notes, tasks, and events. Emphasizes zero inbox, distraction management, and data sovereignty. Available on App Store and Google Play.
+A visually impressive marketing website promoting Sovra, a privacy-focused AI second brain app. Users create their own notes, tasks, projects, and events, plus triage Gmail, Apple Mail, WhatsApp, and Telegram messages into organized notes, tasks, and events. Also brings in financial data (bank accounts) for personal/business wellbeing. Emphasizes zero inbox, distraction management, data sovereignty, on-device AI, and financial privacy. Available on App Store and Google Play.
 
 ## Architecture
 - **Frontend**: React + Vite + Tailwind CSS + Framer Motion
@@ -18,13 +18,15 @@ A visually impressive marketing website promoting Sovra, a privacy-focused AI li
 
 ## Key Sections
 1. **Navbar** - Fixed glassmorphism navbar with smooth scroll navigation
-2. **Hero** - "Triage. Organize. Focus." with Gmail/WhatsApp/Telegram icons and App Store/Play Store CTAs
-3. **How It Works** - 4-step process: Connect Channels, AI Triage, Organize, Zero Inbox
-4. **Features** - 6 feature cards: Zero Inbox Engine, AI Librarian, Smart Task Extraction, Event Detection, Distraction Management, Unified Messaging
-5. **Stats** - Key metrics (3 platforms, 0 inbox, 100% triaged, 4.9 rating)
-6. **Privacy** - Data sovereignty with SOC 2 certification, Unipile secure API
-7. **Download** - App store cards with badges
-8. **Footer** - Product, Company, Legal links
+2. **Hero** - "Stop organizing. Start living." with Gmail/Apple Mail/WhatsApp/Telegram/Bank icons and App Store/Play Store CTAs
+3. **Problem** - "Apps are loud. Your brain is full." with pain points including financial fragmentation
+4. **Triage Flow** - Visual: Bombarded → AI Triage → Organized
+5. **How It Works** - 4-step process: Connect Channels (incl. bank accounts), AI Triage, Organize, Zero Inbox
+6. **Features** - 9 feature cards: Zero Inbox Engine, The Secret Librarian, Capture Everything, Smart Event Detection, Your Finances Private & Present, Anti-Distraction Engine, Works Offline, Multi-Device Sync & Backup
+7. **Stats** - Key metrics (5+ data sources, 0 inbox, 100% on-device, 4.9 rating)
+8. **Privacy** - "Your finances. Your messages. Your thoughts. Nobody else's." with financial data privacy emphasis
+9. **Download** - App store cards with badges
+10. **Footer** - Logo + horizontal nav links
 
 ## Color Palette
 - Primary: #6366F1 (indigo)
