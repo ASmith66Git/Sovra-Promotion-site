@@ -27,7 +27,7 @@ import {
 } from "lucide-react";
 import { SiApple, SiGoogleplay, SiGmail, SiWhatsapp, SiTelegram } from "react-icons/si";
 import { Button } from "@/components/ui/button";
-import sovraLogo from "@assets/Sovra_Icon_1771782361082.png";
+const sovraLogo = "/sovra-logo.svg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -76,7 +76,13 @@ function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
         <div className="flex items-center gap-2.5" data-testid="nav-logo">
-          <img src={sovraLogo} alt="Sovra logo" className="w-8 h-8 rounded-md object-cover" />
+          <motion.img
+            src={sovraLogo}
+            alt="Sovra logo"
+            className="w-8 h-8 rounded-md object-cover"
+            animate={{ filter: ["drop-shadow(0 0 4px rgba(99,102,241,0.4))", "drop-shadow(0 0 8px rgba(99,102,241,0.6))", "drop-shadow(0 0 4px rgba(99,102,241,0.4))"] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+          />
           <span className="text-lg font-bold tracking-tight text-white" data-testid="text-logo">
             Sovra
           </span>
@@ -667,7 +673,13 @@ function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 mb-12">
           <div className="flex items-center gap-2.5" data-testid="footer-logo">
-            <img src={sovraLogo} alt="Sovra logo" className="w-8 h-8 rounded-md object-cover" />
+            <motion.img
+              src={sovraLogo}
+              alt="Sovra logo"
+              className="w-8 h-8 rounded-md object-cover"
+              animate={{ filter: ["drop-shadow(0 0 4px rgba(99,102,241,0.4))", "drop-shadow(0 0 8px rgba(99,102,241,0.6))", "drop-shadow(0 0 4px rgba(99,102,241,0.4))"] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            />
             <span className="text-lg font-bold tracking-tight text-white">Sovra</span>
           </div>
           <nav className="flex flex-wrap items-center gap-6">
