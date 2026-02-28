@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowLeft, Shield, Brain, Lock, AlertTriangle, Zap, Eye, Heart } from "lucide-react";
+import { ArrowLeft, Shield, Brain, Lock, AlertTriangle, Zap, Eye, Heart, TrendingUp } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -80,6 +80,17 @@ const sections = [
       "Folders are a metaphor borrowed from physical reality — a way of managing paper when paper was all we had. We have been dragging this metaphor through fifty years of digital products and wondering why people are overwhelmed.",
       "The assumption behind a filing system is that you know, at the moment of capture, what something will mean to you later. You almost never do. A note taken on a Tuesday becomes relevant on a Friday in a context you couldn't have predicted. A bank transaction from three months ago suddenly connects to a conversation you had last week. A photo of a whiteboard is meaningless until it's the thing you need in a meeting.",
       "AI changes the fundamental equation. You shouldn't have to file anything. You should be able to throw information into a system that understands it, holds it, and gives it back to you when it matters. That is what we are building. The filing cabinet is not a feature we removed — it's a premise we rejected.",
+    ],
+  },
+  {
+    icon: TrendingUp,
+    color: COLORS.secondary,
+    title: "The hardware is about to make everything possible.",
+    body: [
+      "We are at an inflection point that most people haven't fully registered yet. The Neural Processing Units inside today's phones are already extraordinary — capable of running models that would have required a server rack five years ago. In two years, they will be significantly more powerful. In five years, the gap between what an on-device model can do and what a cloud model can do will be difficult to perceive in everyday use.",
+      "Storage is following the same curve. Devices that carry hundreds of gigabytes are becoming the norm. That matters because larger, more capable models can live locally on your device — not streamed from a server, not dependent on a connection, not accessible to anyone but you.",
+      "This is not speculation. The trajectory is clear, and we are building Sovra to take full advantage of it. Every generation of hardware gives us more to work with. Better understanding of context. Smarter triage. Richer connections between your notes, your messages, your calendar, and your financial picture. Features that are technically impractical today will become straightforward in the next release cycle.",
+      "Your subscription is not just paying for what Sovra is today. It is funding the people who are watching this hardware curve, tracking the model improvements, and doing the engineering work to bring those capabilities to you the moment they're ready — without ever compromising on the privacy guarantees that make it worth doing in the first place. We are a small team, and we are playing a long game. We think it's the right one.",
     ],
   },
   {
