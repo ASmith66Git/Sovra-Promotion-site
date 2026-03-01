@@ -495,6 +495,96 @@ function FeaturesSection() {
   );
 }
 
+const screenshots = [
+  { src: "/screenshots/today.jpg", label: "Today View", caption: "Your life at a glance" },
+  { src: "/screenshots/inbox-zero.jpg", label: "Inbox Zero", caption: "Zero inbox, every time" },
+  { src: "/screenshots/tasks.jpg", label: "Tasks", caption: "Stay on top of what matters" },
+  { src: "/screenshots/finance.jpg", label: "Finance", caption: "Your finances, front and centre" },
+  { src: "/screenshots/notes.jpg", label: "Notes", caption: "Everything, perfectly organised" },
+  { src: "/screenshots/calendar.jpg", label: "Calendar", caption: "Never miss a date" },
+  { src: "/screenshots/ask-sovra.jpg", label: "Ask Sovra", caption: "Ask your AI anything" },
+];
+
+function ScreenshotsSection() {
+  return (
+    <section className="relative py-32 px-6 overflow-hidden" data-testid="section-screenshots">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-px" style={{ background: `linear-gradient(to right, transparent, ${COLORS.primary}33, transparent)` }} />
+        <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: `linear-gradient(to right, transparent, ${COLORS.primary}33, transparent)` }} />
+      </div>
+
+      <div className="max-w-7xl mx-auto">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={stagger} className="text-center mb-16">
+          <motion.div variants={fadeUp} custom={0} className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ border: `1px solid ${COLORS.highlight}30`, backgroundColor: `${COLORS.highlight}0A` }}>
+            <Smartphone className="w-4 h-4" style={{ color: COLORS.highlight }} />
+            <span className="text-sm font-medium" style={{ color: COLORS.highlight }}>The Real App</span>
+          </motion.div>
+          <motion.h2 variants={fadeUp} custom={1} className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight mb-6" data-testid="text-screenshots-title">
+            See it in{" "}
+            <span className="bg-clip-text text-transparent" style={{ backgroundImage: `linear-gradient(to right, ${COLORS.primary}, ${COLORS.secondary})` }}>
+              action
+            </span>
+          </motion.h2>
+          <motion.p variants={fadeUp} custom={2} className="text-lg max-w-xl mx-auto" style={{ color: COLORS.muted }} data-testid="text-screenshots-subtitle">
+            Real screenshots from the app. No mockups. No stock photos.
+          </motion.p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          data-testid="screenshots-scroll"
+        >
+          {screenshots.map((shot, i) => (
+            <motion.div
+              key={shot.label}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="flex-shrink-0 snap-center flex flex-col items-center"
+              style={{ width: "200px" }}
+              data-testid={`screenshot-${i}`}
+            >
+              <div
+                className="relative rounded-[2rem] overflow-hidden mb-4"
+                style={{
+                  width: "200px",
+                  height: "433px",
+                  border: `2px solid rgba(255,255,255,0.1)`,
+                  boxShadow: `0 0 0 1px rgba(255,255,255,0.05), 0 24px 48px rgba(0,0,0,0.5)`,
+                }}
+              >
+                <img
+                  src={shot.src}
+                  alt={shot.label}
+                  className="w-full h-full object-cover object-top"
+                />
+                <div
+                  className="absolute inset-0 rounded-[2rem]"
+                  style={{ boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.08)" }}
+                />
+              </div>
+              <p className="text-sm font-semibold text-white mb-1" data-testid={`text-screenshot-label-${i}`}>{shot.label}</p>
+              <p className="text-xs text-center" style={{ color: COLORS.dimmed }} data-testid={`text-screenshot-caption-${i}`}>{shot.caption}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <div className="flex justify-center mt-6 gap-2">
+          {screenshots.map((_, i) => (
+            <div key={i} className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: i === 0 ? COLORS.primary : COLORS.cardBorder }} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function StatsSection() {
   const stats = [
     { value: "5+", label: "Data Sources Connected" },
@@ -740,6 +830,7 @@ export default function Landing() {
       <TriageFlowSection />
       <HowItWorksSection />
       <FeaturesSection />
+      <ScreenshotsSection />
       <StatsSection />
       <PrivacySection />
       <DownloadSection />
