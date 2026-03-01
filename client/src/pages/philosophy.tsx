@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowLeft, Shield, Brain, Lock, AlertTriangle, Zap, Eye, Heart, TrendingUp } from "lucide-react";
+import { ArrowLeft, Shield, Brain, Lock, AlertTriangle, Zap, Eye, Heart, TrendingUp, Smartphone } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -91,6 +91,17 @@ const sections = [
       "Storage is following the same curve. Devices that carry hundreds of gigabytes are becoming the norm. That matters because larger, more capable models can live locally on your device — not streamed from a server, not dependent on a connection, not accessible to anyone but you.",
       "This is not speculation. The trajectory is clear, and we are building Sovra to take full advantage of it. Every generation of hardware gives us more to work with. Better understanding of context. Smarter triage. Richer connections between your notes, your messages, your calendar, and your financial picture. Features that are technically impractical today will become straightforward in the next release cycle.",
       "Your subscription is not just paying for what Sovra is today. It is funding the people who are watching this hardware curve, tracking the model improvements, and doing the engineering work to bring those capabilities to you the moment they're ready — without ever compromising on the privacy guarantees that make it worth doing in the first place. We are a small team, and we are playing a long game. We think it's the right one.",
+    ],
+  },
+  {
+    icon: Smartphone,
+    color: "#F97316",
+    title: "We chose not to build for desktops. That was a deliberate decision.",
+    body: [
+      "We don't have a Windows app. We don't have a Mac app. We have been asked about this many times, and the answer is not that we haven't got around to it — it's that we don't believe the desktop is where the future of personal computing lives.",
+      "The personal device — the phone you carry everywhere, the tablet you reach for first, the foldable that fits in your pocket but opens into a full working surface — is becoming the primary computer for most people on earth. This isn't a prediction; it's already true for billions of people. The PC was a detour. The device you carry is the computer.",
+      "Foldable phones and large-format tablets are particularly significant to us. A device that lives in your pocket but unfolds into a screen capable of real work collapses the distinction between 'phone' and 'computer' entirely. The NPU in these devices is the same one we rely on for on-device AI. The sensors — camera, microphone, GPS — are richer than anything on a laptop. The always-on, always-connected nature of these devices is exactly what a second brain needs to be.",
+      "Building for desktop would mean building for a context where the device is stationary, shared or semi-shared, disconnected from your physical life, and — critically — running AI in the cloud because the hardware assumptions are different. That undermines everything we care about. So we made a choice: go deep on mobile and tablet, and go deep on the hardware that makes on-device AI not just possible but genuinely good. We think in five years, this will seem obvious.",
     ],
   },
   {
