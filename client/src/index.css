@@ -286,3 +286,7 @@
     inset: -1px;
   }
 }
+
+.video-canvas {
+  container-type: size;
+}
