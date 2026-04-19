@@ -24,10 +24,12 @@ import {
   RefreshCw,
   Download,
   CloudOff,
-  Landmark,
-  Wallet,
+  FileText,
+  Paperclip,
+  PenLine,
+  Server,
 } from "lucide-react";
-import { SiApple, SiGoogleplay, SiGmail, SiWhatsapp, SiTelegram } from "react-icons/si";
+import { SiApple, SiGoogleplay, SiGmail } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 const sovraLogo = "/sovra-logo.svg";
 
@@ -137,7 +139,7 @@ function HeroSection() {
         </motion.h1>
 
         <motion.p variants={fadeUp} custom={2} className="text-lg sm:text-xl max-w-2xl mx-auto mb-4 leading-relaxed" style={{ color: COLORS.muted }} data-testid="text-hero-description">
-          Your notes, tasks, projects, finances, and messages — all in one private place. Sovra triages Gmail, Apple Mail, WhatsApp, and Telegram, brings in your bank accounts, and keeps everything at your fingertips.
+          Your notes, tasks, documents, and email — all in one private place. Sovra triages Gmail, Apple Mail, and IMAP, captures attachments and documents, and keeps everything at your fingertips.
         </motion.p>
 
         <motion.p variants={fadeUp} custom={2.5} className="text-lg sm:text-xl max-w-xl mx-auto mb-10 font-medium" style={{ color: COLORS.text }} data-testid="text-hero-hook">
@@ -168,9 +170,9 @@ function HeroSection() {
             <CheckCircle2 className="w-4 h-4" style={{ color: COLORS.accent }} />
             <span>On-Device AI</span>
           </div>
-          <div className="flex items-center gap-2" data-testid="text-hero-finances">
+          <div className="flex items-center gap-2" data-testid="text-hero-documents">
             <CheckCircle2 className="w-4 h-4" style={{ color: COLORS.accent }} />
-            <span>Finances at a Glance</span>
+            <span>Rich Notes & Documents</span>
           </div>
           <div className="flex items-center gap-2" data-testid="text-hero-privacy">
             <CheckCircle2 className="w-4 h-4" style={{ color: COLORS.accent }} />
@@ -189,16 +191,8 @@ function HeroSection() {
               <span className="text-sm">Apple Mail</span>
             </div>
             <div className="flex items-center gap-2" style={{ color: COLORS.dimmed }}>
-              <SiWhatsapp className="w-5 h-5" style={{ color: "#25D366" }} />
-              <span className="text-sm">WhatsApp</span>
-            </div>
-            <div className="flex items-center gap-2" style={{ color: COLORS.dimmed }}>
-              <SiTelegram className="w-5 h-5" style={{ color: "#26A5E4" }} />
-              <span className="text-sm">Telegram</span>
-            </div>
-            <div className="flex items-center gap-2" style={{ color: COLORS.dimmed }}>
-              <Landmark className="w-5 h-5" style={{ color: "#10B981" }} />
-              <span className="text-sm">Bank Accounts</span>
+              <Server className="w-5 h-5" style={{ color: "#94A3B8" }} />
+              <span className="text-sm">IMAP</span>
             </div>
           </div>
         </motion.div>
@@ -230,7 +224,7 @@ function ProblemSection() {
             </span>
           </motion.h2>
           <motion.p variants={fadeUp} custom={1} className="text-lg max-w-2xl mx-auto leading-relaxed" style={{ color: COLORS.muted }} data-testid="text-problem-description">
-            Your messages pile up across Gmail, Apple Mail, WhatsApp, and Telegram. Your finances live in another app. Your notes are somewhere else.
+            Your emails pile up across Gmail, Apple Mail, and IMAP accounts. Your documents and attachments are scattered everywhere. Your notes are somewhere else.
             You spend more time switching between apps than actually managing your life.
           </motion.p>
         </motion.div>
@@ -238,8 +232,8 @@ function ProblemSection() {
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={stagger} className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {[
             { icon: Mail, text: "Email is a task manager for other people", stat: "147", label: "avg emails/day" },
-            { icon: Wallet, text: "Your finances are in one app, your tasks in another, your notes somewhere else", stat: "12+", label: "apps to manage life" },
-            { icon: ListTodo, text: "Critical to-dos and bills hide in message threads", stat: "23%", label: "tasks forgotten" },
+            { icon: FileText, text: "Your documents and attachments are scattered across email, cloud drives, and apps with no single home", stat: "12+", label: "apps to manage life" },
+            { icon: ListTodo, text: "Critical to-dos and action items hide in email threads and lost attachments", stat: "23%", label: "tasks forgotten" },
           ].map((item, i) => (
             <motion.div key={i} variants={fadeUp} custom={i} className="rounded-2xl p-8 text-center" style={{ backgroundColor: COLORS.cardBg, border: `1px solid ${COLORS.cardBorder}` }} data-testid={`card-problem-${i}`}>
               <div className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-5" style={{ backgroundColor: "#EF444415" }}>
@@ -275,12 +269,12 @@ function TriageFlowSection() {
             <div className="flex items-center justify-center gap-4 mb-4">
               <SiGmail className="w-7 h-7" style={{ color: "#EA4335" }} />
               <Mail className="w-7 h-7" style={{ color: "#007AFF" }} />
-              <SiWhatsapp className="w-7 h-7" style={{ color: "#25D366" }} />
-              <SiTelegram className="w-7 h-7" style={{ color: "#26A5E4" }} />
-              <Landmark className="w-7 h-7" style={{ color: "#10B981" }} />
+              <Server className="w-7 h-7" style={{ color: "#94A3B8" }} />
+              <Paperclip className="w-7 h-7" style={{ color: "#F59E0B" }} />
+              <FileText className="w-7 h-7" style={{ color: "#8B5CF6" }} />
             </div>
             <h3 className="text-xl font-bold text-white mb-2">Bombarded</h3>
-            <p className="text-sm" style={{ color: COLORS.muted }}>Messages, transactions, notifications, and threads pouring in from every direction</p>
+            <p className="text-sm" style={{ color: COLORS.muted }}>Emails, attachments, documents, and threads pouring in from every direction</p>
           </motion.div>
 
           <motion.div variants={fadeUp} custom={1} className="flex flex-col items-center my-2">
@@ -300,7 +294,7 @@ function TriageFlowSection() {
           </motion.div>
 
           <motion.div variants={fadeUp} custom={4} className="w-full rounded-2xl p-8 sm:p-10 text-center" style={{ backgroundColor: `${COLORS.accent}0A`, border: `1px solid ${COLORS.accent}20` }} data-testid="card-flow-organized">
-            <div className="grid grid-cols-3 gap-4 max-w-sm mx-auto mb-5">
+            <div className="grid grid-cols-4 gap-3 max-w-sm mx-auto mb-5">
               <div className="flex flex-col items-center gap-2 p-3 rounded-xl" style={{ backgroundColor: `${COLORS.primary}15` }}>
                 <BookOpen className="w-5 h-5" style={{ color: COLORS.primary }} />
                 <span className="text-xs font-medium text-white">Notes</span>
@@ -313,9 +307,13 @@ function TriageFlowSection() {
                 <CalendarCheck className="w-5 h-5" style={{ color: COLORS.accent }} />
                 <span className="text-xs font-medium text-white">Events</span>
               </div>
+              <div className="flex flex-col items-center gap-2 p-3 rounded-xl" style={{ backgroundColor: `${COLORS.highlight}15` }}>
+                <FileText className="w-5 h-5" style={{ color: COLORS.highlight }} />
+                <span className="text-xs font-medium text-white">Docs</span>
+              </div>
             </div>
             <h3 className="text-xl font-bold text-white mb-2">Organized & Actionable</h3>
-            <p className="text-sm" style={{ color: COLORS.muted }}>Messages become notes. Action items become tasks. Dates become events. Inbox reaches zero.</p>
+            <p className="text-sm" style={{ color: COLORS.muted }}>Emails become notes. Attachments become documents. Action items become tasks. Inbox reaches zero.</p>
           </motion.div>
         </motion.div>
       </div>
@@ -327,8 +325,8 @@ function HowItWorksSection() {
   const steps = [
     {
       icon: Mail,
-      title: "Connect Your Channels",
-      description: "Link your Gmail, Apple Mail, WhatsApp, Telegram, and bank accounts. Sovra uses secure APIs to pull in messages and financial data without storing them on external servers.",
+      title: "Connect Your Email",
+      description: "Link your Gmail, Apple Mail, and IMAP accounts. Sovra uses secure APIs to pull in your emails and attachments without storing them on external servers.",
       color: COLORS.highlight,
       badge: "Step 1",
     },
@@ -402,7 +400,7 @@ const features = [
     icon: Inbox,
     title: "Zero Inbox Engine",
     subtitle: "Clear the noise. Keep the signal.",
-    description: "Every message gets processed, categorized, and cleared. Achieve inbox zero across Gmail, Apple Mail, WhatsApp, and Telegram simultaneously. Email is a task manager for other people—Sovra takes it back for you.",
+    description: "Every message gets processed, categorized, and cleared. Achieve inbox zero across Gmail, Apple Mail, and IMAP simultaneously. Email is a task manager for other people—Sovra takes it back for you.",
     color: COLORS.primary,
   },
   {
@@ -415,8 +413,8 @@ const features = [
   {
     icon: Mic,
     title: "Capture Everything, Effortlessly",
-    subtitle: "Talk, snap, or type.",
-    description: "Speak your thoughts, snap a photo of a document or whiteboard, or just type. Sovra's AI extracts text and data from images, stores the original photo, and files everything for you—note, task, or event.",
+    subtitle: "Talk, snap, type, or draw.",
+    description: "Speak your thoughts, snap a photo of a document or whiteboard, type, or sketch with Apple Pencil. Sovra's AI extracts text and data from images, stores the original, and files everything for you—note, task, or event.",
     color: COLORS.highlight,
   },
   {
@@ -427,11 +425,25 @@ const features = [
     color: COLORS.highlight,
   },
   {
-    icon: Landmark,
-    title: "Your Finances, Private & Present",
-    subtitle: "See your full financial picture.",
-    description: "Connect your bank accounts and bring your financial data into Sovra. See balances, track transactions, and manage your personal or business wellbeing—all without your financial data ever leaving your device.",
+    icon: FileText,
+    title: "Documents",
+    subtitle: "Share any document into Sovra.",
+    description: "Share a PDF, Word doc, or any file from any app and it's saved privately in your Documents section. Organised automatically. Always searchable. Never uploaded anywhere you didn't choose.",
     color: COLORS.accent,
+  },
+  {
+    icon: Paperclip,
+    title: "Attachment Capture",
+    subtitle: "Email attachments, saved instantly.",
+    description: "Save email attachments directly into notes or documents with one tap. PDFs, images, spreadsheets — pulled out of your inbox and saved where you actually need them, automatically labelled and filed.",
+    color: COLORS.primary,
+  },
+  {
+    icon: PenLine,
+    title: "Rich Notes",
+    subtitle: "Apple Notes-style editing, supercharged.",
+    description: "Full rich text editing with bold, italic, headings, lists, and tables. Embed images directly into notes. Annotate images with Apple Pencil. Draw and sketch freehand. Your notes, as expressive as your thoughts.",
+    color: COLORS.secondary,
   },
   {
     icon: BellOff,
@@ -451,7 +463,7 @@ const features = [
     icon: RefreshCw,
     title: "Multi-Device Sync & Backup",
     subtitle: "Your data, everywhere you need it.",
-    description: "Using multiple devices? Zero-knowledge encrypted sync keeps everything in perfect harmony across your phone, tablet, and laptop. Full backup and export ensures your data is always recoverable and never trapped. Even our developers can't see what's synced.",
+    description: "Using multiple devices? Zero-knowledge encrypted sync keeps everything in perfect harmony across your phone and tablet. Full backup and export ensures your data is always recoverable and never trapped. Even our developers can't see what's synced.",
     color: COLORS.highlight,
   },
 ];
@@ -499,7 +511,7 @@ const screenshots = [
   { src: "/screenshots/today.jpg", label: "Today View", caption: "Your life at a glance" },
   { src: "/screenshots/inbox-zero.jpg", label: "Inbox Zero", caption: "Zero inbox, every time" },
   { src: "/screenshots/tasks.jpg", label: "Tasks", caption: "Stay on top of what matters" },
-  { src: "/screenshots/finance.jpg", label: "Finance", caption: "Your finances, front and centre" },
+  { src: "/screenshots/documents.jpg", label: "Documents", caption: "Your documents, privately organised" },
   { src: "/screenshots/notes.jpg", label: "Notes", caption: "Everything, perfectly organised" },
   { src: "/screenshots/calendar.jpg", label: "Calendar", caption: "Never miss a date" },
   { src: "/screenshots/ask-sovra.jpg", label: "Ask Sovra", caption: "Ask your AI anything" },
@@ -587,7 +599,7 @@ function ScreenshotsSection() {
 
 function StatsSection() {
   const stats = [
-    { value: "5+", label: "Data Sources Connected" },
+    { value: "3", label: "Email Sources Supported" },
     { value: "0", label: "Target Inbox Count" },
     { value: "100%", label: "On-Device & Private" },
     { value: "4.9", label: "App Store Rating" },
@@ -615,12 +627,12 @@ const privacyPoints = [
   {
     icon: Cpu,
     title: "On-Device AI Processing",
-    description: "Sovra's AI runs on your device's Neural Engine. Your messages, finances, and notes are processed locally—never uploaded to our servers for analysis. Other AI apps train on your data. Ours doesn't.",
+    description: "Sovra's AI runs on your device's Neural Engine. Your emails, documents, and notes are processed locally—never uploaded to our servers for analysis. Other AI apps train on your data. Ours doesn't.",
   },
   {
-    icon: Landmark,
-    title: "Financial Data Stays On-Device",
-    description: "Your bank balances, transactions, and financial history never leave your device. Sovra connects to your accounts securely, processes everything locally, and keeps your financial life completely private.",
+    icon: FileText,
+    title: "Documents Stay On-Device",
+    description: "Every document you share into Sovra, every attachment you save, and every note you write is stored and processed locally. Your files never leave your device in a readable form.",
   },
   {
     icon: Lock,
@@ -660,9 +672,9 @@ function PrivacySection() {
               <span className="text-sm font-medium" style={{ color: COLORS.secondary }}>Data Sovereignty</span>
             </motion.div>
             <motion.h2 variants={fadeUp} custom={1} className="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-6" data-testid="text-privacy-title">
-              Your finances.
+              Your documents.
               <br />
-              Your messages.
+              Your notes.
               <br />
               Your thoughts.
               <br />
@@ -671,9 +683,9 @@ function PrivacySection() {
               </span>
             </motion.h2>
             <motion.p variants={fadeUp} custom={2} className="text-lg leading-relaxed mb-8" style={{ color: COLORS.muted }} data-testid="text-privacy-description">
-              Sovra holds the most sensitive parts of your life — bank accounts, private messages, personal notes, and business plans.
+              Sovra holds the most sensitive parts of your life — private emails, documents, attachments, personal notes, and business plans.
               That's why everything stays on your device. The AI belongs only to you. It learns from you, but stays with you.
-              Your financial data, your messages, your raw thoughts — none of it is ever uploaded or used to train models.
+              Your documents, your attachments, your raw thoughts — none of it is ever uploaded or used to train models.
             </motion.p>
             <motion.div variants={fadeUp} custom={3}>
               <div className="flex items-center gap-4 p-5 rounded-xl" style={{ backgroundColor: "rgba(30, 41, 59, 0.6)", border: `1px solid ${COLORS.cardBorder}` }} data-testid="card-certification">
@@ -730,8 +742,8 @@ function DownloadSection() {
         </motion.h2>
 
         <motion.p variants={fadeUp} custom={2} className="text-lg max-w-2xl mx-auto mb-12" style={{ color: COLORS.muted }} data-testid="text-download-description">
-          Download Sovra and take control of your entire life — messages, finances, notes, and tasks.
-          Connect your channels and watch the chaos transform into organized action.
+          Download Sovra and take control of your entire life — emails, documents, notes, and tasks.
+          Connect your email accounts and watch the chaos transform into organized action.
         </motion.p>
 
         <motion.div variants={fadeUp} custom={3} className="grid sm:grid-cols-2 gap-6 max-w-xl mx-auto mb-16">

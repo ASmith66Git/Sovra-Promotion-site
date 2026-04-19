@@ -58,18 +58,18 @@ const sections = [
     title: "Privacy is not a feature. It's a stance.",
     body: [
       "We are frustrated by the way the tech industry has turned privacy into a marketing checkbox. 'We take your privacy seriously.' Every company says this. Almost none of them mean it in any substantive way.",
-      "Real privacy means the data never leaves your device in a form that anyone — including us — can read. It means encryption keys that only you hold, protected by your own biometrics. It means that when we say your financial data stays private, we mean it is technically impossible for us to see it, not just that we promise not to look.",
+      "Real privacy means the data never leaves your device in a form that anyone — including us — can read. It means encryption keys that only you hold, protected by your own biometrics. It means that when we say your notes and documents stay private, we mean it is technically impossible for us to see them, not just that we promise not to look.",
       "We designed Sovra with a simple test: if we were subpoenaed tomorrow, what could we hand over? The answer should be: nothing useful. That's not a legal strategy. It's a design principle.",
     ],
   },
   {
     icon: Eye,
     color: "#F97316",
-    title: "Your financial data is the most sensitive thing you own.",
+    title: "Your documents and notes are more personal than you think.",
     body: [
-      "We have thought hard about adding financial data to Sovra. Not because it's technically difficult — it isn't — but because we understand what it means to hold it. Your bank transactions are a map of your life. They reveal where you go, who you love, what you fear, what you believe. They are more revealing than your messages.",
-      "We added it anyway, because the alternative is worse: financial data trapped in bank apps that give you no way to think with it, no way to connect it to the rest of your life, no way to ask questions of it. Fragmented data is not safe data — it's just data you can't use.",
-      "The only acceptable model for handling financial data is the same one we use for everything else: it stays on your device, processed by AI you control, never transmitted in a readable form. If we ever change this, you should stop using us.",
+      "We have thought hard about what it means to hold your documents and notes. A shared PDF contains plans, negotiations, and ideas you haven't yet shared with anyone. An email attachment can reveal a medical concern, a legal matter, or a business strategy. A note taken in private is as intimate as a diary entry.",
+      "The only acceptable model for handling this material is the one we use for everything in Sovra: it stays on your device, processed by AI you control, never transmitted in a readable form. You choose what to save. You choose what to delete. We never see any of it.",
+      "Documents and rich notes aren't an afterthought for us — they are central to what a private second brain should be. A place where you can think, sketch, annotate, and write without worrying about who might be reading over your shoulder.",
     ],
   },
   {
@@ -78,7 +78,7 @@ const sections = [
     title: "The filing cabinet should have died with the fax machine.",
     body: [
       "Folders are a metaphor borrowed from physical reality — a way of managing paper when paper was all we had. We have been dragging this metaphor through fifty years of digital products and wondering why people are overwhelmed.",
-      "The assumption behind a filing system is that you know, at the moment of capture, what something will mean to you later. You almost never do. A note taken on a Tuesday becomes relevant on a Friday in a context you couldn't have predicted. A bank transaction from three months ago suddenly connects to a conversation you had last week. A photo of a whiteboard is meaningless until it's the thing you need in a meeting.",
+      "The assumption behind a filing system is that you know, at the moment of capture, what something will mean to you later. You almost never do. A note taken on a Tuesday becomes relevant on a Friday in a context you couldn't have predicted. A document shared with you three months ago suddenly connects to a conversation you had last week. A photo of a whiteboard is meaningless until it's the thing you need in a meeting.",
       "AI changes the fundamental equation. You shouldn't have to file anything. You should be able to throw information into a system that understands it, holds it, and gives it back to you when it matters. That is what we are building. The filing cabinet is not a feature we removed — it's a premise we rejected.",
     ],
   },
@@ -89,7 +89,7 @@ const sections = [
     body: [
       "We are at an inflection point that most people haven't fully registered yet. The Neural Processing Units inside today's phones are already extraordinary — capable of running models that would have required a server rack five years ago. In two years, they will be significantly more powerful. In five years, the gap between what an on-device model can do and what a cloud model can do will be difficult to perceive in everyday use.",
       "Storage is following the same curve. Devices that carry hundreds of gigabytes are becoming the norm. That matters because larger, more capable models can live locally on your device — not streamed from a server, not dependent on a connection, not accessible to anyone but you.",
-      "This is not speculation. The trajectory is clear, and we are building Sovra to take full advantage of it. Every generation of hardware gives us more to work with. Better understanding of context. Smarter triage. Richer connections between your notes, your messages, your calendar, and your financial picture. Features that are technically impractical today will become straightforward in the next release cycle.",
+      "This is not speculation. The trajectory is clear, and we are building Sovra to take full advantage of it. Every generation of hardware gives us more to work with. Better understanding of context. Smarter triage. Richer connections between your notes, your documents, your calendar, and your email. Features that are technically impractical today will become straightforward in the next release cycle.",
       "Your subscription is not just paying for what Sovra is today. It is funding the people who are watching this hardware curve, tracking the model improvements, and doing the engineering work to bring those capabilities to you the moment they're ready — without ever compromising on the privacy guarantees that make it worth doing in the first place. We are a small team, and we are playing a long game. We think it's the right one.",
     ],
   },
@@ -119,7 +119,7 @@ const sections = [
     color: "#EC4899",
     title: "We built this because we needed it.",
     body: [
-      "Sovra was not conceived in a strategy session. It was built out of genuine frustration. We were drowning in our own inboxes. We were losing tasks in WhatsApp threads. We were checking banking apps separately from our task managers and wondering why we felt so scattered. We wanted a single, private, intelligent place where our entire working life could live.",
+      "Sovra was not conceived in a strategy session. It was built out of genuine frustration. We were drowning in our own inboxes. We were losing important emails in cluttered threads. We were saving attachments to the wrong folder and losing documents across apps, wondering why we felt so scattered. We wanted a single, private, intelligent place where our entire working life could live.",
       "We couldn't find one. So we built it.",
       "We are not a large team with unlimited resources. We are people who care deeply about this problem and are stubborn enough to keep working on it. Every design decision, every privacy guarantee, every line of code has been written by people who use this product themselves — and who would be personally embarrassed if it failed to live up to what we've said here.",
       "We hope you find it as useful as we do.",
