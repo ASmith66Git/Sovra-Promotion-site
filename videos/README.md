@@ -18,7 +18,6 @@ videos/
 │       ├── SceneReveal.tsx
 │       ├── SceneTriage.tsx
 │       ├── ScenePrivacy.tsx
-│       ├── SceneFinance.tsx
 │       └── SceneClose.tsx
 ├── src/
 │   ├── index.ts         # Remotion entry point (registerRoot)
