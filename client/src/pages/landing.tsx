@@ -724,7 +724,7 @@ function DownloadSection() {
       <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={stagger} className="relative z-10 max-w-4xl mx-auto text-center">
         <motion.div variants={fadeUp} custom={0} className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ border: `1px solid ${COLORS.highlight}30`, backgroundColor: `${COLORS.highlight}0A` }}>
           <Smartphone className="w-4 h-4" style={{ color: COLORS.highlight }} />
-          <span className="text-sm font-medium" style={{ color: COLORS.highlight }}>Available Now</span>
+          <span className="text-sm font-medium" style={{ color: COLORS.highlight }}>Available for iOS</span>
         </motion.div>
 
         <motion.h2 variants={fadeUp} custom={1} className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight mb-6" data-testid="text-download-title">
@@ -736,8 +736,8 @@ function DownloadSection() {
         </motion.h2>
 
         <motion.p variants={fadeUp} custom={2} className="text-lg max-w-2xl mx-auto mb-12" style={{ color: COLORS.muted }} data-testid="text-download-description">
-          Download Sovra and take control of your entire life — emails, documents, notes, and tasks.
-          Connect your email accounts and watch the chaos transform into organized action.
+          Download Sovra for iPhone or iPad and take control of your life — emails, documents, notes, and tasks.
+          Connect Gmail, Apple Mail, or IMAP and watch the chaos transform into organized action.
         </motion.p>
 
         <motion.div variants={fadeUp} custom={3} className="flex justify-center mb-16">
