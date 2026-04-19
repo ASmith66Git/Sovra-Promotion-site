@@ -29,7 +29,7 @@ import {
   PenLine,
   Server,
 } from "lucide-react";
-import { SiApple, SiGoogleplay, SiGmail } from "react-icons/si";
+import { SiApple, SiGmail } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 const sovraLogo = "/sovra-logo.svg";
 
@@ -146,17 +146,11 @@ function HeroSection() {
           100% on your device. 100% under your control.
         </motion.p>
 
-        <motion.div variants={fadeUp} custom={3} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
+        <motion.div variants={fadeUp} custom={3} className="flex items-center justify-center mb-10">
           <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" data-testid="link-appstore-hero">
-            <Button size="lg" className="text-base px-8 py-6 gap-3 font-semibold border-none w-full sm:w-auto" style={{ backgroundColor: "white", color: COLORS.bg }}>
+            <Button size="lg" className="text-base px-10 py-6 gap-3 font-semibold border-none" style={{ backgroundColor: "white", color: COLORS.bg }}>
               <SiApple className="w-5 h-5" />
               Download for iOS
-            </Button>
-          </a>
-          <a href="https://play.google.com" target="_blank" rel="noopener noreferrer" data-testid="link-playstore-hero">
-            <Button size="lg" variant="outline" className="text-base px-8 py-6 gap-3 font-semibold w-full sm:w-auto text-white" style={{ borderColor: "rgba(255,255,255,0.2)" }}>
-              <SiGoogleplay className="w-5 h-5" />
-              Download for Android
             </Button>
           </a>
         </motion.div>
@@ -746,8 +740,8 @@ function DownloadSection() {
           Connect your email accounts and watch the chaos transform into organized action.
         </motion.p>
 
-        <motion.div variants={fadeUp} custom={3} className="grid sm:grid-cols-2 gap-6 max-w-xl mx-auto mb-16">
-          <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" className="block group" data-testid="link-appstore-download">
+        <motion.div variants={fadeUp} custom={3} className="flex justify-center mb-16">
+          <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" className="block group w-full max-w-xs" data-testid="link-appstore-download">
             <div className="relative rounded-2xl p-8 text-center transition-all duration-300" style={{ backgroundColor: "rgba(30, 41, 59, 0.6)", border: `1px solid rgba(255,255,255,0.08)`, backdropFilter: "blur(12px)" }}>
               <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5" style={{ background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.secondary})` }}>
                 <SiApple className="w-8 h-8 text-white" />
@@ -755,20 +749,6 @@ function DownloadSection() {
               <p className="text-sm mb-1" style={{ color: COLORS.muted }}>Download on the</p>
               <p className="text-xl font-semibold text-white mb-4" data-testid="text-appstore-label">App Store</p>
               <div className="flex items-center justify-center gap-2 text-sm font-medium" style={{ color: COLORS.primary }}>
-                <span>Get it now</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </div>
-            </div>
-          </a>
-
-          <a href="https://play.google.com" target="_blank" rel="noopener noreferrer" className="block group" data-testid="link-playstore-download">
-            <div className="relative rounded-2xl p-8 text-center transition-all duration-300" style={{ backgroundColor: "rgba(30, 41, 59, 0.6)", border: `1px solid rgba(255,255,255,0.08)`, backdropFilter: "blur(12px)" }}>
-              <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5" style={{ background: `linear-gradient(135deg, ${COLORS.accent}, ${COLORS.highlight})` }}>
-                <SiGoogleplay className="w-8 h-8 text-white" />
-              </div>
-              <p className="text-sm mb-1" style={{ color: COLORS.muted }}>Get it on</p>
-              <p className="text-xl font-semibold text-white mb-4" data-testid="text-playstore-label">Google Play</p>
-              <div className="flex items-center justify-center gap-2 text-sm font-medium" style={{ color: COLORS.accent }}>
                 <span>Get it now</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </div>
@@ -791,7 +771,7 @@ function DownloadSection() {
           </div>
           <div className="flex items-center justify-center gap-3 p-4 rounded-xl" style={{ backgroundColor: "rgba(30, 41, 59, 0.3)", border: `1px solid ${COLORS.cardBorder}` }} data-testid="badge-platforms">
             <Smartphone className="w-5 h-5" style={{ color: COLORS.secondary }} />
-            <span className="text-sm" style={{ color: "#CBD5E1" }}>iOS & Android</span>
+            <span className="text-sm" style={{ color: "#CBD5E1" }}>iPhone & iPad</span>
           </div>
         </motion.div>
       </motion.div>
