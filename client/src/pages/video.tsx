@@ -10,8 +10,6 @@ const SCREENSHOT_PATHS = [
   "/screenshots/tasks.jpg",
   "/screenshots/ask-sovra.jpg",
   "/screenshots/notes.jpg",
-  "/screenshots/finance.jpg",
-  "/screenshots/calendar.jpg",
   "/sovra-logo.svg"
 ];
 
@@ -23,14 +21,13 @@ const ICON_SEEDS = Array.from({ length: 15 }, (_, i) => ({
   size: 2 + (i * 7 % 30) / 10,
 }));
 
-// 6 scenes
+// 5 scenes
 const SCENE_DURATIONS = [
   4000, // 0: Hook (4s)
   4500, // 1: Reveal (4.5s)
-  5500, // 2: Inbox Zero (5.5s)
+  5500, // 2: Triage (5.5s)
   5000, // 3: Privacy (5s)
-  5500, // 4: Finance (5.5s)
-  5500, // 5: Brand Close (5.5s)
+  5500, // 4: Brand Close (5.5s)
 ];
 const TOTAL_SCENES = SCENE_DURATIONS.length;
 
@@ -214,7 +211,7 @@ const SceneTriage = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 0.8 }}>
-          Sovra's AI automatically processes Gmail, WhatsApp, and Telegram. Noise filtered. Signal preserved.
+          Sovra's AI automatically triages your email. Noise filtered. Signal preserved.
         </motion.p>
       </div>
 
@@ -329,62 +326,7 @@ const ScenePrivacy = () => {
   );
 };
 
-// Scene 4: Finance
-const SceneFinance = () => {
-  return (
-    <motion.div className="absolute inset-0 flex items-center justify-between px-[8cqw] z-20"
-      initial={{ opacity: 0, x: "10cqw" }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: "-10cqw", filter: "blur(10px)" }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}>
-      
-      <div className="w-1/2 flex flex-col pr-[4cqw]">
-        <motion.h2 className="text-[5.5cqw] font-bold text-white leading-tight mb-[1cqh]"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.6 }}>
-          Your finances.
-        </motion.h2>
-        
-        <motion.h2 className="text-[5.5cqw] font-bold text-blue-400 leading-tight mb-[4cqh]"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.6 }}>
-          Private. Present.
-        </motion.h2>
-        
-        <motion.p className="text-[2.2cqw] text-slate-300 leading-relaxed max-w-[90%]"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.4, duration: 0.8 }}>
-          See your full financial picture alongside your calendar and tasks. Integrated seamlessly into your daily view.
-        </motion.p>
-      </div>
-
-      <div className="w-1/2 flex justify-center relative perspective-[1200px]">
-        {/* Background glow */}
-        <motion.div 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30cqw] h-[30cqw] bg-blue-500/20 rounded-full blur-3xl"
-          initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.8, duration: 1 }}
-        />
-        
-        <motion.div className="relative z-10"
-          initial={{ opacity: 0, rotateY: 25, z: -150, x: "5cqw" }}
-          animate={{ opacity: 1, rotateY: -10, z: 0, x: 0 }}
-          transition={{ delay: 0.4, duration: 1.2, ease: "easeOut" }}>
-          <PhoneMockup src="/screenshots/finance.jpg" alt="Finance View" className="w-[22cqw]" />
-        </motion.div>
-
-        <motion.div className="absolute top-[5cqh] right-0 z-0 opacity-50"
-          initial={{ opacity: 0, rotateY: 30, z: -300, x: "10cqw" }}
-          animate={{ opacity: 0.6, rotateY: -5, z: -100, x: "8cqw" }}
-          transition={{ delay: 0.6, duration: 1.2, ease: "easeOut" }}>
-          <PhoneMockup src="/screenshots/calendar.jpg" alt="Calendar View" className="w-[18cqw]" />
-        </motion.div>
-      </div>
-
-    </motion.div>
-  );
-};
-
-// Scene 5: Brand Close - Uses GSAP timeline for logo lockup reveal
+// Scene 4: Brand Close - Uses GSAP timeline for logo lockup reveal
 const SceneClose = () => {
   const closeRef = useRef<HTMLDivElement>(null);
   const lockupRef = useRef<HTMLDivElement>(null);
@@ -461,7 +403,6 @@ export default function Video() {
     `radial-gradient(circle at 50% 50%, #6366F133 0%, #0F172A 70%)`, // Reveal (Indigo)
     `radial-gradient(circle at 70% 40%, #8B5CF633 0%, #0F172A 80%)`, // Triage (Purple)
     `radial-gradient(circle at 30% 60%, #10B98133 0%, #0F172A 80%)`, // Privacy (Emerald)
-    `radial-gradient(circle at 70% 60%, #3B82F633 0%, #0F172A 80%)`, // Finance (Blue)
     `radial-gradient(circle at 50% 50%, #6366F133 0%, #0F172A 70%)`, // Close (Indigo)
   ];
 
@@ -487,10 +428,10 @@ export default function Video() {
         <motion.div 
           className="absolute rounded-full blur-[8cqw] opacity-30 z-10 mix-blend-screen"
           animate={{
-            x: currentScene === 0 ? "20cqw" : currentScene === 2 ? "70cqw" : currentScene === 3 ? "10cqw" : currentScene === 4 ? "60cqw" : "35cqw",
+            x: currentScene === 0 ? "20cqw" : currentScene === 2 ? "70cqw" : currentScene === 3 ? "10cqw" : "35cqw",
             y: currentScene === 0 ? "30cqh" : currentScene === 1 ? "10cqh" : currentScene === 3 ? "60cqh" : "20cqh",
-            scale: currentScene === 1 || currentScene === 5 ? 2 : 1,
-            backgroundColor: currentScene === 3 ? COLORS.accent : currentScene === 4 ? COLORS.highlight : currentScene === 0 ? COLORS.orange : COLORS.primary,
+            scale: currentScene === 1 || currentScene === 4 ? 2 : 1,
+            backgroundColor: currentScene === 3 ? COLORS.accent : currentScene === 0 ? COLORS.orange : COLORS.primary,
             width: "30cqw",
             height: "30cqw"
           }}
@@ -500,10 +441,10 @@ export default function Video() {
         <motion.div 
           className="absolute rounded-full blur-[6cqw] opacity-20 z-10 mix-blend-screen"
           animate={{
-            x: currentScene === 2 ? "10cqw" : currentScene === 4 ? "20cqw" : currentScene === 3 ? "60cqw" : "50cqw",
+            x: currentScene === 2 ? "10cqw" : currentScene === 3 ? "60cqw" : "50cqw",
             y: currentScene === 1 ? "60cqh" : currentScene === 3 ? "20cqh" : "50cqh",
             scale: currentScene === 0 ? 1.5 : 1,
-            backgroundColor: currentScene === 0 ? COLORS.danger : currentScene === 2 ? COLORS.secondary : currentScene === 4 ? COLORS.primary : COLORS.accent,
+            backgroundColor: currentScene === 0 ? COLORS.danger : currentScene === 2 ? COLORS.secondary : COLORS.accent,
             width: "25cqw",
             height: "25cqw"
           }}
@@ -516,8 +457,7 @@ export default function Video() {
           {currentScene === 1 && <SceneReveal key="scene1" />}
           {currentScene === 2 && <SceneTriage key="scene2" />}
           {currentScene === 3 && <ScenePrivacy key="scene3" />}
-          {currentScene === 4 && <SceneFinance key="scene4" />}
-          {currentScene === 5 && <SceneClose key="scene5" />}
+          {currentScene === 4 && <SceneClose key="scene4" />}
         </AnimatePresence>
 
       </div>

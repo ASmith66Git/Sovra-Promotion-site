@@ -1,0 +1,10 @@
+{
+  "name": "sovra-videos",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "studio": "npx remotion studio src/index.ts",
+    "render": "npx remotion render src/index.ts SovraAd exports/sovra-ad-30s.mp4",
+    "render:still": "npx remotion still src/index.ts SovraAd exports/sovra-ad-30s-thumbnail.png"
+  }
+}

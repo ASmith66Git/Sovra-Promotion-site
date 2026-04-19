@@ -48,5 +48,15 @@ Real app screenshots stored in `client/public/screenshots/`:
 - Highlight: #3B82F6 (blue)
 - Text: #F8FAFC (off-white)
 
+## Video Production (Remotion)
+- `videos/` directory contains a self-contained Remotion workspace for video rendering
+- `videos/sovra-ad-30s/` contains the 30-second Sovra ad composition (6 scenes, 900 frames at 30fps, 1920x1080)
+- Scenes: Hook → Reveal → Triage → Privacy → Finance → Close
+- `cd videos && npm run studio` opens Remotion Studio preview
+- `cd videos && npm run render` exports `sovra-ad-30s.mp4` to `videos/exports/`
+- Assets copied from `client/public/screenshots/` to `videos/public/screenshots/`
+- System deps installed: nspr, nss, X11 libs, cups, mesa, pango, cairo, gtk3 (for Chrome headless rendering)
+- Remotion packages installed at root: remotion, @remotion/cli, @remotion/renderer, @remotion/tailwind
+
 ## Running
 - `npm run dev` starts Express + Vite on port 5000
