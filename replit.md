@@ -50,13 +50,20 @@ Real app screenshots stored in `client/public/screenshots/`:
 
 ## Video Production (Remotion)
 - `videos/` directory contains a self-contained Remotion workspace for video rendering
-- `videos/sovra-ad-30s/` contains the 30-second Sovra ad composition (6 scenes, 900 frames at 30fps, 1920x1080)
-- Scenes: Hook → Reveal → Triage → Privacy → Close
+- `videos/sovra-ad-30s/` contains the 30-second Sovra ad composition (5 scenes, 735 frames at 30fps, 1920x1080)
+- Scenes: Hook → Reveal → Triage → Privacy → Close (finance scene removed)
 - `cd videos && npm run studio` opens Remotion Studio preview
 - `cd videos && npm run render` exports `sovra-ad-30s.mp4` to `videos/exports/`
 - Assets copied from `client/public/screenshots/` to `videos/public/screenshots/`
 - System deps installed: nspr, nss, X11 libs, cups, mesa, pango, cairo, gtk3 (for Chrome headless rendering)
 - Remotion packages installed at root: remotion, @remotion/cli, @remotion/renderer, @remotion/tailwind
+
+## Published Marketing Video
+- `client/public/sovra-ad-30s.mp4` — final 30s marketing video served at `/sovra-ad-30s.mp4`
+- Audio: AI voiceover (OpenAI gpt-audio, "onyx" voice) + synthesized ambient background music
+- Generation scripts in `videos/`: `gen-voiceover.mjs` (uses OpenAI AI Integrations)
+- Intermediate audio assets: `videos/exports/voiceover.mp3`, `videos/exports/ambient.mp3`
+- OpenAI AI Integrations installed (env vars: AI_INTEGRATIONS_OPENAI_API_KEY, AI_INTEGRATIONS_OPENAI_BASE_URL)
 
 ## Running
 - `npm run dev` starts Express + Vite on port 5000
