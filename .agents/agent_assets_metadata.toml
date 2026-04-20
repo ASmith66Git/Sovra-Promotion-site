@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "RMDcnuGmZ--SOE3KCTk4F"
+uri = "file://client/public/sovra-ad-30s.mp4"
+type = "video"
+title = "Sovra 30s Ad — with AI voiceover + ambient music"

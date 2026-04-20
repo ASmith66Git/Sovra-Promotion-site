@@ -591,6 +591,44 @@ function ScreenshotsSection() {
   );
 }
 
+function VideoSection() {
+  return (
+    <section id="video" className="relative py-24 px-6" data-testid="section-video">
+      <div className="max-w-4xl mx-auto text-center">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUp}>
+          <span className="inline-block text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: COLORS.accent }}>See It In Action</span>
+          <h2 className="text-3xl sm:text-5xl font-bold mb-4" style={{ color: COLORS.text }}>
+            Watch how Sovra works
+          </h2>
+          <p className="text-lg mb-10" style={{ color: COLORS.muted }}>
+            From chaotic inbox to zero in minutes — no setup, no fuss.
+          </p>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="relative rounded-2xl overflow-hidden shadow-2xl"
+          style={{ border: `1px solid ${COLORS.cardBorder}` }}
+          data-testid="video-player-container"
+        >
+          <video
+            controls
+            playsInline
+            preload="metadata"
+            className="w-full block"
+            style={{ background: "#000" }}
+            data-testid="video-sovra-ad"
+          >
+            <source src="/sovra-ad-30s.mp4" type="video/mp4" />
+          </video>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 function StatsSection() {
   const stats = [
     { value: "3", label: "Email Sources Supported" },
@@ -823,6 +861,7 @@ export default function Landing() {
       <HowItWorksSection />
       <FeaturesSection />
       <ScreenshotsSection />
+      <VideoSection />
       <StatsSection />
       <PrivacySection />
       <DownloadSection />
