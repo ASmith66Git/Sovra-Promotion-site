@@ -7,6 +7,7 @@ import NotFound from "@/pages/not-found";
 import Landing from "@/pages/landing";
 import Philosophy from "@/pages/philosophy";
 import Video from "@/pages/video";
+import Support from "@/pages/support";
 
 function Router() {
   return (
@@ -14,6 +15,7 @@ function Router() {
       <Route path="/" component={Landing} />
       <Route path="/philosophy" component={Philosophy} />
       <Route path="/video" component={Video} />
+      <Route path="/support" component={Support} />
       <Route component={NotFound} />
     </Switch>
   );

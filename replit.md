@@ -13,9 +13,10 @@ A visually impressive marketing website promoting Sovra, a privacy-focused AI se
 ## Project Structure
 - `client/src/pages/landing.tsx` - Main landing page with all sections
 - `client/src/pages/philosophy.tsx` - Our Philosophy page (developer rant on tech, data, AI, privacy)
-- `client/src/App.tsx` - App router (routes: / and /philosophy)
+- `client/src/pages/support.tsx` - Support contact form page (/support)
+- `client/src/App.tsx` - App router (routes: /, /philosophy, /video, /support)
 - `client/src/index.css` - Theme tokens (unchanged from template)
-- `server/routes.ts` - API routes (none needed for static marketing site)
+- `server/routes.ts` - API routes (POST /api/support sends email via Resend to Info@nammu-tech.com)
 
 ## Key Sections
 1. **Navbar** - Fixed glassmorphism navbar with smooth scroll navigation + link to /philosophy
@@ -28,7 +29,8 @@ A visually impressive marketing website promoting Sovra, a privacy-focused AI se
 8. **Stats** - Key metrics (3 email sources, 0 inbox, 100% on-device, 4.9 rating)
 9. **Privacy** - "Your documents. Your notes. Your thoughts. Nobody else's." — 6 privacy points: On-Device AI Processing, Documents Stay On-Device, Encrypted Everything, Zero-Knowledge Architecture, Zero-Knowledge Sync, Subscriptions Not Data Exploitation; SOC 2 Type II badge
 10. **Download** - iOS App Store CTA only with trust badges (sync, AES-256, backup, iPhone & iPad)
-11. **Footer** - Logo + horizontal nav links including /philosophy
+11. **Footer** - Logo + horizontal nav links including /philosophy and /support
+12. **Support** - Contact form page at /support for App Store support URL requirement
 
 ## Screenshots
 Real app screenshots stored in `client/public/screenshots/`:

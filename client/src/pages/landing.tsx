@@ -878,6 +878,7 @@ function Footer() {
             <a href="#privacy" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-privacy">Privacy</a>
             <a href="#download" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-download">Download</a>
             <a href="/philosophy" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-philosophy">Our Philosophy</a>
+            <a href="/support" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-support">Support</a>
           </nav>
         </div>
 
