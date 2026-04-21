@@ -446,8 +446,8 @@ const features = [
   {
     icon: PenLine,
     title: "Rich Notes",
-    subtitle: "Apple Notes-style editing, supercharged.",
-    description: "Full rich text editing with bold, italic, headings, lists, and tables. Embed images directly into notes. Annotate images with Apple Pencil. Draw and sketch freehand. Your notes, as expressive as your thoughts.",
+    subtitle: "Capture anything, formatted automatically.",
+    description: "Embed images, scan text from documents, or snap a photo straight into a note. The on-device AI handles all the formatting for you, so your notes stay clean and structured without any manual editing.",
     color: COLORS.secondary,
   },
   {
