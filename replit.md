@@ -52,19 +52,25 @@ Real app screenshots stored in `client/public/screenshots/`:
 
 ## Video Production (Remotion)
 - `videos/` directory contains a self-contained Remotion workspace for video rendering
-- `videos/sovra-ad-30s/` contains the 30-second Sovra ad composition (5 scenes, 735 frames at 30fps, 1920x1080)
-- Scenes: Hook → Reveal → Triage → Privacy → Close (finance scene removed)
-- `cd videos && npm run studio` opens Remotion Studio preview
-- `cd videos && npm run render` exports `sovra-ad-30s.mp4` to `videos/exports/`
-- Assets copied from `client/public/screenshots/` to `videos/public/screenshots/`
+- `videos/sovra-ad-30s/` contains the original 30-second Sovra ad composition (5 scenes, 735 frames at 30fps, 1920x1080)
+- `videos/sovra-ad-60s/` contains the 60-second Sovra marketing composition (6 scenes, 1800 frames at 30fps, 1920x1080)
+  - Scene flow (60s): Hook → Reveal → Privacy → Triage → Capture/Secret-Librarian → Close
+  - Reuses Hook/Reveal/Privacy/Triage/Close from the 30s workspace; adds new `scenes/SceneCapture.tsx` for the capture + librarian pillar
+  - Embeds audio directly via Remotion `<Audio>`: VO at full volume, ambient music bed at 0.18 (ducked under)
+- `cd videos && npm run studio` opens Remotion Studio preview (both `SovraAd` and `SovraAd60` compositions registered)
+- `cd videos && npm run render` exports `sovra-ad-30s.mp4`
+- `cd videos && npm run render:60` exports `sovra-ad-60s.mp4` (H.264 + AAC) to `videos/exports/`
+- Assets in `videos/public/screenshots/` and `videos/public/audio/`
 - System deps installed: nspr, nss, X11 libs, cups, mesa, pango, cairo, gtk3 (for Chrome headless rendering)
 - Remotion packages installed at root: remotion, @remotion/cli, @remotion/renderer, @remotion/tailwind
 
-## Published Marketing Video
-- `client/public/sovra-ad-30s.mp4` — final 30s marketing video served at `/sovra-ad-30s.mp4`
-- Audio: AI voiceover (OpenAI gpt-audio, "onyx" voice) + synthesized ambient background music
-- Generation scripts in `videos/`: `gen-voiceover.mjs` (uses OpenAI AI Integrations)
-- Intermediate audio assets: `videos/exports/voiceover.mp3`, `videos/exports/ambient.mp3`
+## Published Marketing Videos
+- `client/public/sovra-ad-30s.mp4` — original 30s marketing video served at `/sovra-ad-30s.mp4`
+- `videos/exports/sovra-ad-60s.mp4` — new 60s marketing video, ~60s, 1920x1080, H.264 + AAC stereo (~11 MB), audio mixed in-composition (UK English VO + ambient bed). Ready to be copied/embedded into the landing page (Task #10 covers placement).
+- Voiceover generation scripts in `videos/`:
+  - `gen-voiceover.mjs` — original 30s VO (OpenAI gpt-audio, "onyx" voice)
+  - `gen-voiceover-60s.mjs` — 60s UK English VO (OpenAI gpt-audio, "fable" voice with British-accent system prompt); writes raw VO to `exports/voiceover-60s.mp3` and the time-stretched (atempo=1.14) version to `public/audio/voiceover-60s-timed.mp3`
+- Background music bed: `videos/public/audio/ambient-60s.mp3` is the existing `exports/ambient.mp3` looped to ~62s with fade-in/out (built via `ffmpeg -stream_loop -1 ... afade`)
 - OpenAI AI Integrations installed (env vars: AI_INTEGRATIONS_OPENAI_API_KEY, AI_INTEGRATIONS_OPENAI_BASE_URL)
 
 ## Running

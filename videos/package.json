@@ -5,6 +5,7 @@
   "scripts": {
     "studio": "npx remotion studio src/index.ts",
     "render": "npx remotion render src/index.ts SovraAd exports/sovra-ad-30s.mp4",
+    "render:60": "npx remotion render src/index.ts SovraAd60 exports/sovra-ad-60s.mp4 --codec h264 --audio-codec aac",
     "render:still": "npx remotion still src/index.ts SovraAd exports/sovra-ad-30s-thumbnail.png"
   }
 }
