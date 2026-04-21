@@ -32,6 +32,17 @@ import {
 import { SiApple, SiGmail } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 const sovraLogo = "/sovra-logo.svg";
+import shotToday from "@assets/IMG_0010_1776776406837.png";
+import shotInbox from "@assets/IMG_0011_1776776406837.png";
+import shotTasks from "@assets/IMG_0012_1776776406837.png";
+import shotProjects from "@assets/IMG_0013_1776776406837.png";
+import shotNotes from "@assets/IMG_0014_1776776406837.png";
+import shotCalendar from "@assets/IMG_0015_1776776406837.png";
+import shotDocuments from "@assets/IMG_0016_1776776406837.png";
+import shotConnected from "@assets/IMG_0017_1776776406837.png";
+import shotIpadTasksTimeline from "@assets/IMG_0044_1776776406837.png";
+import shotIpadProjectsTimeline from "@assets/IMG_0045_1776776406837.png";
+import shotIpadTasksList from "@assets/IMG_0046_1776776406837.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -501,14 +512,19 @@ function FeaturesSection() {
   );
 }
 
-const screenshots = [
-  { src: "/screenshots/today.jpg", label: "Today View", caption: "Your life at a glance" },
-  { src: "/screenshots/inbox-zero.jpg", label: "Inbox Zero", caption: "Zero inbox, every time" },
-  { src: "/screenshots/tasks.jpg", label: "Tasks", caption: "Stay on top of what matters" },
-  { src: "/screenshots/documents.jpg", label: "Documents", caption: "Your documents, privately organised" },
-  { src: "/screenshots/notes.jpg", label: "Notes", caption: "Everything, perfectly organised" },
-  { src: "/screenshots/calendar.jpg", label: "Calendar", caption: "Never miss a date" },
-  { src: "/screenshots/ask-sovra.jpg", label: "Ask Sovra", caption: "Ask your AI anything" },
+type ScreenshotDevice = "iphone" | "ipad";
+const screenshots: { src: string; label: string; caption: string; device: ScreenshotDevice }[] = [
+  { src: shotToday, label: "Today", caption: "Your life at a glance", device: "iphone" },
+  { src: shotInbox, label: "Inbox", caption: "Zero inbox, every time", device: "iphone" },
+  { src: shotTasks, label: "Tasks", caption: "Stay on top of what matters", device: "iphone" },
+  { src: shotProjects, label: "Projects", caption: "Group work into focused projects", device: "iphone" },
+  { src: shotNotes, label: "Notes", caption: "Everything, perfectly organised", device: "iphone" },
+  { src: shotCalendar, label: "Calendar", caption: "Never miss a date", device: "iphone" },
+  { src: shotDocuments, label: "Documents", caption: "Your documents, privately organised", device: "iphone" },
+  { src: shotConnected, label: "Connected Services", caption: "Plug in the tools you already use", device: "iphone" },
+  { src: shotIpadTasksTimeline, label: "Timeline – Tasks", caption: "See your tasks across the week", device: "ipad" },
+  { src: shotIpadProjectsTimeline, label: "Timeline – Projects", caption: "Track projects on a visual timeline", device: "ipad" },
+  { src: shotIpadTasksList, label: "Tasks", caption: "A bigger canvas for getting things done", device: "ipad" },
 ];
 
 function ScreenshotsSection() {
@@ -545,40 +561,63 @@ function ScreenshotsSection() {
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           data-testid="screenshots-scroll"
         >
-          {screenshots.map((shot, i) => (
-            <motion.div
-              key={shot.label}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="flex-shrink-0 snap-center flex flex-col items-center"
-              style={{ width: "200px" }}
-              data-testid={`screenshot-${i}`}
-            >
-              <div
-                className="relative rounded-[2rem] overflow-hidden mb-4"
-                style={{
-                  width: "200px",
-                  height: "433px",
-                  border: `2px solid rgba(255,255,255,0.1)`,
-                  boxShadow: `0 0 0 1px rgba(255,255,255,0.05), 0 24px 48px rgba(0,0,0,0.5)`,
-                }}
+          {screenshots.map((shot, i) => {
+            const isIpad = shot.device === "ipad";
+            const frameWidth = isIpad ? 360 : 200;
+            const frameHeight = isIpad ? 250 : 433;
+            const radius = isIpad ? "1.25rem" : "2rem";
+            return (
+              <motion.div
+                key={shot.label + i}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                className="flex-shrink-0 snap-center flex flex-col items-center"
+                style={{ width: `${frameWidth}px` }}
+                data-testid={`screenshot-${i}`}
               >
-                <img
-                  src={shot.src}
-                  alt={shot.label}
-                  className="w-full h-full object-cover object-top"
-                />
                 <div
-                  className="absolute inset-0 rounded-[2rem]"
-                  style={{ boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.08)" }}
-                />
-              </div>
-              <p className="text-sm font-semibold text-white mb-1" data-testid={`text-screenshot-label-${i}`}>{shot.label}</p>
-              <p className="text-xs text-center" style={{ color: COLORS.dimmed }} data-testid={`text-screenshot-caption-${i}`}>{shot.caption}</p>
-            </motion.div>
-          ))}
+                  className="relative overflow-hidden mb-4"
+                  style={{
+                    width: `${frameWidth}px`,
+                    height: `${frameHeight}px`,
+                    borderRadius: radius,
+                    border: `2px solid rgba(255,255,255,0.1)`,
+                    boxShadow: `0 0 0 1px rgba(255,255,255,0.05), 0 24px 48px rgba(0,0,0,0.5)`,
+                  }}
+                >
+                  <img
+                    src={shot.src}
+                    alt={shot.label}
+                    className={`w-full h-full ${isIpad ? "object-contain" : "object-cover object-top"}`}
+                  />
+                  <div
+                    className="absolute inset-0"
+                    style={{ borderRadius: radius, boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.08)" }}
+                  />
+                  {isIpad && (
+                    <span
+                      className="absolute top-3 left-3 px-2 py-0.5 rounded-full text-[10px] font-semibold tracking-wide uppercase"
+                      style={{
+                        backgroundColor: `${COLORS.highlight}20`,
+                        color: COLORS.highlight,
+                        border: `1px solid ${COLORS.highlight}40`,
+                        backdropFilter: "blur(6px)",
+                      }}
+                      data-testid={`badge-ipad-${i}`}
+                    >
+                      iPad
+                    </span>
+                  )}
+                </div>
+                <p className="text-sm font-semibold text-white mb-1" data-testid={`text-screenshot-label-${i}`}>
+                  {isIpad ? `iPad · ${shot.label}` : shot.label}
+                </p>
+                <p className="text-xs text-center" style={{ color: COLORS.dimmed }} data-testid={`text-screenshot-caption-${i}`}>{shot.caption}</p>
+              </motion.div>
+            );
+          })}
         </motion.div>
 
         <div className="flex justify-center mt-6 gap-2">
