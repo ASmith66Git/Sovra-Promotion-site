@@ -33,7 +33,7 @@ export async function registerRoutes(
 
     try {
       const { error } = await resend.emails.send({
-        from: "Sovra Support <support@sovra.app>",
+        from: "Sovra Support <onboarding@resend.dev>",
         to: ["Info@nammu-tech.com"],
         replyTo: email,
         subject: `[Sovra Support] ${safeSubject}`,
