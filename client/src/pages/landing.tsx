@@ -446,8 +446,8 @@ const features = [
   {
     icon: PenLine,
     title: "Rich Notes",
-    subtitle: "Capture anything, formatted automatically.",
-    description: "Embed images, scan text from documents, or snap a photo straight into a note. The on-device AI handles all the formatting for you, so your notes stay clean and structured without any manual editing.",
+    subtitle: "Capture, draw, and annotate anything.",
+    description: "Embed images, scan text from documents, or snap a photo straight into a note—then draw and annotate directly over any image with Apple Pencil or your finger. The on-device AI handles all the formatting for you, so your notes stay clean and structured without any manual editing.",
     color: COLORS.secondary,
   },
   {
