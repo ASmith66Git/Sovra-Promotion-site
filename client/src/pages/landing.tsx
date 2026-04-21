@@ -660,7 +660,7 @@ function VideoSection() {
             style={{ background: "#000" }}
             data-testid="video-sovra-ad"
           >
-            <source src="/sovra-ad-30s.mp4" type="video/mp4" />
+            <source src="/sovra-ad-60s.mp4" type="video/mp4" />
           </video>
         </motion.div>
       </div>

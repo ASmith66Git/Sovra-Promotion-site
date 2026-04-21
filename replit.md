@@ -65,8 +65,8 @@ Real app screenshots stored in `client/public/screenshots/`:
 - Remotion packages installed at root: remotion, @remotion/cli, @remotion/renderer, @remotion/tailwind
 
 ## Published Marketing Videos
-- `client/public/sovra-ad-30s.mp4` — original 30s marketing video served at `/sovra-ad-30s.mp4`
-- `videos/exports/sovra-ad-60s.mp4` — new 60s marketing video, ~60s, 1920x1080, H.264 + AAC stereo (~11 MB), audio mixed in-composition (UK English VO + ambient bed). Ready to be copied/embedded into the landing page (Task #10 covers placement).
+- `client/public/sovra-ad-60s.mp4` — 60s marketing video served at `/sovra-ad-60s.mp4` and embedded in the landing page VideoSection (replaces the earlier 30s cut)
+- `videos/exports/sovra-ad-60s.mp4` — source export, 1920x1080, H.264 + AAC stereo (~11 MB), audio mixed in-composition (UK English VO + ambient bed)
 - Voiceover generation scripts in `videos/`:
   - `gen-voiceover.mjs` — original 30s VO (OpenAI gpt-audio, "onyx" voice)
   - `gen-voiceover-60s.mjs` — 60s UK English VO (OpenAI gpt-audio, "fable" voice with British-accent system prompt); writes raw VO to `exports/voiceover-60s.mp3` and the time-stretched (atempo=1.14) version to `public/audio/voiceover-60s-timed.mp3`
