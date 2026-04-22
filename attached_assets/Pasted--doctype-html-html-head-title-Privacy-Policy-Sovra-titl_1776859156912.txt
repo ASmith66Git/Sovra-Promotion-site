@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Privacy Policy — Sovra</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        margin: 0;
+        padding: 32px 20px 64px;
+        background: #fff;
+        color: #222;
+        line-height: 1.6;
+        min-height: 100vh;
+      }
+      .wrapper { max-width: 760px; margin: 0 auto; }
+      .top-link {
+        display: inline-block;
+        font-size: 13px;
+        color: #666;
+        text-decoration: none;
+        margin-bottom: 24px;
+      }
+      .top-link:hover { color: #222; }
+      h1 { font-size: 28px; font-weight: 600; margin: 0 0 8px; color: #111; }
+      .updated { font-size: 13px; color: #888; margin-bottom: 32px; }
+      h2 {
+        font-size: 19px;
+        font-weight: 600;
+        margin: 32px 0 10px;
+        color: #111;
+      }
+      h3 {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 20px 0 8px;
+        color: #222;
+      }
+      p, li { font-size: 15px; color: #333; }
+      ul, ol { padding-left: 22px; }
+      li { margin-bottom: 6px; }
+      a { color: #2a5bd7; }
+      strong { color: #111; }
+      .callout {
+        background: #f5f7fb;
+        border: 1px solid #e1e6ef;
+        border-radius: 10px;
+        padding: 16px 20px;
+        margin: 16px 0;
+        font-size: 14px;
+      }
+      footer {
+        margin-top: 48px;
+        padding-top: 24px;
+        border-top: 1px solid #e5e5e5;
+        font-size: 13px;
+        color: #888;
+        text-align: center;
+      }
+      footer a { color: #888; margin: 0 8px; }
+      @media (min-width: 768px) {
+        body { padding: 56px 32px 80px; }
+        h1 { font-size: 34px; }
+      }
+      @media (prefers-color-scheme: dark) {
+        body { background: #0d0d0d; color: #e0e0e0; }
+        h1, h2, h3 { color: #f0f0f0; }
+        p, li { color: #cfcfcf; }
+        strong { color: #f0f0f0; }
+        .updated { color: #888; }
+        .top-link { color: #888; }
+        .top-link:hover { color: #ddd; }
+        a { color: #8ab4ff; }
+        .callout { background: #161922; border-color: #2a2f3a; }
+        footer { border-color: #222; color: #666; }
+        footer a { color: #888; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <a href="/" class="top-link">&larr; Back to Sovra</a>
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: April 22, 2026</p>
+
+      <p>
+        This Privacy Policy explains how <strong>Leviathan Systems Ltd</strong>
+        ("we", "us", "our"), a company registered in England and Wales,
+        collects, uses, and protects your information when you use the Sovra
+        mobile application and related services (the "Service").
+      </p>
+
+      <h2>1. Summary &amp; Privacy by Design</h2>
+      <p>The Service is built on the principle of data sovereignty.</p>
+      <ul>
+        <li><strong>On-Device Storage:</strong> Your messages, attachments, and notes are stored in encrypted storage on your physical device.</li>
+        <li><strong>Transient Processing:</strong> Our servers act as a relay. We do not store the content of your communications on our backend.</li>
+        <li><strong>Zero-Knowledge:</strong> We have no technical means to access your decrypted user data.</li>
+        <li><strong>No Data Sales:</strong> We do not sell your data or use it for advertising or cross-app tracking.</li>
+      </ul>
+
+      <h2>2. Information We Access</h2>
+      <p>Depending on which integrations you enable, the Service may access the following:</p>
+      <ul>
+        <li><strong>Gmail:</strong> Email messages, threads, attachments, labels, and your basic Google profile (name, email, profile picture).</li>
+        <li><strong>iCloud Mail (IMAP):</strong> Message data from folders you connect.</li>
+        <li><strong>Contacts:</strong> Used strictly for displaying sender identities within the app.</li>
+        <li><strong>Subscription Data:</strong> Processed via <strong>RevenueCat</strong>. On iOS, we use the Identifier for Vendor (IDFV) solely for fraud prevention and subscription management. It is not used for advertising.</li>
+        <li><strong>Diagnostic Logs:</strong> Minimal technical traces (error logs) to maintain Service integrity.</li>
+      </ul>
+
+      <h2>3. Google User Data &amp; Limited Use Disclosure</h2>
+      <div class="callout">
+        <strong>Sovra's use and transfer of information received from Google APIs to any other app will adhere to the
+        <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>,
+        including the Limited Use requirements.</strong>
+      </div>
+
+      <h3>Scopes we request</h3>
+      <ul>
+        <li><code>gmail.modify</code> &mdash; to fetch and display your messages, threads, labels, and attachments, and to mark messages as read, archive, or label them based on actions you take in the app.</li>
+        <li><code>gmail.send</code> &mdash; to send replies, forwards, and new messages that you compose.</li>
+        <li><code>userinfo.profile</code> and <code>userinfo.email</code> &mdash; to identify your Google account inside the app.</li>
+      </ul>
+
+      <h3>How Google user data is handled</h3>
+      <ul>
+        <li><strong>No AI Training:</strong> Google user data is <strong>not</strong> used to train, develop, or improve any generalized AI or Machine Learning models.</li>
+        <li><strong>No Human Access:</strong> No employee or contractor reads your Gmail data except (a) with your explicit consent for support, (b) to investigate abuse, or (c) where required by law.</li>
+        <li><strong>Relay Storage:</strong> Email content held in server memory during relay operations is immediately discarded and never written to disk.</li>
+        <li><strong>Storage:</strong> Gmail message bodies, headers, and attachments are stored in encrypted on-device storage so the app can work offline. They are not stored in our backend database.</li>
+        <li><strong>Prohibited Uses:</strong> Gmail data is never sold or shared with third parties for advertising, credit determination, or any purpose unrelated to providing the user-facing features of Sovra. It will not be transferred to or used by data brokers, consumer reporting agencies, or any party for such purposes.</li>
+      </ul>
+
+      <h3>Revoking Google access</h3>
+      <p>
+        You can disconnect your Google account from inside the app at any time, or
+        revoke access directly at
+        <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>.
+        Revoking access stops further sync and removes your tokens from our backend.
+      </p>
+
+      <h2>4. Data Storage and Retention</h2>
+      <ul>
+        <li><strong>Local Data:</strong> All decrypted message content stays on your device.</li>
+        <li><strong>Backend Metadata:</strong> We store only OAuth refresh tokens and minimal account-link metadata (email address).</li>
+        <li><strong>Retention:</strong> OAuth tokens are permanently deleted upon account disconnection or deletion. We do not retain tokens beyond the life of your active integration.</li>
+        <li><strong>Third-party processors:</strong> Replit (US) hosts our backend infrastructure. RevenueCat processes subscription receipts.</li>
+      </ul>
+
+      <h2>5. Your Rights and Account Deletion</h2>
+      <p>
+        Under the <strong>UK GDPR</strong>, you have rights including access,
+        rectification, and erasure.
+      </p>
+      <ul>
+        <li><strong>Account Deletion:</strong> You can delete your account and all associated backend data at any time via the <strong>"Delete Account"</strong> button in the App Settings or by emailing <a href="mailto:privacy@leviathan-sys.com">privacy@leviathan-sys.com</a>.</li>
+        <li><strong>Revocation:</strong> You may revoke API access at any time via your Google or Apple account security settings.</li>
+        <li><strong>Access and export:</strong> Contact us at the address below to request a copy of any personal data we hold on our backend.</li>
+        <li>Depending on your jurisdiction, you may have additional rights under the UK GDPR, EU GDPR, or CCPA &mdash; we will honour verified requests as required by law.</li>
+      </ul>
+
+      <h2>6. Security</h2>
+      <p>
+        We utilise industry-standard TLS for data in transit and OS-level secure
+        storage (Keychain on iOS) for credentials on-device. All user data stored
+        locally is encrypted with AES-256-GCM. No system is perfectly secure;
+        please use a device passcode and keep your operating system up to date.
+      </p>
+
+      <h2>7. Governing Law and Jurisdiction</h2>
+      <p>
+        This Privacy Policy and any dispute or claim arising out of or in
+        connection with it shall be governed by and construed in accordance with
+        the laws of <strong>England and Wales</strong>. You agree that the courts
+        of <strong>England and Wales</strong> shall have exclusive jurisdiction
+        to settle any dispute or claim.
+      </p>
+
+      <h2>8. Contact Us</h2>
+      <p>
+        <strong>Leviathan Systems Ltd</strong><br />
+        Email: <a href="mailto:privacy@leviathan-sys.com">privacy@leviathan-sys.com</a>
+      </p>
+
+      <footer>
+        <a href="/">Home</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </footer>
+    </div>
+  </body>
+</html>

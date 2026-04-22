@@ -73,54 +73,36 @@ export default function Privacy() {
 
           <div className="prose-legal space-y-8 text-base leading-relaxed" style={{ color: COLORS.muted }}>
             <p>
-              This Privacy Policy explains how Sovra ("we", "us", "our") collects, uses, and protects your information when you use the Sovra mobile application and related services (the "Service"). We are committed to keeping your data on your device whenever possible and to processing it only for the purposes you authorize.
+              This Privacy Policy explains how <strong className="text-slate-200">Leviathan Systems Ltd</strong> ("we", "us", "our"), a company registered in England and Wales, collects, uses, and protects your information when you use the Sovra mobile application and related services (the "Service").
             </p>
 
             <section data-testid="section-privacy-summary">
-              <h2 className="text-xl font-semibold text-white mt-10 mb-4">1. Summary</h2>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>The app is designed around <strong className="text-slate-200">on-device storage</strong>. Your messages, attachments, contacts, and notes live in encrypted secure storage on your phone.</li>
-                <li>Our servers act as a <strong className="text-slate-200">transient relay</strong> for connecting to third-party providers (such as Gmail and iCloud Mail). We do not retain the content of your messages on our servers.</li>
-                <li><strong className="text-slate-200">Zero-knowledge architecture:</strong> The app is architected so that we have no ability to read your user data — it lives encrypted on your device. The server never retains message content; any data that passes through our backend is held only in server memory for the duration of the operation and then immediately discarded.</li>
-                <li>We do <strong className="text-slate-200">not sell</strong> your data and do <strong className="text-slate-200">not use it for advertising</strong>.</li>
-                <li>We do <strong className="text-slate-200">not track you</strong> across third-party apps or websites and do not use advertising identifiers for cross-app tracking.</li>
+              <h2 className="text-xl font-semibold text-white mt-10 mb-4">1. Summary &amp; Privacy by Design</h2>
+              <p>The Service is built on the principle of data sovereignty.</p>
+              <ul className="list-disc pl-6 space-y-2 mt-3">
+                <li><strong className="text-slate-200">On-Device Storage:</strong> Your messages, attachments, and notes are stored in encrypted storage on your physical device.</li>
+                <li><strong className="text-slate-200">Transient Processing:</strong> Our servers act as a relay. We do not store the content of your communications on our backend.</li>
+                <li><strong className="text-slate-200">Zero-Knowledge:</strong> We have no technical means to access your decrypted user data.</li>
+                <li><strong className="text-slate-200">No Data Sales:</strong> We do not sell your data or use it for advertising or cross-app tracking.</li>
               </ul>
             </section>
 
             <section data-testid="section-privacy-access">
               <h2 className="text-xl font-semibold text-white mt-10 mb-4">2. Information We Access</h2>
-              <p>Depending on which integrations you enable, the app may access the following:</p>
+              <p>Depending on which integrations you enable, the Service may access the following:</p>
               <ul className="list-disc pl-6 space-y-2 mt-3">
-                <li><strong className="text-slate-200">Gmail:</strong> email messages, threads, attachments, labels, and your basic Google profile (name, email, profile picture).</li>
-                <li><strong className="text-slate-200">iCloud Mail (IMAP):</strong> messages, threads, and attachments from the folders you connect.</li>
-                <li><strong className="text-slate-200">Contacts:</strong> name, email, phone number, and avatar of contacts you choose to expose to the app, used to display sender identities.</li>
-                <li><strong className="text-slate-200">Subscription data (RevenueCat):</strong> a pseudonymous app user ID, purchase receipts, and entitlement status used to verify your subscription. On iOS, RevenueCat may also collect a device-level identifier (IDFV — Identifier for Vendor) solely for subscription verification and fraud prevention. This identifier is not used for advertising or cross-app tracking.</li>
-                <li><strong className="text-slate-200">Diagnostic logs:</strong> minimal, non-content technical logs (e.g. error traces, request timing) used to keep the Service running.</li>
+                <li><strong className="text-slate-200">Gmail:</strong> Email messages, threads, attachments, labels, and your basic Google profile (name, email, profile picture).</li>
+                <li><strong className="text-slate-200">iCloud Mail (IMAP):</strong> Message data from folders you connect.</li>
+                <li><strong className="text-slate-200">Contacts:</strong> Used strictly for displaying sender identities within the app.</li>
+                <li><strong className="text-slate-200">Subscription Data:</strong> Processed via <strong className="text-slate-200">RevenueCat</strong>. On iOS, we use the Identifier for Vendor (IDFV) solely for fraud prevention and subscription management. It is not used for advertising.</li>
+                <li><strong className="text-slate-200">Diagnostic Logs:</strong> Minimal technical traces (error logs) to maintain Service integrity.</li>
               </ul>
-            </section>
-
-            <section data-testid="section-privacy-use">
-              <h2 className="text-xl font-semibold text-white mt-10 mb-4">3. How We Use Your Information</h2>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Display your messages, threads, and attachments inside the app.</li>
-                <li>Send replies, forwards, and new messages on your behalf when you initiate them.</li>
-                <li>Run on-device AI features (summaries, suggested replies, search) that operate against your local data.</li>
-                <li>Pass requests through to provider APIs (e.g. Google, Apple) so the app can stay in sync.</li>
-                <li>Verify and restore your subscription status through RevenueCat.</li>
-              </ul>
-            </section>
-
-            <section data-testid="section-privacy-no-tracking">
-              <h2 className="text-xl font-semibold text-white mt-10 mb-4">3a. No Cross-App Tracking</h2>
-              <p>
-                Sovra does not track users across third-party apps or websites for advertising or any other purpose. We do not use advertising identifiers (such as IDFA or third-party cookies) to build profiles about you or to share your activity with advertising networks.
-              </p>
             </section>
 
             <section data-testid="section-privacy-google">
-              <h2 className="text-xl font-semibold text-white mt-10 mb-4">4. Google User Data</h2>
+              <h2 className="text-xl font-semibold text-white mt-10 mb-4">3. Google User Data &amp; Limited Use Disclosure</h2>
               <div
-                className="rounded-xl px-5 py-4 my-4 text-sm"
+                className="rounded-xl px-5 py-4 my-4 text-sm font-medium"
                 style={{ backgroundColor: `${COLORS.primary}0A`, border: `1px solid ${COLORS.primary}25` }}
               >
                 Sovra's use and transfer of information received from Google APIs to any other app will adhere to the{" "}
@@ -145,13 +127,11 @@ export default function Privacy() {
 
               <h3 className="text-base font-semibold text-slate-200 mt-6 mb-3">How Google user data is handled</h3>
               <ul className="list-disc pl-6 space-y-2">
+                <li><strong className="text-slate-200">No AI Training:</strong> Google user data is <strong className="text-slate-200">not</strong> used to train, develop, or improve any generalized AI or Machine Learning models.</li>
+                <li><strong className="text-slate-200">No Human Access:</strong> No employee or contractor reads your Gmail data except (a) with your explicit consent for support, (b) to investigate abuse, or (c) where required by law.</li>
+                <li><strong className="text-slate-200">Relay Storage:</strong> Email content held in server memory during relay operations is immediately discarded and never written to disk.</li>
                 <li><strong className="text-slate-200">Storage:</strong> Gmail message bodies, headers, and attachments are stored in encrypted on-device storage so the app can work offline. They are not stored in our backend database.</li>
-                <li><strong className="text-slate-200">Transient processing:</strong> Our backend acts only as a short-lived proxy for OAuth token exchange and for relaying message contents from Google to your device. Email bodies and attachments are held only in server memory for the duration of the download or send operation, then immediately discarded — they are never written to disk or persisted in any database.</li>
-                <li><strong className="text-slate-200">AI features:</strong> Summaries, suggested replies, and search run against your locally cached Gmail data on your device. Gmail content is not used to train any AI model.</li>
-                <li><strong className="text-slate-200">No human access:</strong> No employee or contractor reads your Gmail data, except (a) with your explicit consent, (b) to investigate abuse you have reported, or (c) where required by law.</li>
-                <li><strong className="text-slate-200">No sale, no ads:</strong> Gmail data is never sold, rented, or shared with third parties for advertising, analytics, or any purpose unrelated to providing the user-facing features of the app.</li>
-                <li><strong className="text-slate-200">No transfer to third parties</strong> except as needed to provide or improve those user-facing features and only with your knowledge.</li>
-                <li><strong className="text-slate-200">Prohibited uses:</strong> Google user data will not be used for credit determination, insurance underwriting, employment decisions, or any other purpose unrelated to providing the user-facing features of the Service. It will not be transferred to or used by data brokers, consumer reporting agencies, or any party for such purposes.</li>
+                <li><strong className="text-slate-200">Prohibited Uses:</strong> Gmail data is never sold or shared with third parties for advertising, credit determination, or any purpose unrelated to providing the user-facing features of Sovra. It will not be transferred to or used by data brokers, consumer reporting agencies, or any party for such purposes.</li>
               </ul>
 
               <h3 className="text-base font-semibold text-slate-200 mt-6 mb-3">Revoking Google access</h3>
@@ -171,67 +151,49 @@ export default function Privacy() {
             </section>
 
             <section data-testid="section-privacy-storage">
-              <h2 className="text-xl font-semibold text-white mt-10 mb-4">5. Where Your Data Is Stored</h2>
+              <h2 className="text-xl font-semibold text-white mt-10 mb-4">4. Data Storage and Retention</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong className="text-slate-200">On your device:</strong> message contents, attachments, drafts, notes, and contact data are kept in encrypted secure storage on your phone.</li>
-                <li>
-                  <strong className="text-slate-200">On our backend (transient):</strong> OAuth refresh tokens and minimal account-link metadata (such as your email address and provider name) are stored on our backend so the app can re-authenticate with providers on your behalf. Message bodies are held only in server memory during active operations and are never written to disk or retained.
-                  <ul className="list-disc pl-6 mt-2 space-y-1">
-                    <li><strong className="text-slate-200">OAuth token retention:</strong> OAuth refresh tokens are retained only for as long as you keep the account connected in the app. They are permanently deleted from our backend when you disconnect the account from within the app, when you revoke access via the provider's own settings, or when you submit a deletion request to us. We do not retain tokens beyond these events.</li>
-                  </ul>
-                </li>
-                <li>
-                  <strong className="text-slate-200">Third-party processors:</strong>
-                  <ul className="list-disc pl-6 mt-2 space-y-1">
-                    <li>Replit (US) hosts our backend infrastructure.</li>
-                    <li>RevenueCat processes subscription receipts.</li>
-                  </ul>
-                </li>
+                <li><strong className="text-slate-200">Local Data:</strong> All decrypted message content stays on your device.</li>
+                <li><strong className="text-slate-200">Backend Metadata:</strong> We store only OAuth refresh tokens and minimal account-link metadata (email address).</li>
+                <li><strong className="text-slate-200">Retention:</strong> OAuth tokens are permanently deleted upon account disconnection or deletion. We do not retain tokens beyond the life of your active integration.</li>
+                <li><strong className="text-slate-200">Third-party processors:</strong> Replit (US) hosts our backend infrastructure. RevenueCat processes subscription receipts.</li>
               </ul>
             </section>
 
-            <section data-testid="section-privacy-sharing">
-              <h2 className="text-xl font-semibold text-white mt-10 mb-4">6. Data Sharing</h2>
-              <p>
-                We do not sell your personal data. We share data only with the third-party processors listed above, and only to the minimum extent needed to operate the Service. We may disclose data when required by law or to protect the rights, property, or safety of users or the public.
-              </p>
-            </section>
-
             <section data-testid="section-privacy-rights">
-              <h2 className="text-xl font-semibold text-white mt-10 mb-4">7. Your Rights and Choices</h2>
-              <ul className="list-disc pl-6 space-y-2">
-                <li><strong className="text-slate-200">Access and export:</strong> contact us at the address below to request a copy of any personal data we hold on our backend.</li>
-                <li><strong className="text-slate-200">Deletion:</strong> contact us at the address below to delete your backend account and any stored OAuth tokens. Uninstalling the app removes the on-device data.</li>
-                <li><strong className="text-slate-200">Revoke integrations:</strong> you can disconnect Gmail, iCloud Mail, and Contacts at any time from inside the app or from the provider's own settings.</li>
-                <li>Depending on your jurisdiction, you may have additional rights under GDPR, UK GDPR, or CCPA — we will honor verified requests as required by law.</li>
+              <h2 className="text-xl font-semibold text-white mt-10 mb-4">5. Your Rights and Account Deletion</h2>
+              <p>
+                Under the <strong className="text-slate-200">UK GDPR</strong>, you have rights including access, rectification, and erasure.
+              </p>
+              <ul className="list-disc pl-6 space-y-2 mt-3">
+                <li><strong className="text-slate-200">Account Deletion:</strong> You can delete your account and all associated backend data at any time via the <strong className="text-slate-200">"Delete Account"</strong> button in the App Settings or by emailing{" "}
+                  <a href="mailto:privacy@leviathan-sys.com" className="underline underline-offset-2" style={{ color: COLORS.primary }}>privacy@leviathan-sys.com</a>.
+                </li>
+                <li><strong className="text-slate-200">Revocation:</strong> You may revoke API access at any time via your Google or Apple account security settings.</li>
+                <li><strong className="text-slate-200">Access and export:</strong> Contact us at the address below to request a copy of any personal data we hold on our backend.</li>
+                <li>Depending on your jurisdiction, you may have additional rights under the UK GDPR, EU GDPR, or CCPA — we will honour verified requests as required by law.</li>
               </ul>
             </section>
 
             <section data-testid="section-privacy-security">
-              <h2 className="text-xl font-semibold text-white mt-10 mb-4">8. Security</h2>
+              <h2 className="text-xl font-semibold text-white mt-10 mb-4">6. Security</h2>
               <p>
-                We use TLS for all network traffic, store credentials in OS-level secure storage on the device, and limit backend retention to what is strictly required. No system is perfectly secure; please use a device passcode and keep your operating system up to date.
+                We utilise industry-standard TLS for data in transit and OS-level secure storage (Keychain on iOS) for credentials on-device. All user data stored locally is encrypted with AES-256-GCM. No system is perfectly secure; please use a device passcode and keep your operating system up to date.
               </p>
             </section>
 
-            <section data-testid="section-privacy-children">
-              <h2 className="text-xl font-semibold text-white mt-10 mb-4">9. Children</h2>
+            <section data-testid="section-privacy-governing-law">
+              <h2 className="text-xl font-semibold text-white mt-10 mb-4">7. Governing Law and Jurisdiction</h2>
               <p>
-                Sovra is not directed to children under 13 (or the equivalent minimum age in your jurisdiction). We do not knowingly collect personal information from children.
-              </p>
-            </section>
-
-            <section data-testid="section-privacy-changes">
-              <h2 className="text-xl font-semibold text-white mt-10 mb-4">10. Changes to This Policy</h2>
-              <p>
-                We may update this Privacy Policy from time to time. Material changes will be reflected in the "Last updated" date above and, where appropriate, announced inside the app.
+                This Privacy Policy and any dispute or claim arising out of or in connection with it shall be governed by and construed in accordance with the laws of <strong className="text-slate-200">England and Wales</strong>. You agree that the courts of <strong className="text-slate-200">England and Wales</strong> shall have exclusive jurisdiction to settle any dispute or claim.
               </p>
             </section>
 
             <section data-testid="section-privacy-contact">
-              <h2 className="text-xl font-semibold text-white mt-10 mb-4">11. Contact Us</h2>
+              <h2 className="text-xl font-semibold text-white mt-10 mb-4">8. Contact Us</h2>
               <p>
-                Questions, requests, or concerns about this policy or your data? Email{" "}
+                <strong className="text-slate-200">Leviathan Systems Ltd</strong><br />
+                Email:{" "}
                 <a
                   href="mailto:privacy@leviathan-sys.com"
                   className="underline underline-offset-2"
@@ -239,7 +201,6 @@ export default function Privacy() {
                 >
                   privacy@leviathan-sys.com
                 </a>
-                .
               </p>
             </section>
           </div>
