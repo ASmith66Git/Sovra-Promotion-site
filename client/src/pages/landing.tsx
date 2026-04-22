@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import {
   Shield,
   Lock,
@@ -875,7 +876,8 @@ function Footer() {
             <a href="#problem" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-problem">Why Sovra</a>
             <a href="#how-it-works" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-how">How It Works</a>
             <a href="#features" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-features">Features</a>
-            <a href="#privacy" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-privacy">Privacy</a>
+            <Link href="/privacy" data-testid="link-footer-privacy"><span className="text-sm transition-colors duration-200 cursor-pointer" style={{ color: COLORS.dimmed }}>Privacy</span></Link>
+            <Link href="/terms" data-testid="link-footer-terms"><span className="text-sm transition-colors duration-200 cursor-pointer" style={{ color: COLORS.dimmed }}>Terms</span></Link>
             <a href="#download" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-download">Download</a>
             <a href="/philosophy" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-philosophy">Our Philosophy</a>
             <a href="/support" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-support">Support</a>
