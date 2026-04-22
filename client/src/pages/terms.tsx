@@ -162,11 +162,11 @@ export default function Terms() {
               <p>
                 Questions about these Terms? Email{" "}
                 <a
-                  href="mailto:privacy@leviathan-sys.com"
+                  href="mailto:legal@leviathan-sys.com"
                   className="underline underline-offset-2"
                   style={{ color: COLORS.primary }}
                 >
-                  privacy@leviathan-sys.com
+                  legal@leviathan-sys.com
                 </a>
                 .
               </p>
