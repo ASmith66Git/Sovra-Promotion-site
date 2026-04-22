@@ -68,7 +68,7 @@ export default function Privacy() {
             Privacy Policy
           </h1>
           <p className="text-sm mb-10" style={{ color: COLORS.dimmed }} data-testid="text-privacy-updated">
-            Last updated: April 21, 2026
+            Last updated: April 22, 2026
           </p>
 
           <div className="prose-legal space-y-8 text-base leading-relaxed" style={{ color: COLORS.muted }}>
@@ -80,8 +80,10 @@ export default function Privacy() {
               <h2 className="text-xl font-semibold text-white mt-10 mb-4">1. Summary</h2>
               <ul className="list-disc pl-6 space-y-2">
                 <li>The app is designed around <strong className="text-slate-200">on-device storage</strong>. Your messages, attachments, contacts, and notes live in encrypted secure storage on your phone.</li>
-                <li>Our servers act as a <strong className="text-slate-200">transient relay</strong> for connecting to third-party providers (such as Gmail, iCloud, Telegram, and WhatsApp via Unipile). We do not retain the content of your messages on our servers.</li>
+                <li>Our servers act as a <strong className="text-slate-200">transient relay</strong> for connecting to third-party providers (such as Gmail and iCloud Mail). We do not retain the content of your messages on our servers.</li>
+                <li><strong className="text-slate-200">Zero-knowledge architecture:</strong> The app is architected so that we have no ability to read your user data — it lives encrypted on your device. The server never retains message content; any data that passes through our backend is held only in server memory for the duration of the operation and then immediately discarded.</li>
                 <li>We do <strong className="text-slate-200">not sell</strong> your data and do <strong className="text-slate-200">not use it for advertising</strong>.</li>
+                <li>We do <strong className="text-slate-200">not track you</strong> across third-party apps or websites and do not use advertising identifiers for cross-app tracking.</li>
               </ul>
             </section>
 
@@ -91,9 +93,8 @@ export default function Privacy() {
               <ul className="list-disc pl-6 space-y-2 mt-3">
                 <li><strong className="text-slate-200">Gmail:</strong> email messages, threads, attachments, labels, and your basic Google profile (name, email, profile picture).</li>
                 <li><strong className="text-slate-200">iCloud Mail (IMAP):</strong> messages, threads, and attachments from the folders you connect.</li>
-                <li><strong className="text-slate-200">Telegram and WhatsApp (via Unipile):</strong> messages, attachments, and contact metadata for the accounts you link.</li>
                 <li><strong className="text-slate-200">Contacts:</strong> name, email, phone number, and avatar of contacts you choose to expose to the app, used to display sender identities.</li>
-                <li><strong className="text-slate-200">Subscription data (RevenueCat):</strong> a pseudonymous app user ID, purchase receipts, and entitlement status used to verify your subscription.</li>
+                <li><strong className="text-slate-200">Subscription data (RevenueCat):</strong> a pseudonymous app user ID, purchase receipts, and entitlement status used to verify your subscription. On iOS, RevenueCat may also collect a device-level identifier (IDFV — Identifier for Vendor) solely for subscription verification and fraud prevention. This identifier is not used for advertising or cross-app tracking.</li>
                 <li><strong className="text-slate-200">Diagnostic logs:</strong> minimal, non-content technical logs (e.g. error traces, request timing) used to keep the Service running.</li>
               </ul>
             </section>
@@ -104,9 +105,16 @@ export default function Privacy() {
                 <li>Display your messages, threads, and attachments inside the app.</li>
                 <li>Send replies, forwards, and new messages on your behalf when you initiate them.</li>
                 <li>Run on-device AI features (summaries, suggested replies, search) that operate against your local data.</li>
-                <li>Pass requests through to provider APIs (e.g. Google, Apple, Unipile) so the app can stay in sync.</li>
+                <li>Pass requests through to provider APIs (e.g. Google, Apple) so the app can stay in sync.</li>
                 <li>Verify and restore your subscription status through RevenueCat.</li>
               </ul>
+            </section>
+
+            <section data-testid="section-privacy-no-tracking">
+              <h2 className="text-xl font-semibold text-white mt-10 mb-4">3a. No Cross-App Tracking</h2>
+              <p>
+                Sovra does not track users across third-party apps or websites for advertising or any other purpose. We do not use advertising identifiers (such as IDFA or third-party cookies) to build profiles about you or to share your activity with advertising networks.
+              </p>
             </section>
 
             <section data-testid="section-privacy-google">
@@ -130,20 +138,20 @@ export default function Privacy() {
 
               <h3 className="text-base font-semibold text-slate-200 mt-6 mb-3">Scopes we request</h3>
               <ul className="list-disc pl-6 space-y-2">
-                <li><code className="text-indigo-400 text-sm">gmail.readonly</code> — to fetch and display your messages, threads, labels, and attachments inside the app.</li>
+                <li><code className="text-indigo-400 text-sm">gmail.modify</code> — to fetch and display your messages, threads, labels, and attachments, and to mark messages as read, archive, or label them based on actions you take in the app.</li>
                 <li><code className="text-indigo-400 text-sm">gmail.send</code> — to send replies, forwards, and new messages that you compose.</li>
-                <li><code className="text-indigo-400 text-sm">gmail.modify</code> (when enabled) — to mark messages as read, archive, or label them based on actions you take in the app.</li>
                 <li><code className="text-indigo-400 text-sm">userinfo.profile</code> and <code className="text-indigo-400 text-sm">userinfo.email</code> — to identify your Google account inside the app.</li>
               </ul>
 
               <h3 className="text-base font-semibold text-slate-200 mt-6 mb-3">How Google user data is handled</h3>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong className="text-slate-200">Storage:</strong> Gmail message bodies, headers, and attachments are stored in encrypted on-device storage so the app can work offline. They are not stored in our backend database.</li>
-                <li><strong className="text-slate-200">Transient processing:</strong> Our backend acts only as a short-lived proxy for OAuth token exchange and for streaming message contents from Google to your device. Message contents are not logged or persisted server-side.</li>
+                <li><strong className="text-slate-200">Transient processing:</strong> Our backend acts only as a short-lived proxy for OAuth token exchange and for relaying message contents from Google to your device. Email bodies and attachments are held only in server memory for the duration of the download or send operation, then immediately discarded — they are never written to disk or persisted in any database.</li>
                 <li><strong className="text-slate-200">AI features:</strong> Summaries, suggested replies, and search run against your locally cached Gmail data on your device. Gmail content is not used to train any AI model.</li>
                 <li><strong className="text-slate-200">No human access:</strong> No employee or contractor reads your Gmail data, except (a) with your explicit consent, (b) to investigate abuse you have reported, or (c) where required by law.</li>
                 <li><strong className="text-slate-200">No sale, no ads:</strong> Gmail data is never sold, rented, or shared with third parties for advertising, analytics, or any purpose unrelated to providing the user-facing features of the app.</li>
                 <li><strong className="text-slate-200">No transfer to third parties</strong> except as needed to provide or improve those user-facing features and only with your knowledge.</li>
+                <li><strong className="text-slate-200">Prohibited uses:</strong> Google user data will not be used for credit determination, insurance underwriting, employment decisions, or any other purpose unrelated to providing the user-facing features of the Service. It will not be transferred to or used by data brokers, consumer reporting agencies, or any party for such purposes.</li>
               </ul>
 
               <h3 className="text-base font-semibold text-slate-200 mt-6 mb-3">Revoking Google access</h3>
@@ -166,12 +174,16 @@ export default function Privacy() {
               <h2 className="text-xl font-semibold text-white mt-10 mb-4">5. Where Your Data Is Stored</h2>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong className="text-slate-200">On your device:</strong> message contents, attachments, drafts, notes, and contact data are kept in encrypted secure storage on your phone.</li>
-                <li><strong className="text-slate-200">On our backend (transient):</strong> OAuth refresh tokens and minimal account-link metadata so the app can re-authenticate with providers. Message bodies are streamed through and not retained.</li>
+                <li>
+                  <strong className="text-slate-200">On our backend (transient):</strong> OAuth refresh tokens and minimal account-link metadata (such as your email address and provider name) are stored on our backend so the app can re-authenticate with providers on your behalf. Message bodies are held only in server memory during active operations and are never written to disk or retained.
+                  <ul className="list-disc pl-6 mt-2 space-y-1">
+                    <li><strong className="text-slate-200">OAuth token retention:</strong> OAuth refresh tokens are retained only for as long as you keep the account connected in the app. They are permanently deleted from our backend when you disconnect the account from within the app, when you revoke access via the provider's own settings, or when you submit a deletion request to us. We do not retain tokens beyond these events.</li>
+                  </ul>
+                </li>
                 <li>
                   <strong className="text-slate-200">Third-party processors:</strong>
                   <ul className="list-disc pl-6 mt-2 space-y-1">
                     <li>Replit (US) hosts our backend infrastructure.</li>
-                    <li>Unipile processes Telegram and WhatsApp connections per their privacy policy.</li>
                     <li>RevenueCat processes subscription receipts.</li>
                   </ul>
                 </li>
@@ -190,7 +202,7 @@ export default function Privacy() {
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong className="text-slate-200">Access and export:</strong> contact us at the address below to request a copy of any personal data we hold on our backend.</li>
                 <li><strong className="text-slate-200">Deletion:</strong> contact us at the address below to delete your backend account and any stored OAuth tokens. Uninstalling the app removes the on-device data.</li>
-                <li><strong className="text-slate-200">Revoke integrations:</strong> you can disconnect Gmail, iCloud, Telegram, WhatsApp, and Contacts at any time from inside the app or from the provider's own settings.</li>
+                <li><strong className="text-slate-200">Revoke integrations:</strong> you can disconnect Gmail, iCloud Mail, and Contacts at any time from inside the app or from the provider's own settings.</li>
                 <li>Depending on your jurisdiction, you may have additional rights under GDPR, UK GDPR, or CCPA — we will honor verified requests as required by law.</li>
               </ul>
             </section>

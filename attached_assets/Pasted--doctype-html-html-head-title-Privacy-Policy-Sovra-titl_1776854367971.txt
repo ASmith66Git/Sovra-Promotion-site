@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Privacy Policy — Sovra</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        margin: 0;
+        padding: 32px 20px 64px;
+        background: #fff;
+        color: #222;
+        line-height: 1.6;
+        min-height: 100vh;
+      }
+      .wrapper { max-width: 760px; margin: 0 auto; }
+      .top-link {
+        display: inline-block;
+        font-size: 13px;
+        color: #666;
+        text-decoration: none;
+        margin-bottom: 24px;
+      }
+      .top-link:hover { color: #222; }
+      h1 { font-size: 28px; font-weight: 600; margin: 0 0 8px; color: #111; }
+      .updated { font-size: 13px; color: #888; margin-bottom: 32px; }
+      h2 {
+        font-size: 19px;
+        font-weight: 600;
+        margin: 32px 0 10px;
+        color: #111;
+      }
+      h3 {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 20px 0 8px;
+        color: #222;
+      }
+      p, li { font-size: 15px; color: #333; }
+      ul { padding-left: 22px; }
+      li { margin-bottom: 6px; }
+      a { color: #2a5bd7; }
+      .callout {
+        background: #f5f7fb;
+        border: 1px solid #e1e6ef;
+        border-radius: 10px;
+        padding: 16px 20px;
+        margin: 16px 0;
+        font-size: 14px;
+      }
+      footer {
+        margin-top: 48px;
+        padding-top: 24px;
+        border-top: 1px solid #e5e5e5;
+        font-size: 13px;
+        color: #888;
+        text-align: center;
+      }
+      footer a { color: #888; margin: 0 8px; }
+      @media (min-width: 768px) {
+        body { padding: 56px 32px 80px; }
+        h1 { font-size: 34px; }
+      }
+      @media (prefers-color-scheme: dark) {
+        body { background: #0d0d0d; color: #e0e0e0; }
+        h1, h2, h3 { color: #f0f0f0; }
+        p, li { color: #cfcfcf; }
+        .updated { color: #888; }
+        .top-link { color: #888; }
+        .top-link:hover { color: #ddd; }
+        a { color: #8ab4ff; }
+        .callout {
+          background: #161922;
+          border-color: #2a2f3a;
+        }
+        footer { border-color: #222; color: #666; }
+        footer a { color: #888; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <a href="/" class="top-link">&larr; Back to Sovra</a>
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: April 22, 2026</p>
+
+      <p>
+        This Privacy Policy explains how Sovra ("we", "us", "our")
+        collects, uses, and protects your information when you use the
+        Sovra mobile application and related services (the "Service").
+        We are committed to keeping your data on your device whenever possible
+        and to processing it only for the purposes you authorize.
+      </p>
+
+      <h2>1. Summary</h2>
+      <ul>
+        <li>The app is designed around <strong>on-device storage</strong>. Your messages, attachments, contacts, and notes live in encrypted secure storage on your phone.</li>
+        <li>Our servers act as a <strong>transient relay</strong> for connecting to third-party providers (such as Gmail and iCloud Mail). We do not retain the content of your messages on our servers.</li>
+        <li><strong>Zero-knowledge architecture:</strong> The app is architected so that we have no ability to read your user data — it lives encrypted on your device. The server never retains message content; any data that passes through our backend is held only in server memory for the duration of the operation and then immediately discarded.</li>
+        <li>We do <strong>not sell</strong> your data and do <strong>not use it for advertising</strong>.</li>
+        <li>We do <strong>not track you</strong> across third-party apps or websites and do not use advertising identifiers for cross-app tracking.</li>
+      </ul>
+
+      <h2>2. Information We Access</h2>
+      <p>Depending on which integrations you enable, the app may access the following:</p>
+      <ul>
+        <li><strong>Gmail:</strong> email messages, threads, attachments, labels, and your basic Google profile (name, email, profile picture).</li>
+        <li><strong>iCloud Mail (IMAP):</strong> messages, threads, and attachments from the folders you connect.</li>
+        <li><strong>Contacts:</strong> name, email, phone number, and avatar of contacts you choose to expose to the app, used to display sender identities.</li>
+        <li><strong>Subscription data (RevenueCat):</strong> a pseudonymous app user ID, purchase receipts, and entitlement status used to verify your subscription. On iOS, RevenueCat may also collect a device-level identifier (IDFV — Identifier for Vendor) solely for subscription verification and fraud prevention. This identifier is not used for advertising or cross-app tracking.</li>
+        <li><strong>Diagnostic logs:</strong> minimal, non-content technical logs (e.g. error traces, request timing) used to keep the Service running.</li>
+      </ul>
+
+      <h2>3. How We Use Your Information</h2>
+      <ul>
+        <li>Display your messages, threads, and attachments inside the app.</li>
+        <li>Send replies, forwards, and new messages on your behalf when you initiate them.</li>
+        <li>Run on-device AI features (summaries, suggested replies, search) that operate against your local data.</li>
+        <li>Pass requests through to provider APIs (e.g. Google, Apple) so the app can stay in sync.</li>
+        <li>Verify and restore your subscription status through RevenueCat.</li>
+      </ul>
+
+      <h2>3a. No Cross-App Tracking</h2>
+      <p>
+        Sovra does not track users across third-party apps or websites for advertising
+        or any other purpose. We do not use advertising identifiers (such as IDFA or
+        third-party cookies) to build profiles about you or to share your activity
+        with advertising networks.
+      </p>
+
+      <h2>4. Google User Data</h2>
+      <div class="callout">
+        Sovra's use and transfer of information received from Google
+        APIs to any other app will adhere to the
+        <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>,
+        including the <strong>Limited Use</strong> requirements.
+      </div>
+
+      <h3>Scopes we request</h3>
+      <ul>
+        <li><code>gmail.modify</code> &mdash; to fetch and display your messages, threads, labels, and attachments, and to mark messages as read, archive, or label them based on actions you take in the app.</li>
+        <li><code>gmail.send</code> &mdash; to send replies, forwards, and new messages that you compose.</li>
+        <li><code>userinfo.profile</code> and <code>userinfo.email</code> &mdash; to identify your Google account inside the app.</li>
+      </ul>
+
+      <h3>How Google user data is handled</h3>
+      <ul>
+        <li><strong>Storage:</strong> Gmail message bodies, headers, and attachments are stored in encrypted on-device storage so the app can work offline. They are not stored in our backend database.</li>
+        <li><strong>Transient processing:</strong> Our backend acts only as a short-lived proxy for OAuth token exchange and for relaying message contents from Google to your device. Email bodies and attachments are held only in server memory for the duration of the download or send operation, then immediately discarded &mdash; they are never written to disk or persisted in any database.</li>
+        <li><strong>AI features:</strong> Summaries, suggested replies, and search run against your locally cached Gmail data on your device. Gmail content is not used to train any AI model.</li>
+        <li><strong>No human access:</strong> No employee or contractor reads your Gmail data, except (a) with your explicit consent, (b) to investigate abuse you have reported, or (c) where required by law.</li>
+        <li><strong>No sale, no ads:</strong> Gmail data is never sold, rented, or shared with third parties for advertising, analytics, or any purpose unrelated to providing the user-facing features of the app.</li>
+        <li><strong>No transfer to third parties</strong> except as needed to provide or improve those user-facing features and only with your knowledge.</li>
+        <li><strong>Prohibited uses:</strong> Google user data will not be used for credit determination, insurance underwriting, employment decisions, or any other purpose unrelated to providing the user-facing features of the Service. It will not be transferred to or used by data brokers, consumer reporting agencies, or any party for such purposes.</li>
+      </ul>
+
+      <h3>Revoking Google access</h3>
+      <p>
+        You can disconnect your Google account from inside the app at any time, or
+        revoke access directly at
+        <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>.
+        Revoking access stops further sync and removes your tokens from our backend.
+      </p>
+
+      <h2>5. Where Your Data Is Stored</h2>
+      <ul>
+        <li><strong>On your device:</strong> message contents, attachments, drafts, notes, and contact data are kept in encrypted secure storage on your phone.</li>
+        <li><strong>On our backend (transient):</strong> OAuth refresh tokens and minimal account-link metadata (such as your email address and provider name) are stored on our backend so the app can re-authenticate with providers on your behalf. Message bodies are held only in server memory during active operations and are never written to disk or retained.
+          <ul>
+            <li><strong>OAuth token retention:</strong> OAuth refresh tokens are retained only for as long as you keep the account connected in the app. They are permanently deleted from our backend when you disconnect the account from within the app, when you revoke access via the provider's own settings, or when you submit a deletion request to us. We do not retain tokens beyond these events.</li>
+          </ul>
+        </li>
+        <li><strong>Third-party processors:</strong>
+          <ul>
+            <li>Replit (US) hosts our backend infrastructure.</li>
+            <li>RevenueCat processes subscription receipts.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2>6. Data Sharing</h2>
+      <p>
+        We do not sell your personal data. We share data only with the third-party
+        processors listed above, and only to the minimum extent needed to operate
+        the Service. We may disclose data when required by law or to protect the
+        rights, property, or safety of users or the public.
+      </p>
+
+      <h2>7. Your Rights and Choices</h2>
+      <ul>
+        <li><strong>Access and export:</strong> contact us at the address below to request a copy of any personal data we hold on our backend.</li>
+        <li><strong>Deletion:</strong> contact us at the address below to delete your backend account and any stored OAuth tokens. Uninstalling the app removes the on-device data.</li>
+        <li><strong>Revoke integrations:</strong> you can disconnect Gmail, iCloud Mail, and Contacts at any time from inside the app or from the provider's own settings.</li>
+        <li>Depending on your jurisdiction, you may have additional rights under GDPR, UK GDPR, or CCPA &mdash; we will honor verified requests as required by law.</li>
+      </ul>
+
+      <h2>8. Security</h2>
+      <p>
+        We use TLS for all network traffic, store credentials in OS-level secure
+        storage on the device, and limit backend retention to what is strictly
+        required. No system is perfectly secure; please use a device passcode and
+        keep your operating system up to date.
+      </p>
+
+      <h2>9. Children</h2>
+      <p>
+        Sovra is not directed to children under 13 (or the equivalent
+        minimum age in your jurisdiction). We do not knowingly collect personal
+        information from children.
+      </p>
+
+      <h2>10. Changes to This Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. Material changes will
+        be reflected in the "Last updated" date above and, where appropriate,
+        announced inside the app.
+      </p>
+
+      <h2>11. Contact Us</h2>
+      <p>
+        Questions, requests, or concerns about this policy or your data?
+        Email <a href="mailto:privacy@leviathan-sys.com">privacy@leviathan-sys.com</a>.
+      </p>
+
+      <footer>
+        <a href="/">Home</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </footer>
+    </div>
+  </body>
+</html>
