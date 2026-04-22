@@ -68,7 +68,7 @@ export default function Terms() {
             Terms of Service
           </h1>
           <p className="text-sm mb-10" style={{ color: COLORS.dimmed }} data-testid="text-terms-updated">
-            Last updated: April 21, 2026
+            Last updated: April 22, 2026
           </p>
 
           <div className="space-y-8 text-base leading-relaxed" style={{ color: COLORS.muted }}>
@@ -86,7 +86,7 @@ export default function Terms() {
             <section data-testid="section-terms-account">
               <h2 className="text-xl font-semibold text-white mt-10 mb-4">2. Your Account and Connected Services</h2>
               <p>
-                The Service connects to third-party accounts you choose to link, such as Gmail, iCloud, Telegram, and WhatsApp. You are responsible for maintaining the security of your devices and credentials, and for the actions taken under your accounts. You must comply with the terms of any third-party provider you connect.
+                The Service connects to third-party accounts you choose to link, such as Gmail and iCloud Mail. You are responsible for maintaining the security of your devices and credentials, and for the actions taken under your accounts. You must comply with the terms of any third-party provider you connect.
               </p>
             </section>
 
