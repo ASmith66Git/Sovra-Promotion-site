@@ -97,7 +97,7 @@ export default function Terms() {
                 <li>Use the Service to send spam, phishing, malware, or any unlawful or harassing content.</li>
                 <li>Reverse engineer, decompile, or attempt to extract source code, except where permitted by law.</li>
                 <li>Use the Service to violate the rights of others or any applicable law or regulation.</li>
-                <li>Interfere with the integrity or performance of the Service or attempt to gain unauthorized access to it.</li>
+                <li>Interfere with the integrity or performance of the Service or attempt to gain unauthorised access to it.</li>
               </ul>
             </section>
 
