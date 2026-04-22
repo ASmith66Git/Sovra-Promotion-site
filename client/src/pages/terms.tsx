@@ -153,7 +153,7 @@ export default function Terms() {
             <section data-testid="section-terms-governing-law">
               <h2 className="text-xl font-semibold text-white mt-10 mb-4">11. Governing Law</h2>
               <p>
-                These Terms are governed by the laws of the State of Delaware, USA, without regard to its conflict-of-laws principles. You and we agree to the exclusive jurisdiction of the state and federal courts located in Delaware for any dispute that is not subject to arbitration or small-claims court, except where prohibited by your local law.
+                These Terms are governed by the laws of England &amp; Wales, without regard to its conflict-of-laws principles. You and we agree to the exclusive jurisdiction of England &amp; Wales for any dispute that is not subject to arbitration or small-claims court, except where prohibited by your local law.
               </p>
             </section>
 
