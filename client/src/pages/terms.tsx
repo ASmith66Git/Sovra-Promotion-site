@@ -160,15 +160,7 @@ export default function Terms() {
             <section data-testid="section-terms-contact">
               <h2 className="text-xl font-semibold text-white mt-10 mb-4">12. Contact</h2>
               <p>
-                Questions about these Terms? Email{" "}
-                <a
-                  href="mailto:legal@leviathan-sys.com"
-                  className="underline underline-offset-2"
-                  style={{ color: COLORS.primary }}
-                >
-                  legal@leviathan-sys.com
-                </a>
-                .
+                Questions about these Terms? Email legal@leviathan-sys.com.
               </p>
             </section>
           </div>
