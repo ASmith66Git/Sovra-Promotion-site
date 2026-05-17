@@ -166,7 +166,7 @@ export default function Privacy() {
                 Under the <strong className="text-slate-200">UK GDPR</strong>, you have rights including access, rectification, and erasure.
               </p>
               <ul className="list-disc pl-6 space-y-2 mt-3">
-                <li><strong className="text-slate-200">Account Deletion:</strong> You can delete your account and all associated backend data at any time via the <strong className="text-slate-200">"Delete Account"</strong> button in the App Settings or by contacting us at privacy@leviathan-sys.com.</li>
+                <li><strong className="text-slate-200">Account Deletion:</strong> You can delete your account and all associated backend data at any time via the <strong className="text-slate-200">"Delete Account"</strong> button in the App Settings or by contacting us at support@leviathan-sys.com.</li>
                 <li><strong className="text-slate-200">Revocation:</strong> You may revoke API access at any time via your Google or Apple account security settings.</li>
                 <li><strong className="text-slate-200">Access and export:</strong> Contact us at the address below to request a copy of any personal data we hold on our backend.</li>
                 <li>Depending on your jurisdiction, you may have additional rights under the UK GDPR, EU GDPR, or CCPA — we will honour verified requests as required by law.</li>
@@ -191,7 +191,7 @@ export default function Privacy() {
               <h2 className="text-xl font-semibold text-white mt-10 mb-4">8. Contact Us</h2>
               <p>
                 <strong className="text-slate-200">Leviathan Systems Ltd</strong><br />
-                Email: privacy@leviathan-sys.com
+                Email: support@leviathan-sys.com
               </p>
             </section>
           </div>
