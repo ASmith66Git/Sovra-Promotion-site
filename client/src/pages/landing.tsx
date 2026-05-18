@@ -215,7 +215,7 @@ function ProblemSection() {
 
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0} className="text-center">
           <p className="text-2xl sm:text-3xl font-semibold text-white mb-2" data-testid="text-problem-solution-intro">What if there was a better way?</p>
-          <p className="text-2xl sm:text-3xl font-semibold" style={{ color: COLORS.muted }}>
+          <p className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight" style={{ color: COLORS.muted }}>
             Meet{" "}
             <span className="bg-clip-text text-transparent" style={{ backgroundImage: `linear-gradient(to right, ${COLORS.primary}, ${COLORS.secondary})` }}>
               Sovra.
