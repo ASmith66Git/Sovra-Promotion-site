@@ -61,6 +61,16 @@ const fadeUp = {
   }),
 };
 
+const wordReveal = {
+  hidden: { opacity: 0, y: 22, filter: "blur(8px)" },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { delay: 0.1 + i * 0.1, duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+  }),
+};
+
 const stagger = {
   visible: { transition: { staggerChildren: 0.08 } },
 };
@@ -163,13 +173,23 @@ function HeroSection() {
           <span className="text-sm font-medium" style={{ color: COLORS.primary }} data-testid="text-hero-badge">Your Private Second Brain</span>
         </motion.div>
 
-        <motion.h1 variants={fadeUp} custom={1} className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] mb-6" data-testid="text-hero-title">
-          <span className="text-white">Stop organizing.</span>
-          <br />
-          <span className="bg-clip-text text-transparent" style={{ backgroundImage: `linear-gradient(to right, ${COLORS.primary}, ${COLORS.secondary}, ${COLORS.highlight})` }}>
-            Start living.
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] mb-6" data-testid="text-hero-title">
+          <span className="text-white inline-flex gap-[0.22em] flex-wrap justify-center">
+            {["Stop", "organizing."].map((word, i) => (
+              <motion.span key={word} custom={i} variants={wordReveal} className="inline-block">
+                {word}
+              </motion.span>
+            ))}
           </span>
-        </motion.h1>
+          <br />
+          <span className="bg-clip-text text-transparent inline-flex gap-[0.22em] flex-wrap justify-center" style={{ backgroundImage: `linear-gradient(to right, ${COLORS.primary}, ${COLORS.secondary}, ${COLORS.highlight})` }}>
+            {["Start", "living."].map((word, i) => (
+              <motion.span key={word} custom={i + 2} variants={wordReveal} className="inline-block">
+                {word}
+              </motion.span>
+            ))}
+          </span>
+        </h1>
 
         <motion.p variants={fadeUp} custom={2} className="text-lg sm:text-xl max-w-2xl mx-auto mb-4 leading-relaxed" style={{ color: COLORS.muted }} data-testid="text-hero-description">
           Your notes, tasks, projects, documents, calendars, and email — all in one private place. Sovra triages Gmail, Apple Mail, and IMAP, captures attachments and documents, and keeps everything at your fingertips.
