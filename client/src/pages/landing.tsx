@@ -52,6 +52,8 @@ import shot0081 from "@assets/IMG_0081_1779112691140.png";
 import shot0082 from "@assets/IMG_0082_1779112691140.png";
 import shot0083 from "@assets/IMG_0083_1779112691140.png";
 import shot0084 from "@assets/IMG_0084_1779112691140.png";
+import shot0085 from "@assets/IMG_0085_1779112691140.png";
+import shot0086 from "@assets/IMG_0086_1779112748093.png";
 import shotAskSovra from "@assets/IMG_0089_1779115759412.png";
 
 const fadeUp = {
@@ -514,9 +516,11 @@ const screenshots: { src: string; label: string; caption: string }[] = [
   { src: shot0079, label: "Inbox Zero", caption: "Zero inbox, every time" },
   { src: shot0080, label: "Tasks", caption: "Stay on top of what matters" },
   { src: shot0081, label: "Projects", caption: "Group work into focused projects" },
-  { src: shot0082, label: "Notes", caption: "Everything, perfectly organised" },
-  { src: shot0083, label: "Calendar", caption: "Never miss a date" },
-  { src: shot0084, label: "Documents", caption: "Your documents, privately organised" },
+  { src: shot0082, label: "Gantt Chart", caption: "Visualise your project timeline" },
+  { src: shot0083, label: "Notes", caption: "Everything, perfectly organised" },
+  { src: shot0084, label: "Calendar", caption: "Never miss a date" },
+  { src: shot0085, label: "Documents", caption: "Your documents, privately organised" },
+  { src: shot0086, label: "Settings", caption: "Everything under your control" },
   { src: shotAskSovra, label: "Ask Sovra", caption: "Your private AI assistant" },
 ];
 
