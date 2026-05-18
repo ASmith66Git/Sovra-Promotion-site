@@ -172,7 +172,7 @@ function HeroSection() {
           <span className="text-sm font-medium" style={{ color: COLORS.primary }} data-testid="text-hero-badge">Your Private Second Brain</span>
         </motion.div>
 
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] pb-3 mb-6" data-testid="text-hero-title">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] mb-6" data-testid="text-hero-title">
           <span className="text-white inline-flex gap-[0.22em] flex-wrap justify-center">
             {["Stop", "organizing."].map((word, i) => (
               <motion.span key={word} custom={i} variants={wordReveal} className="inline-block">
@@ -181,7 +181,7 @@ function HeroSection() {
             ))}
           </span>
           <br />
-          <span className="bg-clip-text text-transparent inline-flex gap-[0.22em] flex-wrap justify-center" style={{ backgroundImage: `linear-gradient(to right, ${COLORS.primary}, ${COLORS.secondary}, ${COLORS.highlight})` }}>
+          <span className="bg-clip-text text-transparent inline-flex gap-[0.22em] flex-wrap justify-center pb-[0.15em]" style={{ backgroundImage: `linear-gradient(to right, ${COLORS.primary}, ${COLORS.secondary}, ${COLORS.highlight})` }}>
             {["Start", "living."].map((word, i) => (
               <motion.span key={word} custom={i + 2} variants={wordReveal} className="inline-block">
                 {word}
