@@ -321,7 +321,7 @@ function HowItWorksSection() {
         { icon: CalendarCheck, label: "Creates calendar events automatically" },
         { icon: ListTodo, label: "Agenda view with tasks and events together" },
         { icon: Zap, label: "Never miss a meeting or deadline" },
-        { icon: RefreshCw, label: "Syncs across your iPhone and iPad" },
+        { icon: RefreshCw, label: "Syncs across your iPhone, iPad, and Apple Silicon Mac" },
       ],
       color: COLORS.accent,
     },
@@ -460,7 +460,7 @@ const features = [
     icon: RefreshCw,
     title: "Multi-Device Sync & Backup",
     subtitle: "Your data, everywhere you need it.",
-    description: "Using multiple devices? Zero-knowledge encrypted sync keeps everything in perfect harmony across your phone and tablet. Full backup and export ensures your data is always recoverable and never trapped. Even our developers can't see what's synced.",
+    description: "Using multiple devices? Zero-knowledge encrypted sync keeps everything in perfect harmony across your iPhone, iPad, and Apple Silicon Mac. Full backup and export ensures your data is always recoverable and never trapped. Even our developers can't see what's synced.",
     color: COLORS.highlight,
   },
 ];
@@ -882,7 +882,7 @@ function DownloadSection() {
         </motion.h2>
 
         <motion.p variants={fadeUp} custom={2} className="text-lg max-w-2xl mx-auto mb-12" style={{ color: COLORS.muted }} data-testid="text-download-description">
-          Download Sovra for iPhone or iPad and take control of your life — emails, documents, notes, and tasks.
+          Download Sovra for iPhone, iPad, or Apple Silicon Mac and take control of your life — emails, documents, notes, and tasks.
           Connect Gmail, Apple Mail, or IMAP and watch the chaos transform into organized action.
         </motion.p>
 
@@ -917,7 +917,7 @@ function DownloadSection() {
           </div>
           <div className="flex items-center justify-center gap-3 p-4 rounded-xl" style={{ backgroundColor: "rgba(30, 41, 59, 0.3)", border: `1px solid ${COLORS.cardBorder}` }} data-testid="badge-platforms">
             <Smartphone className="w-5 h-5" style={{ color: COLORS.secondary }} />
-            <span className="text-sm" style={{ color: "#CBD5E1" }}>iPhone & iPad</span>
+            <span className="text-sm" style={{ color: "#CBD5E1" }}>iPhone, iPad & Apple Silicon Mac</span>
           </div>
         </motion.div>
       </motion.div>
