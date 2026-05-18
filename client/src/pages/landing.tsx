@@ -46,15 +46,13 @@ import { SiApple, SiGmail } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 const sovraLogo = "/sovra-logo.svg";
 import shot0077 from "@assets/IMG_0077_1779112691140.png";
-import shot0078 from "@assets/IMG_0078_1779112691140.png";
 import shot0079 from "@assets/IMG_0079_1779112691140.png";
 import shot0080 from "@assets/IMG_0080_1779112691140.png";
 import shot0081 from "@assets/IMG_0081_1779112691140.png";
 import shot0082 from "@assets/IMG_0082_1779112691140.png";
 import shot0083 from "@assets/IMG_0083_1779112691140.png";
 import shot0084 from "@assets/IMG_0084_1779112691140.png";
-import shot0085 from "@assets/IMG_0085_1779112691140.png";
-import shot0086 from "@assets/IMG_0086_1779112748093.png";
+import shotAskSovra from "@assets/IMG_0089_1779115759412.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -513,15 +511,13 @@ function FeaturesSection() {
 
 const screenshots: { src: string; label: string; caption: string }[] = [
   { src: shot0077, label: "Today", caption: "Your life at a glance" },
-  { src: shot0078, label: "Inbox Zero", caption: "Zero inbox, every time" },
-  { src: shot0079, label: "Tasks", caption: "Stay on top of what matters" },
-  { src: shot0080, label: "Projects", caption: "Group work into focused projects" },
-  { src: shot0081, label: "Notes", caption: "Everything, perfectly organised" },
-  { src: shot0082, label: "Calendar", caption: "Never miss a date" },
-  { src: shot0083, label: "Documents", caption: "Your documents, privately organised" },
-  { src: shot0084, label: "Ask Sovra", caption: "Your private AI assistant" },
-  { src: shot0085, label: "Connected Services", caption: "Plug in the tools you already use" },
-  { src: shot0086, label: "Triage", caption: "AI sorts your email instantly" },
+  { src: shot0079, label: "Inbox Zero", caption: "Zero inbox, every time" },
+  { src: shot0080, label: "Tasks", caption: "Stay on top of what matters" },
+  { src: shot0081, label: "Projects", caption: "Group work into focused projects" },
+  { src: shot0082, label: "Notes", caption: "Everything, perfectly organised" },
+  { src: shot0083, label: "Calendar", caption: "Never miss a date" },
+  { src: shot0084, label: "Documents", caption: "Your documents, privately organised" },
+  { src: shotAskSovra, label: "Ask Sovra", caption: "Your private AI assistant" },
 ];
 
 function ScreenshotsSection() {
