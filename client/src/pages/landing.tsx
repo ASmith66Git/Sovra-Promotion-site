@@ -159,11 +159,7 @@ function HeroSection() {
 
       <motion.div initial="hidden" animate="visible" variants={stagger} className="relative z-10 max-w-5xl mx-auto px-6 text-center">
         <motion.div variants={fadeUp} custom={0} className="inline-flex flex-col items-center gap-3 mb-8">
-          <motion.img
-            src="/sovra-logo.png"
-            alt="Sovra"
-            className="w-24 h-24 object-contain"
-            style={{ mixBlendMode: "screen" }}
+          <motion.div
             animate={{
               filter: [
                 `drop-shadow(0 0 8px ${COLORS.primary}60) drop-shadow(0 0 16px ${COLORS.primary}30)`,
@@ -172,7 +168,14 @@ function HeroSection() {
               ],
             }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          />
+          >
+            <img
+              src="/sovra-logo.png"
+              alt="Sovra"
+              className="w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 object-contain"
+              style={{ mixBlendMode: "screen" }}
+            />
+          </motion.div>
           <span className="text-sm font-medium" style={{ color: COLORS.primary }} data-testid="text-hero-badge">Your Private Second Brain</span>
         </motion.div>
 
