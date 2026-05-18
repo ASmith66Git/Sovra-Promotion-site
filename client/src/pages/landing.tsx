@@ -107,6 +107,7 @@ function Navbar() {
           <button onClick={() => scrollTo("problem")} className="text-sm cursor-pointer bg-transparent border-none" style={{ color: COLORS.muted }} data-testid="link-nav-problem">Why Sovra</button>
           <button onClick={() => scrollTo("how-it-works")} className="text-sm cursor-pointer bg-transparent border-none" style={{ color: COLORS.muted }} data-testid="link-nav-how">How It Works</button>
           <button onClick={() => scrollTo("features")} className="text-sm cursor-pointer bg-transparent border-none" style={{ color: COLORS.muted }} data-testid="link-nav-features">Features</button>
+          <button onClick={() => scrollTo("pricing")} className="text-sm cursor-pointer bg-transparent border-none" style={{ color: COLORS.muted }} data-testid="link-nav-pricing">Pricing</button>
           <button onClick={() => scrollTo("privacy")} className="text-sm cursor-pointer bg-transparent border-none" style={{ color: COLORS.muted }} data-testid="link-nav-privacy">Privacy</button>
           <button onClick={() => scrollTo("download")} className="text-sm cursor-pointer bg-transparent border-none" style={{ color: COLORS.muted }} data-testid="link-nav-download">Download</button>
 
@@ -791,6 +792,83 @@ function PrivacySection() {
   );
 }
 
+function PricingSection() {
+  return (
+    <section id="pricing" className="relative py-32 px-6" data-testid="section-pricing">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] rounded-full opacity-10" style={{ background: `radial-gradient(circle, ${COLORS.primary}, transparent 70%)`, filter: "blur(80px)" }} />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full opacity-8" style={{ background: `radial-gradient(circle, ${COLORS.secondary}, transparent 70%)`, filter: "blur(80px)" }} />
+      </div>
+
+      <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={stagger} className="relative z-10 max-w-4xl mx-auto text-center">
+        <motion.div variants={fadeUp} custom={0} className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ border: `1px solid ${COLORS.primary}30`, backgroundColor: `${COLORS.primary}0A` }}>
+          <span className="text-sm font-medium" style={{ color: COLORS.primary }} data-testid="text-pricing-badge">Simple Pricing</span>
+        </motion.div>
+
+        <motion.h2 variants={fadeUp} custom={1} className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight mb-6" data-testid="text-pricing-title">
+          One app. Your data. Your price.
+        </motion.h2>
+        <motion.p variants={fadeUp} custom={2} className="text-lg max-w-2xl mx-auto mb-16 leading-relaxed" style={{ color: COLORS.muted }} data-testid="text-pricing-description">
+          No ads. No data selling. Just a fair subscription that keeps Sovra running — and your second brain private.
+        </motion.p>
+
+        <motion.div variants={fadeUp} custom={3} className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          {/* Monthly */}
+          <div
+            className="rounded-2xl p-8 text-left flex flex-col"
+            style={{ backgroundColor: COLORS.cardBg, border: `1px solid ${COLORS.cardBorder}`, backdropFilter: "blur(12px)" }}
+            data-testid="card-pricing-monthly"
+          >
+            <p className="text-sm font-medium mb-4" style={{ color: COLORS.muted }}>Monthly</p>
+            <div className="flex items-end gap-1 mb-2">
+              <span className="text-5xl font-bold text-white tracking-tight">£14.99</span>
+              <span className="text-base mb-2" style={{ color: COLORS.dimmed }}>/month</span>
+            </div>
+            <p className="text-sm mb-8" style={{ color: COLORS.dimmed }}>Billed monthly. Cancel any time.</p>
+            <ul className="space-y-3 mt-auto">
+              {["Full AI triage", "Zero Inbox Engine", "On-device AI", "Multi-device sync", "iCloud & Gmail"].map((f) => (
+                <li key={f} className="flex items-center gap-2.5 text-sm" style={{ color: COLORS.muted }}>
+                  <span className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold" style={{ backgroundColor: `${COLORS.primary}20`, color: COLORS.primary }}>✓</span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Annual */}
+          <div
+            className="rounded-2xl p-8 text-left flex flex-col relative overflow-hidden"
+            style={{ backgroundColor: COLORS.cardBg, border: `1px solid ${COLORS.primary}40`, backdropFilter: "blur(12px)" }}
+            data-testid="card-pricing-annual"
+          >
+            <div className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: `${COLORS.accent}20`, color: COLORS.accent }} data-testid="badge-pricing-save">
+              Save ~£30
+            </div>
+            <p className="text-sm font-medium mb-4" style={{ color: COLORS.muted }}>Annual</p>
+            <div className="flex items-end gap-1 mb-2">
+              <span className="text-5xl font-bold text-white tracking-tight">£149.99</span>
+              <span className="text-base mb-2" style={{ color: COLORS.dimmed }}>/year</span>
+            </div>
+            <p className="text-sm mb-8" style={{ color: COLORS.dimmed }}>Billed once a year. Best value.</p>
+            <ul className="space-y-3 mt-auto">
+              {["Full AI triage", "Zero Inbox Engine", "On-device AI", "Multi-device sync", "iCloud & Gmail"].map((f) => (
+                <li key={f} className="flex items-center gap-2.5 text-sm" style={{ color: COLORS.muted }}>
+                  <span className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold" style={{ backgroundColor: `${COLORS.primary}20`, color: COLORS.primary }}>✓</span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </motion.div>
+
+        <motion.p variants={fadeUp} custom={4} className="text-sm mt-10" style={{ color: COLORS.dimmed }} data-testid="text-pricing-note">
+          Subscriptions are managed through the App Store. Cancel any time from your Apple account settings.
+        </motion.p>
+      </motion.div>
+    </section>
+  );
+}
+
 function DownloadSection() {
   return (
     <section id="download" className="relative py-32 px-6" data-testid="section-download">
@@ -876,6 +954,7 @@ function Footer() {
             <a href="#problem" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-problem">Why Sovra</a>
             <a href="#how-it-works" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-how">How It Works</a>
             <a href="#features" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-features">Features</a>
+            <a href="#pricing" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-pricing">Pricing</a>
             <Link href="/privacy" data-testid="link-footer-privacy"><span className="text-sm transition-colors duration-200 cursor-pointer" style={{ color: COLORS.dimmed }}>Privacy</span></Link>
             <Link href="/terms" data-testid="link-footer-terms"><span className="text-sm transition-colors duration-200 cursor-pointer" style={{ color: COLORS.dimmed }}>Terms</span></Link>
             <a href="#download" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-download">Download</a>
@@ -905,6 +984,7 @@ export default function Landing() {
       <ScreenshotsSection />
       <VideoSection />
       <StatsSection />
+      <PricingSection />
       <PrivacySection />
       <DownloadSection />
       <Footer />
