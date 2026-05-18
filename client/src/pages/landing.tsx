@@ -6,6 +6,7 @@ import {
   Lock,
   Eye,
   Smartphone,
+  MonitorSmartphone,
   ArrowRight,
   ChevronDown,
   ChevronLeft,
@@ -1004,7 +1005,7 @@ function DownloadSection() {
             <span className="text-sm" style={{ color: "#CBD5E1" }}>Full Backup & Export</span>
           </div>
           <div className="flex items-center justify-center gap-3 p-4 rounded-xl" style={{ backgroundColor: "rgba(30, 41, 59, 0.3)", border: `1px solid ${COLORS.cardBorder}` }} data-testid="badge-platforms">
-            <Smartphone className="w-5 h-5" style={{ color: COLORS.secondary }} />
+            <MonitorSmartphone className="w-5 h-5" style={{ color: COLORS.secondary }} />
             <span className="text-sm" style={{ color: "#CBD5E1" }}>iPhone, iPad & Apple Silicon Mac</span>
           </div>
         </motion.div>
