@@ -216,9 +216,9 @@ function ProblemSection() {
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0} className="text-center">
           <p className="text-2xl sm:text-3xl font-semibold text-white mb-2" data-testid="text-problem-solution-intro">What if there was a better way?</p>
           <p className="text-lg" style={{ color: COLORS.muted }}>
-            Meet your{" "}
+            Meet{" "}
             <span className="font-semibold bg-clip-text text-transparent" style={{ backgroundImage: `linear-gradient(to right, ${COLORS.primary}, ${COLORS.secondary})` }}>
-              private librarian.
+              Sovra.
             </span>
           </p>
         </motion.div>
@@ -227,66 +227,6 @@ function ProblemSection() {
   );
 }
 
-function TriageFlowSection() {
-  return (
-    <section className="relative py-24 px-6" data-testid="section-triage-flow">
-      <div className="max-w-4xl mx-auto">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={stagger} className="flex flex-col items-center">
-          <motion.div variants={fadeUp} custom={0} className="w-full rounded-2xl p-8 sm:p-10 text-center mb-6" style={{ backgroundColor: "#EF44440A", border: `1px solid #EF444420` }} data-testid="card-flow-bombarded">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <SiGmail className="w-7 h-7" style={{ color: "#EA4335" }} />
-              <Mail className="w-7 h-7" style={{ color: "#007AFF" }} />
-              <Server className="w-7 h-7" style={{ color: "#94A3B8" }} />
-              <Paperclip className="w-7 h-7" style={{ color: "#F59E0B" }} />
-              <FileText className="w-7 h-7" style={{ color: "#8B5CF6" }} />
-            </div>
-            <h3 className="text-xl font-bold text-white mb-2">Bombarded</h3>
-            <p className="text-sm" style={{ color: COLORS.muted }}>Emails, attachments, documents, and threads pouring in from every direction</p>
-          </motion.div>
-
-          <motion.div variants={fadeUp} custom={1} className="flex flex-col items-center my-2">
-            <ArrowDown className="w-6 h-6" style={{ color: COLORS.primary }} />
-          </motion.div>
-
-          <motion.div variants={fadeUp} custom={2} className="w-full rounded-2xl p-8 sm:p-10 text-center mb-6" style={{ backgroundColor: `${COLORS.primary}0A`, border: `1px solid ${COLORS.primary}20` }} data-testid="card-flow-triage">
-            <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4" style={{ background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.secondary})` }}>
-              <Brain className="w-7 h-7 text-white" />
-            </div>
-            <h3 className="text-xl font-bold text-white mb-2">AI Triage</h3>
-            <p className="text-sm" style={{ color: COLORS.muted }}>Sovra's on-device AI reads, categorizes, and extracts what matters. Noise is filtered. Signal is preserved.</p>
-          </motion.div>
-
-          <motion.div variants={fadeUp} custom={3} className="flex flex-col items-center my-2">
-            <ArrowDown className="w-6 h-6" style={{ color: COLORS.accent }} />
-          </motion.div>
-
-          <motion.div variants={fadeUp} custom={4} className="w-full rounded-2xl p-8 sm:p-10 text-center" style={{ backgroundColor: `${COLORS.accent}0A`, border: `1px solid ${COLORS.accent}20` }} data-testid="card-flow-organized">
-            <div className="grid grid-cols-4 gap-3 max-w-sm mx-auto mb-5">
-              <div className="flex flex-col items-center gap-2 p-3 rounded-xl" style={{ backgroundColor: `${COLORS.primary}15` }}>
-                <BookOpen className="w-5 h-5" style={{ color: COLORS.primary }} />
-                <span className="text-xs font-medium text-white">Notes</span>
-              </div>
-              <div className="flex flex-col items-center gap-2 p-3 rounded-xl" style={{ backgroundColor: `${COLORS.secondary}15` }}>
-                <ListTodo className="w-5 h-5" style={{ color: COLORS.secondary }} />
-                <span className="text-xs font-medium text-white">Tasks</span>
-              </div>
-              <div className="flex flex-col items-center gap-2 p-3 rounded-xl" style={{ backgroundColor: `${COLORS.accent}15` }}>
-                <CalendarCheck className="w-5 h-5" style={{ color: COLORS.accent }} />
-                <span className="text-xs font-medium text-white">Events</span>
-              </div>
-              <div className="flex flex-col items-center gap-2 p-3 rounded-xl" style={{ backgroundColor: `${COLORS.highlight}15` }}>
-                <FileText className="w-5 h-5" style={{ color: COLORS.highlight }} />
-                <span className="text-xs font-medium text-white">Docs</span>
-              </div>
-            </div>
-            <h3 className="text-xl font-bold text-white mb-2">Organized & Actionable</h3>
-            <p className="text-sm" style={{ color: COLORS.muted }}>Emails become notes. Attachments become documents. Action items become tasks. Inbox reaches zero.</p>
-          </motion.div>
-        </motion.div>
-      </div>
-    </section>
-  );
-}
 
 function HowItWorksSection() {
   const steps = [
@@ -938,7 +878,6 @@ export default function Landing() {
       <Navbar />
       <HeroSection />
       <ProblemSection />
-      <TriageFlowSection />
       <HowItWorksSection />
       <FeaturesSection />
       <ScreenshotsSection />
