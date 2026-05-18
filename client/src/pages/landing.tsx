@@ -152,7 +152,7 @@ function HeroSection() {
         </motion.h1>
 
         <motion.p variants={fadeUp} custom={2} className="text-lg sm:text-xl max-w-2xl mx-auto mb-4 leading-relaxed" style={{ color: COLORS.muted }} data-testid="text-hero-description">
-          Your notes, tasks, documents, and email — all in one private place. Sovra triages Gmail, Apple Mail, and IMAP, captures attachments and documents, and keeps everything at your fingertips.
+          Your notes, tasks, projects, documents, calendars, and email — all in one private place. Sovra triages Gmail, Apple Mail, and IMAP, captures attachments and documents, and keeps everything at your fingertips.
         </motion.p>
 
         <motion.p variants={fadeUp} custom={2.5} className="text-lg sm:text-xl max-w-xl mx-auto mb-10 font-medium" style={{ color: COLORS.text }} data-testid="text-hero-hook">
