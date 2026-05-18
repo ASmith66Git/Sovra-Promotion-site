@@ -139,7 +139,7 @@ function HeroSection() {
 
       <motion.div initial="hidden" animate="visible" variants={stagger} className="relative z-10 max-w-5xl mx-auto px-6 text-center">
         <motion.div variants={fadeUp} custom={0} className="inline-flex flex-col items-center gap-3 mb-8">
-          <img src={sovraLogo} alt="Sovra" className="w-16 h-16 rounded-2xl object-cover" style={{ boxShadow: `0 0 24px ${COLORS.primary}40` }} />
+          <img src="/sovra-logo.png" alt="Sovra" className="w-24 h-24 object-contain" style={{ mixBlendMode: "screen", boxShadow: `0 0 24px ${COLORS.primary}40` }} />
           <span className="text-sm font-medium" style={{ color: COLORS.primary }} data-testid="text-hero-badge">Your Private Second Brain</span>
         </motion.div>
 
