@@ -168,41 +168,6 @@ function HeroSection() {
           </a>
         </motion.div>
 
-        <motion.div variants={fadeUp} custom={4} className="flex flex-wrap items-center justify-center gap-6 text-sm" style={{ color: COLORS.dimmed }}>
-          <div className="flex items-center gap-2" data-testid="text-hero-zero-inbox">
-            <CheckCircle2 className="w-4 h-4" style={{ color: COLORS.accent }} />
-            <span>Zero Inbox</span>
-          </div>
-          <div className="flex items-center gap-2" data-testid="text-hero-on-device">
-            <CheckCircle2 className="w-4 h-4" style={{ color: COLORS.accent }} />
-            <span>On-Device AI</span>
-          </div>
-          <div className="flex items-center gap-2" data-testid="text-hero-documents">
-            <CheckCircle2 className="w-4 h-4" style={{ color: COLORS.accent }} />
-            <span>Rich Notes & Documents</span>
-          </div>
-          <div className="flex items-center gap-2" data-testid="text-hero-privacy">
-            <CheckCircle2 className="w-4 h-4" style={{ color: COLORS.accent }} />
-            <span>Your Data Stays Yours</span>
-          </div>
-        </motion.div>
-
-        <motion.div variants={fadeUp} custom={5} className="mt-12">
-          <div className="flex items-center justify-center gap-8 flex-wrap">
-            <div className="flex items-center gap-2" style={{ color: COLORS.dimmed }}>
-              <SiGmail className="w-5 h-5" style={{ color: "#EA4335" }} />
-              <span className="text-sm">Gmail</span>
-            </div>
-            <div className="flex items-center gap-2" style={{ color: COLORS.dimmed }}>
-              <Mail className="w-5 h-5" style={{ color: "#007AFF" }} />
-              <span className="text-sm">Apple Mail</span>
-            </div>
-            <div className="flex items-center gap-2" style={{ color: COLORS.dimmed }}>
-              <Server className="w-5 h-5" style={{ color: "#94A3B8" }} />
-              <span className="text-sm">IMAP</span>
-            </div>
-          </div>
-        </motion.div>
 
       </motion.div>
     </section>
