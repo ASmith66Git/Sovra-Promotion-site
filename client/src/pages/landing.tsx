@@ -138,8 +138,8 @@ function HeroSection() {
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)", backgroundSize: "40px 40px" }} />
 
       <motion.div initial="hidden" animate="visible" variants={stagger} className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        <motion.div variants={fadeUp} custom={0} className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8" style={{ border: `1px solid ${COLORS.primary}30`, backgroundColor: `${COLORS.primary}0A` }}>
-          <BookOpen className="w-4 h-4" style={{ color: COLORS.primary }} />
+        <motion.div variants={fadeUp} custom={0} className="inline-flex flex-col items-center gap-3 mb-8">
+          <img src={sovraLogo} alt="Sovra" className="w-16 h-16 rounded-2xl object-cover" style={{ boxShadow: `0 0 24px ${COLORS.primary}40` }} />
           <span className="text-sm font-medium" style={{ color: COLORS.primary }} data-testid="text-hero-badge">Your Private Second Brain</span>
         </motion.div>
 
