@@ -109,7 +109,7 @@ function Navbar() {
           <button onClick={() => scrollTo("features")} className="text-sm cursor-pointer bg-transparent border-none" style={{ color: COLORS.muted }} data-testid="link-nav-features">Features</button>
           <button onClick={() => scrollTo("privacy")} className="text-sm cursor-pointer bg-transparent border-none" style={{ color: COLORS.muted }} data-testid="link-nav-privacy">Privacy</button>
           <button onClick={() => scrollTo("download")} className="text-sm cursor-pointer bg-transparent border-none" style={{ color: COLORS.muted }} data-testid="link-nav-download">Download</button>
-          <a href="/philosophy" className="text-sm" style={{ color: COLORS.muted }} data-testid="link-nav-philosophy">Our Philosophy</a>
+
         </div>
         <Button
           size="sm"
