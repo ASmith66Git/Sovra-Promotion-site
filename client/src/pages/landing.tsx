@@ -62,11 +62,10 @@ const fadeUp = {
 };
 
 const wordReveal = {
-  hidden: { opacity: 0, y: 22, filter: "blur(8px)" },
+  hidden: { opacity: 0, y: 24 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: { delay: 0.1 + i * 0.1, duration: 0.55, ease: [0.22, 1, 0.36, 1] },
   }),
 };
