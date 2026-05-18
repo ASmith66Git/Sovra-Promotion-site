@@ -1,3 +1,4 @@
+import { useRef, useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import {
@@ -7,6 +8,9 @@ import {
   Smartphone,
   ArrowRight,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  X,
   Wifi,
   CheckCircle2,
   Zap,
@@ -40,17 +44,16 @@ import {
 import { SiApple, SiGmail } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 const sovraLogo = "/sovra-logo.svg";
-import shotToday from "@assets/IMG_0010_1776776406837.png";
-import shotInbox from "@assets/IMG_0011_1776776406837.png";
-import shotTasks from "@assets/IMG_0012_1776776406837.png";
-import shotProjects from "@assets/IMG_0013_1776776406837.png";
-import shotNotes from "@assets/IMG_0014_1776776406837.png";
-import shotCalendar from "@assets/IMG_0015_1776776406837.png";
-import shotDocuments from "@assets/IMG_0016_1776776406837.png";
-import shotConnected from "@assets/IMG_0017_1776776406837.png";
-import shotIpadTasksTimeline from "@assets/IMG_0044_1776776406837.png";
-import shotIpadProjectsTimeline from "@assets/IMG_0045_1776776406837.png";
-import shotIpadTasksList from "@assets/IMG_0046_1776776406837.png";
+import shot0077 from "@assets/IMG_0077_1779112691140.png";
+import shot0078 from "@assets/IMG_0078_1779112691140.png";
+import shot0079 from "@assets/IMG_0079_1779112691140.png";
+import shot0080 from "@assets/IMG_0080_1779112691140.png";
+import shot0081 from "@assets/IMG_0081_1779112691140.png";
+import shot0082 from "@assets/IMG_0082_1779112691140.png";
+import shot0083 from "@assets/IMG_0083_1779112691140.png";
+import shot0084 from "@assets/IMG_0084_1779112691140.png";
+import shot0085 from "@assets/IMG_0085_1779112691140.png";
+import shot0086 from "@assets/IMG_0086_1779112748093.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -504,22 +507,69 @@ function FeaturesSection() {
   );
 }
 
-type ScreenshotDevice = "iphone" | "ipad";
-const screenshots: { src: string; label: string; caption: string; device: ScreenshotDevice }[] = [
-  { src: shotToday, label: "Today", caption: "Your life at a glance", device: "iphone" },
-  { src: shotInbox, label: "Inbox", caption: "Zero inbox, every time", device: "iphone" },
-  { src: shotTasks, label: "Tasks", caption: "Stay on top of what matters", device: "iphone" },
-  { src: shotProjects, label: "Projects", caption: "Group work into focused projects", device: "iphone" },
-  { src: shotNotes, label: "Notes", caption: "Everything, perfectly organised", device: "iphone" },
-  { src: shotCalendar, label: "Calendar", caption: "Never miss a date", device: "iphone" },
-  { src: shotDocuments, label: "Documents", caption: "Your documents, privately organised", device: "iphone" },
-  { src: shotConnected, label: "Connected Services", caption: "Plug in the tools you already use", device: "iphone" },
-  { src: shotIpadTasksTimeline, label: "Timeline – Tasks", caption: "See your tasks across the week", device: "ipad" },
-  { src: shotIpadProjectsTimeline, label: "Timeline – Projects", caption: "Track projects on a visual timeline", device: "ipad" },
-  { src: shotIpadTasksList, label: "Tasks", caption: "A bigger canvas for getting things done", device: "ipad" },
+const screenshots: { src: string; label: string; caption: string }[] = [
+  { src: shot0077, label: "Today", caption: "Your life at a glance" },
+  { src: shot0078, label: "Inbox Zero", caption: "Zero inbox, every time" },
+  { src: shot0079, label: "Tasks", caption: "Stay on top of what matters" },
+  { src: shot0080, label: "Projects", caption: "Group work into focused projects" },
+  { src: shot0081, label: "Notes", caption: "Everything, perfectly organised" },
+  { src: shot0082, label: "Calendar", caption: "Never miss a date" },
+  { src: shot0083, label: "Documents", caption: "Your documents, privately organised" },
+  { src: shot0084, label: "Ask Sovra", caption: "Your private AI assistant" },
+  { src: shot0085, label: "Connected Services", caption: "Plug in the tools you already use" },
+  { src: shot0086, label: "Triage", caption: "AI sorts your email instantly" },
 ];
 
 function ScreenshotsSection() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const frameWidth = 200;
+  const frameHeight = 433;
+  const gap = 24;
+
+  const updateActiveIndex = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const center = el.scrollLeft + el.clientWidth / 2;
+    const cardWidth = frameWidth + gap;
+    const idx = Math.round((center - frameWidth / 2) / cardWidth);
+    setActiveIndex(Math.max(0, Math.min(idx, screenshots.length - 1)));
+  }, []);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.addEventListener("scroll", updateActiveIndex, { passive: true });
+    return () => el.removeEventListener("scroll", updateActiveIndex);
+  }, [updateActiveIndex]);
+
+  const scrollToIndex = (i: number) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const cardWidth = frameWidth + gap;
+    const offset = i * cardWidth - (el.clientWidth - frameWidth) / 2;
+    el.scrollTo({ left: offset, behavior: "smooth" });
+  };
+
+  const closeLightbox = useCallback(() => setLightboxIndex(null), []);
+  const prevLightbox = useCallback(() =>
+    setLightboxIndex(i => (i !== null ? (i - 1 + screenshots.length) % screenshots.length : null)), []);
+  const nextLightbox = useCallback(() =>
+    setLightboxIndex(i => (i !== null ? (i + 1) % screenshots.length : null)), []);
+
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") prevLightbox();
+      if (e.key === "ArrowRight") nextLightbox();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [lightboxIndex, closeLightbox, prevLightbox, nextLightbox]);
+
   return (
     <section className="relative py-32 px-6 overflow-hidden" data-testid="section-screenshots">
       <div className="absolute inset-0 overflow-hidden">
@@ -545,79 +595,117 @@ function ScreenshotsSection() {
         </motion.div>
 
         <motion.div
+          ref={scrollRef}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          className="flex overflow-x-auto pb-6 snap-x snap-mandatory"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none", gap: `${gap}px` }}
           data-testid="screenshots-scroll"
         >
-          {screenshots.map((shot, i) => {
-            const isIpad = shot.device === "ipad";
-            const frameWidth = isIpad ? 360 : 200;
-            const frameHeight = isIpad ? 250 : 433;
-            const radius = isIpad ? "1.25rem" : "2rem";
-            return (
-              <motion.div
-                key={shot.label + i}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                className="flex-shrink-0 snap-center flex flex-col items-center"
-                style={{ width: `${frameWidth}px` }}
-                data-testid={`screenshot-${i}`}
+          {screenshots.map((shot, i) => (
+            <motion.div
+              key={shot.label + i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="flex-shrink-0 snap-center flex flex-col items-center cursor-pointer"
+              style={{ width: `${frameWidth}px` }}
+              onClick={() => setLightboxIndex(i)}
+              data-testid={`screenshot-${i}`}
+            >
+              <div
+                className="relative overflow-hidden mb-4 transition-transform duration-200 hover:scale-[1.03]"
+                style={{
+                  width: `${frameWidth}px`,
+                  height: `${frameHeight}px`,
+                  borderRadius: "2rem",
+                  border: `2px solid rgba(255,255,255,0.1)`,
+                  boxShadow: `0 0 0 1px rgba(255,255,255,0.05), 0 24px 48px rgba(0,0,0,0.5)`,
+                }}
               >
-                <div
-                  className="relative overflow-hidden mb-4"
-                  style={{
-                    width: `${frameWidth}px`,
-                    height: `${frameHeight}px`,
-                    borderRadius: radius,
-                    border: `2px solid rgba(255,255,255,0.1)`,
-                    boxShadow: `0 0 0 1px rgba(255,255,255,0.05), 0 24px 48px rgba(0,0,0,0.5)`,
-                  }}
-                >
-                  <img
-                    src={shot.src}
-                    alt={shot.label}
-                    className={`w-full h-full ${isIpad ? "object-contain" : "object-cover object-top"}`}
-                  />
-                  <div
-                    className="absolute inset-0"
-                    style={{ borderRadius: radius, boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.08)" }}
-                  />
-                  {isIpad && (
-                    <span
-                      className="absolute top-3 left-3 px-2 py-0.5 rounded-full text-[10px] font-semibold tracking-wide uppercase"
-                      style={{
-                        backgroundColor: `${COLORS.highlight}20`,
-                        color: COLORS.highlight,
-                        border: `1px solid ${COLORS.highlight}40`,
-                        backdropFilter: "blur(6px)",
-                      }}
-                      data-testid={`badge-ipad-${i}`}
-                    >
-                      iPad
-                    </span>
-                  )}
-                </div>
-                <p className="text-sm font-semibold text-white mb-1" data-testid={`text-screenshot-label-${i}`}>
-                  {isIpad ? `iPad · ${shot.label}` : shot.label}
-                </p>
-                <p className="text-xs text-center" style={{ color: COLORS.dimmed }} data-testid={`text-screenshot-caption-${i}`}>{shot.caption}</p>
-              </motion.div>
-            );
-          })}
+                <img src={shot.src} alt={shot.label} className="w-full h-full object-cover object-top" />
+                <div className="absolute inset-0" style={{ borderRadius: "2rem", boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.08)" }} />
+              </div>
+              <p className="text-sm font-semibold text-white mb-1" data-testid={`text-screenshot-label-${i}`}>{shot.label}</p>
+              <p className="text-xs text-center" style={{ color: COLORS.dimmed }} data-testid={`text-screenshot-caption-${i}`}>{shot.caption}</p>
+            </motion.div>
+          ))}
         </motion.div>
 
         <div className="flex justify-center mt-6 gap-2">
           {screenshots.map((_, i) => (
-            <div key={i} className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: i === 0 ? COLORS.primary : COLORS.cardBorder }} />
+            <button
+              key={i}
+              onClick={() => scrollToIndex(i)}
+              className="rounded-full transition-all duration-300 focus:outline-none"
+              style={{
+                width: i === activeIndex ? "20px" : "6px",
+                height: "6px",
+                backgroundColor: i === activeIndex ? COLORS.primary : COLORS.cardBorder,
+              }}
+              aria-label={`Go to screenshot ${i + 1}`}
+              data-testid={`dot-screenshot-${i}`}
+            />
           ))}
         </div>
       </div>
+
+      {lightboxIndex !== null && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center"
+          style={{ backgroundColor: "rgba(0,0,0,0.92)", backdropFilter: "blur(8px)" }}
+          onClick={closeLightbox}
+          data-testid="lightbox-overlay"
+        >
+          <button
+            className="absolute top-4 right-4 p-2 rounded-full text-white hover:bg-white/10 transition-colors"
+            onClick={closeLightbox}
+            aria-label="Close lightbox"
+            data-testid="button-lightbox-close"
+          >
+            <X className="w-6 h-6" />
+          </button>
+
+          <button
+            className="absolute left-4 p-3 rounded-full text-white hover:bg-white/10 transition-colors"
+            onClick={(e) => { e.stopPropagation(); prevLightbox(); }}
+            aria-label="Previous screenshot"
+            data-testid="button-lightbox-prev"
+          >
+            <ChevronLeft className="w-7 h-7" />
+          </button>
+
+          <div
+            className="flex flex-col items-center gap-4 px-16"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={screenshots[lightboxIndex].src}
+              alt={screenshots[lightboxIndex].label}
+              className="max-h-[80vh] max-w-[90vw] object-contain rounded-3xl"
+              style={{ boxShadow: "0 32px 64px rgba(0,0,0,0.6)" }}
+              data-testid="lightbox-image"
+            />
+            <div className="text-center">
+              <p className="text-white font-semibold text-lg" data-testid="lightbox-label">{screenshots[lightboxIndex].label}</p>
+              <p className="text-sm mt-1" style={{ color: COLORS.muted }} data-testid="lightbox-caption">{screenshots[lightboxIndex].caption}</p>
+            </div>
+            <p className="text-xs" style={{ color: COLORS.dimmed }}>{lightboxIndex + 1} / {screenshots.length}</p>
+          </div>
+
+          <button
+            className="absolute right-4 p-3 rounded-full text-white hover:bg-white/10 transition-colors"
+            onClick={(e) => { e.stopPropagation(); nextLightbox(); }}
+            aria-label="Next screenshot"
+            data-testid="button-lightbox-next"
+          >
+            <ChevronRight className="w-7 h-7" />
+          </button>
+        </div>
+      )}
     </section>
   );
 }
