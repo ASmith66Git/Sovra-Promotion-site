@@ -29,6 +29,13 @@ import {
   Paperclip,
   PenLine,
   Server,
+  FolderOpen,
+  GanttChart,
+  Image,
+  Pencil,
+  CalendarDays,
+  Share2,
+  ScanText,
 } from "lucide-react";
 import { SiApple, SiGmail } from "react-icons/si";
 import { Button } from "@/components/ui/button";
@@ -242,44 +249,86 @@ function ProblemSection() {
 
 
 function HowItWorksSection() {
-  const steps = [
+  const sections = [
     {
       icon: Mail,
-      title: "Connect Your Email",
-      description: "Link your Gmail, Apple Mail, and IMAP accounts. Sovra uses secure APIs to pull in your emails and attachments without storing them on external servers.",
+      badge: "Email",
+      title: "Zero Inbox. Every Time.",
+      description: "Connect Gmail, Apple Mail, or any IMAP account and let Sovra's on-device AI read every message the moment it arrives. Important emails surface as notes — AI formatted and ready to read. Action items become tasks. Meeting requests become events. Attachments are captured and filed automatically. Everything else is batched, summarised, and silenced. Your inbox hits zero and stays there.",
+      bullets: [
+        { icon: SiGmail, label: "Gmail, Apple Mail & IMAP support" },
+        { icon: Brain, label: "On-device AI triage — nothing leaves your phone" },
+        { icon: Paperclip, label: "Attachments captured and saved on-device automatically" },
+        { icon: ScanText, label: "AI summarises long email threads into clean notes" },
+        { icon: BellOff, label: "Distraction emails batched into daily digests" },
+      ],
       color: COLORS.highlight,
-      badge: "Step 1",
     },
     {
-      icon: Brain,
-      title: "AI Reads & Triages",
-      description: "Your on-device AI librarian reads every message, identifies what's important, and categorizes it. No cloud processing. No data harvesting.",
+      icon: ListTodo,
+      badge: "Tasks & Projects",
+      title: "From Email to Done.",
+      description: "Sovra spots action items buried in your emails and turns them into tasks instantly — complete with deadlines, context, and the original message attached. Group tasks into projects, track progress, and see everything laid out in a Gantt chart. Whether it's a single to-do or a multi-week delivery, nothing slips through.",
+      bullets: [
+        { icon: Mail, label: "AI extracts tasks directly from emails" },
+        { icon: FolderOpen, label: "Organise tasks into projects with milestones" },
+        { icon: GanttChart, label: "Gantt chart view for project timelines" },
+        { icon: Zap, label: "Due dates, priorities & reminders" },
+        { icon: WifiOff, label: "Fully on-device — works offline" },
+      ],
       color: COLORS.primary,
-      badge: "Step 2",
+    },
+    {
+      icon: FileText,
+      badge: "Documents",
+      title: "Every Document. Captured, Summarised, Yours.",
+      description: "Every PDF, contract, invoice, spreadsheet, or image that arrives in your inbox — or is shared from any other app via the iOS share sheet — is captured and saved on your device. Sovra's AI reads and summarises every document so you get the key points instantly, and indexes the full content so you can find anything by what's inside it. No cloud uploads. No third-party storage.",
+      bullets: [
+        { icon: Paperclip, label: "Auto-captures email attachments on arrival" },
+        { icon: Share2, label: "Receive docs from any app via the iOS share sheet" },
+        { icon: Brain, label: "AI summarises every document automatically" },
+        { icon: ScanText, label: "Full-text AI search across all content" },
+        { icon: CloudOff, label: "Stored entirely on-device — never in the cloud" },
+      ],
+      color: COLORS.secondary,
+    },
+    {
+      icon: CalendarDays,
+      badge: "Calendars",
+      title: "Your Day, Already Planned.",
+      description: "Sovra reads your emails for dates, meeting requests, deadlines, and commitments and adds them to your calendar before you even think to do it. See your full day and week in a clean agenda view alongside your tasks — so you always know what's coming and when.",
+      bullets: [
+        { icon: Brain, label: "AI detects dates and events in emails" },
+        { icon: CalendarCheck, label: "Creates calendar events automatically" },
+        { icon: ListTodo, label: "Agenda view with tasks and events together" },
+        { icon: Zap, label: "Never miss a meeting or deadline" },
+        { icon: RefreshCw, label: "Syncs across your iPhone and iPad" },
+      ],
+      color: COLORS.accent,
     },
     {
       icon: BookOpen,
-      title: "Notes, Tasks & Events Appear",
-      description: "Stop organizing. Start capturing. Sovra transforms conversations into structured notes, actionable tasks with deadlines, and calendar events.",
-      color: COLORS.secondary,
-      badge: "Step 3",
-    },
-    {
-      icon: Inbox,
-      title: "Zero Inbox. Zero Distractions.",
-      description: "Every message is processed and filed. Distractions are batched and summarized. Your inbox is clear. Your mind is free. You focus on what matters.",
-      color: COLORS.accent,
-      badge: "Step 4",
+      badge: "Notes",
+      title: "Capture Everything. In Any Form.",
+      description: "A Sovra note isn't just text. Write, sketch, annotate a photo, or mix all three in one place. Notes created from emails are automatically formatted by the AI — headings, bullet points, key facts pulled out — so they're ready to read the moment they appear. Capture a thought in seconds; Sovra makes it look like you spent minutes.",
+      bullets: [
+        { icon: Brain, label: "AI auto-formats notes from emails instantly" },
+        { icon: Image, label: "Add photos, sketches, and drawings to any note" },
+        { icon: Pencil, label: "Annotate images with markup tools" },
+        { icon: ScanText, label: "Fully searchable — find anything instantly" },
+        { icon: FolderOpen, label: "Link notes to tasks, projects, and documents" },
+      ],
+      color: "#A78BFA",
     },
   ];
 
   return (
     <section id="how-it-works" className="relative pt-12 pb-32 px-6" data-testid="section-how-it-works">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={stagger} className="text-center mb-20">
           <motion.div variants={fadeUp} custom={0} className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ border: `1px solid ${COLORS.highlight}30`, backgroundColor: `${COLORS.highlight}0A` }}>
             <Zap className="w-4 h-4" style={{ color: COLORS.highlight }} />
-            <span className="text-sm font-medium" style={{ color: COLORS.highlight }}>How It Works</span>
+            <span className="text-sm font-medium" style={{ color: COLORS.highlight }}>Everything in One Place</span>
           </motion.div>
           <motion.h2 variants={fadeUp} custom={1} className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight mb-6" data-testid="text-how-title">
             Your private librarian{" "}
@@ -292,21 +341,30 @@ function HowItWorksSection() {
           </motion.p>
         </motion.div>
 
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={stagger} className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {steps.map((step, i) => (
-            <motion.div key={step.title} variants={fadeUp} custom={i} className="relative rounded-2xl p-8 transition-all duration-300" style={{ backgroundColor: COLORS.cardBg, border: `1px solid ${COLORS.cardBorder}`, backdropFilter: "blur(12px)" }} data-testid={`card-step-${i}`}>
-              <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${step.color}15` }}>
-                    <step.icon className="w-6 h-6" style={{ color: step.color }} />
-                  </div>
-                  <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full" style={{ color: step.color, backgroundColor: `${step.color}15` }} data-testid={`text-step-badge-${i}`}>
-                    {step.badge}
-                  </span>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={stagger} className="flex flex-col gap-8">
+          {sections.map((sec, i) => (
+            <motion.div key={sec.badge} variants={fadeUp} custom={i} className="relative rounded-2xl p-8 sm:p-10 overflow-hidden" style={{ backgroundColor: COLORS.cardBg, border: `1px solid ${COLORS.cardBorder}`, backdropFilter: "blur(12px)" }} data-testid={`card-section-${i}`}>
+              <div className="absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl" style={{ backgroundColor: sec.color }} />
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${sec.color}18` }}>
+                  <sec.icon className="w-6 h-6" style={{ color: sec.color }} />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3" data-testid={`text-step-title-${i}`}>{step.title}</h3>
-                <p className="leading-relaxed" style={{ color: COLORS.muted }} data-testid={`text-step-desc-${i}`}>{step.description}</p>
+                <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ color: sec.color, backgroundColor: `${sec.color}15` }} data-testid={`text-section-badge-${i}`}>
+                  {sec.badge}
+                </span>
               </div>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 tracking-tight" data-testid={`text-section-title-${i}`}>{sec.title}</h3>
+              <p className="text-base leading-relaxed mb-8" style={{ color: COLORS.muted }} data-testid={`text-section-desc-${i}`}>{sec.description}</p>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {sec.bullets.map((b, j) => (
+                  <li key={j} className="flex items-center gap-3">
+                    <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${sec.color}15` }}>
+                      <b.icon className="w-3.5 h-3.5" style={{ color: sec.color }} />
+                    </div>
+                    <span className="text-sm font-medium" style={{ color: COLORS.muted }}>{b.label}</span>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </motion.div>
