@@ -176,7 +176,7 @@ function HeroSection() {
 
 function ProblemSection() {
   return (
-    <section id="problem" className="relative py-32 px-6" data-testid="section-problem">
+    <section id="problem" className="relative pt-32 pb-12 px-6" data-testid="section-problem">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px" style={{ background: `linear-gradient(to right, transparent, ${COLORS.primary}33, transparent)` }} />
       </div>
@@ -261,7 +261,7 @@ function HowItWorksSection() {
   ];
 
   return (
-    <section id="how-it-works" className="relative py-32 px-6" data-testid="section-how-it-works">
+    <section id="how-it-works" className="relative pt-12 pb-32 px-6" data-testid="section-how-it-works">
       <div className="max-w-7xl mx-auto">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={stagger} className="text-center mb-20">
           <motion.div variants={fadeUp} custom={0} className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ border: `1px solid ${COLORS.highlight}30`, backgroundColor: `${COLORS.highlight}0A` }}>
