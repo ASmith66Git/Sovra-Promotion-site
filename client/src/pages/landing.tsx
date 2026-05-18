@@ -253,7 +253,7 @@ function ProblemSection() {
           <p className="text-lg" style={{ color: COLORS.muted }}>
             Meet your{" "}
             <span className="font-semibold bg-clip-text text-transparent" style={{ backgroundImage: `linear-gradient(to right, ${COLORS.primary}, ${COLORS.secondary})` }}>
-              secret librarian.
+              private librarian.
             </span>
           </p>
         </motion.div>
@@ -364,7 +364,7 @@ function HowItWorksSection() {
             <span className="text-sm font-medium" style={{ color: COLORS.highlight }}>How It Works</span>
           </motion.div>
           <motion.h2 variants={fadeUp} custom={1} className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight mb-6" data-testid="text-how-title">
-            Your secret librarian{" "}
+            Your private librarian{" "}
             <span className="bg-clip-text text-transparent" style={{ backgroundImage: `linear-gradient(to right, ${COLORS.highlight}, ${COLORS.accent})` }}>
               at work
             </span>
@@ -407,7 +407,7 @@ const features = [
   },
   {
     icon: Brain,
-    title: "The Secret Librarian",
+    title: "The Private Librarian",
     subtitle: "The filing cabinet is dead.",
     description: "Folders, tags, and notebooks all have the same flaw — you have to know where to put things before you know why they matter. Sovra buries the filing cabinet. Just capture the information; the AI organises, connects, and surfaces it exactly when you need it.",
     color: COLORS.secondary,
