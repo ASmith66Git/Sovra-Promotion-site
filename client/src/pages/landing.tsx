@@ -204,11 +204,6 @@ function HeroSection() {
           </div>
         </motion.div>
 
-        <motion.div variants={fadeUp} custom={6} className="mt-10">
-          <button onClick={() => document.getElementById("problem")?.scrollIntoView({ behavior: "smooth" })} className="inline-flex items-center justify-center cursor-pointer bg-transparent border-none" data-testid="button-scroll-problem">
-            <ChevronDown className="w-6 h-6 animate-bounce" style={{ color: COLORS.dimmed }} />
-          </button>
-        </motion.div>
       </motion.div>
     </section>
   );
