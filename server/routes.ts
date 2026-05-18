@@ -2,9 +2,18 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { Resend } from "resend";
+import rateLimit from "express-rate-limit";
 import { supportFormSchema } from "../shared/schema";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+const supportRateLimit = rateLimit({
+  windowMs: 60 * 60 * 1000,
+  max: 5,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { message: "Too many support requests. Please try again later." },
+});
 
 function escapeHtml(str: string): string {
   return str
@@ -19,7 +28,7 @@ export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
-  app.post("/api/support", async (req, res) => {
+  app.post("/api/support", supportRateLimit, async (req, res) => {
     const parsed = supportFormSchema.safeParse(req.body);
     if (!parsed.success) {
       return res.status(400).json({ message: "Invalid form data", errors: parsed.error.flatten().fieldErrors });
