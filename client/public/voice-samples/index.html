@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sovra — Voice Audition</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0F172A;
+      color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    .header { text-align: center; margin-bottom: 48px; }
+    .header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
+    .header p { color: #94A3B8; font-size: 1rem; max-width: 520px; margin: 0 auto; line-height: 1.6; }
+    .script-box {
+      background: #1E293B;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 20px 24px;
+      max-width: 640px;
+      margin: 0 auto 48px;
+      font-size: 0.9rem;
+      color: #CBD5E1;
+      line-height: 1.7;
+      font-style: italic;
+    }
+    .script-box strong { color: #F8FAFC; font-style: normal; display: block; margin-bottom: 8px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #6366F1; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .card {
+      background: #1E293B;
+      border: 1px solid #334155;
+      border-radius: 14px;
+      padding: 20px;
+      transition: border-color 0.2s;
+    }
+    .card:hover { border-color: #6366F1; }
+    .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+    .voice-name { font-size: 1.1rem; font-weight: 600; text-transform: capitalize; }
+    .badge {
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-weight: 500;
+    }
+    .badge-neutral { background: #334155; color: #94A3B8; }
+    .badge-male   { background: #1E3A5F; color: #60A5FA; }
+    .badge-female { background: #3B1A5C; color: #C084FC; }
+    .badge-british { background: #14532D; color: #4ADE80; }
+    .desc { font-size: 0.8rem; color: #64748B; margin-bottom: 14px; line-height: 1.4; }
+    audio {
+      width: 100%;
+      height: 36px;
+      accent-color: #6366F1;
+    }
+    audio::-webkit-media-controls-panel { background: #0F172A; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Sovra Voice Audition</h1>
+    <p>All 10 OpenAI voices reading the same sample script. Pick your favourite — then let me know and I'll use it for the video.</p>
+  </div>
+
+  <div class="script-box">
+    <strong>Sample script used</strong>
+    Meet Sovra — your private AI second brain. Your notes, tasks, and emails, all organised on your device. Nothing in the cloud. Everything under your control. Download Sovra today, only on the App Store.
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-header">
+        <span class="voice-name">Alloy</span>
+        <span class="badge badge-neutral">Neutral</span>
+      </div>
+      <p class="desc">Balanced, clear American accent. Versatile and professional.</p>
+      <audio controls src="alloy.mp3"></audio>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="voice-name">Echo</span>
+        <span class="badge badge-male">Male</span>
+      </div>
+      <p class="desc">Deep, authoritative male voice. Calm and confident.</p>
+      <audio controls src="echo.mp3"></audio>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="voice-name">Fable</span>
+        <span class="badge badge-british">British Male</span>
+      </div>
+      <p class="desc">Refined British accent. Warm and cinematic — used in the existing 60s video.</p>
+      <audio controls src="fable.mp3"></audio>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="voice-name">Onyx</span>
+        <span class="badge badge-male">Male</span>
+      </div>
+      <p class="desc">Rich, resonant male voice. Deep and polished — used in the existing 30s video.</p>
+      <audio controls src="onyx.mp3"></audio>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="voice-name">Nova</span>
+        <span class="badge badge-female">Female</span>
+      </div>
+      <p class="desc">Friendly, energetic female voice. Clear and engaging.</p>
+      <audio controls src="nova.mp3"></audio>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="voice-name">Shimmer</span>
+        <span class="badge badge-female">Female</span>
+      </div>
+      <p class="desc">Bright, expressive female voice. Warm and approachable.</p>
+      <audio controls src="shimmer.mp3"></audio>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="voice-name">Ash</span>
+        <span class="badge badge-neutral">Neutral</span>
+      </div>
+      <p class="desc">Smooth, modern neutral voice. Measured and trustworthy.</p>
+      <audio controls src="ash.mp3"></audio>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="voice-name">Coral</span>
+        <span class="badge badge-female">Female</span>
+      </div>
+      <p class="desc">Gentle, conversational female voice. Natural and reassuring.</p>
+      <audio controls src="coral.mp3"></audio>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="voice-name">Sage</span>
+        <span class="badge badge-neutral">Neutral</span>
+      </div>
+      <p class="desc">Calm, thoughtful neutral voice. Considered and clear.</p>
+      <audio controls src="sage.mp3"></audio>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="voice-name">Verse</span>
+        <span class="badge badge-neutral">Neutral</span>
+      </div>
+      <p class="desc">Expressive, dynamic neutral voice. Great for storytelling.</p>
+      <audio controls src="verse.mp3"></audio>
+    </div>
+  </div>
+</body>
+</html>
