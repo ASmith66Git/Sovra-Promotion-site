@@ -23,12 +23,12 @@ export default function VideoPlan() {
       <Section num="02" title="Script" status="DRAFT" statusColor="#F59E0B">
         <Note>This is the proposed 60-second voiceover script. Lines in [brackets] indicate timing markers, not spoken words. Review and edit as needed before rendering.</Note>
         <ScriptBlock lines={[
-          { time: "0:00–0:07", line: "Your apps are loud. Your inbox never sleeps. And your brain is paying the price." },
-          { time: "0:07–0:14", line: "Meet Sovra — your private AI second brain, built for the way modern life actually works." },
-          { time: "0:14–0:24", line: "Privacy isn't a feature. It's a stance. Sovra runs entirely on your device — zero-knowledge, end-to-end encrypted, with on-device AI. Your data never leaves your phone, and we couldn't see it even if we tried." },
-          { time: "0:24–0:36", line: "Connect Gmail, Apple Mail, and IMAP, and Sovra triages the lot. Every message becomes notes, tasks, and events — automatically. Inbox zero, every single day, without lifting a finger." },
-          { time: "0:36–0:47", line: "Speak it, snap it, type it, sketch it — Sovra captures anything. And the secret librarian files it all for you. No folders. No tags. Just ask, and it's there." },
-          { time: "0:47–0:60", line: "Sovra — your notes, your tasks, your inbox. Completely yours. Stop organising. Start living. Download Sovra today, only on the App Store." },
+          { time: "0:00–0:07", line: "Your life runs through dozens of apps. Emails, attachments, files — all scattered. Your brain is full." },
+          { time: "0:07–0:13", line: "Meet Sovra — your private AI second brain. Built to capture anything. Organise everything." },
+          { time: "0:13–0:24", line: "Connect Gmail, Apple Mail, and IMAP. Share anything in from any app on your phone. Attachments are captured automatically as documents. However information finds you — Sovra catches it." },
+          { time: "0:24–0:40", line: "AI turns emails into notes, tasks, and calendar events — automatically. Group tasks into projects. Visualise your timelines on Gantt charts. Your documents, notes, and calendar: all searchable, all linked." },
+          { time: "0:40–0:50", line: "And it all runs on your device. On-device AI, zero-knowledge encryption, nothing in the cloud. Your data stays yours — completely and permanently." },
+          { time: "0:50–1:00", line: "Sovra. Your notes, tasks, projects, documents, and inbox. Stop organising. Start living. Only on the App Store." },
         ]} />
       </Section>
 
@@ -36,57 +36,60 @@ export default function VideoPlan() {
       <Section num="03" title="Visual Content" status="PROPOSED" statusColor="#94A3B8">
         <Note>Scene-by-scene breakdown of what appears on screen. Currently based on the existing 60s Remotion composition. Propose changes here before re-rendering.</Note>
 
-        <Scene n={1} title="Hook" timing="0:00 – 0:07" vo="Your apps are loud. Your inbox never sleeps. And your brain is paying the price.">
+        <Scene n={1} title="Hook" timing="0:00 – 0:07" vo="Your life runs through dozens of apps. Emails, attachments, files — all scattered. Your brain is full.">
           <ul style={listStyle}>
-            <li>Near-black background fades in with a slow dark noise texture</li>
-            <li>Notification icons (Gmail, messages, calendar, reminders) rapidly stack up from the edges — overwhelming the frame</li>
-            <li>Title text animates in word-by-word: "Your apps are loud."</li>
-            <li>Slight camera shake / vibration effect to convey anxiety</li>
+            <li>Near-black background fades in with dark noise texture</li>
+            <li>App icons cascade across the frame: Gmail, Files, Safari, Messages, Calendar, Notes — overlapping and chaotic</li>
+            <li>Title text punches in word-by-word: "Your life runs through dozens of apps."</li>
+            <li>Screen shakes subtly on "scattered" — conveying overwhelm</li>
           </ul>
         </Scene>
 
-        <Scene n={2} title="Reveal" timing="0:07 – 0:14" vo="Meet Sovra — your private AI second brain, built for the way modern life actually works.">
+        <Scene n={2} title="Reveal" timing="0:07 – 0:13" vo="Meet Sovra — your private AI second brain. Built to capture anything. Organise everything.">
           <ul style={listStyle}>
-            <li>Notifications dissolve. Hard cut to silence and dark space.</li>
-            <li>Sovra neural logo fades in at centre with an indigo glow pulse</li>
-            <li>"Meet Sovra" appears below — clean, large, white typeface</li>
-            <li>Tagline "Your Private Second Brain" fades up beneath</li>
+            <li>App icons dissolve. Hard cut to silence and dark space.</li>
+            <li>Sovra neural logo fades in at centre with a soft indigo glow pulse</li>
+            <li>"Meet Sovra" appears below in large white typeface</li>
+            <li>"Your Private Second Brain" fades up beneath it</li>
           </ul>
         </Scene>
 
-        <Scene n={3} title="Privacy" timing="0:14 – 0:24" vo="Privacy isn't a feature. It's a stance. Sovra runs entirely on your device…">
+        <Scene n={3} title="Inputs" timing="0:13 – 0:24" vo="Connect Gmail, Apple Mail, and IMAP. Share anything in from any app on your phone. Attachments are captured automatically as documents.">
           <ul style={listStyle}>
-            <li>Abstract "data orb" — a glowing sphere of particles — locked inside an iPhone silhouette</li>
-            <li>Key privacy pillars appear as pill badges, one by one: "On-Device AI", "Zero-Knowledge", "AES-256 Encrypted", "No Cloud Storage"</li>
-            <li>Lock icon pulses as VO says "your data never leaves your phone"</li>
-            <li>Colour palette shifts to deep green (#10B981) to reinforce trust</li>
+            <li>Left column: Gmail, Apple Mail, IMAP logos slide in one by one</li>
+            <li>Middle row: iOS Share Sheet icon + arrow pointing into Sovra — labelled "Share from any app"</li>
+            <li>Right column: Paperclip icon → Document card — labelled "Attachments → Documents"</li>
+            <li>All three flows converge to a central Sovra node with a particle-trail animation</li>
+            <li>Caption appears: "However information finds you — Sovra catches it."</li>
           </ul>
         </Scene>
 
-        <Scene n={4} title="Triage" timing="0:24 – 0:36" vo="Connect Gmail, Apple Mail, and IMAP, and Sovra triages the lot…">
+        <Scene n={4} title="Organise" timing="0:24 – 0:40" vo="AI turns emails into notes, tasks, and calendar events — automatically. Group tasks into projects. Visualise your timelines on Gantt charts.">
           <ul style={listStyle}>
-            <li>Three email source logos (Gmail red, Apple Mail blue, generic IMAP) slide in from left</li>
-            <li>Arrow flow animation → "AI Triage" box in centre (Sovra indigo)</li>
-            <li>Output column on right: Notes card, Tasks card, Events card — each sliding in as the VO mentions them</li>
-            <li>iPhone mockup shows Inbox Zero state: green envelope + "Every email has been dealt with."</li>
+            <li>Animated flow: Email → AI brain → splits into three output cards (Note, Task, Event) — each labelled</li>
+            <li>Task card expands to show tasks grouped inside a Project folder</li>
+            <li>Project expands to reveal a Gantt chart timeline — bars sliding in left to right</li>
+            <li>iPhone mockup cycles: Tasks screen → Projects screen → Gantt Chart screen</li>
+            <li>Caption: "All searchable. All linked."</li>
           </ul>
         </Scene>
 
-        <Scene n={5} title="Capture / Secret Librarian" timing="0:36 – 0:47" vo="Speak it, snap it, type it, sketch it — Sovra captures anything…">
+        <Scene n={5} title="Privacy" timing="0:40 – 0:50" vo="And it all runs on your device. On-device AI, zero-knowledge encryption, nothing in the cloud. Your data stays yours — completely and permanently.">
           <ul style={listStyle}>
-            <li>Four capture icons animate in on a 2×2 grid: microphone (speak), camera (snap), keyboard (type), pencil (sketch)</li>
-            <li>Each taps into a central "librarian" node — particle trail effect</li>
-            <li>iPhone mockup shows Notes list view with AI-generated notes</li>
-            <li>VO "just ask, and it's there" → Ask Sovra screen slides in</li>
+            <li>iPhone silhouette with a glowing lock icon at its centre</li>
+            <li>Privacy pill badges appear one by one: "On-Device AI", "Zero-Knowledge", "AES-256", "No Cloud"</li>
+            <li>Colour palette shifts to trust green (#10B981) on "your data stays yours"</li>
+            <li>Lock pulses and seals shut on the final beat</li>
           </ul>
         </Scene>
 
-        <Scene n={6} title="Close" timing="0:47 – 1:00" vo="Sovra — your notes, your tasks, your inbox. Completely yours. Stop organising. Start living.">
+        <Scene n={6} title="Close" timing="0:50 – 1:00" vo="Sovra. Your notes, tasks, projects, documents, and inbox. Stop organising. Start living. Only on the App Store.">
           <ul style={listStyle}>
-            <li>Today dashboard screenshot fills the frame in an iPhone bezel</li>
-            <li>Final tagline builds word-by-word: "Stop organising. Start living." in the hero gradient (indigo → purple)</li>
-            <li>App Store badge fades in at bottom</li>
-            <li>Sovra logo + "Leviathan Systems" lockup appears as card fades to near-black</li>
+            <li>Today dashboard screenshot fills the frame in an iPhone bezel — showing the breadth of the app</li>
+            <li>Feature list fades in beside it: Notes · Tasks · Projects · Gantt · Documents · Calendar · Inbox Zero · Ask Sovra</li>
+            <li>Tagline builds: "Stop organising. Start living." in indigo → purple gradient</li>
+            <li>App Store badge fades in, Sovra logo lockup + "Leviathan Systems" appears beneath</li>
+            <li>Fade to near-black</li>
           </ul>
         </Scene>
 
@@ -101,6 +104,7 @@ export default function VideoPlan() {
       <Section num="04" title="Decisions Log" status="LIVE" statusColor="#10B981">
         <Note>Every confirmed decision is recorded here so the plan stays current across sessions.</Note>
         <Decision date="2026-05-20" item="Voice style" decision="Soft, warm, friendly neutral English male — BBC presenter register. Guided samples generated for Ash, Echo, Fable." />
+        <Decision date="2026-05-20" item="Script v2" decision="Script expanded to cover all input sources (email, share sheet, attachments→docs), full output depth (notes, tasks, projects, Gantt charts, events), and privacy — then CTA." />
         <Decision date="2026-05-20" item="Duration" decision="60 seconds target." />
         <Decision date="2026-05-20" item="Aspect ratio" decision="1920×1080 (landscape) for the website embed. Possible future 9:16 for social." />
         <Decision date="2026-05-20" item="Screenshots" decision="Real device iPhone screenshots used throughout. 8 confirmed screenshots available." />
