@@ -11,6 +11,7 @@ import Support from "@/pages/support";
 import Privacy from "@/pages/privacy";
 import Terms from "@/pages/terms";
 import VoiceSamples from "@/pages/voice-samples";
+import VideoPlan from "@/pages/video-plan";
 
 function Router() {
   return (
@@ -22,6 +23,7 @@ function Router() {
       <Route path="/privacy" component={Privacy} />
       <Route path="/terms" component={Terms} />
       <Route path="/voice-samples" component={VoiceSamples} />
+      <Route path="/video-plan" component={VideoPlan} />
       <Route component={NotFound} />
     </Switch>
   );

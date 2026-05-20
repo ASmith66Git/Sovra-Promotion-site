@@ -73,5 +73,36 @@ Real app screenshots stored in `client/public/screenshots/`:
 - Background music bed: `videos/public/audio/ambient-60s.mp3` is the existing `exports/ambient.mp3` looped to ~62s with fade-in/out (built via `ffmpeg -stream_loop -1 ... afade`)
 - OpenAI AI Integrations installed (env vars: AI_INTEGRATIONS_OPENAI_API_KEY, AI_INTEGRATIONS_OPENAI_BASE_URL)
 
+## NEW VIDEO — Production Plan (IN PROGRESS)
+Working document lives at `/video-plan` in the app and `client/src/pages/video-plan.tsx` in code.
+This is the source of truth for the next video re-render. Update it before touching any Remotion files.
+
+### Section 1 — Voice (IN REVIEW)
+- Style target: soft, warm, friendly neutral English male — calm BBC-presenter register
+- Guided samples generated for Ash, Echo, Fable (stored at `client/public/voice-samples/*-guided.mp3`)
+- Audition page: `/voice-samples`
+- **STATUS: Awaiting user voice selection**
+
+### Section 2 — Script (DRAFT)
+60-second script broken into 6 timing blocks:
+1. 0:00–0:07 Hook: "Your apps are loud. Your inbox never sleeps. And your brain is paying the price."
+2. 0:07–0:14 Reveal: "Meet Sovra — your private AI second brain, built for the way modern life actually works."
+3. 0:14–0:24 Privacy: "Privacy isn't a feature. It's a stance. Sovra runs entirely on your device…"
+4. 0:24–0:36 Triage: "Connect Gmail, Apple Mail, and IMAP, and Sovra triages the lot…"
+5. 0:36–0:47 Capture: "Speak it, snap it, type it, sketch it — Sovra captures anything…"
+6. 0:47–1:00 Close: "Sovra — your notes, your tasks, your inbox. Completely yours. Stop organising. Start living."
+- **STATUS: Draft — awaiting user review and approval**
+
+### Section 3 — Visual Content (PROPOSED)
+Scene-by-scene breakdown in `/video-plan`. Real device screenshots (IMG_0077–IMG_0089) available.
+6 scenes: Hook (notification storm) → Reveal (logo) → Privacy (device lock) → Triage (email flow) → Capture (4-input grid) → Close (today dashboard + App Store CTA)
+- **STATUS: Proposed — awaiting user confirmation before Remotion work begins**
+
+### Decisions Log
+- Voice style confirmed: soft, warm, friendly neutral English male
+- Duration: 60 seconds, 1920×1080
+- Screenshots: 10 real device iPhone screenshots confirmed
+- Pending: final voice choice, script approval, Scene 3 visual style
+
 ## Running
 - `npm run dev` starts Express + Vite on port 5000
