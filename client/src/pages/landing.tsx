@@ -46,7 +46,7 @@ import { SiApple, SiGmail } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 const sovraLogo = "/sovra-logo.svg";
 import shot0077 from "@assets/IMG_0077_1779112691140.png";
-import shot0079 from "@assets/IMG_0079_1779112691140.png";
+import shotInboxZero from "@assets/IMG_0104_1779289107358.png";
 import shot0080 from "@assets/IMG_0080_1779112691140.png";
 import shot0081 from "@assets/IMG_0081_1779112691140.png";
 import shot0082 from "@assets/IMG_0082_1779112691140.png";
@@ -513,7 +513,7 @@ function FeaturesSection() {
 
 const screenshots: { src: string; label: string; caption: string }[] = [
   { src: shot0077, label: "Today", caption: "Your life at a glance" },
-  { src: shot0079, label: "Inbox Zero", caption: "Zero inbox, every time" },
+  { src: shotInboxZero, label: "Inbox Zero", caption: "Zero inbox, every time" },
   { src: shot0080, label: "Tasks", caption: "Stay on top of what matters" },
   { src: shot0081, label: "Projects", caption: "Group work into focused projects" },
   { src: shot0082, label: "Gantt Chart", caption: "Visualise your project timeline" },
