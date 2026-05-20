@@ -4,6 +4,8 @@ import { storage } from "./storage";
 import { Resend } from "resend";
 import rateLimit from "express-rate-limit";
 import { supportFormSchema } from "../shared/schema";
+import path from "path";
+import express from "express";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -28,6 +30,9 @@ export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
+  const voiceSamplesDir = path.resolve(process.cwd(), "client/public/voice-samples");
+  app.use("/voice-samples", express.static(voiceSamplesDir, { index: "index.html" }));
+
   app.post("/api/support", supportRateLimit, async (req, res) => {
     const parsed = supportFormSchema.safeParse(req.body);
     if (!parsed.success) {
