@@ -76,18 +76,35 @@ export default function VoiceSamples() {
         </div>
       </div>
 
-      {/* Chosen voice — Shimmer v2 with full script */}
+      {/* Shimmer + Lo-Fi Mix — full preview */}
       <div style={{ maxWidth: 960, margin: "0 auto 48px" }}>
-        <h2 style={{ fontSize: "1rem", fontWeight: 600, color: "#6366F1", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>
-          ✓ Chosen voice — Shimmer (full v2 script)
+        <h2 style={{ fontSize: "1rem", fontWeight: 600, color: "#10B981", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>
+          ✓ Full mix — Shimmer VO + Lo-Fi Tech Pulse
         </h2>
-        <div style={{ background: "#13203A", border: "2px solid #6366F1", borderRadius: 14, padding: 24 }}>
+        <div style={{ background: "#0D2420", border: "2px solid #10B981", borderRadius: 14, padding: 24 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
-            <span style={{ fontSize: "1.2rem", fontWeight: 700 }}>Shimmer</span>
-            <span style={{ fontSize: "0.7rem", padding: "2px 10px", borderRadius: 999, fontWeight: 600, background: "#312E81", color: "#A5B4FC" }}>Full 60s script · pronunciation fixed</span>
+            <span style={{ fontSize: "1.2rem", fontWeight: 700 }}>Shimmer + Lo-Fi Tech Pulse</span>
+            <span style={{ fontSize: "0.7rem", padding: "2px 10px", borderRadius: 999, fontWeight: 600, background: "#064E3B", color: "#6EE7B7" }}>58.9s · music ducked to 18% · fade in/out</span>
           </div>
           <p style={{ fontSize: "0.82rem", color: "#64748B", marginBottom: 16, lineHeight: 1.5 }}>
-            New v2 script covering all features: email, share sheet, attachments→docs, notes, tasks, projects, Gantt charts, events, privacy. Pronunciation guidance added: "Sovra" = SOV-ruh (ov like "of").
+            Full v2 script with the lo-fi music bed mixed in. Voice is front and centre — music adds warmth and momentum underneath.
+          </p>
+          <audio controls src="/music-samples/shimmer-lofi-mix.mp3" style={{ width: "100%", accentColor: "#10B981" }} />
+        </div>
+      </div>
+
+      {/* Chosen voice — Shimmer v2 voice only */}
+      <div style={{ maxWidth: 960, margin: "0 auto 48px" }}>
+        <h2 style={{ fontSize: "1rem", fontWeight: 600, color: "#6366F1", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>
+          Voice only — Shimmer (full v2 script)
+        </h2>
+        <div style={{ background: "#13203A", border: "1px solid #6366F1", borderRadius: 14, padding: 24 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+            <span style={{ fontSize: "1.2rem", fontWeight: 700 }}>Shimmer</span>
+            <span style={{ fontSize: "0.7rem", padding: "2px 10px", borderRadius: 999, fontWeight: 600, background: "#312E81", color: "#A5B4FC" }}>Full 60s script · pronunciation fixed · no music</span>
+          </div>
+          <p style={{ fontSize: "0.82rem", color: "#64748B", marginBottom: 16, lineHeight: 1.5 }}>
+            Voice only for reference. "Sovra" = SOV-ruh (ov like "of").
           </p>
           <audio controls src="/voice-samples/shimmer-vo-v2.mp3" style={{ width: "100%", accentColor: "#6366F1" }} />
         </div>
