@@ -890,8 +890,12 @@ function PricingSection() {
         <motion.h2 variants={fadeUp} custom={1} className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight mb-6" data-testid="text-pricing-title">
           One app. Your data. Your price.
         </motion.h2>
-        <motion.p variants={fadeUp} custom={2} className="text-lg max-w-2xl mx-auto mb-16 leading-relaxed" style={{ color: COLORS.muted }} data-testid="text-pricing-description">
-          No ads. No data selling. Just a fair subscription that keeps Sovra running — and your second brain private.
+        <motion.p variants={fadeUp} custom={2} className="text-lg max-w-2xl mx-auto mb-6 leading-relaxed" style={{ color: COLORS.muted }} data-testid="text-pricing-description">
+          Start free for 14 days. No ads, no data selling — just a fair subscription that keeps Sovra running and your second brain private.
+        </motion.p>
+
+        <motion.p variants={fadeUp} custom={2.5} className="text-sm max-w-xl mx-auto mb-12 leading-relaxed" style={{ color: COLORS.dimmed }} data-testid="text-pricing-trial-intro">
+          Start with a 14-day free trial. Your subscription begins after the trial ends. Cancel any time — before or after — from your Apple account settings.
         </motion.p>
 
         <motion.div variants={fadeUp} custom={3} className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
@@ -901,12 +905,15 @@ function PricingSection() {
             style={{ backgroundColor: COLORS.cardBg, border: `1px solid ${COLORS.cardBorder}`, backdropFilter: "blur(12px)" }}
             data-testid="card-pricing-monthly"
           >
-            <p className="text-sm font-medium mb-4" style={{ color: COLORS.muted }}>Monthly</p>
+            <div className="flex items-center justify-between mb-4">
+              <p className="text-sm font-medium" style={{ color: COLORS.muted }}>Monthly</p>
+              <span className="px-2.5 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: `${COLORS.primary}20`, color: COLORS.primary }} data-testid="badge-pricing-monthly-trial">14-day free trial</span>
+            </div>
             <div className="flex items-end gap-1 mb-2">
               <span className="text-5xl font-bold text-white tracking-tight">£14.99</span>
               <span className="text-base mb-2" style={{ color: COLORS.dimmed }}>/month</span>
             </div>
-            <p className="text-sm mb-8" style={{ color: COLORS.dimmed }}>Billed monthly. Cancel any time.</p>
+            <p className="text-sm mb-8" style={{ color: COLORS.dimmed }}>14-day free trial, then £14.99/month · Cancel any time.</p>
             <ul className="space-y-3 mt-auto">
               {["Full AI triage", "Zero Inbox Engine", "On-device AI", "Multi-device sync", "iCloud & Gmail"].map((f) => (
                 <li key={f} className="flex items-center gap-2.5 text-sm" style={{ color: COLORS.muted }}>
@@ -926,12 +933,15 @@ function PricingSection() {
             <div className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: `${COLORS.accent}20`, color: COLORS.accent }} data-testid="badge-pricing-save">
               Save ~£30
             </div>
-            <p className="text-sm font-medium mb-4" style={{ color: COLORS.muted }}>Annual</p>
+            <div className="flex items-center gap-2 mb-4">
+              <p className="text-sm font-medium" style={{ color: COLORS.muted }}>Annual</p>
+              <span className="px-2.5 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: `${COLORS.primary}20`, color: COLORS.primary }} data-testid="badge-pricing-annual-trial">14-day free trial</span>
+            </div>
             <div className="flex items-end gap-1 mb-2">
               <span className="text-5xl font-bold text-white tracking-tight">£149.99</span>
               <span className="text-base mb-2" style={{ color: COLORS.dimmed }}>/year</span>
             </div>
-            <p className="text-sm mb-8" style={{ color: COLORS.dimmed }}>Billed once a year. Best value.</p>
+            <p className="text-sm mb-8" style={{ color: COLORS.dimmed }}>14-day free trial, then £149.99/year · Best value · Cancel any time.</p>
             <ul className="space-y-3 mt-auto">
               {["Full AI triage", "Zero Inbox Engine", "On-device AI", "Multi-device sync", "iCloud & Gmail"].map((f) => (
                 <li key={f} className="flex items-center gap-2.5 text-sm" style={{ color: COLORS.muted }}>
@@ -944,7 +954,7 @@ function PricingSection() {
         </motion.div>
 
         <motion.p variants={fadeUp} custom={4} className="text-sm mt-10" style={{ color: COLORS.dimmed }} data-testid="text-pricing-note">
-          Subscriptions are managed through the App Store. Cancel any time from your Apple account settings.
+          Includes a 14-day free trial. Your subscription starts after the trial ends at the price shown. Subscriptions are managed through the App Store. Cancel any time from your Apple account settings.
         </motion.p>
       </motion.div>
     </section>
