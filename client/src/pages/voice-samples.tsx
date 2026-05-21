@@ -84,7 +84,7 @@ export default function VoiceSamples() {
         <div style={{ background: "#0D2420", border: "2px solid #10B981", borderRadius: 14, padding: 24 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
             <span style={{ fontSize: "1.2rem", fontWeight: 700 }}>Shimmer + Lo-Fi Tech Pulse</span>
-            <span style={{ fontSize: "0.7rem", padding: "2px 10px", borderRadius: 999, fontWeight: 600, background: "#064E3B", color: "#6EE7B7" }}>58.9s · music at 35% · no fade</span>
+            <span style={{ fontSize: "0.7rem", padding: "2px 10px", borderRadius: 999, fontWeight: 600, background: "#064E3B", color: "#6EE7B7" }}>58.9s · voice 75% · music 35% · no fade</span>
           </div>
           <p style={{ fontSize: "0.82rem", color: "#64748B", marginBottom: 16, lineHeight: 1.5 }}>
             Full v2 script with the lo-fi music bed mixed in. Voice is front and centre — music adds warmth and momentum underneath.
