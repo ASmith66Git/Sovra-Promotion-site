@@ -26,7 +26,7 @@ export const SceneOrganise: React.FC = () => {
   const notesOp    = clampedInterpolate(frame, [T0, T0 + 12, T1, T1 + CROSSFADE],              [0, 1, 1, 0]);
   const tasksOp    = clampedInterpolate(frame, [T1, T1 + CROSSFADE, T2, T2 + CROSSFADE],        [0, 1, 1, 0]);
   const ganttOp    = clampedInterpolate(frame, [T2, T2 + CROSSFADE, T3, T3 + CROSSFADE],        [0, 1, 1, 0]);
-  const calendarOp = clampedInterpolate(frame, [T3, T3 + CROSSFADE, T4, T4],                    [0, 1, 1, 1]);
+  const calendarOp = clampedInterpolate(frame, [T3, T3 + CROSSFADE],                    [0, 1]);
 
   const containerOpacity = clampedInterpolate(frame, [0, 24], [0, 1]);
   const glowOpacity = delayedInterpolate(frame, 0.3, 1.0, 0, 1);

@@ -87,27 +87,24 @@ This is the source of truth for the next video re-render. Update it before touch
 - Preview at `/voice-samples` → shimmer-vo-v2.mp3
 - **STATUS: Voice confirmed — Shimmer**
 
-### Section 2 — Script (DRAFT v2 — updated to cover full feature breadth)
-60-second script broken into 6 timing blocks:
-1. 0:00–0:07 Hook: "Your life runs through dozens of apps. Emails, attachments, files — all scattered. Your brain is full."
-2. 0:07–0:13 Reveal: "Meet Sovra — your private AI second brain. Built to capture anything. Organise everything."
-3. 0:13–0:24 Inputs: "Connect Gmail, Apple Mail, and IMAP. Share anything in from any app on your phone. Attachments are saved as documents. However information finds you — Sovra catches it."
-4. 0:24–0:40 Organise: "AI turns emails into notes, tasks, and calendar events — instantly. Group tasks into projects. Visualise your timelines on Gantt charts. Your documents, notes, and calendar: all searchable, all linked."
-5. 0:40–0:50 Privacy: "And it all runs on your device. On-device AI, zero-knowledge encryption, nothing in the cloud. Your data stays yours — completely and permanently."
-6. 0:50–1:00 Close: "Sovra. Your notes, tasks, projects, documents, and inbox. Stop organising. Start living. Only on the App Store."
-- Script covers: email triage, iOS share sheet, attachments→documents, notes, tasks, projects, Gantt charts, calendar events, privacy, CTA
-- **STATUS: Draft v2 — awaiting user review and approval**
+### Section 2 — Script (CONFIRMED v2)
+60-second script broken into 6 timing blocks — confirmed and rendered:
+1. 0:00–0:07 Hook → 0:07–0:13 Reveal → 0:13–0:24 Inputs → 0:24–0:40 Organise → 0:40–0:50 Privacy → 0:50–1:00 Close
 
-### Section 3 — Visual Content (PROPOSED)
-Scene-by-scene breakdown in `/video-plan`. Real device screenshots (IMG_0077–IMG_0089) available.
-6 scenes: Hook (notification storm) → Reveal (logo) → Privacy (device lock) → Triage (email flow) → Capture (4-input grid) → Close (today dashboard + App Store CTA)
-- **STATUS: Proposed — awaiting user confirmation before Remotion work begins**
+### Section 3 — Visual Content (RENDERED ✓)
+6 scenes rendered and delivered:
+- SceneHook60: notification storm (icon grid + Hero headline)
+- SceneReveal60: Sovra logo reveal
+- SceneInputs: Gmail/Mail/IMAP + share sheet + attachments, phone showing inbox-zero.jpg
+- SceneOrganise: AI triage output — notes→tasks→gantt→calendar crossfade in phone shell
+- ScenePrivacy60: on-device lock + 3 privacy pillars
+- SceneClose60: today dashboard + App Store CTA
 
-### Decisions Log
-- Voice style confirmed: soft, warm, friendly neutral English male
-- Duration: 60 seconds, 1920×1080
-- Screenshots: 10 real device iPhone screenshots confirmed
-- Pending: final voice choice, script approval, Scene 3 visual style
+### Render Details
+- Rendered in 12 chunks of 150 frames each (Replit sandbox constraint) then concatenated via ffmpeg
+- Audio mixed via ffmpeg post-concatenation: VO at 0.75 vol, Lo-Fi Tech Pulse at 0.35 vol, no fade
+- Bug fixed: `calendarOp` had duplicate T4 in inputRange `[T3, T3+CROSSFADE, T4, T4]` → fixed to `[T3, T3+CROSSFADE]`
+- **STATUS: COMPLETE — `client/public/sovra-ad-60s.mp4` updated (15 MB, 59s)**
 
 ## Running
 - `npm run dev` starts Express + Vite on port 5000
