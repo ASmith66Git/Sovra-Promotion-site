@@ -41,6 +41,41 @@ export default function VoiceSamples() {
         Meet Sovra — your private AI second brain. Your notes, tasks, and emails, all organised on your device. Nothing in the cloud. Everything under your control. Download Sovra today, only on the App Store.
       </div>
 
+      {/* Music samples */}
+      <div style={{ maxWidth: 960, margin: "0 auto 56px" }}>
+        <h2 style={{ fontSize: "1rem", fontWeight: 600, color: "#8B5CF6", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 4 }}>
+          ♪ Background Music — 3 styles
+        </h2>
+        <p style={{ color: "#64748B", fontSize: "0.82rem", marginBottom: 16 }}>All AI-generated, 65 seconds each. Pick the one that fits.</p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16 }}>
+          {[
+            {
+              id: "cinematic-ambient",
+              label: "Cinematic Ambient",
+              desc: "Soft pads, string swells, no percussion. Calm and aspirational — Apple keynote energy.",
+            },
+            {
+              id: "lofi-tech-pulse",
+              label: "Lo-Fi Tech Pulse",
+              desc: "Gentle electronic beat, warm synths, understated rhythm. Modern and focused.",
+            },
+            {
+              id: "minimal-piano-pads",
+              label: "Minimal Piano + Pads",
+              desc: "Solo piano with atmospheric layers. Warm and personal — suits the privacy angle.",
+            },
+          ].map(m => (
+            <div key={m.id} style={{ background: "#1A1040", border: "1px solid #4C1D95", borderRadius: 14, padding: 20 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
+                <span style={{ fontSize: "1rem", fontWeight: 700 }}>{m.label}</span>
+              </div>
+              <p style={{ fontSize: "0.8rem", color: "#64748B", marginBottom: 14, lineHeight: 1.4 }}>{m.desc}</p>
+              <audio controls src={`/music-samples/${m.id}.mp3`} style={{ width: "100%", accentColor: "#8B5CF6" }} />
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Chosen voice — Shimmer v2 with full script */}
       <div style={{ maxWidth: 960, margin: "0 auto 48px" }}>
         <h2 style={{ fontSize: "1rem", fontWeight: 600, color: "#6366F1", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>

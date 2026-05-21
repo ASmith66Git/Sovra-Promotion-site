@@ -6,3 +6,21 @@ id = "RMDcnuGmZ--SOE3KCTk4F"
 uri = "file://client/public/sovra-ad-30s.mp4"
 type = "video"
 title = "Sovra 30s Ad — with AI voiceover + ambient music"
+
+[[outputs]]
+id = "tJyx7Hj1fRpPkQYdrLO1Y"
+uri = "file://client/public/music-samples/cinematic-ambient.mp3"
+type = "audio"
+title = "cinematic-ambient"
+
+[[outputs]]
+id = "FljjvhowK1UNLT4FBpFNO"
+uri = "file://client/public/music-samples/lofi-tech-pulse.mp3"
+type = "audio"
+title = "lofi-tech-pulse"
+
+[[outputs]]
+id = "EPHJS9A6T8m92gJcXGbku"
+uri = "file://client/public/music-samples/minimal-piano-pads.mp3"
+type = "audio"
+title = "minimal-piano-pads"
