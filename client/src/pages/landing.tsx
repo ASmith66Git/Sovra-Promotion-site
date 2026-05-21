@@ -310,7 +310,7 @@ function HowItWorksSection() {
       title: "Every Document. Captured, Summarised, Yours.",
       description: "Every PDF, contract, invoice, spreadsheet, or image that arrives in your inbox — or is shared from any other app via the iOS share sheet — is captured and saved on your device. Sovra's AI reads and summarises every document so you get the key points instantly, and indexes the full content so you can find anything by what's inside it. No cloud uploads. No third-party storage.",
       bullets: [
-        { icon: Paperclip, label: "Auto-captures email attachments on arrival" },
+        { icon: Paperclip, label: "Captures email attachments on arrival" },
         { icon: Share2, label: "Receive docs from any app via the iOS share sheet" },
         { icon: Brain, label: "AI summarises every document" },
         { icon: ScanText, label: "Full-text AI search across all content" },
@@ -338,7 +338,7 @@ function HowItWorksSection() {
       title: "Capture Everything. In Any Form.",
       description: "A Sovra note isn't just text. Write, sketch, annotate a photo, or mix all three in one place. Notes created from emails are formatted by the AI — headings, bullet points, key facts pulled out — so they're ready to read the moment they appear. Capture a thought in seconds; Sovra makes it look like you spent minutes.",
       bullets: [
-        { icon: Brain, label: "AI auto-formats notes from emails instantly" },
+        { icon: Brain, label: "AI formats notes from emails instantly" },
         { icon: Image, label: "Add photos, sketches, and drawings to any note" },
         { icon: Pencil, label: "Annotate images with markup tools" },
         { icon: ScanText, label: "Fully searchable — find anything instantly" },

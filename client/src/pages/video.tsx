@@ -211,7 +211,7 @@ const SceneTriage = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 0.8 }}>
-          Sovra's AI automatically triages your email. Noise filtered. Signal preserved.
+          Sovra's AI triages your email. Noise filtered. Signal preserved.
         </motion.p>
       </div>
 
