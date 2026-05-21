@@ -41,6 +41,23 @@ export default function VoiceSamples() {
         Meet Sovra — your private AI second brain. Your notes, tasks, and emails, all organised on your device. Nothing in the cloud. Everything under your control. Download Sovra today, only on the App Store.
       </div>
 
+      {/* Chosen voice — Shimmer v2 with full script */}
+      <div style={{ maxWidth: 960, margin: "0 auto 48px" }}>
+        <h2 style={{ fontSize: "1rem", fontWeight: 600, color: "#6366F1", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>
+          ✓ Chosen voice — Shimmer (full v2 script)
+        </h2>
+        <div style={{ background: "#13203A", border: "2px solid #6366F1", borderRadius: 14, padding: 24 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+            <span style={{ fontSize: "1.2rem", fontWeight: 700 }}>Shimmer</span>
+            <span style={{ fontSize: "0.7rem", padding: "2px 10px", borderRadius: 999, fontWeight: 600, background: "#312E81", color: "#A5B4FC" }}>Full 60s script · pronunciation fixed</span>
+          </div>
+          <p style={{ fontSize: "0.82rem", color: "#64748B", marginBottom: 16, lineHeight: 1.5 }}>
+            New v2 script covering all features: email, share sheet, attachments→docs, notes, tasks, projects, Gantt charts, events, privacy. Pronunciation guidance added: "Sovra" = SOV-ruh (ov like "of").
+          </p>
+          <audio controls src="/voice-samples/shimmer-vo-v2.mp3" style={{ width: "100%", accentColor: "#6366F1" }} />
+        </div>
+      </div>
+
       {/* Guided candidates */}
       <div style={{ maxWidth: 960, margin: "0 auto 56px" }}>
         <h2 style={{ fontSize: "1rem", fontWeight: 600, color: "#10B981", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>

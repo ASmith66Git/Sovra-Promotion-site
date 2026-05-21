@@ -81,7 +81,11 @@ This is the source of truth for the next video re-render. Update it before touch
 - Style target: soft, warm, friendly neutral English male — calm BBC-presenter register
 - Guided samples generated for Ash, Echo, Fable (stored at `client/public/voice-samples/*-guided.mp3`)
 - Audition page: `/voice-samples`
-- **STATUS: Awaiting user voice selection**
+- **Chosen voice: Shimmer**
+- Pronunciation fix: "Sovra" = SOV-ruh (ov sounds like "of", not "stove") — baked into system prompt
+- New VO generated: `videos/exports/voiceover-60s.mp3` (Shimmer, v2 script), timed version at `videos/public/audio/voiceover-60s-timed.mp3`
+- Preview at `/voice-samples` → shimmer-vo-v2.mp3
+- **STATUS: Voice confirmed — Shimmer**
 
 ### Section 2 — Script (DRAFT v2 — updated to cover full feature breadth)
 60-second script broken into 6 timing blocks:

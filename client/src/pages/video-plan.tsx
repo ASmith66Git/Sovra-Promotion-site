@@ -13,7 +13,7 @@ export default function VideoPlan() {
       {/* ── SECTION 1: VOICE ── */}
       <Section num="01" title="Voice" status="IN REVIEW" statusColor="#F59E0B">
         <Row label="Audition page" value={<a href="/voice-samples" style={{ color: "#6366F1" }}>/voice-samples</a>} />
-        <Row label="Chosen voice" value="TBD — awaiting selection" dim />
+        <Row label="Chosen voice" value="Shimmer" />
         <Row label="Style guide" value="Soft, warm, friendly neutral English male. Calm BBC-presenter energy. Not heavily American, not heavily regional British." />
         <Row label="Guided candidates" value="Ash (guided), Echo (guided), Fable (guided) — all available at /voice-samples" />
         <Note>Once a voice is chosen, update this section and the script will be rendered with that voice automatically.</Note>
@@ -103,7 +103,7 @@ export default function VideoPlan() {
       {/* ── SECTION 4: DECISIONS LOG ── */}
       <Section num="04" title="Decisions Log" status="LIVE" statusColor="#10B981">
         <Note>Every confirmed decision is recorded here so the plan stays current across sessions.</Note>
-        <Decision date="2026-05-20" item="Voice style" decision="Soft, warm, friendly neutral English male — BBC presenter register. Guided samples generated for Ash, Echo, Fable." />
+        <Decision date="2026-05-21" item="Voice" decision="Shimmer selected. Pronunciation note: 'Sovra' = SOV-ruh (the 'ov' sounds like the word 'of', not 'stove'). System prompt updated in gen-voiceover-60s.mjs." />
         <Decision date="2026-05-20" item="Script v2" decision="Script expanded to cover all input sources (email, share sheet, attachments→docs), full output depth (notes, tasks, projects, Gantt charts, events), and privacy — then CTA." />
         <Decision date="2026-05-20" item="Duration" decision="60 seconds target." />
         <Decision date="2026-05-20" item="Aspect ratio" decision="1920×1080 (landscape) for the website embed. Possible future 9:16 for social." />
