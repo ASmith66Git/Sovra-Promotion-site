@@ -25,8 +25,8 @@ export default function VideoPlan() {
         <ScriptBlock lines={[
           { time: "0:00–0:07", line: "Your life runs through dozens of apps. Emails, attachments, files — all scattered. Your brain is full." },
           { time: "0:07–0:13", line: "Meet Sovra — your private AI second brain. Built to capture anything. Organise everything." },
-          { time: "0:13–0:24", line: "Connect Gmail, Apple Mail, and IMAP. Share anything in from any app on your phone. Attachments are captured automatically as documents. However information finds you — Sovra catches it." },
-          { time: "0:24–0:40", line: "AI turns emails into notes, tasks, and calendar events — automatically. Group tasks into projects. Visualise your timelines on Gantt charts. Your documents, notes, and calendar: all searchable, all linked." },
+          { time: "0:13–0:24", line: "Connect Gmail, Apple Mail, and IMAP. Share anything in from any app on your phone. Attachments are saved as documents. However information finds you — Sovra catches it." },
+          { time: "0:24–0:40", line: "AI turns emails into notes, tasks, and calendar events — instantly. Group tasks into projects. Visualise your timelines on Gantt charts. Your documents, notes, and calendar: all searchable, all linked." },
           { time: "0:40–0:50", line: "And it all runs on your device. On-device AI, zero-knowledge encryption, nothing in the cloud. Your data stays yours — completely and permanently." },
           { time: "0:50–1:00", line: "Sovra. Your notes, tasks, projects, documents, and inbox. Stop organising. Start living. Only on the App Store." },
         ]} />
@@ -54,7 +54,7 @@ export default function VideoPlan() {
           </ul>
         </Scene>
 
-        <Scene n={3} title="Inputs" timing="0:13 – 0:24" vo="Connect Gmail, Apple Mail, and IMAP. Share anything in from any app on your phone. Attachments are captured automatically as documents.">
+        <Scene n={3} title="Inputs" timing="0:13 – 0:24" vo="Connect Gmail, Apple Mail, and IMAP. Share anything in from any app on your phone. Attachments are saved as documents.">
           <ul style={listStyle}>
             <li>Left column: Gmail, Apple Mail, IMAP logos slide in one by one</li>
             <li>Middle row: iOS Share Sheet icon + arrow pointing into Sovra — labelled "Share from any app"</li>
@@ -64,7 +64,7 @@ export default function VideoPlan() {
           </ul>
         </Scene>
 
-        <Scene n={4} title="Organise" timing="0:24 – 0:40" vo="AI turns emails into notes, tasks, and calendar events — automatically. Group tasks into projects. Visualise your timelines on Gantt charts.">
+        <Scene n={4} title="Organise" timing="0:24 – 0:40" vo="AI turns emails into notes, tasks, and calendar events — instantly. Group tasks into projects. Visualise your timelines on Gantt charts.">
           <ul style={listStyle}>
             <li>Animated flow: Email → AI brain → splits into three output cards (Note, Task, Event) — each labelled</li>
             <li>Task card expands to show tasks grouped inside a Project folder</li>

@@ -91,8 +91,8 @@ This is the source of truth for the next video re-render. Update it before touch
 60-second script broken into 6 timing blocks:
 1. 0:00–0:07 Hook: "Your life runs through dozens of apps. Emails, attachments, files — all scattered. Your brain is full."
 2. 0:07–0:13 Reveal: "Meet Sovra — your private AI second brain. Built to capture anything. Organise everything."
-3. 0:13–0:24 Inputs: "Connect Gmail, Apple Mail, and IMAP. Share anything in from any app on your phone. Attachments are captured automatically as documents. However information finds you — Sovra catches it."
-4. 0:24–0:40 Organise: "AI turns emails into notes, tasks, and calendar events — automatically. Group tasks into projects. Visualise your timelines on Gantt charts. Your documents, notes, and calendar: all searchable, all linked."
+3. 0:13–0:24 Inputs: "Connect Gmail, Apple Mail, and IMAP. Share anything in from any app on your phone. Attachments are saved as documents. However information finds you — Sovra catches it."
+4. 0:24–0:40 Organise: "AI turns emails into notes, tasks, and calendar events — instantly. Group tasks into projects. Visualise your timelines on Gantt charts. Your documents, notes, and calendar: all searchable, all linked."
 5. 0:40–0:50 Privacy: "And it all runs on your device. On-device AI, zero-knowledge encryption, nothing in the cloud. Your data stays yours — completely and permanently."
 6. 0:50–1:00 Close: "Sovra. Your notes, tasks, projects, documents, and inbox. Stop organising. Start living. Only on the App Store."
 - Script covers: email triage, iOS share sheet, attachments→documents, notes, tasks, projects, Gantt charts, calendar events, privacy, CTA

@@ -11,9 +11,9 @@ const voiceoverScript = `Your life runs through dozens of apps. Emails, attachme
 
 Meet Sovra. Your private AI second brain. Built to capture anything. Organise everything.
 
-Connect Gmail, Apple Mail, and IMAP. Share anything in from any app on your phone. Attachments are captured automatically as documents. However information finds you — Sovra catches it.
+Connect Gmail, Apple Mail, and IMAP. Share anything in from any app on your phone. Attachments are saved as documents. However information finds you — Sovra catches it.
 
-AI turns emails into notes, tasks, and calendar events — automatically. Group tasks into projects. Visualise your timelines on Gantt charts. Your documents, notes, and calendar: all searchable, all linked.
+AI turns emails into notes, tasks, and calendar events — instantly. Group tasks into projects. Visualise your timelines on Gantt charts. Your documents, notes, and calendar: all searchable, all linked.
 
 And it all runs on your device. On-device AI, zero-knowledge encryption, nothing in the cloud. Your data stays yours — completely and permanently.
 
