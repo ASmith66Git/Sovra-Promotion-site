@@ -153,6 +153,19 @@ const BackgroundLayer: React.FC = () => {
   );
 };
 
+const FADE_OUT_START  = SOVRA_AD_60_DURATION - 60; // last 2 seconds
+
+const FadeOutOverlay: React.FC = () => {
+  const frame = useCurrentFrame();
+  const opacity = interpolate(frame, [FADE_OUT_START, SOVRA_AD_60_DURATION - 1], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  return (
+    <div style={{ position: "absolute", inset: 0, backgroundColor: "#000000", opacity, zIndex: 100, pointerEvents: "none" }} />
+  );
+};
+
 export const SovraAd60: React.FC = () => (
   <AbsoluteFill style={{
     backgroundColor: COLORS.bg,
@@ -167,6 +180,8 @@ export const SovraAd60: React.FC = () => (
     <Sequence from={OFF.organise} durationInFrames={SCENE_FRAMES_60.organise}> <SceneOrganise />  </Sequence>
     <Sequence from={OFF.privacy}  durationInFrames={SCENE_FRAMES_60.privacy}>  <ScenePrivacy60 /> </Sequence>
     <Sequence from={OFF.close}    durationInFrames={SCENE_FRAMES_60.close}>    <SceneClose60 />   </Sequence>
+
+    <FadeOutOverlay />
 
     {/* Audio — VO at 75%, lo-fi bed at 35%, no fade */}
     <Audio src={staticFile("audio/voiceover-60s-timed.mp3")} volume={0.75} />

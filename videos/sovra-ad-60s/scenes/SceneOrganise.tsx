@@ -2,11 +2,11 @@ import { useCurrentFrame, useVideoConfig, spring } from "remotion";
 import { FileText, CheckSquare, BarChart2, CalendarDays } from "lucide-react";
 import { SCREENSHOT_PATHS, clampedInterpolate, delayedInterpolate } from "../../sovra-ad-30s/shared";
 
-const CROSSFADE = 30;
+const CROSSFADE = 20;
 const T0 = 0;
-const T1 = 90;
-const T2 = 180;
-const T3 = 300;
+const T1 = 120;
+const T2 = 240;
+const T3 = 360;
 const T4 = 480;
 
 const features = [
@@ -40,11 +40,12 @@ export const SceneOrganise: React.FC = () => {
 
       {/* Left — text + feature list */}
       <div style={{ width: "48%", display: "flex", flexDirection: "column" }}>
-        <p style={{ fontSize: "4.8cqw", fontWeight: 800, color: "#F8FAFC", lineHeight: 1.2, marginBottom: "1.5cqh", opacity: headlineOpacity, transform: `translateY(${headlineY}px)` }}>
-          AI reads your emails.<br />
+        <p style={{ fontSize: "4.2cqw", fontWeight: 800, color: "#F8FAFC", lineHeight: 1.25, marginBottom: "1.5cqh", opacity: headlineOpacity, transform: `translateY(${headlineY}px)` }}>
+          AI can turn your emails,{" "}
           <span style={{ background: "linear-gradient(90deg, #818CF8, #C084FC, #34D399)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-            Everything gets organised.
+            attachments and documents
           </span>
+          {" "}into organised notes, tasks and events.
         </p>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "1.2cqh", marginBottom: "2.5cqh" }}>
@@ -81,16 +82,16 @@ export const SceneOrganise: React.FC = () => {
       <div style={{ width: "48%", display: "flex", alignItems: "center", justifyContent: "center", position: "relative" }}>
         <div style={{ position: "absolute", top: "50%", left: "50%", width: "30cqw", height: "30cqw", borderRadius: "50%", filter: "blur(5cqw)", opacity: glowOpacity, transform: "translate(-50%, -50%)", backgroundColor: `rgb(${Math.round(glowR)},${Math.round(glowG)},${Math.round(glowB)})` }} />
 
-        {/* Phone shell with crossfading screenshots */}
-        <div style={{ position: "relative", zIndex: 10, width: "18cqw", borderRadius: "2cqw", border: "0.3cqw solid rgba(255,255,255,0.1)", backgroundColor: "rgba(0,0,0,0.5)", overflow: "hidden", boxShadow: "0 2cqw 5cqw rgba(0,0,0,0.5)", aspectRatio: "9/19" }}>
+        {/* Phone shell with crossfading screenshots — objectFit: contain so full screen is always visible */}
+        <div style={{ position: "relative", zIndex: 10, width: "18cqw", borderRadius: "2cqw", border: "0.3cqw solid rgba(255,255,255,0.1)", backgroundColor: "#0A0F1E", overflow: "hidden", boxShadow: "0 2cqw 5cqw rgba(0,0,0,0.5)", aspectRatio: "9/19" }}>
           {/* Notch */}
           <div style={{ position: "absolute", top: 0, left: "33%", right: "33%", height: "2.5cqw", backgroundColor: "rgba(0,0,0,0.8)", display: "flex", justifyContent: "center", alignItems: "center", borderBottomLeftRadius: "1cqw", borderBottomRightRadius: "1cqw", zIndex: 10 }}>
             <div style={{ width: "3cqw", height: "0.4cqw", borderRadius: "99px", backgroundColor: "rgba(255,255,255,0.2)" }} />
           </div>
-          <img src={SCREENSHOT_PATHS.notes}          alt="Notes"    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: notesOp }} />
-          <img src={SCREENSHOT_PATHS.tasks}          alt="Tasks"    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: tasksOp }} />
-          <img src={SCREENSHOT_PATHS.tasksTimeline}  alt="Gantt"    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: ganttOp }} />
-          <img src={SCREENSHOT_PATHS.calendar}       alt="Calendar" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: calendarOp }} />
+          <img src={SCREENSHOT_PATHS.notes}         alt="Notes"    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain", opacity: notesOp }} />
+          <img src={SCREENSHOT_PATHS.tasks}         alt="Tasks"    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain", opacity: tasksOp }} />
+          <img src={SCREENSHOT_PATHS.tasksTimeline} alt="Gantt"    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain", opacity: ganttOp }} />
+          <img src={SCREENSHOT_PATHS.calendar}      alt="Calendar" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain", opacity: calendarOp }} />
         </div>
       </div>
     </div>

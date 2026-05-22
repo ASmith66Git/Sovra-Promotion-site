@@ -10,8 +10,8 @@ const sources = [
 ];
 
 const extra = [
-  { label: "Share from any app",        sub: "iOS Share Sheet",       color: "#8B5CF6", bg: "rgba(139,92,246,0.12)",  border: "rgba(167,139,250,0.4)", Icon: Share2    },
-  { label: "Attachments → Documents",   sub: "On-device, private",    color: "#10B981", bg: "rgba(16,185,129,0.1)",   border: "rgba(52,211,153,0.4)",  Icon: Paperclip },
+  { label: "Share from any app",                  sub: "iOS Share Sheet",       color: "#8B5CF6", bg: "rgba(139,92,246,0.12)",  border: "rgba(167,139,250,0.4)", Icon: Share2    },
+  { label: "Attachments saved to Notes & Docs",   sub: "On-device, private",    color: "#10B981", bg: "rgba(16,185,129,0.1)",   border: "rgba(52,211,153,0.4)",  Icon: Paperclip },
 ];
 
 export const SceneInputs: React.FC = () => {
@@ -40,7 +40,7 @@ export const SceneInputs: React.FC = () => {
           </span>
         </div>
 
-        {/* Headline — kept to 2 lines max */}
+        {/* Headline */}
         <p style={{ fontSize: "3.4cqw", fontWeight: 800, color: "#F8FAFC", lineHeight: 1.2, marginBottom: "1.8cqh", opacity: headlineOpacity, transform: `translateY(${headlineY}px)` }}>
           However information finds you —{" "}
           <span style={{ background: "linear-gradient(90deg, #60A5FA, #818CF8)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
