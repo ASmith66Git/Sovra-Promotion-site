@@ -1,6 +1,6 @@
 import { useCurrentFrame, useVideoConfig, spring } from "remotion";
 import { PhoneMockup } from "../../sovra-ad-30s/scenes/PhoneMockup";
-import { SOVRA_LOGO, SCREENSHOT_PATHS, clampedInterpolate, delayedInterpolate } from "../../sovra-ad-30s/shared";
+import { SOVRA_LOGO_TRANSPARENT, SCREENSHOT_PATHS, clampedInterpolate, delayedInterpolate } from "../../sovra-ad-30s/shared";
 
 const featurePills = ["Notes", "Tasks", "Projects", "Gantt", "Documents", "Calendar", "Inbox Zero", "Ask Sovra"];
 
@@ -33,17 +33,14 @@ export const SceneClose60: React.FC = () => {
         </div>
       </div>
 
-      {/* Logo lockup */}
+      {/* Logo lockup — bare neuron + wordmark, no background box */}
       <div style={{
-        display: "flex", alignItems: "center", gap: "2cqw",
+        display: "flex", alignItems: "center", gap: "1.5cqw",
         marginBottom: "2.5cqh",
-        backgroundColor: "rgba(15,23,42,0.7)",
-        padding: "2cqh 4cqw", borderRadius: "2cqw",
-        border: "1px solid rgba(255,255,255,0.1)",
         opacity: lockupSpring,
         transform: `scale(${0.7 + 0.3 * lockupSpring})`,
       }}>
-        <img src={SOVRA_LOGO} alt="Sovra" style={{ width: "7cqw", height: "7cqw", objectFit: "contain" }} />
+        <img src={SOVRA_LOGO_TRANSPARENT} alt="Sovra" style={{ width: "8cqw", height: "8cqw", objectFit: "contain", filter: "drop-shadow(0 0 1.5cqw rgba(99,102,241,0.7))" }} />
         <span style={{ fontSize: "6.5cqw", fontWeight: 900, color: "#F8FAFC", letterSpacing: "-0.02em", lineHeight: 1 }}>Sovra</span>
       </div>
 

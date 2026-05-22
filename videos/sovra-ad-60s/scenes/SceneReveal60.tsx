@@ -1,6 +1,6 @@
 import { useCurrentFrame, useVideoConfig, spring } from "remotion";
 import { PhoneMockup } from "../../sovra-ad-30s/scenes/PhoneMockup";
-import { SOVRA_LOGO, SCREENSHOT_PATHS, clampedInterpolate, delayedInterpolate } from "../../sovra-ad-30s/shared";
+import { SOVRA_LOGO_TRANSPARENT, SCREENSHOT_PATHS, clampedInterpolate, delayedInterpolate } from "../../sovra-ad-30s/shared";
 
 export const SceneReveal60: React.FC = () => {
   const frame = useCurrentFrame();
@@ -30,7 +30,7 @@ export const SceneReveal60: React.FC = () => {
         {/* Logo mark — neuron icon + wordmark */}
         <div style={{ display: "flex", alignItems: "center", gap: "2cqw", marginBottom: "3cqh", opacity: logoSpring, transform: `scale(${0.4 + 0.6 * logoSpring})` }}>
           <img
-            src={SOVRA_LOGO}
+            src={SOVRA_LOGO_TRANSPARENT}
             alt="Sovra"
             style={{ width: "9cqw", height: "9cqw", objectFit: "contain", filter: "drop-shadow(0 0 2cqw rgba(99,102,241,0.8))" }}
           />

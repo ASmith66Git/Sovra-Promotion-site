@@ -40,6 +40,7 @@ export const SCREENSHOT_PATHS = {
 };
 
 export const SOVRA_LOGO = staticFile("sovra-logo.svg");
+export const SOVRA_LOGO_TRANSPARENT = staticFile("sovra-logo-transparent.png");
 
 export function clampedInterpolate(
   frame: number,

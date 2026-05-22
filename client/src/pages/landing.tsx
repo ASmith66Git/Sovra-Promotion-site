@@ -44,7 +44,7 @@ import {
 } from "lucide-react";
 import { SiApple, SiGmail } from "react-icons/si";
 import { Button } from "@/components/ui/button";
-const sovraLogo = "/sovra-logo.svg";
+const sovraLogo = "/sovra-logo-transparent.png";
 import shot0077 from "@assets/IMG_0077_1779112691140.png";
 import shotInboxZero from "@assets/IMG_0104_1779289107358.png";
 import shot0080 from "@assets/IMG_0080_1779112691140.png";
@@ -115,7 +115,8 @@ function Navbar() {
           <motion.img
             src={sovraLogo}
             alt="Sovra logo"
-            className="w-8 h-8 rounded-md object-cover"
+            className="w-9 h-9 object-contain"
+            style={{ mixBlendMode: "screen" }}
             animate={{ filter: ["drop-shadow(0 0 4px rgba(99,102,241,0.4))", "drop-shadow(0 0 8px rgba(99,102,241,0.6))", "drop-shadow(0 0 4px rgba(99,102,241,0.4))"] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           />
@@ -1036,7 +1037,8 @@ function Footer() {
             <motion.img
               src={sovraLogo}
               alt="Sovra logo"
-              className="w-8 h-8 rounded-md object-cover"
+              className="w-9 h-9 object-contain"
+              style={{ mixBlendMode: "screen" }}
               animate={{ filter: ["drop-shadow(0 0 4px rgba(99,102,241,0.4))", "drop-shadow(0 0 8px rgba(99,102,241,0.6))", "drop-shadow(0 0 4px rgba(99,102,241,0.4))"] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             />
