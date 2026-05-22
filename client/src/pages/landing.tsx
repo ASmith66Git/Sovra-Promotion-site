@@ -199,7 +199,7 @@ function HeroSection() {
         </h1>
 
         <motion.p variants={fadeUp} custom={2} className="text-lg sm:text-xl max-w-2xl mx-auto mb-4 leading-relaxed" style={{ color: COLORS.muted }} data-testid="text-hero-description">
-          Your notes, tasks, projects, documents, calendars, and email — all in one private place. Sovra triages Gmail, Apple Mail, and IMAP, captures attachments and documents, and keeps everything at your fingertips.
+          Your notes, tasks, projects, documents, calendars, and email — all in one private place. Sovra helps you triage Gmail, Apple Mail, and IMAP, can capture attachments and documents, and keeps everything at your fingertips.
         </motion.p>
 
         <motion.p variants={fadeUp} custom={2.5} className="text-lg sm:text-xl max-w-xl mx-auto mb-10 font-medium" style={{ color: COLORS.text }} data-testid="text-hero-hook">
@@ -281,13 +281,13 @@ function HowItWorksSection() {
       icon: Mail,
       badge: "Email",
       title: "Zero Inbox. Every Time.",
-      description: "Connect Gmail, Apple Mail, or any IMAP account and let Sovra's on-device AI read every message the moment it arrives. Important emails surface as notes — AI formatted and ready to read. Action items become tasks. Meeting requests become events. Attachments are captured and filed on-device. Everything else is batched, summarised, and silenced. Your inbox hits zero and stays there.",
+      description: "Connect Gmail, Apple Mail, or any IMAP account and let Sovra's on-device AI read every message the moment it arrives. Important emails can surface as notes — AI formatted and ready to read. Action items can become tasks. Meeting requests can become events. Attachments are captured and can be filed on-device. Everything else can be batched, summarised, and silenced. Your inbox can hit zero and stay there.",
       bullets: [
         { icon: SiGmail, label: "Gmail, Apple Mail & IMAP support" },
         { icon: Brain, label: "On-device AI triage — nothing leaves your phone" },
         { icon: Paperclip, label: "Attachments captured and saved on-device" },
-        { icon: ScanText, label: "AI summarises long email threads into clean notes" },
-        { icon: BellOff, label: "Distraction emails batched into daily digests" },
+        { icon: ScanText, label: "AI can summarise long email threads into clean notes" },
+        { icon: BellOff, label: "Distraction emails can be batched into daily digests" },
       ],
       color: COLORS.highlight,
     },
@@ -295,9 +295,9 @@ function HowItWorksSection() {
       icon: ListTodo,
       badge: "Tasks & Projects",
       title: "From Email to Done.",
-      description: "Sovra spots action items buried in your emails and turns them into tasks instantly — complete with deadlines, context, and the original message attached. Group tasks into projects, track progress, and see everything laid out in a Gantt chart. Whether it's a single to-do or a multi-week delivery, nothing slips through.",
+      description: "Sovra can spot action items buried in your emails and turn them into tasks — complete with deadlines, context, and the original message attached. Group tasks into projects, track progress, and see everything laid out in a Gantt chart. Whether it's a single to-do or a multi-week delivery, nothing slips through.",
       bullets: [
-        { icon: Mail, label: "AI extracts tasks directly from emails" },
+        { icon: Mail, label: "AI can surface tasks from emails" },
         { icon: FolderOpen, label: "Organise tasks into projects with milestones" },
         { icon: GanttChart, label: "Gantt chart view for project timelines" },
         { icon: Zap, label: "Due dates, priorities & reminders" },
@@ -309,11 +309,11 @@ function HowItWorksSection() {
       icon: FileText,
       badge: "Documents",
       title: "Every Document. Captured, Summarised, Yours.",
-      description: "Every PDF, contract, invoice, spreadsheet, or image that arrives in your inbox — or is shared from any other app via the iOS share sheet — is captured and saved on your device. Sovra's AI reads and summarises every document so you get the key points instantly, and indexes the full content so you can find anything by what's inside it. No cloud uploads. No third-party storage.",
+      description: "Every PDF, contract, invoice, spreadsheet, or image that arrives in your inbox — or is shared from any other app via the iOS share sheet — can be captured and saved on your device. Sovra's AI can read and summarise documents so you get the key points instantly, and indexes the full content so you can find anything by what's inside it. No cloud uploads. No third-party storage.",
       bullets: [
-        { icon: Paperclip, label: "Captures email attachments on arrival" },
+        { icon: Paperclip, label: "Email attachments can be saved on arrival" },
         { icon: Share2, label: "Receive docs from any app via the iOS share sheet" },
-        { icon: Brain, label: "AI summarises every document" },
+        { icon: Brain, label: "AI can summarise every document" },
         { icon: ScanText, label: "Full-text AI search across all content" },
         { icon: CloudOff, label: "Stored entirely on-device — never in the cloud" },
       ],
@@ -323,10 +323,10 @@ function HowItWorksSection() {
       icon: CalendarDays,
       badge: "Calendars",
       title: "Your Day, Already Planned.",
-      description: "Sovra reads your emails for dates, meeting requests, deadlines, and commitments and adds them to your calendar before you even think to do it. See your full day and week in a clean agenda view alongside your tasks — so you always know what's coming and when.",
+      description: "Sovra can spot dates, meeting requests, deadlines, and commitments in your emails and add them to your calendar — so you don't have to. See your full day and week in a clean agenda view alongside your tasks — so you always know what's coming and when.",
       bullets: [
-        { icon: Brain, label: "AI detects dates and events in emails" },
-        { icon: CalendarCheck, label: "Creates calendar events from your emails" },
+        { icon: Brain, label: "AI can detect dates and events in emails" },
+        { icon: CalendarCheck, label: "AI can create calendar events from your emails" },
         { icon: ListTodo, label: "Agenda view with tasks and events together" },
         { icon: Zap, label: "Never miss a meeting or deadline" },
         { icon: RefreshCw, label: "Syncs across your iPhone, iPad, and Apple Silicon Mac" },
@@ -337,9 +337,9 @@ function HowItWorksSection() {
       icon: BookOpen,
       badge: "Notes",
       title: "Capture Everything. In Any Form.",
-      description: "A Sovra note isn't just text. Write, sketch, annotate a photo, or mix all three in one place. Notes created from emails are formatted by the AI — headings, bullet points, key facts pulled out — so they're ready to read the moment they appear. Capture a thought in seconds; Sovra makes it look like you spent minutes.",
+      description: "A Sovra note isn't just text. Write, sketch, annotate a photo, or mix all three in one place. Notes created from emails can be formatted by the AI — headings, bullet points, key facts pulled out — so they're ready to read the moment they appear. Capture a thought in seconds; Sovra makes it look like you spent minutes.",
       bullets: [
-        { icon: Brain, label: "AI formats notes from emails instantly" },
+        { icon: Brain, label: "AI can format notes from emails" },
         { icon: Image, label: "Add photos, sketches, and drawings to any note" },
         { icon: Pencil, label: "Annotate images with markup tools" },
         { icon: ScanText, label: "Fully searchable — find anything instantly" },
@@ -364,7 +364,7 @@ function HowItWorksSection() {
             </span>
           </motion.h2>
           <motion.p variants={fadeUp} custom={2} className="text-lg max-w-2xl mx-auto" style={{ color: COLORS.muted }} data-testid="text-how-subtitle">
-            No folders. No tags. No filing cabinets. Sovra just wants the information — the AI handles everything else.
+            No folders. No tags. No filing cabinets. Sovra just wants the information — the AI can handle everything else.
           </motion.p>
         </motion.div>
 
@@ -405,56 +405,56 @@ const features = [
     icon: Inbox,
     title: "Zero Inbox Engine",
     subtitle: "Clear the noise. Keep the signal.",
-    description: "Every message gets processed, categorized, and cleared. Achieve inbox zero across Gmail, Apple Mail, and IMAP simultaneously. Email is a task manager for other people—Sovra takes it back for you.",
+    description: "Every message can be processed, categorised, and cleared. Achieve inbox zero across Gmail, Apple Mail, and IMAP simultaneously. Email is a task manager for other people—Sovra helps you take it back.",
     color: COLORS.primary,
   },
   {
     icon: Brain,
     title: "The Private Librarian",
     subtitle: "The filing cabinet is dead.",
-    description: "Folders, tags, and notebooks all have the same flaw — you have to know where to put things before you know why they matter. Sovra buries the filing cabinet. Just capture the information; the AI organises, connects, and surfaces it exactly when you need it.",
+    description: "Folders, tags, and notebooks all have the same flaw — you have to know where to put things before you know why they matter. Sovra buries the filing cabinet. Just capture the information; the AI can organise, connect, and surface it exactly when you need it.",
     color: COLORS.secondary,
   },
   {
     icon: Mic,
     title: "Capture Everything, Effortlessly",
     subtitle: "Talk, snap, type, or draw.",
-    description: "Speak your thoughts, snap a photo of a document or whiteboard, type, or sketch with Apple Pencil. Sovra's AI extracts text and data from images, stores the original, and files everything for you—note, task, or event.",
+    description: "Speak your thoughts, snap a photo of a document or whiteboard, type, or sketch with Apple Pencil. Sovra's AI can extract text and data from images, keeps the original, and can file it for you—as a note, task, or event. You choose where it goes.",
     color: COLORS.highlight,
   },
   {
     icon: CalendarCheck,
     title: "Smart Event Detection",
     subtitle: "Never miss a date again.",
-    description: "Meeting invites, appointment mentions, and date references buried in conversations are captured and added to your calendar. No manual entry needed.",
+    description: "Meeting invites, appointment mentions, and date references buried in conversations can be captured and added to your calendar — no manual entry needed.",
     color: COLORS.highlight,
   },
   {
     icon: FileText,
     title: "Documents",
     subtitle: "Share any document into Sovra.",
-    description: "Share a PDF, Word doc, or any file from any app and it's saved privately in your Documents section. Organised for you. Always searchable. Never uploaded anywhere you didn't choose.",
+    description: "Share a PDF, Word doc, or any file from any app and it can be saved privately in your Documents section. Organised on your terms. Always searchable. Never uploaded anywhere you didn't choose.",
     color: COLORS.accent,
   },
   {
     icon: Paperclip,
     title: "Attachment Capture",
     subtitle: "Email attachments, saved instantly.",
-    description: "Save email attachments directly into notes or documents with one tap. PDFs, images, spreadsheets — pulled out of your inbox and saved where you actually need them, labelled and filed.",
+    description: "Save email attachments directly into notes or documents with one tap. PDFs, images, spreadsheets — pulled out of your inbox and saved where you actually need them, labelled and filed your way.",
     color: COLORS.primary,
   },
   {
     icon: PenLine,
     title: "Rich Notes",
     subtitle: "Capture, draw, and annotate anything.",
-    description: "Embed images, scan text from documents, or snap a photo straight into a note—then draw and annotate directly over any image with Apple Pencil or your finger. The on-device AI handles all the formatting for you, so your notes stay clean and structured without any manual editing.",
+    description: "Embed images, scan text from documents, or snap a photo straight into a note—then draw and annotate directly over any image with Apple Pencil or your finger. The on-device AI can handle formatting for you, so your notes can stay clean and structured without manual editing.",
     color: COLORS.secondary,
   },
   {
     icon: BellOff,
     title: "Anti-Distraction Engine",
     subtitle: "Take back your attention from the noise.",
-    description: "Low-priority messages are batched and summarized. Sovra filters noise from signal so you stay in flow. No more context-switching between apps to check if something important arrived.",
+    description: "Low-priority messages can be batched and summarised. Sovra helps you filter noise from signal so you stay in flow. No more context-switching between apps to check if something important arrived.",
     color: COLORS.primary,
   },
   {
