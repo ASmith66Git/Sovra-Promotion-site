@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowLeft, Shield, Brain, Lock, AlertTriangle, Zap, Eye, Heart, TrendingUp, Smartphone } from "lucide-react";
@@ -128,6 +129,19 @@ const sections = [
 ];
 
 export default function Philosophy() {
+  useEffect(() => {
+    document.title = "Our Philosophy — Why We Built Sovra";
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.name = "description";
+      document.head.appendChild(meta);
+    }
+    meta.content = "Why we built Sovra: our stance on the attention economy, data privacy, on-device AI, and building software that actually serves the user — not advertisers.";
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (canonical) canonical.href = "https://sovra.app/philosophy";
+  }, []);
+
   return (
     <div className="min-h-screen text-slate-100" style={{ backgroundColor: COLORS.bg, fontFamily: "Inter, sans-serif" }}>
       <nav
