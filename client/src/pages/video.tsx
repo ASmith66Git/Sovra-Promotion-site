@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { Link } from "wouter";
-import { Play, Pause, Volume2, VolumeX, Maximize2 } from "lucide-react";
+import { Play, Pause, Volume2, VolumeX, Maximize2, Download } from "lucide-react";
 
 export default function Video() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -103,8 +103,17 @@ export default function Video() {
       </div>
 
       {/* CTA below */}
-      <div className="mt-10 text-center">
-        <p className="text-slate-400 mb-4 text-sm">Ready to clear your inbox for good?</p>
+      <div className="mt-10 text-center flex flex-col items-center gap-4">
+        <a
+          href="/sovra-ad-60s.mp4"
+          download="Sovra-60s.mp4"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white font-medium text-sm transition-colors"
+          data-testid="link-download-video"
+        >
+          <Download className="w-4 h-4" />
+          Download video
+        </a>
+        <p className="text-slate-400 text-sm">Ready to clear your inbox for good?</p>
         <a
           href="https://apps.apple.com/app/sovra"
           target="_blank"
