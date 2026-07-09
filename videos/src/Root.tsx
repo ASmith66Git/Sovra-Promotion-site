@@ -1,6 +1,8 @@
 import { Composition } from "remotion";
 import { SovraAd } from "../sovra-ad-30s/Root";
 import { SovraAd60, SOVRA_AD_60_DURATION, SOVRA_AD_60_FPS } from "../sovra-ad-60s/Root";
+import { SovraPortrait30, PORTRAIT_30_DURATION, PORTRAIT_30_FPS } from "../sovra-portrait-30s/Root";
+import { SovraPortrait15, PORTRAIT_15_DURATION, PORTRAIT_15_FPS } from "../sovra-portrait-15s/Root";
 import "./style.css";
 
 export const RemotionRoot: React.FC = () => {
@@ -21,6 +23,22 @@ export const RemotionRoot: React.FC = () => {
         fps={SOVRA_AD_60_FPS}
         width={1920}
         height={1080}
+      />
+      <Composition
+        id="SovraPortrait30"
+        component={SovraPortrait30}
+        durationInFrames={PORTRAIT_30_DURATION}
+        fps={PORTRAIT_30_FPS}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="SovraPortrait15"
+        component={SovraPortrait15}
+        durationInFrames={PORTRAIT_15_DURATION}
+        fps={PORTRAIT_15_FPS}
+        width={1080}
+        height={1920}
       />
     </>
   );
