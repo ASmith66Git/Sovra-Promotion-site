@@ -147,7 +147,7 @@ export default function Video() {
         <div className="text-center mb-12">
           <p className="text-indigo-400 text-sm font-semibold uppercase tracking-widest mb-3">Marketing Assets</p>
           <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">Sovra Video Library</h1>
-          <p className="text-slate-400 text-lg max-w-xl mx-auto">Seven video cuts, ready to download for any placement — landscape for YouTube & web, portrait for Meta & Instagram.</p>
+          <p className="text-slate-400 text-lg max-w-xl mx-auto">Eight video cuts, ready to download for any placement — landscape for YouTube & web, portrait for Meta & Instagram.</p>
         </div>
 
         {/* ── 60s Landscape ── */}
@@ -275,6 +275,20 @@ export default function Video() {
             formatIcon="portrait"
             downloadHref="/sovra-portrait-privacy.mp4"
             downloadName="Sovra-30s-Privacy.mp4"
+            aspectClass="aspect-[9/16]"
+          />
+
+          {/* 30s Secret Librarian portrait */}
+          <VideoCard
+            src="/sovra-librarian-portrait.mp4"
+            poster="/screenshots/notes.jpg"
+            title="Secret Librarian — 30s"
+            subtitle="Capture from email, messages & any app. Sovra files it — you just find it."
+            duration="0:30"
+            format="Portrait · 1080×1920 · Reels & Stories"
+            formatIcon="portrait"
+            downloadHref="/sovra-librarian-portrait.mp4"
+            downloadName="Sovra-Librarian-30s-Portrait.mp4"
             aspectClass="aspect-[9/16]"
           />
         </div>

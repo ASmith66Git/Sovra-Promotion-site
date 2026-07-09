@@ -1,0 +1,1 @@
+- [Portrait phone sizing](portrait-phone-sizing.md) — use 38cqw (not 55cqw) for phone width in portrait 9:16 canvas scenes with text overlays

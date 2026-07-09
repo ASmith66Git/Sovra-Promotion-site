@@ -31,7 +31,7 @@ export const SceneOrganiseP30: React.FC = () => {
 
       {/* Phone */}
       <div style={{ position: "absolute", left: "50%", top: "50%", transform: `translate(-50%, -50%) scale(${phoneScale})`, opacity: phoneOp, zIndex: 5 }}>
-        <div style={{ width: "55cqw", borderRadius: "4cqw", border: "0.4cqw solid rgba(255,255,255,0.15)", backgroundColor: "#0A0F1E", overflow: "hidden", boxShadow: "0 3cqw 8cqw rgba(0,0,0,0.7)", aspectRatio: "9/19", position: "relative" }}>
+        <div style={{ width: "38cqw", borderRadius: "3.5cqw", border: "0.35cqw solid rgba(255,255,255,0.15)", backgroundColor: "#0A0F1E", overflow: "hidden", boxShadow: "0 2.5cqw 6cqw rgba(0,0,0,0.7)", aspectRatio: "9/19", position: "relative" }}>
           <div style={{ position: "absolute", top: 0, left: "30%", right: "30%", height: "2.5cqw", backgroundColor: "#000", borderBottomLeftRadius: "1.2cqw", borderBottomRightRadius: "1.2cqw", zIndex: 10 }} />
           <img src={SHOTS.notes}    alt="Notes"    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain", opacity: notesOp }} />
           <img src={SHOTS.tasks}    alt="Tasks"    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain", opacity: tasksOp }} />
