@@ -147,7 +147,7 @@ export default function Video() {
         <div className="text-center mb-12">
           <p className="text-indigo-400 text-sm font-semibold uppercase tracking-widest mb-3">Marketing Assets</p>
           <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">Sovra Video Library</h1>
-          <p className="text-slate-400 text-lg max-w-xl mx-auto">Four video cuts, ready to download for any placement — landscape for YouTube & web, portrait for Meta & Instagram.</p>
+          <p className="text-slate-400 text-lg max-w-xl mx-auto">Five video cuts, ready to download for any placement — landscape for YouTube & web, portrait for Meta & Instagram.</p>
         </div>
 
         {/* ── 60s Landscape ── */}
@@ -166,10 +166,35 @@ export default function Video() {
           />
         </div>
 
+        {/* ── 60s Portrait — featured ── */}
+        <div className="mb-14">
+          <div className="flex items-center gap-4 mb-10">
+            <div className="flex-1 h-px bg-white/8" />
+            <span className="text-slate-500 text-xs uppercase tracking-widest font-medium">Portrait — Meta & Instagram</span>
+            <div className="flex-1 h-px bg-white/8" />
+          </div>
+          <div className="flex justify-center">
+            <div className="w-full max-w-xs">
+              <VideoCard
+                src="/sovra-portrait-60s.mp4"
+                poster="/screenshots/today.jpg"
+                title="Full Feature Ad — 60s Portrait"
+                subtitle="Complete Sovra story: inbox chaos → AI triage → organised life → privacy. Perfect for Meta Reels."
+                duration="1:00"
+                format="Portrait · 1080×1920 · Meta Reels"
+                formatIcon="portrait"
+                downloadHref="/sovra-portrait-60s.mp4"
+                downloadName="Sovra-60s-Portrait.mp4"
+                aspectClass="aspect-[9/16]"
+              />
+            </div>
+          </div>
+        </div>
+
         {/* Divider */}
         <div className="flex items-center gap-4 mb-10">
           <div className="flex-1 h-px bg-white/8" />
-          <span className="text-slate-500 text-xs uppercase tracking-widest font-medium">Portrait cuts — Meta & Instagram</span>
+          <span className="text-slate-500 text-xs uppercase tracking-widest font-medium">Short portrait cuts — Reels & Stories</span>
           <div className="flex-1 h-px bg-white/8" />
         </div>
 
