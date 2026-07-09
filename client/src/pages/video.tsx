@@ -147,7 +147,7 @@ export default function Video() {
         <div className="text-center mb-12">
           <p className="text-indigo-400 text-sm font-semibold uppercase tracking-widest mb-3">Marketing Assets</p>
           <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">Sovra Video Library</h1>
-          <p className="text-slate-400 text-lg max-w-xl mx-auto">All three video cuts, ready to download for any placement — landscape for YouTube & web, portrait for Meta & Instagram.</p>
+          <p className="text-slate-400 text-lg max-w-xl mx-auto">Four video cuts, ready to download for any placement — landscape for YouTube & web, portrait for Meta & Instagram.</p>
         </div>
 
         {/* ── 60s Landscape ── */}
@@ -173,15 +173,15 @@ export default function Video() {
           <div className="flex-1 h-px bg-white/8" />
         </div>
 
-        {/* ── Portrait pair ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+        {/* ── Portrait trio ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
 
-          {/* 30s portrait */}
+          {/* 30s all-features */}
           <VideoCard
             src="/sovra-portrait-30s.mp4"
             poster="/screenshots/inbox-zero.jpg"
-            title="All Features — 30 Seconds"
-            subtitle="Fast-paced full-feature summary: triage, organise, privacy, CTA."
+            title="All Features — 30s"
+            subtitle="Full-feature summary: triage, organise, privacy, CTA."
             duration="0:30"
             format="Portrait · 1080×1920 · Reels & Stories"
             formatIcon="portrait"
@@ -190,17 +190,31 @@ export default function Video() {
             aspectClass="aspect-[9/16]"
           />
 
-          {/* 15s portrait */}
+          {/* 15s email triage */}
           <VideoCard
             src="/sovra-portrait-15s.mp4"
             poster="/screenshots/inbox-zero.jpg"
-            title="Email Triage — 15 Seconds"
-            subtitle="Laser-focused on the inbox chaos → inbox zero story. Perfect for top-of-funnel."
+            title="Email Triage — 15s"
+            subtitle="Inbox chaos → inbox zero. Top-of-funnel hook."
             duration="0:15"
             format="Portrait · 1080×1920 · Reels & Stories"
             formatIcon="portrait"
             downloadHref="/sovra-portrait-15s.mp4"
             downloadName="Sovra-15s-Portrait.mp4"
+            aspectClass="aspect-[9/16]"
+          />
+
+          {/* 30s privacy */}
+          <VideoCard
+            src="/sovra-portrait-privacy.mp4"
+            poster="/screenshots/today.jpg"
+            title="Privacy Stance — 30s"
+            subtitle="Philosophy-driven: you are the product → Sovra refuses to play that game."
+            duration="0:30"
+            format="Portrait · 1080×1920 · Reels & Stories"
+            formatIcon="portrait"
+            downloadHref="/sovra-portrait-privacy.mp4"
+            downloadName="Sovra-30s-Privacy.mp4"
             aspectClass="aspect-[9/16]"
           />
         </div>
