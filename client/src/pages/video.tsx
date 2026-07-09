@@ -147,7 +147,7 @@ export default function Video() {
         <div className="text-center mb-12">
           <p className="text-indigo-400 text-sm font-semibold uppercase tracking-widest mb-3">Marketing Assets</p>
           <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">Sovra Video Library</h1>
-          <p className="text-slate-400 text-lg max-w-xl mx-auto">Six video cuts, ready to download for any placement — landscape for YouTube & web, portrait for Meta & Instagram.</p>
+          <p className="text-slate-400 text-lg max-w-xl mx-auto">Seven video cuts, ready to download for any placement — landscape for YouTube & web, portrait for Meta & Instagram.</p>
         </div>
 
         {/* ── 60s Landscape ── */}
@@ -219,8 +219,22 @@ export default function Video() {
           <div className="flex-1 h-px bg-white/8" />
         </div>
 
-        {/* ── Portrait trio ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+        {/* ── Portrait quad ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+          {/* 30s email triage portrait */}
+          <VideoCard
+            src="/sovra-email-30s.mp4"
+            poster="/screenshots/inbox-zero.jpg"
+            title="Email Triage — 30s"
+            subtitle="Inbox chaos → AI triage → inbox zero. Focused email story for top-of-funnel ads."
+            duration="0:30"
+            format="Portrait · 1080×1920 · Reels & Stories"
+            formatIcon="portrait"
+            downloadHref="/sovra-email-30s.mp4"
+            downloadName="Sovra-Email-Triage-30s.mp4"
+            aspectClass="aspect-[9/16]"
+          />
 
           {/* 30s all-features */}
           <VideoCard
