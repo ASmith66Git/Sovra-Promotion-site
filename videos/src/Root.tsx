@@ -5,6 +5,7 @@ import { SovraPortrait30, PORTRAIT_30_DURATION, PORTRAIT_30_FPS } from "../sovra
 import { SovraPortrait15, PORTRAIT_15_DURATION, PORTRAIT_15_FPS } from "../sovra-portrait-15s/Root";
 import { SovraPortraitPrivacy, PORTRAIT_PV_DURATION, PORTRAIT_PV_FPS } from "../sovra-portrait-privacy/Root";
 import { SovraPortrait60, PORTRAIT_60_DURATION, PORTRAIT_60_FPS } from "../sovra-portrait-60s/Root";
+import { SovraEmail30, EMAIL_30_DURATION, EMAIL_30_FPS } from "../sovra-email-30s/Root";
 import "./style.css";
 
 export const RemotionRoot: React.FC = () => {
@@ -55,6 +56,14 @@ export const RemotionRoot: React.FC = () => {
         component={SovraPortrait60}
         durationInFrames={PORTRAIT_60_DURATION}
         fps={PORTRAIT_60_FPS}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="SovraEmail30"
+        component={SovraEmail30}
+        durationInFrames={EMAIL_30_DURATION}
+        fps={EMAIL_30_FPS}
         width={1080}
         height={1920}
       />

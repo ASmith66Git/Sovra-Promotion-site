@@ -716,6 +716,8 @@ function ScreenshotsSection() {
 }
 
 function VideoSection() {
+  const [activeTab, setActiveTab] = useState<"60s" | "email">("60s");
+
   return (
     <section id="video" className="relative py-24 px-6" data-testid="section-video">
       <div className="max-w-4xl mx-auto text-center">
@@ -724,10 +726,44 @@ function VideoSection() {
           <h2 className="text-3xl sm:text-5xl font-bold mb-4" style={{ color: COLORS.text }}>
             Watch how Sovra works
           </h2>
-          <p className="text-lg mb-10" style={{ color: COLORS.muted }}>
+          <p className="text-lg mb-8" style={{ color: COLORS.muted }}>
             From chaotic inbox to zero in minutes — no setup, no fuss.
           </p>
         </motion.div>
+
+        {/* Tab toggle */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.1 }}
+          className="inline-flex items-center rounded-xl p-1 mb-8"
+          style={{ backgroundColor: "rgba(30,41,59,0.7)", border: `1px solid ${COLORS.cardBorder}` }}
+        >
+          <button
+            onClick={() => setActiveTab("60s")}
+            className="px-5 py-2 rounded-lg text-sm font-semibold transition-all duration-200"
+            style={{
+              backgroundColor: activeTab === "60s" ? COLORS.primary : "transparent",
+              color: activeTab === "60s" ? "#fff" : COLORS.muted,
+            }}
+            data-testid="button-tab-60s"
+          >
+            60s Overview
+          </button>
+          <button
+            onClick={() => setActiveTab("email")}
+            className="px-5 py-2 rounded-lg text-sm font-semibold transition-all duration-200"
+            style={{
+              backgroundColor: activeTab === "email" ? COLORS.primary : "transparent",
+              color: activeTab === "email" ? "#fff" : COLORS.muted,
+            }}
+            data-testid="button-tab-email"
+          >
+            Email Triage
+          </button>
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -737,16 +773,31 @@ function VideoSection() {
           style={{ border: `1px solid ${COLORS.cardBorder}` }}
           data-testid="video-player-container"
         >
-          <video
-            controls
-            playsInline
-            preload="metadata"
-            className="w-full block"
-            style={{ background: "#000" }}
-            data-testid="video-sovra-ad"
-          >
-            <source src="/sovra-ad-60s.mp4" type="video/mp4" />
-          </video>
+          {activeTab === "60s" ? (
+            <video
+              key="60s"
+              controls
+              playsInline
+              preload="metadata"
+              className="w-full block"
+              style={{ background: "#000" }}
+              data-testid="video-sovra-ad-60s"
+            >
+              <source src="/sovra-ad-60s.mp4" type="video/mp4" />
+            </video>
+          ) : (
+            <video
+              key="email"
+              controls
+              playsInline
+              preload="metadata"
+              className="w-full block"
+              style={{ background: "#000", maxHeight: "80vh" }}
+              data-testid="video-sovra-email-30s"
+            >
+              <source src="/sovra-email-30s.mp4" type="video/mp4" />
+            </video>
+          )}
         </motion.div>
       </div>
     </section>
