@@ -38,6 +38,7 @@ export const SCREENSHOT_PATHS = {
   askSovra: staticFile("screenshots/ask-sovra.jpg"),
   notes: staticFile("screenshots/notes.jpg"),
   calendar: staticFile("screenshots/calendar.jpg"),
+  connected: staticFile("screenshots/connected.jpg"),
 };
 
 export const SOVRA_LOGO = staticFile("sovra-logo.svg");

@@ -1,17 +1,7 @@
 import { useCurrentFrame } from "remotion";
 import { SCREENSHOT_PATHS, clampedInterpolate, delayedInterpolate } from "../shared";
 
-const NODES = [
-  { x: 50, y: 50, label: "Q4 Budget",    color: "#6366F1", size: 1.2, delay: 0 },
-  { x: 22, y: 30, label: "Email",         color: "#EA4335", size: 0.9, delay: 0.3 },
-  { x: 75, y: 25, label: "Meeting Notes", color: "#8B5CF6", size: 1.0, delay: 0.5 },
-  { x: 80, y: 65, label: "Task: Review",  color: "#10B981", size: 0.85, delay: 0.8 },
-  { x: 25, y: 72, label: "Attachment",    color: "#F97316", size: 0.85, delay: 1.0 },
-  { x: 58, y: 82, label: "Calendar",      color: "#3B82F6", size: 0.9,  delay: 1.3 },
-];
-
-const EDGES = [[0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [1, 2], [3, 5]];
-const QUERY_CHARS = "budget review";
+const QUERY_CHARS = "Native Dive Computer";
 
 export const SceneLibraryPLib: React.FC = () => {
   const frame = useCurrentFrame();
@@ -24,7 +14,6 @@ export const SceneLibraryPLib: React.FC = () => {
   const topY  = delayedInterpolate(frame, 0.2, 0.6, -18, 0);
   const bottomOp = delayedInterpolate(frame, 0.8, 0.6, 0, 1);
 
-  const graphOp = clampedInterpolate(frame, [25, 55], [0, 1]);
   const searchBarOp = delayedInterpolate(frame, 3.5, 0.5, 0, 1);
   const searchBarY  = delayedInterpolate(frame, 3.5, 0.5, 12, 0);
   const typedChars  = Math.floor(clampedInterpolate(frame, [120, 180], [0, QUERY_CHARS.length]));
@@ -37,7 +26,7 @@ export const SceneLibraryPLib: React.FC = () => {
       <div style={{ position: "absolute", left: "50%", top: "50%", transform: `translate(-50%, -50%) scale(${phoneScale})`, opacity: phoneOp, zIndex: 5 }}>
         <div style={{ width: "38cqw", borderRadius: "3.5cqw", border: "0.35cqw solid rgba(255,255,255,0.15)", backgroundColor: "#0A0F1E", overflow: "hidden", boxShadow: "0 2.5cqw 6cqw rgba(0,0,0,0.7)", aspectRatio: "9/19", position: "relative" }}>
           <div style={{ position: "absolute", top: 0, left: "30%", right: "30%", height: "2.5cqw", backgroundColor: "#000", borderBottomLeftRadius: "1.2cqw", borderBottomRightRadius: "1.2cqw", zIndex: 10 }} />
-          <img src={SCREENSHOT_PATHS.askSovra} alt="Ask Sovra" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+          <img src={SCREENSHOT_PATHS.connected} alt="Connected" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
         </div>
       </div>
 
@@ -55,30 +44,8 @@ export const SceneLibraryPLib: React.FC = () => {
         </p>
       </div>
 
-      {/* Bottom overlay — node graph + search */}
+      {/* Bottom overlay — search bar */}
       <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, zIndex: 20, background: "linear-gradient(to top, rgba(15,23,42,0.97) 68%, transparent)", padding: "9cqh 7cqw 6cqh", opacity: bottomOp }}>
-
-        {/* Compact node graph */}
-        <div style={{ opacity: graphOp, height: "18cqh", position: "relative", marginBottom: "2.5cqh" }}>
-          <svg viewBox="0 0 100 100" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} preserveAspectRatio="xMidYMid meet">
-            {EDGES.map(([a, b], i) => {
-              const na = NODES[a]; const nb = NODES[b];
-              const edgeOp = clampedInterpolate(frame, [Math.round((na.delay + 0.4) * 30), Math.round((na.delay + 0.9) * 30)], [0, 0.4]);
-              return <line key={i} x1={na.x} y1={na.y} x2={nb.x} y2={nb.y} stroke="white" strokeWidth="0.5" opacity={edgeOp} strokeDasharray="2 1" />;
-            })}
-            {NODES.map((node, i) => {
-              const nodeOp = clampedInterpolate(frame, [Math.round(node.delay * 30), Math.round((node.delay + 0.4) * 30)], [0, 1]);
-              const pulse = 1 + Math.sin(frame / 20 + i) * 0.05;
-              return (
-                <g key={i} opacity={nodeOp}>
-                  <circle cx={node.x} cy={node.y} r={3.5 * node.size * pulse} fill={node.color} opacity={0.2} />
-                  <circle cx={node.x} cy={node.y} r={2 * node.size} fill={node.color} opacity={0.85} />
-                  <text x={node.x} y={node.y + 5 * node.size + 2} textAnchor="middle" fill="white" fontSize="3.5" opacity={0.75} fontFamily="ui-sans-serif, system-ui, sans-serif">{node.label}</text>
-                </g>
-              );
-            })}
-          </svg>
-        </div>
 
         {/* Search bar */}
         <div style={{ backgroundColor: "rgba(30,41,59,0.8)", borderRadius: "2cqw", border: "1px solid rgba(255,255,255,0.1)", overflow: "hidden", opacity: searchBarOp, transform: `translateY(${searchBarY}px)` }}>
@@ -92,14 +59,14 @@ export const SceneLibraryPLib: React.FC = () => {
             </span>
           </div>
           <div style={{ padding: "1.2cqh 3cqw", display: "flex", alignItems: "center", gap: "2cqw", opacity: resultOp }}>
-            <div style={{ width: "4.5cqw", height: "4.5cqw", borderRadius: "1cqw", backgroundColor: "rgba(99,102,241,0.3)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-              <svg style={{ width: "2.5cqw", height: "2.5cqw", color: "#818CF8" }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div style={{ width: "4.5cqw", height: "4.5cqw", borderRadius: "1cqw", backgroundColor: "rgba(16,185,129,0.2)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+              <svg style={{ width: "2.5cqw", height: "2.5cqw", color: "#34D399" }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
             </div>
             <div>
-              <p style={{ fontSize: "3cqw", color: "#F8FAFC", fontWeight: 600, margin: 0 }}>Q4 Budget Review</p>
-              <p style={{ fontSize: "2.5cqw", color: "#94A3B8", margin: 0 }}>From Gmail · 3 related notes · 1 task</p>
+              <p style={{ fontSize: "3cqw", color: "#F8FAFC", fontWeight: 600, margin: 0 }}>Native Dive Computer Integration Guide</p>
+              <p style={{ fontSize: "2.5cqw", color: "#94A3B8", margin: 0 }}>PDF · 4 connected items · Tagged automatically</p>
             </div>
           </div>
         </div>

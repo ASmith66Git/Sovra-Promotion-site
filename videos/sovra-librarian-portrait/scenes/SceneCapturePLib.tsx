@@ -30,7 +30,7 @@ export const SceneCapturePLib: React.FC = () => {
       <div style={{ position: "absolute", left: "50%", top: "50%", transform: `translate(-50%, -50%) scale(${phoneScale})`, opacity: phoneScale, zIndex: 5 }}>
         <div style={{ width: "38cqw", borderRadius: "3.5cqw", border: "0.35cqw solid rgba(255,255,255,0.15)", backgroundColor: "#0A0F1E", overflow: "hidden", boxShadow: "0 2.5cqw 6cqw rgba(0,0,0,0.7)", aspectRatio: "9/19", position: "relative" }}>
           <div style={{ position: "absolute", top: 0, left: "30%", right: "30%", height: "2.5cqw", backgroundColor: "#000", borderBottomLeftRadius: "1.2cqw", borderBottomRightRadius: "1.2cqw", zIndex: 10 }} />
-          <img src={SCREENSHOT_PATHS.notes} alt="Notes" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+          <img src={SCREENSHOT_PATHS.inboxZero} alt="Inbox Zero" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
         </div>
       </div>
 
