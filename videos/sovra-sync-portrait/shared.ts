@@ -6,11 +6,11 @@ export const SP_FPS      = 30;
 export const SP_DURATION = 940; // 31.32s — matches natural VO pace
 
 export const SP_FRAMES = {
-  hook:     150, // 5s   "Sovra lives on your device"
-  devices:  210, // 7s   "But what about your iPad too?"
+  hook:     180, // 6s   "Sovra lives on your device"
+  devices:  180, // 6s   "But what about your iPad too?"
   zero:     300, // 10s  "Zero-knowledge — encrypted before it moves"
-  settings: 165, // 5.5s Settings screen — Cloud Sync (aligned to chunk boundary 825)
-  close:    115, // 3.8s "Two devices. One brain. Zero compromise."
+  settings: 150, // 5s   Settings screen — Cloud Sync
+  close:    130, // 4.3s "Two devices. One brain. Zero compromise."
 } as const;
 
 export const BG = "#0A0F1C";
