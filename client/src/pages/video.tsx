@@ -147,7 +147,7 @@ export default function Video() {
         <div className="text-center mb-12">
           <p className="text-indigo-400 text-sm font-semibold uppercase tracking-widest mb-3">Marketing Assets</p>
           <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">Sovra Video Library</h1>
-          <p className="text-slate-400 text-lg max-w-xl mx-auto">Seven video cuts, ready to download for any placement — landscape for YouTube & web, portrait for Meta, Instagram & YouTube Shorts.</p>
+          <p className="text-slate-400 text-lg max-w-xl mx-auto">Five video cuts, ready to download for any placement — landscape for YouTube & web, portrait for Meta, Instagram & YouTube Shorts.</p>
         </div>
 
         {/* ── 60s Landscape ── */}
@@ -212,34 +212,6 @@ export default function Video() {
             formatIcon="portrait"
             downloadHref="/sovra-email-30s.mp4"
             downloadName="Sovra-Email-Triage-30s.mp4"
-            aspectClass="aspect-[9/16]"
-          />
-
-          {/* 30s all-features */}
-          <VideoCard
-            src="/sovra-portrait-30s.mp4"
-            poster="/screenshots/inbox-zero.jpg"
-            title="All Features — 30s"
-            subtitle="Full-feature summary: triage, organise, privacy, CTA."
-            duration="0:30"
-            format="Portrait · 1080×1920 · Reels & Stories"
-            formatIcon="portrait"
-            downloadHref="/sovra-portrait-30s.mp4"
-            downloadName="Sovra-30s-Portrait.mp4"
-            aspectClass="aspect-[9/16]"
-          />
-
-          {/* 15s email triage */}
-          <VideoCard
-            src="/sovra-portrait-15s.mp4"
-            poster="/screenshots/inbox-zero.jpg"
-            title="Email Triage — 15s"
-            subtitle="Inbox chaos → inbox zero. Top-of-funnel hook."
-            duration="0:15"
-            format="Portrait · 1080×1920 · Reels & Stories"
-            formatIcon="portrait"
-            downloadHref="/sovra-portrait-15s.mp4"
-            downloadName="Sovra-15s-Portrait.mp4"
             aspectClass="aspect-[9/16]"
           />
 

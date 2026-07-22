@@ -132,6 +132,7 @@ function Navbar() {
           <button onClick={() => scrollTo("privacy")} className="text-sm cursor-pointer bg-transparent border-none" style={{ color: COLORS.muted }} data-testid="link-nav-privacy">Privacy</button>
           <button onClick={() => scrollTo("download")} className="text-sm cursor-pointer bg-transparent border-none" style={{ color: COLORS.muted }} data-testid="link-nav-download">Download</button>
           <Link href="/security" data-testid="link-nav-security"><span className="text-sm cursor-pointer" style={{ color: COLORS.muted }}>Security</span></Link>
+          <Link href="/video" data-testid="link-nav-videos"><span className="text-sm cursor-pointer" style={{ color: COLORS.muted }}>Videos</span></Link>
         </div>
         <Button
           size="sm"
@@ -1105,6 +1106,7 @@ function Footer() {
             <Link href="/security" data-testid="link-footer-security"><span className="text-sm transition-colors duration-200 cursor-pointer" style={{ color: COLORS.dimmed }}>Security</span></Link>
             <a href="#download" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-download">Download</a>
             <a href="/philosophy" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-philosophy">Our Philosophy</a>
+            <Link href="/video" data-testid="link-footer-videos"><span className="text-sm transition-colors duration-200 cursor-pointer" style={{ color: COLORS.dimmed }}>Videos</span></Link>
             <a href="/support" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-support">Support</a>
           </nav>
         </div>
