@@ -143,26 +143,15 @@ function Navbar() {
           <Link href="/security" data-testid="link-nav-security"><span className="text-sm cursor-pointer" style={{ color: COLORS.muted }}>Security</span></Link>
           <Link href="/video" data-testid="link-nav-videos"><span className="text-sm cursor-pointer" style={{ color: COLORS.muted }}>Videos</span></Link>
         </div>
-        <div className="flex items-center gap-2">
-          <button
-            className="md:hidden flex items-center justify-center w-9 h-9 rounded-lg border-none bg-transparent cursor-pointer"
-            style={{ color: COLORS.muted }}
-            onClick={() => setMobileOpen(o => !o)}
-            aria-label="Toggle menu"
-            data-testid="button-mobile-menu-toggle"
-          >
-            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
-          <Button
-            size="sm"
-            onClick={() => scrollTo("download")}
-            className="text-white border-none"
-            style={{ backgroundColor: COLORS.primary }}
-            data-testid="button-get-app-nav"
-          >
-            Get the App
-          </Button>
-        </div>
+        <button
+          className="md:hidden flex items-center justify-center w-9 h-9 rounded-lg border-none bg-transparent cursor-pointer"
+          style={{ color: COLORS.muted }}
+          onClick={() => setMobileOpen(o => !o)}
+          aria-label="Toggle menu"
+          data-testid="button-mobile-menu-toggle"
+        >
+          {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
       </div>
 
       <AnimatePresence>
