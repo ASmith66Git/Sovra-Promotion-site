@@ -1,0 +1,91 @@
+import { useCurrentFrame, useVideoConfig, spring } from "remotion";
+import { SEC_SHOTS, clampedInterpolate, delayedInterpolate } from "../shared";
+
+export const SceneKeySec: React.FC = () => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+
+  const containerOp = clampedInterpolate(frame, [0, 20], [0, 1]);
+  const phoneScale  = spring({ frame: frame - 15, fps, config: { damping: 12, stiffness: 70 } });
+
+  const topOp = delayedInterpolate(frame, 0.3, 0.6, 0, 1);
+  const topY  = delayedInterpolate(frame, 0.3, 0.6, -18, 0);
+  const bottomOp = delayedInterpolate(frame, 1.0, 0.6, 0, 1);
+  const bottomY  = delayedInterpolate(frame, 1.0, 0.6, 18, 0);
+
+  const wordCount = Math.floor(clampedInterpolate(frame, [60, 180], [0, 24]));
+
+  return (
+    <div style={{ position: "absolute", inset: 0, overflow: "hidden", opacity: containerOp, zIndex: 20 }}>
+
+      {/* Phone */}
+      <div style={{
+        position: "absolute", left: "50%", top: "50%",
+        transform: `translate(-50%, -50%) scale(${phoneScale})`,
+        opacity: phoneScale, zIndex: 5,
+      }}>
+        <div style={{
+          width: "38cqw", borderRadius: "3.5cqw",
+          border: "0.35cqw solid rgba(255,255,255,0.15)",
+          backgroundColor: "#0A0F1E", overflow: "hidden",
+          boxShadow: "0 2.5cqw 6cqw rgba(0,0,0,0.7)",
+          aspectRatio: "9/19", position: "relative",
+        }}>
+          <div style={{ position: "absolute", top: 0, left: "30%", right: "30%", height: "2.5cqw", backgroundColor: "#000", borderBottomLeftRadius: "1.2cqw", borderBottomRightRadius: "1.2cqw", zIndex: 10 }} />
+          <img src={SEC_SHOTS.phrase} alt="Recovery Phrase" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+        </div>
+      </div>
+
+      {/* Word counter badge — pulses as words tick up */}
+      <div style={{
+        position: "absolute", right: "7cqw", top: "50%",
+        transform: "translateY(-50%)", zIndex: 15,
+        opacity: clampedInterpolate(frame, [50, 70], [0, 1]),
+      }}>
+        <div style={{
+          backgroundColor: "rgba(52,211,153,0.15)", border: "1px solid rgba(52,211,153,0.4)",
+          borderRadius: "1.5cqw", padding: "1.5cqh 2.5cqw", textAlign: "center",
+        }}>
+          <p style={{ fontSize: "6cqw", fontWeight: 900, color: "#34D399", margin: 0, lineHeight: 1 }}>{wordCount}</p>
+          <p style={{ fontSize: "2.5cqw", color: "#94A3B8", margin: "0.5cqh 0 0", fontWeight: 500 }}>of 24</p>
+        </div>
+      </div>
+
+      {/* Top overlay */}
+      <div style={{
+        position: "absolute", top: 0, left: 0, right: 0, zIndex: 20,
+        background: "linear-gradient(to bottom, rgba(10,15,28,0.97) 60%, transparent)",
+        padding: "7cqh 7cqw 8cqh", opacity: topOp, transform: `translateY(${topY}px)`,
+      }}>
+        <div style={{
+          display: "inline-block", fontSize: "2.8cqw", textTransform: "uppercase",
+          letterSpacing: "0.2cqw", color: "#34D399", fontWeight: 600,
+          backgroundColor: "rgba(52,211,153,0.12)", padding: "0.8cqh 3cqw",
+          borderRadius: "99px", border: "1px solid rgba(52,211,153,0.3)", marginBottom: "3cqh",
+        }}>
+          Your Encryption Key
+        </div>
+        <p style={{ fontSize: "7.5cqw", fontWeight: 800, color: "#F8FAFC", lineHeight: 1.2, margin: 0 }}>
+          24 words.
+          <br />
+          <span style={{ background: "linear-gradient(90deg, #34D399, #6366F1)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+            Only you.
+          </span>
+        </p>
+      </div>
+
+      {/* Bottom overlay */}
+      <div style={{
+        position: "absolute", bottom: 0, left: 0, right: 0, zIndex: 20,
+        background: "linear-gradient(to top, rgba(10,15,28,0.97) 65%, transparent)",
+        padding: "8cqh 7cqw 6cqh", opacity: bottomOp, transform: `translateY(${bottomY}px)`,
+      }}>
+        <p style={{ fontSize: "3.5cqw", color: "#94A3B8", margin: 0, lineHeight: 1.6 }}>
+          Generated on your device.
+          <br />
+          Sovra never sees it. Nobody does.
+        </p>
+      </div>
+    </div>
+  );
+};
