@@ -250,7 +250,7 @@ export default function Video() {
           {/* Document Workflow — portrait */}
           <VideoCard
             src="/sovra-docs-portrait.mp4"
-            poster="/screenshots/documents.jpg"
+            poster="/screenshots/inbox-zero.jpg"
             title="Document Workflow — 38s"
             subtitle="Invoice lands → one tap saves it → Sovra names & links it → annotate → share from any app."
             duration="0:38"
