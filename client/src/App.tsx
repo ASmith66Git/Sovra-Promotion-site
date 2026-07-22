@@ -13,6 +13,7 @@ import Terms from "@/pages/terms";
 import VoiceSamples from "@/pages/voice-samples";
 import VideoPlan from "@/pages/video-plan";
 import Security from "@/pages/security";
+import AiPage from "@/pages/ai";
 
 function Router() {
   return (
@@ -26,6 +27,7 @@ function Router() {
       <Route path="/voice-samples" component={VoiceSamples} />
       <Route path="/video-plan" component={VideoPlan} />
       <Route path="/security" component={Security} />
+      <Route path="/ai" component={AiPage} />
       <Route component={NotFound} />
     </Switch>
   );

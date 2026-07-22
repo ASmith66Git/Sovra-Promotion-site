@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect, useCallback } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
 import {
   Shield,
@@ -12,6 +12,7 @@ import {
   ChevronLeft,
   ChevronRight,
   X,
+  Menu,
   Wifi,
   CheckCircle2,
   Zap,
@@ -93,9 +94,16 @@ const COLORS = {
 };
 
 function Navbar() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setMobileOpen(false);
+    setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    }, 150);
   };
+
+  const closeMenu = () => setMobileOpen(false);
 
   return (
     <motion.nav
@@ -131,19 +139,59 @@ function Navbar() {
           <button onClick={() => scrollTo("pricing")} className="text-sm cursor-pointer bg-transparent border-none" style={{ color: COLORS.muted }} data-testid="link-nav-pricing">Pricing</button>
           <button onClick={() => scrollTo("privacy")} className="text-sm cursor-pointer bg-transparent border-none" style={{ color: COLORS.muted }} data-testid="link-nav-privacy">Privacy</button>
           <button onClick={() => scrollTo("download")} className="text-sm cursor-pointer bg-transparent border-none" style={{ color: COLORS.muted }} data-testid="link-nav-download">Download</button>
+          <Link href="/ai" data-testid="link-nav-ai"><span className="text-sm cursor-pointer" style={{ color: COLORS.muted }}>AI</span></Link>
           <Link href="/security" data-testid="link-nav-security"><span className="text-sm cursor-pointer" style={{ color: COLORS.muted }}>Security</span></Link>
           <Link href="/video" data-testid="link-nav-videos"><span className="text-sm cursor-pointer" style={{ color: COLORS.muted }}>Videos</span></Link>
         </div>
-        <Button
-          size="sm"
-          onClick={() => scrollTo("download")}
-          className="text-white border-none"
-          style={{ backgroundColor: COLORS.primary }}
-          data-testid="button-get-app-nav"
-        >
-          Get the App
-        </Button>
+        <div className="flex items-center gap-2">
+          <button
+            className="md:hidden flex items-center justify-center w-9 h-9 rounded-lg border-none bg-transparent cursor-pointer"
+            style={{ color: COLORS.muted }}
+            onClick={() => setMobileOpen(o => !o)}
+            aria-label="Toggle menu"
+            data-testid="button-mobile-menu-toggle"
+          >
+            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+          <Button
+            size="sm"
+            onClick={() => scrollTo("download")}
+            className="text-white border-none"
+            style={{ backgroundColor: COLORS.primary }}
+            data-testid="button-get-app-nav"
+          >
+            Get the App
+          </Button>
+        </div>
       </div>
+
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.22, ease: "easeInOut" }}
+            className="md:hidden overflow-hidden"
+            style={{ backgroundColor: COLORS.glassBg, borderTop: `1px solid ${COLORS.cardBorder}` }}
+            data-testid="nav-mobile-menu"
+          >
+            <div className="px-6 py-4 flex flex-col gap-1">
+              <button onClick={() => scrollTo("problem")} className="text-left text-sm py-3 px-3 rounded-lg cursor-pointer bg-transparent border-none w-full" style={{ color: COLORS.muted }} data-testid="link-mobile-problem">Why Sovra</button>
+              <button onClick={() => scrollTo("how-it-works")} className="text-left text-sm py-3 px-3 rounded-lg cursor-pointer bg-transparent border-none w-full" style={{ color: COLORS.muted }} data-testid="link-mobile-how">How It Works</button>
+              <button onClick={() => scrollTo("features")} className="text-left text-sm py-3 px-3 rounded-lg cursor-pointer bg-transparent border-none w-full" style={{ color: COLORS.muted }} data-testid="link-mobile-features">Features</button>
+              <button onClick={() => scrollTo("pricing")} className="text-left text-sm py-3 px-3 rounded-lg cursor-pointer bg-transparent border-none w-full" style={{ color: COLORS.muted }} data-testid="link-mobile-pricing">Pricing</button>
+              <button onClick={() => scrollTo("privacy")} className="text-left text-sm py-3 px-3 rounded-lg cursor-pointer bg-transparent border-none w-full" style={{ color: COLORS.muted }} data-testid="link-mobile-privacy">Privacy</button>
+              <button onClick={() => scrollTo("download")} className="text-left text-sm py-3 px-3 rounded-lg cursor-pointer bg-transparent border-none w-full" style={{ color: COLORS.muted }} data-testid="link-mobile-download">Download</button>
+              <Link href="/ai" onClick={closeMenu} data-testid="link-mobile-ai"><span className="block text-sm py-3 px-3 rounded-lg cursor-pointer" style={{ color: COLORS.muted }}>AI</span></Link>
+              <Link href="/security" onClick={closeMenu} data-testid="link-mobile-security"><span className="block text-sm py-3 px-3 rounded-lg cursor-pointer" style={{ color: COLORS.muted }}>Security</span></Link>
+              <Link href="/video" onClick={closeMenu} data-testid="link-mobile-videos"><span className="block text-sm py-3 px-3 rounded-lg cursor-pointer" style={{ color: COLORS.muted }}>Videos</span></Link>
+              <Link href="/philosophy" onClick={closeMenu} data-testid="link-mobile-philosophy"><span className="block text-sm py-3 px-3 rounded-lg cursor-pointer" style={{ color: COLORS.muted }}>Our Philosophy</span></Link>
+              <Link href="/support" onClick={closeMenu} data-testid="link-mobile-support"><span className="block text-sm py-3 px-3 rounded-lg cursor-pointer" style={{ color: COLORS.muted }}>Support</span></Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 }
@@ -1103,6 +1151,7 @@ function Footer() {
             <a href="#pricing" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-pricing">Pricing</a>
             <Link href="/privacy" data-testid="link-footer-privacy"><span className="text-sm transition-colors duration-200 cursor-pointer" style={{ color: COLORS.dimmed }}>Privacy</span></Link>
             <Link href="/terms" data-testid="link-footer-terms"><span className="text-sm transition-colors duration-200 cursor-pointer" style={{ color: COLORS.dimmed }}>Terms</span></Link>
+            <Link href="/ai" data-testid="link-footer-ai"><span className="text-sm transition-colors duration-200 cursor-pointer" style={{ color: COLORS.dimmed }}>AI</span></Link>
             <Link href="/security" data-testid="link-footer-security"><span className="text-sm transition-colors duration-200 cursor-pointer" style={{ color: COLORS.dimmed }}>Security</span></Link>
             <a href="#download" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-download">Download</a>
             <a href="/philosophy" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-philosophy">Our Philosophy</a>
