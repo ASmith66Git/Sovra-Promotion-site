@@ -1,0 +1,79 @@
+How Sovra Protects Your Data
+Your Vault. Your Keys. Your Rules.
+Sovra is built on a single foundational principle: your private data should only ever be readable by you. Not by Sovra, not by our servers, and not by anyone who intercepts traffic between your device and the cloud. This isn't a marketing claim — it's a technical guarantee baked into how the app works at every layer, including deliberate choices designed to remain secure as computing technology evolves.
+
+The Vault Key
+When you set up Sovra, the app generates a 12-word BIP39 seed phrase — the same battle-tested standard used to secure cryptocurrency wallets. From that phrase, Sovra derives a cryptographic key using PBKDF2 (a key-stretching algorithm designed to make brute-force guessing computationally expensive, even on specialised hardware). That derived key is your vault key, and it is the single secret that protects everything you store.
+
+The vault key is generated on your device. It is stored only on your device, protected by your device's secure hardware enclave (iOS Secure Enclave / Android Keystore). It is never transmitted anywhere — not to our servers, not to any third party.
+
+What this means in practice: if you lose your seed phrase and every device running Sovra, your data is permanently unrecoverable. There is no "forgot my password" flow — because there is no back door.
+
+Encryption: AES-GCM End-to-End
+Every note, task, event, and credential you save is encrypted using AES-256-GCM before it leaves the in-app memory buffer and touches local storage or any network connection. AES-GCM is an authenticated encryption scheme — it simultaneously keeps your data confidential and guarantees that any tampering with the ciphertext will be detected and rejected.
+
+Each encrypted record carries its own cryptographic nonce, meaning the same plaintext encrypted twice produces two completely different ciphertexts. This prevents statistical analysis of your stored data even if an attacker obtained the raw database file.
+
+Encryption and decryption happen entirely on-device. The server never receives a decryption key. The server cannot read your data. Sovra employees cannot read your data.
+
+Local-First Architecture
+Sovra stores all your data locally in an encrypted SQLite database on your device. The app is fully functional with no internet connection — create notes, manage tasks, write emails, everything works offline. The cloud sync layer is opt-in, and even when enabled, it exists purely to replicate your already-encrypted data to your other devices.
+
+This is the opposite of most productivity apps, which store your data in the cloud and show it to you on request. In Sovra, the device is the source of truth.
+
+Cloud Sync: An Encrypted Relay, Nothing More
+When you enable cloud sync, Sovra uses a blind relay architecture. Here's exactly what happens when data moves between your device and the Sovra server:
+
+A record is encrypted on your device with your vault key.
+The resulting ciphertext — which the server cannot decode — is sent over HTTPS to the Sovra server, authenticated with a sync token (a SHA-256 hash of your vault key, not the key itself).
+The server stores the ciphertext and routes it to your other devices.
+Your other devices receive the ciphertext and decrypt it locally using the vault key stored on that device.
+The server's role is exactly that of a secure postal service: it knows which vault a parcel belongs to, but it cannot open the parcel.
+
+Authentication without identity: Sovra has no user accounts, no email addresses, no passwords stored server-side. Your vault is identified to the server solely by the SHA-256 hash of your sync token — a 64-character hex string that cannot be reversed to obtain your vault key or seed phrase. There is no "account" to breach.
+
+Conflict-Free Sync Across Multiple Devices
+Sovra uses a CRDT (Conflict-free Replicated Data Type) system stamped with Hybrid Logical Clocks (HLC). When two devices both modify the same record while offline and then sync, Sovra resolves the conflict automatically — the version with the most recent timestamp wins, using a timestamp format that accounts for clock drift between devices.
+
+Every change is recorded in an append-only operation log. When devices sync, they exchange only the changes since their last sync point (delta sync), keeping bandwidth usage low. Conflict resolution happens on the client — the server just stores and forwards.
+
+Attachment and File Encryption
+Photos, scanned documents, and PDF attachments are encrypted as binary blobs before upload using the same AES-256-GCM scheme. Each blob is encrypted before leaving the device and stored server-side in an isolated binary table. On a new device, blobs are downloaded and decrypted locally — the server never serves plaintext file content.
+
+Biometric Authentication
+Access to your vault is gated by your device's biometric hardware (Face ID, Touch ID, or device PIN as fallback). Biometric authentication is handled entirely by the operating system — Sovra never sees your biometric data. On iOS, this leverages the Secure Enclave directly.
+
+Quantum Resistance Considerations
+The cybersecurity community is actively preparing for a future where sufficiently powerful quantum computers exist. Two quantum algorithms are relevant to encryption:
+
+Grover's algorithm can theoretically search an unsorted key space in roughly the square root of the time a classical computer would take. In practice, this halves the effective security of a symmetric key — a 256-bit key behaves like a 128-bit key against a quantum attacker.
+
+Shor's algorithm can efficiently break the mathematical problems underpinning most modern asymmetric (public-key) cryptography — RSA, Diffie-Hellman, and elliptic-curve cryptography (ECC) are all vulnerable.
+
+How Sovra is positioned:
+
+Sovra's encryption architecture was deliberately designed around symmetric-only cryptography for all vault data. There are no RSA keys, no ECC key pairs, and no Diffie-Hellman key exchanges involved in encrypting or decrypting your notes, tasks, or credentials. Shor's algorithm — the primary quantum threat to most encrypted systems — therefore has no attack surface in Sovra's data encryption model.
+
+For the remaining quantum threat (Grover's algorithm against symmetric keys), Sovra uses AES-256, which at 256-bit key length retains a 128-bit effective security margin against a quantum adversary. A 128-bit security level is the current industry benchmark for long-term quantum resistance and remains computationally infeasible to brute-force even with projected quantum hardware.
+
+The key derivation chain (PBKDF2 + SHA-256) follows the same logic: SHA-256 produces a 256-bit output, leaving a 128-bit quantum-safe margin under Grover's analysis.
+
+The one caveat — transport layer: The HTTPS connection between your device and the Sovra server uses TLS, which does rely on asymmetric cryptography for the connection handshake. A future quantum computer could theoretically break a recorded TLS session. However, because your data is already encrypted with AES-256-GCM before it reaches the TLS layer, a broken TLS session still yields only ciphertext — the vault key never traverses the network, so there is nothing of cryptographic value to extract from the transport.
+
+In short: Sovra's design choices today align with the trajectory of post-quantum cryptography standards. As NIST's post-quantum standards (such as CRYSTALS-Kyber for key exchange) mature and become available in mobile platforms, Sovra is positioned to adopt them at the transport layer without any change to the underlying vault encryption model, which is already structured to resist quantum attack.
+
+What Sovra Cannot Do
+Sovra cannot read your notes, tasks, or emails. All content is AES-256-GCM encrypted before it reaches our servers.
+Sovra cannot reset your vault. There is no account recovery. Your seed phrase is your only recovery mechanism.
+Sovra cannot link your data to your identity. Your vault is identified by a cryptographic hash. We hold no email address, name, or personal identifier.
+Sovra cannot intercept your email credentials. Gmail and iCloud app passwords are stored as encrypted CRDT entries — they sync across your devices in ciphertext form and are only decrypted on-device when the mail client needs them.
+Summary
+Layer	Protection	Quantum Status
+On-device storage	AES-256-GCM encrypted SQLite, key in hardware secure enclave	Quantum-resistant (128-bit margin under Grover's)
+Key derivation	PBKDF2 + SHA-256 from BIP39 seed phrase	Quantum-resistant
+In transit	HTTPS + bearer token (SHA-256 hash of vault key)	Transport TLS uses asymmetric handshake; mitigated — vault data is pre-encrypted before reaching TLS
+Server-side storage	Ciphertext only — server has no decryption capability	Symmetric ciphertext; no asymmetric key material present
+Authentication	Zero-knowledge — no accounts, no PKI, no PII server-side	No Shor's-vulnerable key material in auth path
+Multi-device sync	CRDT delta sync, conflict-free merge, encrypted end-to-end	Symmetric throughout
+File attachments	Per-blob AES-256-GCM encryption, decrypted only on device	Quantum-resistant
+App access	OS biometric (Face ID / Touch ID) + Secure Enclave	OS-managed; outside Sovra's cryptographic scope
