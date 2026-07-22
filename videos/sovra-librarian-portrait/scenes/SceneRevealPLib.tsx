@@ -16,42 +16,54 @@ export const SceneRevealPLib: React.FC = () => {
 
   return (
     <div
-      className="absolute inset-0 flex flex-col items-center justify-center z-20"
-      style={{ opacity: containerOpacity, transform: `scale(${containerScale})` }}
+      style={{
+        position: "absolute", inset: 0, display: "flex", flexDirection: "column",
+        alignItems: "center", justifyContent: "center", zIndex: 20,
+        opacity: containerOpacity, transform: `scale(${containerScale})`,
+      }}
     >
-      <div
-        className="absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.8) 1px, transparent 0)",
-          backgroundSize: "5.5cqw 5.5cqw",
-        }}
-      />
+      {/* Subtle dot grid */}
+      <div style={{
+        position: "absolute", inset: 0, opacity: 0.04,
+        backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.8) 1px, transparent 0)",
+        backgroundSize: "5.5cqw 5.5cqw",
+      }} />
 
       <img
         src={SOVRA_LOGO}
         alt="Sovra Logo"
-        className="mb-[3cqh] drop-shadow-[0_0_4cqw_rgba(99,102,241,0.7)]"
         style={{
-          width: "20cqw",
-          height: "20cqw",
+          width: "20cqw", height: "20cqw",
+          marginBottom: "3cqh",
           opacity: logoSpring,
           transform: `scale(${0.5 + 0.5 * logoSpring})`,
+          filter: "drop-shadow(0 0 4cqw rgba(99,102,241,0.7))",
         }}
       />
 
-      <h2
-        className="text-[3.5cqw] text-indigo-300 font-medium tracking-[0.3cqw] uppercase mb-[2.5cqh] bg-indigo-500/10 px-[3cqw] py-[0.8cqh] rounded-full border border-indigo-500/30"
-        style={{ opacity: badgeOpacity, transform: `translateY(${badgeY}px)` }}
-      >
+      <div style={{
+        fontSize: "3.5cqw", color: "#A5B4FC", fontWeight: 600,
+        textTransform: "uppercase", letterSpacing: "0.3cqw",
+        marginBottom: "2.5cqh",
+        backgroundColor: "rgba(99,102,241,0.1)",
+        padding: "0.8cqh 3cqw", borderRadius: "99px",
+        border: "1px solid rgba(99,102,241,0.3)",
+        opacity: badgeOpacity, transform: `translateY(${badgeY}px)`,
+      }}>
         Your Private Second Brain
-      </h2>
+      </div>
 
-      <h1
-        className="text-[10cqw] font-bold text-white tracking-tight leading-[1.1] text-center"
-        style={{ opacity: headlineOpacity, transform: `translateY(${headlineY}px)` }}
-      >
+      <h1 style={{
+        fontSize: "10cqw", fontWeight: 800, color: "#F8FAFC",
+        letterSpacing: "-0.02em", lineHeight: 1.1, textAlign: "center",
+        opacity: headlineOpacity, transform: `translateY(${headlineY}px)`,
+        margin: 0,
+      }}>
         Meet{" "}
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-400">
+        <span style={{
+          background: "linear-gradient(90deg, #818CF8, #C084FC, #818CF8)",
+          WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+        }}>
           Sovra.
         </span>
       </h1>

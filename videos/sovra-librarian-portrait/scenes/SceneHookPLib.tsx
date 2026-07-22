@@ -1,73 +1,82 @@
 import { useCurrentFrame, useVideoConfig, spring } from "remotion";
-import { Mail, MessageCircle, Share2, FileText, Link as LinkIcon, Bell } from "lucide-react";
-import { ICON_SEEDS, clampedInterpolate, delayedInterpolate } from "../shared";
-
-const ICONS = [Mail, MessageCircle, Share2, FileText, LinkIcon, Bell];
+import { SCREENSHOT_PATHS, clampedInterpolate, delayedInterpolate } from "../shared";
 
 export const SceneHookPLib: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  const containerOpacity = clampedInterpolate(frame, [0, 20], [0, 1]);
-  const cardSpring = spring({ frame: frame - 20, fps, config: { damping: 12, stiffness: 80 } });
-  const cardOpacity = clampedInterpolate(frame, [20, 40], [0, 1]);
+  const containerOpacity = clampedInterpolate(frame, [0, 30], [0, 1]);
 
-  const line1Opacity = delayedInterpolate(frame, 0.9, 0.5, 0, 1);
-  const line1Y = delayedInterpolate(frame, 0.9, 0.5, 20, 0);
-  const line2Opacity = delayedInterpolate(frame, 1.5, 0.5, 0, 1);
-  const line2Y = delayedInterpolate(frame, 1.5, 0.5, 20, 0);
+  const splashScale = clampedInterpolate(frame, [0, 150], [1.0, 1.08]);
+
+  const line1Opacity = delayedInterpolate(frame, 0.8, 0.5, 0, 1);
+  const line1Y = delayedInterpolate(frame, 0.8, 0.5, 24, 0);
+  const line2Opacity = delayedInterpolate(frame, 1.3, 0.6, 0, 1);
+  const line2Y = delayedInterpolate(frame, 1.3, 0.6, 24, 0);
+  const line3Opacity = delayedInterpolate(frame, 2.0, 0.5, 0, 1);
+  const line3Y = delayedInterpolate(frame, 2.0, 0.5, 18, 0);
 
   return (
-    <div
-      className="absolute inset-0 flex flex-col items-center justify-center z-20"
-      style={{ opacity: containerOpacity }}
-    >
-      {ICON_SEEDS.map((seed, i) => {
-        const Icon = ICONS[i % ICONS.length];
-        const iconOpacity = clampedInterpolate(frame, [seed.delay, seed.delay + 25], [0, 0.25]);
-        const iconX = clampedInterpolate(frame, [seed.delay, seed.delay + 120], [seed.initialX, seed.animateX]);
-        const iconY = clampedInterpolate(frame, [seed.delay, seed.delay + 120], [seed.initialY, seed.animateY]);
-        const floatY = Math.sin((frame + seed.delay * 3) / 30) * 2;
-        return (
-          <div
-            key={i}
-            className="absolute text-indigo-300"
-            style={{
-              opacity: iconOpacity,
-              transform: `translate(${iconX}cqw, calc(${iconY}cqh + ${floatY}cqh))`,
-              left: "50%",
-              top: "50%",
-            }}
-          >
-            <Icon size={`${seed.size * 2.2}cqw`} />
-          </div>
-        );
-      })}
+    <div style={{ position: "absolute", inset: 0, overflow: "hidden", opacity: containerOpacity, zIndex: 20 }}>
 
-      <div
-        className="text-center z-10 bg-slate-900/70 px-[7cqw] py-[5cqh] rounded-3xl backdrop-blur-md border border-white/10 max-w-[86cqw]"
-        style={{ opacity: cardOpacity, transform: `scale(${0.85 + 0.15 * cardSpring})` }}
-      >
-        <p
-          className="text-[3.5cqw] text-indigo-300 font-semibold uppercase tracking-[0.3cqw] mb-[2cqh]"
-          style={{ opacity: line1Opacity, transform: `translateY(${line1Y}px)` }}
-        >
-          Information finds you everywhere
-        </p>
-        <h1
-          className="text-[9cqw] font-bold text-white leading-tight tracking-tight"
-          style={{ opacity: line1Opacity, transform: `translateY(${line1Y}px)` }}
-        >
-          Saving it?
+      {/* Sovra splash screenshot — full frame, slow Ken Burns zoom */}
+      <img
+        src={SCREENSHOT_PATHS.sovraSplash}
+        alt="Sovra"
+        style={{
+          position: "absolute", inset: 0, width: "100%", height: "100%",
+          objectFit: "cover",
+          transform: `scale(${splashScale})`,
+          transformOrigin: "center center",
+        }}
+      />
+
+      {/* Dark gradient overlay — stronger at top and bottom for text legibility */}
+      <div style={{
+        position: "absolute", inset: 0, zIndex: 2,
+        background: "linear-gradient(to bottom, rgba(15,23,42,0.85) 0%, rgba(15,23,42,0.2) 40%, rgba(15,23,42,0.2) 60%, rgba(15,23,42,0.92) 100%)",
+      }} />
+
+      {/* Top text */}
+      <div style={{
+        position: "absolute", top: 0, left: 0, right: 0, zIndex: 10,
+        padding: "8cqh 7cqw 0",
+      }}>
+        <div style={{
+          display: "inline-block", fontSize: "2.8cqw", textTransform: "uppercase",
+          letterSpacing: "0.2cqw", color: "#818CF8", fontWeight: 600,
+          backgroundColor: "rgba(99,102,241,0.15)", padding: "0.8cqh 3cqw",
+          borderRadius: "99px", border: "1px solid rgba(99,102,241,0.35)",
+          opacity: line1Opacity, transform: `translateY(${line1Y}px)`,
+        }}>
+          Your Private Second Brain
+        </div>
+
+        <p style={{
+          fontSize: "8.5cqw", fontWeight: 800, color: "#F8FAFC",
+          lineHeight: 1.15, margin: "3cqh 0 0", letterSpacing: "-0.02em",
+          opacity: line2Opacity, transform: `translateY(${line2Y}px)`,
+        }}>
+          Information
           <br />
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-orange-400">
-            That's where it falls apart.
+          finds you.
+          <br />
+          <span style={{
+            background: "linear-gradient(90deg, #F87171, #FB923C)",
+            WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+          }}>
+            Saving it?
           </span>
-        </h1>
-        <p
-          className="mt-[2cqh] text-[3.5cqw] text-slate-400 font-medium"
-          style={{ opacity: line2Opacity, transform: `translateY(${line2Y}px)` }}
-        >
+        </p>
+      </div>
+
+      {/* Bottom caption */}
+      <div style={{
+        position: "absolute", bottom: 0, left: 0, right: 0, zIndex: 10,
+        padding: "0 7cqw 7cqh",
+        opacity: line3Opacity, transform: `translateY(${line3Y}px)`,
+      }}>
+        <p style={{ fontSize: "3.8cqw", color: "#94A3B8", fontWeight: 500, margin: 0 }}>
           Email · Messages · Links · Files — scattered everywhere
         </p>
       </div>
