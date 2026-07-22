@@ -142,6 +142,7 @@ function Navbar() {
           <Link href="/ai" data-testid="link-nav-ai"><span className="text-sm cursor-pointer" style={{ color: COLORS.muted }}>AI</span></Link>
           <Link href="/security" data-testid="link-nav-security"><span className="text-sm cursor-pointer" style={{ color: COLORS.muted }}>Security</span></Link>
           <Link href="/video" data-testid="link-nav-videos"><span className="text-sm cursor-pointer" style={{ color: COLORS.muted }}>Videos</span></Link>
+          <Link href="/roadmap" data-testid="link-nav-roadmap"><span className="text-sm cursor-pointer" style={{ color: COLORS.muted }}>Road Map</span></Link>
         </div>
         <button
           className="md:hidden flex items-center justify-center w-9 h-9 rounded-lg border-none bg-transparent cursor-pointer"
@@ -175,6 +176,7 @@ function Navbar() {
               <Link href="/ai" onClick={closeMenu} data-testid="link-mobile-ai"><span className="block text-sm py-3 px-3 rounded-lg cursor-pointer" style={{ color: COLORS.muted }}>AI</span></Link>
               <Link href="/security" onClick={closeMenu} data-testid="link-mobile-security"><span className="block text-sm py-3 px-3 rounded-lg cursor-pointer" style={{ color: COLORS.muted }}>Security</span></Link>
               <Link href="/video" onClick={closeMenu} data-testid="link-mobile-videos"><span className="block text-sm py-3 px-3 rounded-lg cursor-pointer" style={{ color: COLORS.muted }}>Videos</span></Link>
+              <Link href="/roadmap" onClick={closeMenu} data-testid="link-mobile-roadmap"><span className="block text-sm py-3 px-3 rounded-lg cursor-pointer" style={{ color: COLORS.muted }}>Road Map</span></Link>
               <Link href="/philosophy" onClick={closeMenu} data-testid="link-mobile-philosophy"><span className="block text-sm py-3 px-3 rounded-lg cursor-pointer" style={{ color: COLORS.muted }}>Our Philosophy</span></Link>
               <Link href="/support" onClick={closeMenu} data-testid="link-mobile-support"><span className="block text-sm py-3 px-3 rounded-lg cursor-pointer" style={{ color: COLORS.muted }}>Support</span></Link>
             </div>
@@ -1134,6 +1136,7 @@ function Footer() {
             <a href="#download" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-download">Download</a>
             <a href="/philosophy" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-philosophy">Our Philosophy</a>
             <Link href="/video" data-testid="link-footer-videos"><span className="text-sm transition-colors duration-200 cursor-pointer" style={{ color: COLORS.dimmed }}>Videos</span></Link>
+            <Link href="/roadmap" data-testid="link-footer-roadmap"><span className="text-sm transition-colors duration-200 cursor-pointer" style={{ color: COLORS.dimmed }}>Road Map</span></Link>
             <a href="/support" className="text-sm transition-colors duration-200" style={{ color: COLORS.dimmed }} data-testid="link-footer-support">Support</a>
           </nav>
         </div>

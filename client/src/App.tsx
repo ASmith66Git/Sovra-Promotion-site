@@ -14,6 +14,10 @@ import VoiceSamples from "@/pages/voice-samples";
 import VideoPlan from "@/pages/video-plan";
 import Security from "@/pages/security";
 import AiPage from "@/pages/ai";
+import Roadmap from "@/pages/roadmap";
+import MultiLanguage from "@/pages/roadmap/multi-language";
+import UpdatedAiModels from "@/pages/roadmap/updated-ai-models";
+import UnifiedInbox from "@/pages/roadmap/unified-inbox";
 
 function Router() {
   return (
@@ -28,6 +32,10 @@ function Router() {
       <Route path="/video-plan" component={VideoPlan} />
       <Route path="/security" component={Security} />
       <Route path="/ai" component={AiPage} />
+      <Route path="/roadmap" component={Roadmap} />
+      <Route path="/roadmap/multi-language" component={MultiLanguage} />
+      <Route path="/roadmap/updated-ai-models" component={UpdatedAiModels} />
+      <Route path="/roadmap/unified-inbox" component={UnifiedInbox} />
       <Route component={NotFound} />
     </Switch>
   );
