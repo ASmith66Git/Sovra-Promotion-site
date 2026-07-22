@@ -234,6 +234,27 @@ export default function Video() {
             aspectClass="aspect-[9/16]"
           />
 
+          {/* Document Workflow landscape */}
+          <div className="sm:col-span-2 lg:col-span-4 mt-8">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="flex-1 h-px bg-white/8" />
+              <span className="text-slate-500 text-xs uppercase tracking-widest font-medium">Landscape · Document Workflow</span>
+              <div className="flex-1 h-px bg-white/8" />
+            </div>
+            <VideoCard
+              src="/sovra-docs-30s.mp4"
+              poster="/screenshots/documents.jpg"
+              title="Document Workflow — 34s"
+              subtitle="Receive an invoice, save it in one tap, annotate it inside Sovra, then share to Sovra from any app."
+              duration="0:34"
+              format="Landscape · 1920×1080 · YouTube & Web"
+              formatIcon="landscape"
+              downloadHref="/sovra-docs-30s.mp4"
+              downloadName="Sovra-DocWorkflow-34s.mp4"
+              aspectClass="aspect-video"
+            />
+          </div>
+
           {/* Security — portrait */}
           <VideoCard
             src="/sovra-portrait-security.mp4"

@@ -9,6 +9,7 @@ import { SovraEmail30, EMAIL_30_DURATION, EMAIL_30_FPS } from "../sovra-email-30
 import { SovraLibrarian, LIBRARIAN_DURATION, LIBRARIAN_FPS } from "../sovra-librarian-30s/Root";
 import { SovraLibrarianPortrait, PORTRAIT_LIB_DURATION, PORTRAIT_LIB_FPS } from "../sovra-librarian-portrait/Root";
 import { SovraPortraitSecurity, PORTRAIT_SEC_DURATION, PORTRAIT_SEC_FPS } from "../sovra-portrait-security/Root";
+import { SovraDocWorkflow, DOCS_DURATION, DOCS_FPS } from "../sovra-docs-30s/Root";
 import "./style.css";
 
 export const RemotionRoot: React.FC = () => {
@@ -93,6 +94,14 @@ export const RemotionRoot: React.FC = () => {
         fps={PORTRAIT_SEC_FPS}
         width={1080}
         height={1920}
+      />
+      <Composition
+        id="SovraDocWorkflow"
+        component={SovraDocWorkflow}
+        durationInFrames={DOCS_DURATION}
+        fps={DOCS_FPS}
+        width={1920}
+        height={1080}
       />
     </>
   );
