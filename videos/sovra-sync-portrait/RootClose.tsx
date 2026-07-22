@@ -14,7 +14,6 @@ export const SovraSyncClose: React.FC = () => {
     <AbsoluteFill style={{
       backgroundColor: BG,
       fontFamily: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif',
-      containerType: "size",
     }}>
       <div style={{
         position: "absolute", inset: 0,

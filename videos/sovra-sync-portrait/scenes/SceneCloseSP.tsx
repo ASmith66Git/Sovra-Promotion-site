@@ -1,65 +1,53 @@
-import { useCurrentFrame, useVideoConfig, spring } from "remotion";
-import { SOVRA_LOGO_TRANSPARENT, clampedInterpolate, delayedInterpolate } from "../shared";
+import { useCurrentFrame, interpolate } from "remotion";
+import { SOVRA_LOGO_TRANSPARENT } from "../shared";
 
 export const SceneCloseSP: React.FC = () => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
 
-  const containerOp = clampedInterpolate(frame, [0, 20], [0, 1]);
-  const logoSpring  = spring({ frame: frame - 5, fps, config: { damping: 12, stiffness: 75 } });
-  const line1Op     = delayedInterpolate(frame, 0.5, 0.5, 0, 1);
-  const line1Y      = delayedInterpolate(frame, 0.5, 0.5, 20, 0);
-  const line2Op     = delayedInterpolate(frame, 0.9, 0.5, 0, 1);
-  const line2Y      = delayedInterpolate(frame, 0.9, 0.5, 20, 0);
-  const badgeSpring = spring({ frame: frame - 65, fps, config: { damping: 10, stiffness: 70 } });
+  const op = interpolate(frame, [0, 25], [0, 1], {
+    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+  });
+  const badgeOp = interpolate(frame, [30, 55], [0, 1], {
+    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+  });
 
   return (
     <div style={{
       position: "absolute", inset: 0, display: "flex", flexDirection: "column",
       alignItems: "center", justifyContent: "center",
-      padding: "0 8cqw", zIndex: 20, opacity: containerOp,
+      padding: "0 86px", zIndex: 20, opacity: op,
+      background: "radial-gradient(ellipse 70% 50% at 50% 40%, rgba(99,102,241,0.15) 0%, transparent 70%)",
     }}>
-      {/* Logo */}
       <div style={{
-        display: "flex", alignItems: "center", gap: "3cqw", marginBottom: "5cqh",
-        opacity: logoSpring, transform: `scale(${0.5 + 0.5 * logoSpring})`,
+        display: "flex", alignItems: "center", gap: "32px", marginBottom: "96px",
       }}>
         <img src={SOVRA_LOGO_TRANSPARENT} alt="Sovra" style={{
-          width: "13cqw", height: "13cqw", objectFit: "contain",
-          filter: "drop-shadow(0 0 2.5cqw rgba(99,102,241,0.9))",
+          width: "140px", height: "140px", objectFit: "contain",
         }} />
-        <span style={{ fontSize: "11cqw", fontWeight: 900, color: "#F8FAFC", letterSpacing: "-0.02em", lineHeight: 1 }}>Sovra</span>
+        <span style={{ fontSize: "119px", fontWeight: 900, color: "#F8FAFC", letterSpacing: "-0.02em", lineHeight: 1 }}>Sovra</span>
       </div>
 
       <p style={{
-        fontSize: "6.2cqw", fontWeight: 800, color: "#F8FAFC",
-        textAlign: "center", lineHeight: 1.2, marginBottom: "1.5cqh",
-        opacity: line1Op, transform: `translateY(${line1Y}px)`,
+        fontSize: "67px", fontWeight: 800, color: "#F8FAFC",
+        textAlign: "center", lineHeight: 1.2, marginBottom: "29px",
       }}>
         Two devices. One brain.
       </p>
       <p style={{
-        fontSize: "6.5cqw", fontWeight: 900, textAlign: "center",
-        background: "linear-gradient(90deg, #6366F1, #8B5CF6)",
-        WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
-        lineHeight: 1.2, marginBottom: "9cqh",
-        opacity: line2Op, transform: `translateY(${line2Y}px)`,
+        fontSize: "70px", fontWeight: 900, textAlign: "center",
+        color: "#8B5CF6", lineHeight: 1.2, marginBottom: "173px",
       }}>
         Zero compromise.
       </p>
 
-      {/* App Store badge */}
       <div style={{
-        display: "flex", alignItems: "center", gap: "2.5cqw",
-        padding: "2.2cqh 5cqw", borderRadius: "2.5cqw", backgroundColor: "#ffffff",
-        opacity: badgeSpring, transform: `scale(${0.7 + 0.3 * badgeSpring})`,
+        display: "flex", alignItems: "center", gap: "27px",
+        padding: "42px 54px", borderRadius: "27px", backgroundColor: "#ffffff",
+        opacity: badgeOp,
       }}>
-        <svg viewBox="0 0 24 24" style={{ width: "6cqw", height: "6cqw", fill: "#000" }}>
-          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-        </svg>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <span style={{ fontSize: "2.5cqw", fontWeight: 500, color: "rgba(0,0,0,0.6)", lineHeight: 1 }}>Download on the</span>
-          <span style={{ fontSize: "4cqw", fontWeight: 700, color: "#000", lineHeight: 1.2 }}>App Store</span>
+          <span style={{ fontSize: "27px", fontWeight: 500, color: "rgba(0,0,0,0.6)", lineHeight: 1 }}>Download on the</span>
+          <span style={{ fontSize: "45px", fontWeight: 700, color: "#000", lineHeight: 1.2 }}>App Store</span>
         </div>
       </div>
     </div>

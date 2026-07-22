@@ -8,9 +8,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const COMPOSITION_ID = "SovraSyncClose";
 const TOTAL_FRAMES   = 115;
-const CHUNK_SIZE     = 75;
+const CHUNK_SIZE     = 5;
 const OUT_DIR        = path.join(__dirname, "exports", "chunks-sync-close");
-const ENTRY_POINT    = path.join(__dirname, "src", "index.ts");
+const ENTRY_POINT    = path.join(__dirname, "src", "index-close.ts");
 
 mkdirSync(OUT_DIR, { recursive: true });
 
