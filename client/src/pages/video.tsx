@@ -8,7 +8,7 @@ interface VideoCardProps {
   title: string;
   subtitle: string;
   duration: string;
-  format: string;
+  format?: string;
   formatIcon: "landscape" | "portrait";
   downloadHref: string;
   downloadName: string;
@@ -43,15 +43,17 @@ function VideoCard({ src, poster, title, subtitle, duration, format, formatIcon,
       {/* Header */}
       <div className="flex items-start justify-between gap-3">
         <div>
-          <div className="flex items-center gap-2 mb-1">
-            {formatIcon === "landscape"
-              ? <Monitor className="w-4 h-4 text-indigo-400" />
-              : <Smartphone className="w-4 h-4 text-purple-400" />
-            }
-            <span className={`text-xs font-semibold uppercase tracking-widest ${formatIcon === "landscape" ? "text-indigo-400" : "text-purple-400"}`}>
-              {format}
-            </span>
-          </div>
+          {format && (
+            <div className="flex items-center gap-2 mb-1">
+              {formatIcon === "landscape"
+                ? <Monitor className="w-4 h-4 text-indigo-400" />
+                : <Smartphone className="w-4 h-4 text-purple-400" />
+              }
+              <span className={`text-xs font-semibold uppercase tracking-widest ${formatIcon === "landscape" ? "text-indigo-400" : "text-purple-400"}`}>
+                {format}
+              </span>
+            </div>
+          )}
           <h2 className="text-white font-bold text-lg leading-tight">{title}</h2>
           <p className="text-slate-400 text-sm mt-0.5">{subtitle}</p>
         </div>
@@ -147,7 +149,6 @@ export default function Video() {
         <div className="text-center mb-12">
           <p className="text-indigo-400 text-sm font-semibold uppercase tracking-widest mb-3">Marketing Assets</p>
           <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">Sovra Video Library</h1>
-          <p className="text-slate-400 text-lg max-w-xl mx-auto">Six video cuts, ready to download for any placement — landscape for YouTube & web, portrait for Meta, Instagram & YouTube Shorts.</p>
         </div>
 
         {/* ── 60s Landscape ── */}
@@ -181,7 +182,6 @@ export default function Video() {
                 title="Full Feature Ad — 60s Portrait"
                 subtitle="Complete Sovra story: inbox chaos → AI triage → organised life → privacy. Perfect for Meta Reels."
                 duration="1:00"
-                format="Portrait · 1080×1920 · Meta Reels"
                 formatIcon="portrait"
                 downloadHref="/sovra-portrait-60s.mp4"
                 downloadName="Sovra-60s-Portrait.mp4"
@@ -191,12 +191,6 @@ export default function Video() {
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="flex items-center gap-4 mb-10">
-          <div className="flex-1 h-px bg-white/8" />
-          <span className="text-slate-500 text-xs uppercase tracking-widest font-medium">Short portrait cuts — Reels & Stories</span>
-          <div className="flex-1 h-px bg-white/8" />
-        </div>
 
         {/* ── Portrait quad ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -208,7 +202,6 @@ export default function Video() {
             title="Email Triage — 30s"
             subtitle="Inbox chaos → AI triage → inbox zero. Focused email story for top-of-funnel ads."
             duration="0:30"
-            format="Portrait · 1080×1920 · Reels & Stories"
             formatIcon="portrait"
             downloadHref="/sovra-email-30s.mp4"
             downloadName="Sovra-Email-Triage-30s.mp4"
@@ -222,7 +215,6 @@ export default function Video() {
             title="Privacy Stance — 30s"
             subtitle="Philosophy-driven: you are the product → Sovra refuses to play that game."
             duration="0:30"
-            format="Portrait · 1080×1920 · Reels & Stories"
             formatIcon="portrait"
             downloadHref="/sovra-portrait-privacy.mp4"
             downloadName="Sovra-30s-Privacy.mp4"
@@ -236,7 +228,6 @@ export default function Video() {
             title="Secret Librarian — 34s"
             subtitle="Capture from email, messages & any app. Sovra files it — you just find it."
             duration="0:34"
-            format="Portrait · 1080×1920 · Reels & Stories"
             formatIcon="portrait"
             downloadHref="/sovra-librarian-portrait.mp4"
             downloadName="Sovra-Librarian-34s-Portrait.mp4"
@@ -250,7 +241,6 @@ export default function Video() {
             title="Security — 30s"
             subtitle="Your 24-word key. Your device. Your rules. How Sovra's security actually works."
             duration="0:30"
-            format="Portrait · 1080×1920 · Reels & Stories"
             formatIcon="portrait"
             downloadHref="/sovra-portrait-security.mp4"
             downloadName="Sovra-Security-30s-Portrait.mp4"
