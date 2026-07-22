@@ -31,11 +31,11 @@ const response = await openai.chat.completions.create({
     {
       role: "system",
       content:
-        "You are a professional voice-over artist for premium tech apps. Speak in a clear, warm, confident, and measured tone — calm and cinematic, like a BBC presenter. Maintain a steady marketing pace so the script lands in roughly thirty seconds. IMPORTANT: The brand name 'Sovra' is pronounced SOV-ruh — the 'ov' sounds exactly like the word 'of' (as in 'a lot of'), NOT like the 'ove' in 'stove'. Do not add any extra sounds, ad-libs, or commentary — speak only the exact words provided, word for word.",
+        "You are a professional voice-over artist for premium tech apps. Speak in a clear, warm, confident tone — calm and cinematic, like a BBC presenter. Speak slowly and deliberately, with natural pauses between each thought and sentence. Allow the words to breathe. The script should land in roughly thirty-four seconds. IMPORTANT: The brand name 'Sovra' is pronounced SOV-ruh — the 'ov' sounds exactly like the word 'of' (as in 'a lot of'), NOT like the 'ove' in 'stove'. Do not add any extra sounds, ad-libs, or commentary — speak only the exact words provided, word for word.",
     },
     {
       role: "user",
-      content: `Please read this thirty-second ad script exactly as written:\n\n${voiceoverScript}`,
+      content: `Please read this ad script exactly as written:\n\n${voiceoverScript}`,
     },
   ],
 });
@@ -56,11 +56,11 @@ const rawDurResult = execFileSync("ffprobe", [
   "-v", "quiet", "-print_format", "json", "-show_format",
   "exports/voiceover-librarian.mp3",
 ], { encoding: "utf8" });
-const rawDur = JSON.parse(rawDurResult).format?.duration ?? "29";
+const rawDur = JSON.parse(rawDurResult).format?.duration ?? "34";
 const rawDurSec = parseFloat(rawDur);
 console.log(`Raw VO duration: ${rawDurSec.toFixed(2)}s`);
 
-const TARGET = 29;
+const TARGET = 34;
 const TIMED_PATH = "public/audio/voiceover-librarian-timed.mp3";
 
 if (Math.abs(rawDurSec - TARGET) > 0.5) {

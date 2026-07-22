@@ -4,17 +4,17 @@ import { SceneRevealPLib } from "./scenes/SceneRevealPLib";
 import { SceneCapturePLib } from "./scenes/SceneCapturePLib";
 import { SceneLibraryPLib } from "./scenes/SceneLibraryPLib";
 import { SceneClosePLib } from "./scenes/SceneClosePLib";
-import { SCENE_FRAMES, COLORS } from "./shared";
+import { PORTRAIT_SCENE_FRAMES, COLORS } from "./shared";
 
-export const PORTRAIT_LIB_DURATION = 900;
+export const PORTRAIT_LIB_DURATION = 1020;
 export const PORTRAIT_LIB_FPS = 30;
 
 const SCENE_START = {
   hook:    0,
-  reveal:  SCENE_FRAMES.hook,
-  capture: SCENE_FRAMES.hook + SCENE_FRAMES.reveal,
-  library: SCENE_FRAMES.hook + SCENE_FRAMES.reveal + SCENE_FRAMES.capture,
-  close:   SCENE_FRAMES.hook + SCENE_FRAMES.reveal + SCENE_FRAMES.capture + SCENE_FRAMES.library,
+  reveal:  PORTRAIT_SCENE_FRAMES.hook,
+  capture: PORTRAIT_SCENE_FRAMES.hook + PORTRAIT_SCENE_FRAMES.reveal,
+  library: PORTRAIT_SCENE_FRAMES.hook + PORTRAIT_SCENE_FRAMES.reveal + PORTRAIT_SCENE_FRAMES.capture,
+  close:   PORTRAIT_SCENE_FRAMES.hook + PORTRAIT_SCENE_FRAMES.reveal + PORTRAIT_SCENE_FRAMES.capture + PORTRAIT_SCENE_FRAMES.library,
 };
 
 const FADE_OUT_START = PORTRAIT_LIB_DURATION - 45;

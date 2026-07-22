@@ -147,7 +147,7 @@ export default function Video() {
         <div className="text-center mb-12">
           <p className="text-indigo-400 text-sm font-semibold uppercase tracking-widest mb-3">Marketing Assets</p>
           <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">Sovra Video Library</h1>
-          <p className="text-slate-400 text-lg max-w-xl mx-auto">Eight video cuts, ready to download for any placement — landscape for YouTube & web, portrait for Meta & Instagram.</p>
+          <p className="text-slate-400 text-lg max-w-xl mx-auto">Seven video cuts, ready to download for any placement — landscape for YouTube & web, portrait for Meta, Instagram & YouTube Shorts.</p>
         </div>
 
         {/* ── 60s Landscape ── */}
@@ -162,27 +162,6 @@ export default function Video() {
             formatIcon="landscape"
             downloadHref="/sovra-ad-60s.mp4"
             downloadName="Sovra-60s-Landscape.mp4"
-            aspectClass="aspect-video"
-          />
-        </div>
-
-        {/* ── Librarian 30s Landscape ── */}
-        <div className="mb-14">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="flex-1 h-px bg-white/8" />
-            <span className="text-slate-500 text-xs uppercase tracking-widest font-medium">Landscape — Knowledge Capture</span>
-            <div className="flex-1 h-px bg-white/8" />
-          </div>
-          <VideoCard
-            src="/sovra-librarian-30s.mp4"
-            poster="/screenshots/notes.jpg"
-            title="Secret Librarian (30s Landscape)"
-            subtitle="Smart filing cabinet — capture from email, messages & any app. Sovra's AI organises it for you."
-            duration="0:30"
-            format="Landscape · 1920×1080 · YouTube & Web"
-            formatIcon="landscape"
-            downloadHref="/sovra-librarian-30s.mp4"
-            downloadName="Sovra-Librarian-30s-Landscape.mp4"
             aspectClass="aspect-video"
           />
         </div>
@@ -278,17 +257,17 @@ export default function Video() {
             aspectClass="aspect-[9/16]"
           />
 
-          {/* 30s Secret Librarian portrait */}
+          {/* Secret Librarian portrait */}
           <VideoCard
             src="/sovra-librarian-portrait.mp4"
-            poster="/screenshots/notes.jpg"
-            title="Secret Librarian — 30s"
+            poster="/screenshots/inbox-zero.jpg"
+            title="Secret Librarian — 34s"
             subtitle="Capture from email, messages & any app. Sovra files it — you just find it."
-            duration="0:30"
+            duration="0:34"
             format="Portrait · 1080×1920 · Reels & Stories"
             formatIcon="portrait"
             downloadHref="/sovra-librarian-portrait.mp4"
-            downloadName="Sovra-Librarian-30s-Portrait.mp4"
+            downloadName="Sovra-Librarian-34s-Portrait.mp4"
             aspectClass="aspect-[9/16]"
           />
         </div>

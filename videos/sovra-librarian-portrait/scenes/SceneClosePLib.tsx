@@ -64,7 +64,7 @@ export const SceneClosePLib: React.FC = () => {
       <div style={{ opacity: phoneScale, transform: `scale(${0.8 + 0.2 * phoneScale})` }}>
         <div style={{ width: "38cqw", borderRadius: "3.5cqw", border: "0.35cqw solid rgba(255,255,255,0.15)", backgroundColor: "#0A0F1E", overflow: "hidden", boxShadow: "0 2.5cqw 8cqw rgba(0,0,0,0.8)", aspectRatio: "9/19", position: "relative" }}>
           <div style={{ position: "absolute", top: 0, left: "30%", right: "30%", height: "2.5cqw", backgroundColor: "#000", borderBottomLeftRadius: "1.2cqw", borderBottomRightRadius: "1.2cqw", zIndex: 10 }} />
-          <img src={SCREENSHOT_PATHS.today} alt="Today" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+          <img src={SCREENSHOT_PATHS.sovraSplash} alt="Sovra" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         </div>
       </div>
 

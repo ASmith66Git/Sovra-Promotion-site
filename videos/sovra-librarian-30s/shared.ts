@@ -39,6 +39,12 @@ export const SCREENSHOT_PATHS = {
   notes: staticFile("screenshots/notes.jpg"),
   calendar: staticFile("screenshots/calendar.jpg"),
   connected: staticFile("screenshots/connected.jpg"),
+  noteEdit: staticFile("screenshots/note-edit.jpg"),
+  docConnectedNew: staticFile("screenshots/doc-connected-new.jpg"),
+  sovraSplash: staticFile("screenshots/sovra-splash.jpg"),
+  taskEdit: staticFile("screenshots/task-edit.jpg"),
+  taskDetails: staticFile("screenshots/task-details.jpg"),
+  docDetails: staticFile("screenshots/doc-details.jpg"),
 };
 
 export const SOVRA_LOGO = staticFile("sovra-logo.svg");

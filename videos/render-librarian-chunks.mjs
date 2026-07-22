@@ -6,8 +6,8 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const COMPOSITION_ID = "SovraLibrarian";
-const TOTAL_FRAMES = 900;
+const COMPOSITION_ID = "SovraLibrarianPortrait";
+const TOTAL_FRAMES = 1020;
 const CHUNK_SIZE = 150;
 const OUT_DIR = path.join(__dirname, "exports", "chunks-librarian");
 const ENTRY_POINT = path.join(__dirname, "src", "index.ts");
