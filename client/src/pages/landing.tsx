@@ -207,7 +207,7 @@ function HeroSection() {
         </motion.p>
 
         <motion.div variants={fadeUp} custom={3} className="flex items-center justify-center mb-10">
-          <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" data-testid="link-appstore-hero">
+          <a href="https://apps.apple.com/app/id6764045748" target="_blank" rel="noopener noreferrer" data-testid="link-appstore-hero">
             <Button size="lg" className="text-base px-10 py-6 gap-3 font-semibold border-none" style={{ backgroundColor: "white", color: COLORS.bg }}>
               <SiApple className="w-5 h-5" />
               Download for iOS
@@ -1041,7 +1041,7 @@ function DownloadSection() {
         </motion.p>
 
         <motion.div variants={fadeUp} custom={3} className="flex justify-center mb-16">
-          <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" className="block group w-full max-w-xs" data-testid="link-appstore-download">
+          <a href="https://apps.apple.com/app/id6764045748" target="_blank" rel="noopener noreferrer" className="block group w-full max-w-xs" data-testid="link-appstore-download">
             <div className="relative rounded-2xl p-8 text-center transition-all duration-300" style={{ backgroundColor: "rgba(30, 41, 59, 0.6)", border: `1px solid rgba(255,255,255,0.08)`, backdropFilter: "blur(12px)" }}>
               <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5" style={{ background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.secondary})` }}>
                 <SiApple className="w-8 h-8 text-white" />

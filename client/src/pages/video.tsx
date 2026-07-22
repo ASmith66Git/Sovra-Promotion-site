@@ -276,7 +276,7 @@ export default function Video() {
         <div className="mt-16 text-center flex flex-col items-center gap-4">
           <p className="text-slate-400 text-sm">Ready to clear your inbox for good?</p>
           <a
-            href="https://apps.apple.com/app/sovra"
+            href="https://apps.apple.com/app/id6764045748"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold transition-colors shadow-lg"
