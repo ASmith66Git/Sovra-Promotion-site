@@ -6,17 +6,14 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const COMPOSITION_ID = "SovraPortraitSecurity";
-const TOTAL_FRAMES   = 1200;
-const CHUNK_SIZE     = 150;
-const OUT_DIR        = path.join(__dirname, "exports", "chunks-security");
-const ENTRY_POINT    = path.join(__dirname, "src", "index.ts");
+const OUT_DIR    = path.join(__dirname, "exports", "chunks-security");
+const ENTRY_POINT = path.join(__dirname, "src", "index.ts");
 
 mkdirSync(OUT_DIR, { recursive: true });
 
-const chunkIndex = parseInt(process.argv[2] ?? "0", 10);
-const startFrame = chunkIndex * CHUNK_SIZE;
-const endFrame   = Math.min(startFrame + CHUNK_SIZE, TOTAL_FRAMES) - 1;
+const startFrame = parseInt(process.argv[2], 10);
+const endFrame   = parseInt(process.argv[3], 10);
+const outName    = process.argv[4] ?? `mini-${startFrame}-${endFrame}`;
 
 console.log(`Bundling...`);
 const bundleLocation = await bundle({
@@ -24,14 +21,13 @@ const bundleLocation = await bundle({
   webpackOverride: (config) => config,
 });
 
-console.log(`Rendering chunk ${chunkIndex}: frames ${startFrame}–${endFrame}`);
-
 const composition = await selectComposition({
   serveUrl: bundleLocation,
-  id: COMPOSITION_ID,
+  id: "SovraPortraitSecurity",
 });
 
-const outFile = path.join(OUT_DIR, `chunk-${String(chunkIndex).padStart(3, "0")}.mp4`);
+const outFile = path.join(OUT_DIR, `${outName}.mp4`);
+console.log(`Rendering frames ${startFrame}–${endFrame} → ${outFile}`);
 
 await renderMedia({
   composition,
@@ -43,4 +39,4 @@ await renderMedia({
   logLevel: "warn",
 });
 
-console.log(`Chunk ${chunkIndex} done → ${outFile}`);
+console.log(`Done → ${outFile}`);

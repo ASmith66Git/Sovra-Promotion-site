@@ -238,9 +238,9 @@ export default function Video() {
           <VideoCard
             src="/sovra-portrait-security.mp4"
             poster="/screenshots/sec-settings.jpg"
-            title="Security — 30s"
+            title="Security — 37s"
             subtitle="Your 24-word key. Your device. Your rules. How Sovra's security actually works."
-            duration="0:30"
+            duration="0:37"
             formatIcon="portrait"
             downloadHref="/sovra-portrait-security.mp4"
             downloadName="Sovra-Security-30s-Portrait.mp4"
