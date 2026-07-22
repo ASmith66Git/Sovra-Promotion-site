@@ -11,6 +11,8 @@ import { SovraLibrarianPortrait, PORTRAIT_LIB_DURATION, PORTRAIT_LIB_FPS } from 
 import { SovraPortraitSecurity, PORTRAIT_SEC_DURATION, PORTRAIT_SEC_FPS } from "../sovra-portrait-security/Root";
 import { SovraDocsPortrait, PORTRAIT_DP_DURATION, PORTRAIT_DP_FPS } from "../sovra-docs-portrait/Root";
 import { SovraDocWorkflow, DOCS_DURATION, DOCS_FPS } from "../sovra-docs-30s/Root";
+import { SovraSyncPortrait, PORTRAIT_SP_DURATION, PORTRAIT_SP_FPS } from "../sovra-sync-portrait/Root";
+import { SovraSyncClose, CLOSE_SP_DURATION, CLOSE_SP_FPS } from "../sovra-sync-portrait/RootClose";
 import "./style.css";
 
 export const RemotionRoot: React.FC = () => {
@@ -109,6 +111,22 @@ export const RemotionRoot: React.FC = () => {
         component={SovraDocsPortrait}
         durationInFrames={PORTRAIT_DP_DURATION}
         fps={PORTRAIT_DP_FPS}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="SovraSyncPortrait"
+        component={SovraSyncPortrait}
+        durationInFrames={PORTRAIT_SP_DURATION}
+        fps={PORTRAIT_SP_FPS}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="SovraSyncClose"
+        component={SovraSyncClose}
+        durationInFrames={CLOSE_SP_DURATION}
+        fps={CLOSE_SP_FPS}
         width={1080}
         height={1920}
       />
