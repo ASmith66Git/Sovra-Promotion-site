@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowLeft, ArrowRight, Globe, Cpu, Inbox, Zap } from "lucide-react";
+import { SiInstagram } from "react-icons/si";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -184,8 +185,36 @@ export default function Roadmap() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.65, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-10 rounded-2xl p-7 flex items-center gap-6"
+            style={{ backgroundColor: "rgba(225,48,108,0.06)", border: "1px solid rgba(225,48,108,0.18)" }}
+            data-testid="section-roadmap-instagram"
+          >
+            <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "rgba(225,48,108,0.12)", border: "1px solid rgba(225,48,108,0.25)" }}>
+              <SiInstagram className="w-5 h-5" style={{ color: "#E1306C" }} />
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-medium text-white mb-0.5">Stay in the loop</p>
+              <p className="text-sm" style={{ color: COLORS.muted }}>Follow us on Instagram to see what we're building and where we're headed.</p>
+            </div>
+            <a
+              href="https://www.instagram.com/sovr.privacy.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white transition-opacity hover:opacity-80"
+              style={{ backgroundColor: "#E1306C" }}
+              data-testid="link-roadmap-instagram"
+            >
+              <SiInstagram className="w-4 h-4" />
+              Follow
+            </a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-16 rounded-2xl p-8 text-center"
+            className="mt-6 rounded-2xl p-8 text-center"
             style={{ backgroundColor: "rgba(99,102,241,0.07)", border: "1px solid rgba(99,102,241,0.18)" }}
             data-testid="section-roadmap-cta"
           >
