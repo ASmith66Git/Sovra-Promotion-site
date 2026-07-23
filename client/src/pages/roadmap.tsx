@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowLeft, ArrowRight, Globe, Cpu, Inbox } from "lucide-react";
+import { ArrowLeft, ArrowRight, Globe, Cpu, Inbox, Zap } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -31,6 +31,14 @@ const COLORS = {
 };
 
 const features = [
+  {
+    icon: Zap,
+    color: "#6366F1",
+    title: "Intelligent Automation",
+    teaser: "Describe what you want in plain English. Sovra translates it into a rule that runs automatically — no flowcharts, no triggers, no conditions to configure.",
+    href: "/roadmap/intelligent-automation",
+    gradient: "from-indigo-600/20 to-violet-600/10",
+  },
   {
     icon: Globe,
     color: "#3B82F6",
