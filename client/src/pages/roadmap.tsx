@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowLeft, ArrowRight, Globe, Cpu, Inbox, Zap } from "lucide-react";
-import { SiInstagram } from "react-icons/si";
+import { SiInstagram, SiYoutube } from "react-icons/si";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -186,28 +186,36 @@ export default function Roadmap() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.65, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-10 rounded-2xl p-7 flex items-center gap-6"
-            style={{ backgroundColor: "rgba(225,48,108,0.06)", border: "1px solid rgba(225,48,108,0.18)" }}
-            data-testid="section-roadmap-instagram"
+            className="mt-10 rounded-2xl p-7"
+            style={{ backgroundColor: "rgba(30, 41, 59, 0.5)", border: `1px solid ${COLORS.cardBorder}` }}
+            data-testid="section-roadmap-social"
           >
-            <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "rgba(225,48,108,0.12)", border: "1px solid rgba(225,48,108,0.25)" }}>
-              <SiInstagram className="w-5 h-5" style={{ color: "#E1306C" }} />
+            <p className="text-sm font-medium text-white mb-1">Stay in the loop</p>
+            <p className="text-sm mb-5" style={{ color: COLORS.muted }}>Follow us to see what we're building and where we're headed.</p>
+            <div className="flex gap-3">
+              <a
+                href="https://www.instagram.com/sovr.privacy.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white transition-opacity hover:opacity-80"
+                style={{ backgroundColor: "#E1306C" }}
+                data-testid="link-roadmap-instagram"
+              >
+                <SiInstagram className="w-4 h-4" />
+                Instagram
+              </a>
+              <a
+                href="https://www.youtube.com/@SovraApp"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white transition-opacity hover:opacity-80"
+                style={{ backgroundColor: "#FF0000" }}
+                data-testid="link-roadmap-youtube"
+              >
+                <SiYoutube className="w-4 h-4" />
+                YouTube
+              </a>
             </div>
-            <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium text-white mb-0.5">Stay in the loop</p>
-              <p className="text-sm" style={{ color: COLORS.muted }}>Follow us on Instagram to see what we're building and where we're headed.</p>
-            </div>
-            <a
-              href="https://www.instagram.com/sovr.privacy.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white transition-opacity hover:opacity-80"
-              style={{ backgroundColor: "#E1306C" }}
-              data-testid="link-roadmap-instagram"
-            >
-              <SiInstagram className="w-4 h-4" />
-              Follow
-            </a>
           </motion.div>
 
           <motion.div
