@@ -1,0 +1,74 @@
+This is the most important design question in the whole idea, and you've identified exactly the right tension.
+
+The answer: AI as translator, not runtime executor
+The mistake would be having the AI interpret the rule every time it runs — that's slow, inconsistent, and burns model resources on something that should be deterministic. The right pattern is:
+
+AI is used once, at rule creation time, as a translator.
+
+The user types in plain English what they want. The AI reads it, converts it internally to a structured rule, then plays it back in plain English for confirmation. Once the user says yes, the stored rule is deterministic — it runs the same way every time without touching the AI again.
+
+So the flow is:
+
+User types: "When I get an invoice from Intelligent Insurance, send it to my File Invoice shortcut"
+
+AI responds: "Got it — when an email with a PDF attachment that looks like an invoice arrives from Intelligent Insurance, I'll extract the supplier name, amount, and due date, then run your 'File Invoice' shortcut with those details. Shall I save this rule?"
+
+User taps Save → rule is stored and runs deterministically from that point on.
+
+The AI never touches it again at runtime. It's just pattern matching against sender + attachment type + extracted fields, then calling a Shortcut URL.
+
+Why this solves the Shortcuts complexity problem
+The reason Shortcuts is hard is that the user has to think in the machine's language — triggers, actions, conditions, variables. The entire cognitive burden is on the user to translate what they want into a workflow structure.
+
+Here the user never leaves plain English. The translation burden shifts entirely to the AI at setup time. A one-sentence description is genuinely sufficient because the AI is doing the interpretation work in that single moment, not repeatedly.
+
+The confirmation step is critical
+The AI playing back what it understood — in plain English, not in technical terms — is what makes this trustworthy. The user doesn't need to understand how the rule works internally. They just need to recognise whether the playback matches their intent. If it doesn't, they correct it conversationally:
+
+"No, only invoices over £500"
+
+AI: "Updated — same rule but only when the invoice total is over £500. Save this?"
+
+That's a dramatically better experience than building a conditional branch in Shortcuts.
+
+The one thing to be careful about
+The AI at rule creation time needs to be honest about what it can't reliably detect. If someone says "when I get something important from my solicitor" — "important" is ambiguous and the AI should say so rather than guess. The confirmation step is where that surfaces. Rules need at least one concrete anchor: a sender, a keyword, an attachment type, a detected document type. Vague rules should prompt a clarifying question, not a silent best guess.
+
+But for the invoice case you described — concrete sender, concrete document type, concrete action — this works cleanly and the UX is genuinely simple.
+
+okay? So the next fun bit is that assuming I have my inbox has been triage and that's assume I'm left with a dozen emails and added that dozen emails I have rules that will deal with say eight of them with an into the trust situation to give the AI complete trust at the stage would be foolish so we need a UI feedback screen that says from the AI I've identified eight emails that need the following actions please confirm or something like that so that it can easily be a tick box to each one or not and then it's done. We could then build on that so if it is so reliable after 20 to 30 times we could then perhaps add something back into the rule into face screen that is a toggle requires confirmation doesn't require confirmation or something like that.
+
+20 minutes ago
+
+1 message & 1 action
+ok another queston will we require each device to verify the rules if they have differnt models or can the intent ne sysnced
+
+7 minutes ago
+
+Planning rule syncing strategy (9 seconds)
+Good question and the answer is elegant given how Sovra already works.
+
+Rules sync as structured intent, not natural language
+The key is what gets stored when a rule is saved. It shouldn't be the user's original sentence — it should be the structured interpretation the AI produced from it. Something like:
+
+trigger: sender_domain = "intelligent-insurance.com"
+         attachment_type = "invoice"
+action:  extract_fields [supplier, amount, due_date]
+         run_shortcut = "File Invoice"
+confidence_required: true
+confirmations: 12
+
+That structured data syncs via CRDT like any other vault entry. Every device receives the exact same rule — no reinterpretation needed anywhere. The AI was only needed once, at creation time on one device, to do the translation. After that it's just data.
+
+Where the model difference does matter
+The model on each device is used at execution time — deciding whether an incoming email actually matches the rule. A more capable model might be better at recognising that a PDF is an invoice even if the filename is ambiguous. A smaller model might miss edge cases.
+
+But this doesn't require re-verifying the rule itself — it just means classification accuracy might vary slightly between devices. In practice this is fine because:
+
+The confirmation screen catches misclassifications before they cause damage
+Most rules have concrete anchors (sender domain, MIME type) that don't require AI inference at all — pure pattern matching
+The AI classification is only needed for the ambiguous cases like "does this PDF look like an invoice"
+The practical outcome
+A rule created on your iPad with the full model syncs instantly to your iPhone running the smaller model. The iPhone runs it identically. The only difference is if an edge case email arrives — the smaller model might be slightly less confident about classification, so it surfaces it for confirmation rather than auto-acting. That's actually the correct conservative behaviour for a less capable model.
+
+No per-device verification step needed. The rules are device-agnostic by design.
