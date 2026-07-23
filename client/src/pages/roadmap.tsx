@@ -59,7 +59,7 @@ const features = [
     icon: Inbox,
     color: "#10B981",
     title: "Unified Inbox",
-    teaser: "One view. Every email source. A single, consolidated inbox that brings together Gmail, Apple Mail, and IMAP into one intelligent triage surface.",
+    teaser: "Your relationships, not your channels. One inbox for email, WhatsApp, Signal, and more — Sovra replies on the most appropriate channel so you never think about the app again.",
     href: "/roadmap/unified-inbox",
     gradient: "from-emerald-600/20 to-teal-600/10",
   },

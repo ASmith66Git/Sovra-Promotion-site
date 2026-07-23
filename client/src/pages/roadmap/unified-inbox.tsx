@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowLeft, Inbox, Mail, Zap, Brain, RefreshCw } from "lucide-react";
+import { ArrowLeft, Inbox, Users, ArrowRightLeft, Shield, Layers } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -19,10 +19,6 @@ const stagger = {
 const COLORS = {
   bg: "#0F172A",
   primary: "#6366F1",
-  secondary: "#8B5CF6",
-  accent: "#10B981",
-  highlight: "#3B82F6",
-  text: "#F8FAFC",
   muted: "#94A3B8",
   dimmed: "#64748B",
   cardBg: "rgba(30, 41, 59, 0.5)",
@@ -34,24 +30,24 @@ const featureColor = "#10B981";
 
 const pillars = [
   {
-    icon: Mail,
-    title: "All accounts, one surface",
-    body: "Whether you have a personal Gmail, a work Apple Mail account, and an IMAP mailbox from your hosting provider, the Unified Inbox will show them together — sorted by arrival time, filtered by AI priority, and triaged in one pass. No more switching between accounts to clear your inbox.",
+    icon: Users,
+    title: "The channel is an implementation detail.",
+    body: "When someone messages you, the channel they used is often accidental — they emailed because they had your address, WhatsApp'd because that's what they had open. What matters is the relationship, not the pipe it arrived through. Sovra organises your inbox by person, not by app. Every interaction with a contact — email, Signal, WhatsApp — surfaces together. You see a conversation, not a fragmented trail across three different apps.",
   },
   {
-    icon: Brain,
-    title: "AI triage across the whole picture",
-    body: "Today, Sovra triages each account independently. With the Unified Inbox, the AI will see across all your accounts simultaneously — correlating threads, spotting duplicates, and understanding when the same conversation is happening across multiple email addresses. The result is more accurate triage with fewer false positives.",
+    icon: ArrowRightLeft,
+    title: "Sovra replies on the best available channel.",
+    body: "When you respond, Sovra doesn't just reply in kind — it chooses the most appropriate channel for that person. If someone is reachable on Signal, that's where your reply goes. WhatsApp is preferred over email where both are available. You write the response once; Sovra works out where to send it. Modern, end-to-end encrypted channels are preferred. Email is the fallback, not the default.",
   },
   {
-    icon: Zap,
-    title: "Account-aware actions",
-    body: "Replying from the right address, applying account-specific rules, and routing notes and tasks to the correct context — the Unified Inbox won't flatten your accounts into a single undifferentiated pile. It will give you the convenience of one view while keeping the intelligence to know which account an email belongs to.",
+    icon: Layers,
+    title: "AI triage across everything.",
+    body: "The same AI that triages your email today will work across every channel. An invoice arrives via email, a follow-up lands on WhatsApp, a confirmation comes through Signal — Sovra sees all three as part of the same thread and treats them accordingly. Actions, notes, and tasks are extracted regardless of where the message came from. Zero inbox means zero across every channel, in a single session.",
   },
   {
-    icon: RefreshCw,
-    title: "Smarter zero inbox",
-    body: "Achieving zero inbox across multiple accounts today means triaging each one separately. The Unified Inbox will let you reach zero across all accounts in a single session — with AI assisting across the entire batch and a single 'done' state when you're finished.",
+    icon: Shield,
+    title: "All on-device. Always.",
+    body: "Unified doesn't mean centralised. Your messages from WhatsApp, Signal, and email never leave your device to be read, indexed, or correlated by a server. The intelligence that connects them lives entirely on your iPhone. This is the only acceptable way to handle communications this personal.",
   },
 ];
 
@@ -64,7 +60,7 @@ export default function UnifiedInbox() {
       meta.name = "description";
       document.head.appendChild(meta);
     }
-    meta.content = "Sovra's Unified Inbox brings Gmail, Apple Mail, and IMAP into one AI-powered triage surface. One view. Zero inbox. Every time.";
+    meta.content = "One inbox for email, WhatsApp, Signal, and more. Sovra organises your communications by relationship, not channel — and replies on the most appropriate one.";
     window.scrollTo(0, 0);
   }, []);
 
@@ -116,10 +112,13 @@ export default function UnifiedInbox() {
               Unified Inbox
             </motion.h1>
             <motion.p variants={fadeUp} custom={2} className="text-xl leading-relaxed mb-4" style={{ color: COLORS.muted }}>
-              One view. Every email source. Zero inbox.
+              Your relationships, not your channels.
             </motion.p>
-            <motion.p variants={fadeUp} custom={3} className="text-base leading-relaxed" style={{ color: COLORS.dimmed }}>
-              Most people with multiple email accounts have the same problem: triaging them one by one is tedious, and the mental model of "which account did that email come from?" adds friction to every interaction. The Unified Inbox is our answer — a single, intelligent triage surface that sees everything and helps you act on what matters, regardless of which account it arrived in.
+            <motion.p variants={fadeUp} custom={3} className="text-base leading-relaxed mb-4" style={{ color: COLORS.dimmed }}>
+              Email was designed in 1971 to mimic a filing cabinet. It has no concept of a conversation — only messages. No concept of a relationship — only addresses. No concept of urgency — only chronological order. Half a century later, we've added WhatsApp, Signal, iMessage, and a dozen other channels on top of it, and called that progress.
+            </motion.p>
+            <motion.p variants={fadeUp} custom={4} className="text-base leading-relaxed" style={{ color: COLORS.dimmed }}>
+              The result is that staying in touch now requires managing a collection of apps, each with its own notification, its own inbox, its own mental overhead. Sovra's Unified Inbox collapses all of it — not by treating everything like email, but by treating everything as what it actually is: communication between people.
             </motion.p>
           </motion.div>
 
@@ -159,15 +158,24 @@ export default function UnifiedInbox() {
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
             className="rounded-2xl p-8 mb-14"
             style={{ backgroundColor: `${featureColor}08`, border: `1px solid ${featureColor}20` }}
-            data-testid="section-privacy-note"
+            data-testid="section-channels"
           >
-            <h2 className="text-xl font-bold text-white mb-4">Still entirely on-device</h2>
-            <p className="text-base leading-relaxed mb-4" style={{ color: COLORS.muted }}>
-              The Unified Inbox will consolidate your email sources into a single view — but it will not send your email credentials or message content to any server for cross-account analysis. All correlation, deduplication, and prioritisation happens on your device, using the same on-device AI engine that powers Sovra today.
+            <h2 className="text-xl font-bold text-white mb-3">Planned channel support</h2>
+            <p className="text-sm mb-6" style={{ color: COLORS.muted }}>
+              Sovra will connect to messaging channels where iOS allows secure, privacy-respecting integration. The channel list will grow as platform support evolves.
             </p>
-            <p className="text-base leading-relaxed" style={{ color: COLORS.dimmed }}>
-              Multiple accounts means more sensitive data in one place — not more risk. Sovra's zero-knowledge architecture ensures that the Unified Inbox is as private as every other part of the app.
-            </p>
+            <div className="flex flex-wrap gap-2">
+              {["Email (Gmail, Apple Mail, IMAP)", "WhatsApp", "Signal", "iMessage", "Telegram"].map((channel) => (
+                <span
+                  key={channel}
+                  className="px-3 py-1.5 rounded-full text-sm font-medium"
+                  style={{ backgroundColor: `${featureColor}15`, color: featureColor, border: `1px solid ${featureColor}30` }}
+                  data-testid={`badge-channel-${channel.toLowerCase().replace(/\s|[(),.]/g, "-")}`}
+                >
+                  {channel}
+                </span>
+              ))}
+            </div>
           </motion.div>
 
           <motion.div
@@ -179,9 +187,9 @@ export default function UnifiedInbox() {
             style={{ backgroundColor: "rgba(99,102,241,0.07)", border: "1px solid rgba(99,102,241,0.18)" }}
             data-testid="section-cta"
           >
-            <p className="text-base font-medium text-white mb-2">Zero inbox is available today</p>
+            <p className="text-base font-medium text-white mb-2">Email triage is available now</p>
             <p className="text-sm mb-6" style={{ color: COLORS.muted }}>
-              Connect Gmail, Apple Mail, and IMAP — and let Sovra's on-device AI start triaging. The Unified Inbox is coming; the zero-inbox habit starts now.
+              Zero inbox across Gmail, Apple Mail, and IMAP — with on-device AI triage, rich notes, and full privacy.
             </p>
             <a
               href="https://apps.apple.com/app/id6764045748"
