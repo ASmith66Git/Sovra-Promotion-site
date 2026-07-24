@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowLeft, ArrowRight, Mail } from "lucide-react";
+import { ArrowLeft, ArrowRight, Brain, Mail } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -33,6 +33,15 @@ export const POSTS = [
     excerpt: "Email was supposed to save time. Instead it became a full-time responsibility that follows you everywhere. Here's why — and what a different approach looks like.",
     icon: Mail,
     color: "#6366F1",
+  },
+  {
+    slug: "why-we-built-sovra",
+    title: "Why We Built Sovra — And What It's Actually For",
+    date: "16 July 2025",
+    readTime: "7 min read",
+    excerpt: "This isn't a sales pitch. It's the honest story of where Sovra came from, what problem we were trying to solve, and why privacy had to be the foundation — not a feature.",
+    icon: Brain,
+    color: "#8B5CF6",
   },
 ];
 
