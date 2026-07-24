@@ -14,6 +14,8 @@ import VoiceSamples from "@/pages/voice-samples";
 import VideoPlan from "@/pages/video-plan";
 import Security from "@/pages/security";
 import AiPage from "@/pages/ai";
+import Blog from "@/pages/blog";
+import PostWhyEmail from "@/pages/blog/why-email-became-your-second-job";
 import Roadmap from "@/pages/roadmap";
 import IntelligentAutomation from "@/pages/roadmap/intelligent-automation";
 import MultiLanguage from "@/pages/roadmap/multi-language";
@@ -33,6 +35,8 @@ function Router() {
       <Route path="/video-plan" component={VideoPlan} />
       <Route path="/security" component={Security} />
       <Route path="/ai" component={AiPage} />
+      <Route path="/blog" component={Blog} />
+      <Route path="/blog/why-email-became-your-second-job" component={PostWhyEmail} />
       <Route path="/roadmap" component={Roadmap} />
       <Route path="/roadmap/intelligent-automation" component={IntelligentAutomation} />
       <Route path="/roadmap/multi-language" component={MultiLanguage} />
