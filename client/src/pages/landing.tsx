@@ -131,7 +131,7 @@ function Navbar() {
       }}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
-        <div className="flex items-center gap-2.5" data-testid="nav-logo">
+        <a href="/" className="flex items-center gap-2.5 cursor-pointer" style={{ textDecoration: "none" }} data-testid="nav-logo">
           <motion.img
             src={sovraLogo}
             alt="Sovra logo"
@@ -143,7 +143,7 @@ function Navbar() {
           <span className="text-lg font-bold tracking-tight text-white" data-testid="text-logo">
             Sovra
           </span>
-        </div>
+        </a>
         <div className="hidden md:flex items-center gap-7">
           <button onClick={() => scrollTo("problem")} className="text-sm cursor-pointer bg-transparent border-none" style={{ color: COLORS.muted }} data-testid="link-nav-problem">Why Sovra</button>
           <button onClick={() => scrollTo("how-it-works")} className="text-sm cursor-pointer bg-transparent border-none" style={{ color: COLORS.muted }} data-testid="link-nav-how">How It Works</button>
