@@ -95,6 +95,18 @@ const COLORS = {
 
 function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
+  const moreRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (moreRef.current && !moreRef.current.contains(e.target as Node)) {
+        setMoreOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const scrollTo = (id: string) => {
     setMobileOpen(false);
@@ -132,18 +144,67 @@ function Navbar() {
             Sovra
           </span>
         </div>
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-7">
           <button onClick={() => scrollTo("problem")} className="text-sm cursor-pointer bg-transparent border-none" style={{ color: COLORS.muted }} data-testid="link-nav-problem">Why Sovra</button>
           <button onClick={() => scrollTo("how-it-works")} className="text-sm cursor-pointer bg-transparent border-none" style={{ color: COLORS.muted }} data-testid="link-nav-how">How It Works</button>
           <button onClick={() => scrollTo("features")} className="text-sm cursor-pointer bg-transparent border-none" style={{ color: COLORS.muted }} data-testid="link-nav-features">Features</button>
-          <button onClick={() => scrollTo("pricing")} className="text-sm cursor-pointer bg-transparent border-none" style={{ color: COLORS.muted }} data-testid="link-nav-pricing">Pricing</button>
           <button onClick={() => scrollTo("privacy")} className="text-sm cursor-pointer bg-transparent border-none" style={{ color: COLORS.muted }} data-testid="link-nav-privacy">Privacy</button>
           <button onClick={() => scrollTo("download")} className="text-sm cursor-pointer bg-transparent border-none" style={{ color: COLORS.muted }} data-testid="link-nav-download">Download</button>
-          <Link href="/ai" data-testid="link-nav-ai"><span className="text-sm cursor-pointer" style={{ color: COLORS.muted }}>AI</span></Link>
-          <Link href="/security" data-testid="link-nav-security"><span className="text-sm cursor-pointer" style={{ color: COLORS.muted }}>Security</span></Link>
-          <Link href="/video" data-testid="link-nav-videos"><span className="text-sm cursor-pointer" style={{ color: COLORS.muted }}>Videos</span></Link>
-          <Link href="/blog" data-testid="link-nav-blog"><span className="text-sm cursor-pointer" style={{ color: COLORS.muted }}>Blog</span></Link>
-          <Link href="/roadmap" data-testid="link-nav-roadmap"><span className="text-sm cursor-pointer" style={{ color: COLORS.muted }}>Road Map</span></Link>
+
+          {/* More dropdown */}
+          <div className="relative" ref={moreRef}>
+            <button
+              onClick={() => setMoreOpen(o => !o)}
+              className="flex items-center gap-1 text-sm cursor-pointer bg-transparent border-none"
+              style={{ color: moreOpen ? "#fff" : COLORS.muted }}
+              data-testid="button-nav-more"
+            >
+              More
+              <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200" style={{ transform: moreOpen ? "rotate(180deg)" : "rotate(0deg)" }} />
+            </button>
+
+            <AnimatePresence>
+              {moreOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 6, scale: 0.97 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 6, scale: 0.97 }}
+                  transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
+                  className="absolute right-0 top-full mt-3 w-48 rounded-2xl overflow-hidden z-50"
+                  style={{
+                    backgroundColor: "rgba(15, 23, 42, 0.96)",
+                    border: `1px solid ${COLORS.cardBorder}`,
+                    backdropFilter: "blur(20px)",
+                    WebkitBackdropFilter: "blur(20px)",
+                    boxShadow: "0 20px 40px rgba(0,0,0,0.5)",
+                  }}
+                  data-testid="dropdown-more"
+                >
+                  {[
+                    { label: "Blog", href: "/blog", testid: "link-more-blog" },
+                    { label: "Road Map", href: "/roadmap", testid: "link-more-roadmap" },
+                    { label: "Our Philosophy", href: "/philosophy", testid: "link-more-philosophy" },
+                    { label: "Videos", href: "/video", testid: "link-more-videos" },
+                    { label: "AI", href: "/ai", testid: "link-more-ai" },
+                    { label: "Security", href: "/security", testid: "link-more-security" },
+                    { label: "Support", href: "/support", testid: "link-more-support" },
+                  ].map((item, i) => (
+                    <Link key={item.href} href={item.href} onClick={() => setMoreOpen(false)} data-testid={item.testid}>
+                      <div
+                        className="px-4 py-2.5 text-sm cursor-pointer transition-colors duration-150 hover:text-white"
+                        style={{
+                          color: COLORS.muted,
+                          borderBottom: i < 6 ? `1px solid ${COLORS.cardBorder}` : "none",
+                        }}
+                      >
+                        {item.label}
+                      </div>
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
         <button
           className="md:hidden flex items-center justify-center w-9 h-9 rounded-lg border-none bg-transparent cursor-pointer"
