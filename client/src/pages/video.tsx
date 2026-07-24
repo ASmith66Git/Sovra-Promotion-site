@@ -142,7 +142,7 @@ export default function Video() {
             </svg>
             Back to Sovra
           </Link>
-          <img src="/sovra-logo.svg" alt="Sovra" className="w-8 h-8 opacity-70" />
+          <img src="/sovra-logo-icon.webp" alt="Sovra" className="w-8 h-8 opacity-70" />
         </div>
 
         {/* Heading */}

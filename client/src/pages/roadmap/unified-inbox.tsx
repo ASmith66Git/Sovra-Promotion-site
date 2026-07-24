@@ -79,7 +79,7 @@ export default function UnifiedInbox() {
         <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" data-testid="link-nav-logo">
             <div className="flex items-center gap-2.5 cursor-pointer">
-              <img src="/sovra-logo.png" alt="Sovra logo" className="w-8 h-8 object-contain" style={{ mixBlendMode: "screen" }} />
+              <img src="/sovra-logo-sm.webp" alt="Sovra logo" className="w-8 h-8 object-contain" style={{ mixBlendMode: "screen" }} />
               <span className="text-lg font-bold tracking-tight text-white">Sovra</span>
             </div>
           </Link>

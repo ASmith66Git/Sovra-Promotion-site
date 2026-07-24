@@ -105,7 +105,7 @@ export default function AiPage() {
         <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" data-testid="link-nav-logo-ai">
             <div className="flex items-center gap-2.5 cursor-pointer">
-              <img src="/sovra-logo.svg" alt="Sovra logo" className="w-8 h-8 rounded-md object-cover" />
+              <img src="/sovra-logo-icon.webp" alt="Sovra logo" className="w-8 h-8 rounded-md object-cover" />
               <span className="text-lg font-bold tracking-tight text-white">Sovra</span>
             </div>
           </Link>

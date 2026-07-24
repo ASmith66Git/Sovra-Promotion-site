@@ -30,7 +30,7 @@ const COLORS = {
   glassBg: "rgba(15, 23, 42, 0.8)",
 };
 
-const sovraLogo = "/sovra-logo.svg";
+const sovraLogo = "/sovra-logo-icon.webp";
 
 const sections = [
   {

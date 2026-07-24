@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { ArrowLeft, Mail } from "lucide-react";
 import { useEffect } from "react";
 
-const sovraLogo = "/sovra-logo.svg";
+const sovraLogo = "/sovra-logo-icon.webp";
 
 const COLORS = {
   bg: "#0F172A",

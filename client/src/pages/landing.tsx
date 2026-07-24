@@ -45,17 +45,7 @@ import {
 } from "lucide-react";
 import { SiApple, SiGmail } from "react-icons/si";
 import { Button } from "@/components/ui/button";
-const sovraLogo = "/sovra-logo-transparent.png";
-import shot0077 from "@assets/IMG_0077_1779112691140.png";
-import shotInboxZero from "@assets/IMG_0104_1779289107358.png";
-import shot0080 from "@assets/IMG_0080_1779112691140.png";
-import shot0081 from "@assets/IMG_0081_1779112691140.png";
-import shot0082 from "@assets/IMG_0082_1779112691140.png";
-import shot0083 from "@assets/IMG_0083_1779112691140.png";
-import shot0084 from "@assets/IMG_0084_1779112691140.png";
-import shot0085 from "@assets/IMG_0085_1779112691140.png";
-import shot0086 from "@assets/IMG_0086_1779112748093.png";
-import shotAskSovra from "@assets/IMG_0089_1779115759412.png";
+const sovraLogo = "/sovra-logo-transparent-sm.webp";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -274,10 +264,11 @@ function HeroSection() {
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           >
             <img
-              src="/sovra-logo.png"
+              src="/sovra-logo-sm.webp"
               alt="Sovra"
               className="w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 object-contain"
               style={{ mixBlendMode: "screen" }}
+              decoding="async"
             />
           </motion.div>
           <span className="text-sm font-medium" style={{ color: COLORS.primary }} data-testid="text-hero-badge">Your Private Second Brain</span>
@@ -604,17 +595,17 @@ function FeaturesSection() {
   );
 }
 
-const screenshots: { src: string; label: string; caption: string }[] = [
-  { src: shot0077, label: "Today", caption: "Your life at a glance" },
-  { src: shotInboxZero, label: "Inbox Zero", caption: "Zero inbox, every time" },
-  { src: shot0080, label: "Tasks", caption: "Stay on top of what matters" },
-  { src: shot0081, label: "Projects", caption: "Group work into focused projects" },
-  { src: shot0082, label: "Gantt Chart", caption: "Visualise your project timeline" },
-  { src: shot0083, label: "Notes", caption: "Everything, perfectly organised" },
-  { src: shot0084, label: "Calendar", caption: "Never miss a date" },
-  { src: shot0085, label: "Documents", caption: "Your documents, privately organised" },
-  { src: shot0086, label: "Settings", caption: "Everything under your control" },
-  { src: shotAskSovra, label: "Ask Sovra", caption: "Your private AI assistant" },
+const screenshots: { thumb: string; src: string; label: string; caption: string }[] = [
+  { thumb: "/screenshots/today-thumb.webp", src: "/screenshots/today-full.webp", label: "Today", caption: "Your life at a glance" },
+  { thumb: "/screenshots/inbox-zero-gallery-thumb.webp", src: "/screenshots/inbox-zero-gallery-full.webp", label: "Inbox Zero", caption: "Zero inbox, every time" },
+  { thumb: "/screenshots/tasks-thumb.webp", src: "/screenshots/tasks-full.webp", label: "Tasks", caption: "Stay on top of what matters" },
+  { thumb: "/screenshots/projects-thumb.webp", src: "/screenshots/projects-full.webp", label: "Projects", caption: "Group work into focused projects" },
+  { thumb: "/screenshots/gantt-thumb.webp", src: "/screenshots/gantt-full.webp", label: "Gantt Chart", caption: "Visualise your project timeline" },
+  { thumb: "/screenshots/notes-thumb.webp", src: "/screenshots/notes-full.webp", label: "Notes", caption: "Everything, perfectly organised" },
+  { thumb: "/screenshots/calendar-thumb.webp", src: "/screenshots/calendar-full.webp", label: "Calendar", caption: "Never miss a date" },
+  { thumb: "/screenshots/documents-thumb.webp", src: "/screenshots/documents-full.webp", label: "Documents", caption: "Your documents, privately organised" },
+  { thumb: "/screenshots/settings-thumb.webp", src: "/screenshots/settings-full.webp", label: "Settings", caption: "Everything under your control" },
+  { thumb: "/screenshots/ask-sovra-thumb.webp", src: "/screenshots/ask-sovra-full.webp", label: "Ask Sovra", caption: "Your private AI assistant" },
 ];
 
 function ScreenshotsSection() {
@@ -723,7 +714,7 @@ function ScreenshotsSection() {
                   boxShadow: `0 0 0 1px rgba(255,255,255,0.05), 0 24px 48px rgba(0,0,0,0.5)`,
                 }}
               >
-                <img src={shot.src} alt={shot.label} className="w-full h-full object-cover object-top" />
+                <img src={shot.thumb} alt={shot.label} className="w-full h-full object-cover object-top" loading="lazy" decoding="async" />
                 <div className="absolute inset-0" style={{ borderRadius: "2rem", boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.08)" }} />
               </div>
               <p className="text-sm font-semibold text-white mb-1" data-testid={`text-screenshot-label-${i}`}>{shot.label}</p>
