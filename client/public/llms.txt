@@ -1,0 +1,31 @@
+# Sovra
+
+Sovra is a privacy-first AI second brain for iPhone and iPad. It triages Gmail, Apple Mail, and IMAP email into notes, tasks, and calendar events using on-device AI — your data never leaves your device.
+
+## Key pages
+
+- Homepage: https://sovra.app/
+- AI features: https://sovra.app/ai
+- Security: https://sovra.app/security
+- Blog: https://sovra.app/blog
+- Roadmap: https://sovra.app/roadmap
+- Support: https://sovra.app/support
+- Privacy Policy: https://sovra.app/privacy
+- Terms of Service: https://sovra.app/terms
+- Our Philosophy: https://sovra.app/philosophy
+
+## Blog posts
+
+- Why Email Became Your Second Job: https://sovra.app/blog/why-email-became-your-second-job
+- Why We Built Sovra — And What It's Actually For: https://sovra.app/blog/why-we-built-sovra
+
+## Roadmap
+
+- Intelligent Automation: https://sovra.app/roadmap/intelligent-automation
+- Multi-language Support: https://sovra.app/roadmap/multi-language
+- Updated AI Models: https://sovra.app/roadmap/updated-ai-models
+- Unified Inbox: https://sovra.app/roadmap/unified-inbox
+
+## About
+
+Sovra is made by Nammu Technologies. It is available exclusively on iOS (iPhone and iPad) via the App Store. Core values: on-device AI processing, zero-knowledge encrypted sync, zero inbox, data sovereignty.
