@@ -18,6 +18,27 @@ const DEFAULT_META: PageMeta = {
   ogDesc: "Stop organizing. Start living. Notes, tasks, and email — all in one private place. On-device AI keeps your data yours.",
 };
 
+const VALID_ROUTES = new Set([
+  "/",
+  "/philosophy",
+  "/video",
+  "/support",
+  "/privacy",
+  "/terms",
+  "/security",
+  "/ai",
+  "/blog",
+  "/blog/why-email-became-your-second-job",
+  "/blog/why-we-built-sovra",
+  "/roadmap",
+  "/roadmap/intelligent-automation",
+  "/roadmap/multi-language",
+  "/roadmap/updated-ai-models",
+  "/roadmap/unified-inbox",
+  "/voice-samples",
+  "/video-plan",
+]);
+
 const ROUTE_META: Record<string, PageMeta> = {
   "/": DEFAULT_META,
   "/philosophy": {
@@ -100,9 +121,13 @@ export function serveStatic(app: Express) {
 
   app.use("/{*path}", (req, res) => {
     const rawHtml = fs.readFileSync(indexPath, "utf-8");
+    const isValid = VALID_ROUTES.has(req.path);
     const meta = ROUTE_META[req.path] ?? DEFAULT_META;
     const html = injectMeta(rawHtml, meta);
     res.setHeader("Content-Type", "text/html");
+    if (!isValid) {
+      res.status(404);
+    }
     res.send(html);
   });
 }
