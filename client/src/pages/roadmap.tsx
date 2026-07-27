@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowLeft, ArrowRight, Globe, Cpu, Inbox, Zap } from "lucide-react";
+import { ArrowLeft, ArrowRight, Globe, Cpu, Inbox, Zap, CheckCircle2, Users } from "lucide-react";
 import { SiInstagram, SiYoutube } from "react-icons/si";
 
 const fadeUp = {
@@ -33,12 +33,22 @@ const COLORS = {
 
 const features = [
   {
+    icon: Users,
+    color: "#10B981",
+    title: "In-App Contact Management",
+    teaser: "Manage your contacts directly inside Sovra. See every note, task, email, and event linked to a person — all in one place, all private.",
+    href: null,
+    completed: true,
+    completedDate: "July 2025",
+  },
+  {
     icon: Zap,
     color: "#6366F1",
     title: "Intelligent Automation",
     teaser: "Describe what you want in plain English. Sovra translates it into a rule that runs automatically — no flowcharts, no triggers, no conditions to configure.",
     href: "/roadmap/intelligent-automation",
-    gradient: "from-indigo-600/20 to-violet-600/10",
+    completed: false,
+    completedDate: null,
   },
   {
     icon: Globe,
@@ -46,7 +56,8 @@ const features = [
     title: "Multi-language",
     teaser: "Sovra in your language. AI triage, notes, and interface — all tuned for speakers of Spanish, French, German, Japanese, and more.",
     href: "/roadmap/multi-language",
-    gradient: "from-blue-600/20 to-indigo-600/10",
+    completed: false,
+    completedDate: null,
   },
   {
     icon: Cpu,
@@ -54,7 +65,8 @@ const features = [
     title: "Updated AI Models",
     teaser: "As Apple's Neural Engine evolves, so does Sovra. Smarter triage, richer summaries, and deeper document understanding — all still on-device.",
     href: "/roadmap/updated-ai-models",
-    gradient: "from-purple-600/20 to-violet-600/10",
+    completed: false,
+    completedDate: null,
   },
   {
     icon: Inbox,
@@ -62,7 +74,8 @@ const features = [
     title: "Unified Inbox",
     teaser: "Your relationships, not your channels. One inbox for email, WhatsApp, Signal, and more — Sovra replies on the most appropriate channel so you never think about the app again.",
     href: "/roadmap/unified-inbox",
-    gradient: "from-emerald-600/20 to-teal-600/10",
+    completed: false,
+    completedDate: null,
   },
 ];
 
@@ -137,49 +150,65 @@ export default function Roadmap() {
             className="flex flex-col gap-6"
             data-testid="list-roadmap-features"
           >
-            {features.map((feature, i) => (
-              <motion.div key={feature.title} variants={fadeUp} custom={i + 3} data-testid={`card-roadmap-${i}`}>
-                <Link href={feature.href}>
-                  <div
-                    className={`group relative rounded-2xl p-8 cursor-pointer overflow-hidden transition-all duration-300`}
-                    style={{
-                      backgroundColor: COLORS.cardBg,
-                      border: `1px solid ${COLORS.cardBorder}`,
-                      backdropFilter: "blur(12px)",
-                    }}
-                  >
+            {features.map((feature, i) => {
+              const card = (
+                <div
+                  className={`group relative rounded-2xl p-8 overflow-hidden transition-all duration-300 ${feature.href ? "cursor-pointer" : ""}`}
+                  style={{
+                    backgroundColor: feature.completed ? "rgba(16, 185, 129, 0.05)" : COLORS.cardBg,
+                    border: feature.completed ? "1px solid rgba(16, 185, 129, 0.2)" : `1px solid ${COLORS.cardBorder}`,
+                    backdropFilter: "blur(12px)",
+                  }}
+                >
+                  {feature.href && (
                     <div
                       className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                       style={{ background: `radial-gradient(circle at top left, ${feature.color}12, transparent 70%)` }}
                     />
-                    <div className="absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl transition-opacity duration-300" style={{ backgroundColor: feature.color }} />
+                  )}
+                  <div className="absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl" style={{ backgroundColor: feature.completed ? "#10B981" : feature.color }} />
 
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex items-start gap-5 flex-1">
-                        <div
-                          className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                          style={{ backgroundColor: `${feature.color}18`, border: `1px solid ${feature.color}30` }}
-                        >
-                          <feature.icon className="w-6 h-6" style={{ color: feature.color }} />
-                        </div>
-                        <div>
-                          <h2 className="text-xl font-bold text-white mb-2" data-testid={`text-feature-title-${i}`}>
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex items-start gap-5 flex-1">
+                      <div
+                        className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                        style={{ backgroundColor: `${feature.completed ? "#10B981" : feature.color}18`, border: `1px solid ${feature.completed ? "#10B981" : feature.color}30` }}
+                      >
+                        <feature.icon className="w-6 h-6" style={{ color: feature.completed ? "#10B981" : feature.color }} />
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 flex-wrap mb-2">
+                          <h2 className="text-xl font-bold text-white" data-testid={`text-feature-title-${i}`}>
                             {feature.title}
                           </h2>
-                          <p className="text-base leading-relaxed" style={{ color: COLORS.muted }} data-testid={`text-feature-teaser-${i}`}>
-                            {feature.teaser}
-                          </p>
+                          {feature.completed && (
+                            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: "rgba(16, 185, 129, 0.12)", color: "#10B981", border: "1px solid rgba(16, 185, 129, 0.25)" }}>
+                              <CheckCircle2 className="w-3.5 h-3.5" />
+                              Completed {feature.completedDate}
+                            </div>
+                          )}
                         </div>
+                        <p className="text-base leading-relaxed" style={{ color: COLORS.muted }} data-testid={`text-feature-teaser-${i}`}>
+                          {feature.teaser}
+                        </p>
                       </div>
+                    </div>
+                    {feature.href && (
                       <ArrowRight
                         className="w-5 h-5 flex-shrink-0 mt-1 transition-transform duration-200 group-hover:translate-x-1"
                         style={{ color: COLORS.dimmed }}
                       />
-                    </div>
+                    )}
                   </div>
-                </Link>
-              </motion.div>
-            ))}
+                </div>
+              );
+
+              return (
+                <motion.div key={feature.title} variants={fadeUp} custom={i + 3} data-testid={`card-roadmap-${i}`}>
+                  {feature.href ? <Link href={feature.href}>{card}</Link> : card}
+                </motion.div>
+              );
+            })}
           </motion.div>
 
           <motion.div
