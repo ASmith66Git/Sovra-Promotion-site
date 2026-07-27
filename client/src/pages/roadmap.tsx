@@ -218,29 +218,6 @@ export default function Roadmap() {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-6 rounded-2xl p-8 text-center"
-            style={{ backgroundColor: "rgba(99,102,241,0.07)", border: "1px solid rgba(99,102,241,0.18)" }}
-            data-testid="section-roadmap-cta"
-          >
-            <p className="text-base font-medium text-white mb-2">Already available today</p>
-            <p className="text-sm mb-6" style={{ color: COLORS.muted }}>
-              Zero inbox, on-device AI triage, rich notes, projects, calendars, and documents — all private, all yours.
-            </p>
-            <a
-              href="https://apps.apple.com/app/id6764045748"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white text-sm"
-              style={{ backgroundColor: COLORS.primary }}
-              data-testid="link-roadmap-appstore"
-            >
-              Download on the App Store
-            </a>
-          </motion.div>
         </div>
       </main>
 
