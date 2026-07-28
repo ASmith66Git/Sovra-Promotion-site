@@ -1,0 +1,10 @@
+So the core issue was Contacts is that on most devices they’re treated as an afterthought getting reality everything revolves around the contact the flow of information that we receive is all based on somebody Weather as via email a phone call WhatsApp message et cetera
+And present the way that we deal with this as we invariably have an app called Contacts and whilst it will synchronise with most things, it is not really built-in. It’s the root layers of most applications.
+What we’ve attempted to do with sovereign is incorporate people rather than contacts into the workflow as an example emails are received from people therefore we should be able to surface details about that person who sent us this email other than just the email address we might create a note and that note might be about someone or relating to someone therefore if we attached a person to that note again we’ve got context and we’ve got links between the people that we are dealing with and the information that we store that is related to them
+This can apply for tasks, documents, events, et cetera even projects
+The fun bit is ensuring that this isn’t intrusive and it’s automated
+You shouldn’t have to copy and paste information about an email into your contacts and vice versa you shouldn’t have to go and look up a contact to them be able to do something. They should all be seamless so that when an email is received from somebody the AI will recognise that this is junk mail. This is a promotional email. All this is actually from a real person in which case it’ll immediately store that information check whether you’ve already got any information for that user person and merge it together in the background. It will also seamlessly sync with your iOS contacts so that that is constantly up-to-date.
+But what is driving this is the flow of information into Sovra 
+
+The importance of this cannot be overstated as the mantra of input data once is crucial here
+Almost all information that is related to a person comes into your device externally therefore having to manage that seems to be a poor use of time the app should deal with all of this and surface it when you need it 
