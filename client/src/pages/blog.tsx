@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowLeft, ArrowRight, Brain, Mail } from "lucide-react";
+import { ArrowLeft, ArrowRight, Brain, Mail, Users } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -25,6 +25,15 @@ const COLORS = {
 };
 
 export const POSTS = [
+  {
+    slug: "people-not-contacts",
+    title: "People, Not Contacts — Rethinking How Your App Knows Who You're Talking To",
+    date: "30 July 2025",
+    readTime: "5 min read",
+    excerpt: "On most devices, contacts are an afterthought. Sovra puts people at the centre of the workflow — so the context you need surfaces automatically, without you having to manage anything.",
+    icon: Users,
+    color: "#10B981",
+  },
   {
     slug: "why-email-became-your-second-job",
     title: "Why Email Became Your Second Job",
