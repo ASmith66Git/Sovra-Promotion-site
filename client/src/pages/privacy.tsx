@@ -110,9 +110,8 @@ export default function Privacy() {
               <ul className="list-disc pl-6 space-y-2 mt-3">
                 <li><strong className="text-slate-200">What Firebase collects:</strong> Aggregate install events, device type, operating system version, and the advertising campaign associated with an install (if any). Firebase does not collect your name, email address, or any content you create inside the app.</li>
                 <li><strong className="text-slate-200">No individual tracking:</strong> Firebase Analytics data is not linked to your Sovra account or any personally identifiable information held by us.</li>
-                <li><strong className="text-slate-200">Apple App Tracking Transparency:</strong> On iOS, Firebase respects the App Tracking Transparency (ATT) framework. If you decline tracking when prompted, no advertising identifier is collected or used.</li>
+                <li><strong className="text-slate-200">SKAdNetwork attribution:</strong> We use Apple's privacy-preserving <strong className="text-slate-200">SKAdNetwork</strong> framework for install attribution. This means no Identifier for Advertising (IDFA) is collected, no App Tracking Transparency (ATT) consent prompt is displayed, and no individual advertising identifier is used at any point. Attribution is handled entirely through Apple's aggregate, on-device framework.</li>
                 <li><strong className="text-slate-200">Firebase as a data processor:</strong> Google Ireland Limited acts as a data processor on our behalf for Firebase Analytics. Firebase's own privacy practices are described at <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2" style={{ color: COLORS.primary }}>firebase.google.com/support/privacy</a>.</li>
-                <li><strong className="text-slate-200">Opt out:</strong> You can limit ad measurement on iOS via <strong className="text-slate-200">Settings → Privacy & Security → Tracking</strong>, or by resetting your Advertising Identifier.</li>
               </ul>
             </section>
 
