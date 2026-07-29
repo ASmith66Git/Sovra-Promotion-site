@@ -435,6 +435,7 @@ export const ROUTE_META: Record<string, PageMeta> = {
           { "@type": "WebPage", "name": "Multi-language Support", "url": "https://sovra.app/roadmap/multi-language" },
           { "@type": "WebPage", "name": "Updated AI Models", "url": "https://sovra.app/roadmap/updated-ai-models" },
           { "@type": "WebPage", "name": "Unified Inbox", "url": "https://sovra.app/roadmap/unified-inbox" },
+          { "@type": "WebPage", "name": "In-App Contact Management", "url": "https://sovra.app/roadmap/contact-management" },
         ],
       },
     ],
@@ -457,6 +458,11 @@ export const ROUTE_META: Record<string, PageMeta> = {
 <article style="border:1px solid rgba(255,255,255,0.08);border-radius:1rem;padding:1.5rem;margin-bottom:1.25rem;background:rgba(30,41,59,0.5)">
   <h2 style="font-size:1.2rem;font-weight:700;margin-bottom:0.5rem"><a href="/roadmap/unified-inbox" style="color:#F8FAFC;text-decoration:none">Unified Inbox</a></h2>
   <p style="color:#94A3B8;line-height:1.7">Your relationships, not your channels. One inbox for email, WhatsApp, Signal, and more — Sovra replies on the most appropriate channel.</p>
+</article>
+<article style="border:1px solid rgba(16,185,129,0.2);border-radius:1rem;padding:1.5rem;margin-bottom:1.25rem;background:rgba(16,185,129,0.05)">
+  <span style="background:rgba(16,185,129,0.12);color:#10B981;border:1px solid rgba(16,185,129,0.3);padding:0.2rem 0.6rem;border-radius:999px;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;display:inline-block">Completed July 2025</span>
+  <h2 style="font-size:1.2rem;font-weight:700;margin-bottom:0.5rem"><a href="/roadmap/contact-management" style="color:#F8FAFC;text-decoration:none">In-App Contact Management</a></h2>
+  <p style="color:#94A3B8;line-height:1.7">People, not contacts. Notes, tasks, emails, events, and documents all link to the people they involve — automatically, privately, on-device.</p>
 </article>
 </div>`,
   },
@@ -581,6 +587,44 @@ export const ROUTE_META: Record<string, PageMeta> = {
 <p style="color:#94A3B8;line-height:1.75;margin-bottom:1.25rem">Each generation of Apple's Neural Engine delivers more tokens per second at lower thermal cost. AI operations that today take a noticeable moment will become instantaneous — without draining your battery.</p>
 <h2 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem;margin-top:1.5rem">The principle that doesn't change</h2>
 <p style="color:#94A3B8;line-height:1.75">Better models will never mean your data leaves your device. Every model we ship runs entirely on your iPhone, iPad, or Apple Silicon Mac. Your notes, emails, and documents are the input; your device is the processor; you are the only one who sees the output.</p>
+</div>`,
+  },
+  "/roadmap/contact-management": {
+    title: "In-App Contact Management — Sovra Roadmap",
+    description: "Sovra puts people at the centre of the workflow. Notes, tasks, emails, events, and documents all link to the people they involve — automatically, privately, on-device.",
+    canonical: "https://sovra.app/roadmap/contact-management",
+    ogTitle: "In-App Contact Management — Sovra Roadmap",
+    ogDesc: "People, not contacts. Everything in Sovra connects to the people it involves.",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "In-App Contact Management — Sovra Roadmap",
+        "url": "https://sovra.app/roadmap/contact-management",
+        "description": "Sovra puts people at the centre of the workflow. Notes, tasks, emails, events, and documents all link to the people they involve — automatically, privately, on-device.",
+        "publisher": ORG,
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sovra.app/" },
+            { "@type": "ListItem", "position": 2, "name": "Roadmap", "item": "https://sovra.app/roadmap" },
+            { "@type": "ListItem", "position": 3, "name": "In-App Contact Management", "item": "https://sovra.app/roadmap/contact-management" },
+          ],
+        },
+      },
+    ],
+    bodyContent: `<div style="font-family:Inter,sans-serif;background:#0F172A;color:#F8FAFC;padding:2rem;max-width:800px;margin:0 auto">
+<nav style="margin-bottom:2rem"><a href="/roadmap" style="color:#94A3B8;text-decoration:none">← Road Map</a></nav>
+<span style="background:rgba(16,185,129,0.12);color:#10B981;border:1px solid rgba(16,185,129,0.3);padding:0.3rem 0.75rem;border-radius:999px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em">Completed July 2025</span>
+<h1 style="font-size:2.5rem;font-weight:800;margin-top:1rem;margin-bottom:1rem">In-App Contact Management</h1>
+<p style="color:#94A3B8;font-size:1.1rem;margin-bottom:0.75rem">People, not contacts. Everything in Sovra connects to the people it involves.</p>
+<p style="color:#64748B;line-height:1.75;margin-bottom:2rem">Traditional contacts apps sit at the edges of your digital life — a lookup tool you open, find a number, and close. Sovra takes the opposite approach: people are woven into the fabric of the app. Every email, note, task, event, and document can carry the context of who it involves.</p>
+<h2 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem;margin-top:1.5rem">People at the centre of everything</h2>
+<p style="color:#94A3B8;line-height:1.75;margin-bottom:1.25rem">When an email arrives from someone, Sovra links it to that person automatically. Notes, tasks, events, documents, and projects can all carry the context of who they involve. A contact record in Sovra is a living thread of your relationship with that person.</p>
+<h2 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem;margin-top:1.5rem">Input data once — the app handles the rest</h2>
+<p style="color:#94A3B8;line-height:1.75;margin-bottom:1.25rem">Sovra's AI recognises when a message is from a real person, checks what it already knows about them, and surfaces the relevant context. You don't manually copy anything into a contacts record.</p>
+<h2 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem;margin-top:1.5rem">Seamless and private — never intrusive</h2>
+<p style="color:#94A3B8;line-height:1.75">Contact enrichment happens quietly, in the background, entirely on your device. Nothing about your relationships leaves your hands.</p>
 </div>`,
   },
   "/roadmap/unified-inbox": {

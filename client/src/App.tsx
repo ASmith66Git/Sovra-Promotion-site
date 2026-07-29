@@ -23,6 +23,7 @@ import IntelligentAutomation from "@/pages/roadmap/intelligent-automation";
 import MultiLanguage from "@/pages/roadmap/multi-language";
 import UpdatedAiModels from "@/pages/roadmap/updated-ai-models";
 import UnifiedInbox from "@/pages/roadmap/unified-inbox";
+import ContactManagement from "@/pages/roadmap/contact-management";
 
 function Router() {
   return (
@@ -46,6 +47,7 @@ function Router() {
       <Route path="/roadmap/multi-language" component={MultiLanguage} />
       <Route path="/roadmap/updated-ai-models" component={UpdatedAiModels} />
       <Route path="/roadmap/unified-inbox" component={UnifiedInbox} />
+      <Route path="/roadmap/contact-management" component={ContactManagement} />
       <Route component={NotFound} />
     </Switch>
   );

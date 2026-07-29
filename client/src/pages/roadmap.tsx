@@ -37,7 +37,7 @@ const features = [
     color: "#10B981",
     title: "In-App Contact Management",
     teaser: "Manage your contacts directly inside Sovra. See every note, task, email, and event linked to a person — all in one place, all private.",
-    href: null,
+    href: "/roadmap/contact-management",
     completed: true,
     completedDate: "July 2025",
   },
