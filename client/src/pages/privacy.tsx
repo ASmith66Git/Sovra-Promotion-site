@@ -68,7 +68,7 @@ export default function Privacy() {
             Privacy Policy
           </h1>
           <p className="text-sm mb-10" style={{ color: COLORS.dimmed }} data-testid="text-privacy-updated">
-            Last updated: April 22, 2026
+            Last updated: July 24, 2026
           </p>
 
           <div className="prose-legal space-y-8 text-base leading-relaxed" style={{ color: COLORS.muted }}>
@@ -99,8 +99,25 @@ export default function Privacy() {
               </ul>
             </section>
 
+            <section data-testid="section-privacy-analytics">
+              <h2 className="text-xl font-semibold text-white mt-10 mb-4">3. Analytics and Advertising Measurement</h2>
+              <p>
+                We use <strong className="text-slate-200">Google Firebase Analytics</strong> and <strong className="text-slate-200">Google Analytics for Firebase</strong> to measure the effectiveness of our advertising campaigns — specifically to understand how many app installs result from ads we run on platforms such as the Apple App Store and Google.
+              </p>
+              <p className="mt-3">
+                This is <strong className="text-slate-200">campaign-level measurement only</strong>. We do not build profiles of individual users, track your behaviour inside the app over time for advertising purposes, or share any data about you with advertisers. The information we collect through Firebase is aggregated and used solely to understand which marketing channels drive downloads.
+              </p>
+              <ul className="list-disc pl-6 space-y-2 mt-3">
+                <li><strong className="text-slate-200">What Firebase collects:</strong> Aggregate install events, device type, operating system version, and the advertising campaign associated with an install (if any). Firebase does not collect your name, email address, or any content you create inside the app.</li>
+                <li><strong className="text-slate-200">No individual tracking:</strong> Firebase Analytics data is not linked to your Sovra account or any personally identifiable information held by us.</li>
+                <li><strong className="text-slate-200">Apple App Tracking Transparency:</strong> On iOS, Firebase respects the App Tracking Transparency (ATT) framework. If you decline tracking when prompted, no advertising identifier is collected or used.</li>
+                <li><strong className="text-slate-200">Firebase as a data processor:</strong> Google Ireland Limited acts as a data processor on our behalf for Firebase Analytics. Firebase's own privacy practices are described at <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2" style={{ color: COLORS.primary }}>firebase.google.com/support/privacy</a>.</li>
+                <li><strong className="text-slate-200">Opt out:</strong> You can limit ad measurement on iOS via <strong className="text-slate-200">Settings → Privacy & Security → Tracking</strong>, or by resetting your Advertising Identifier.</li>
+              </ul>
+            </section>
+
             <section data-testid="section-privacy-google">
-              <h2 className="text-xl font-semibold text-white mt-10 mb-4">3. Google User Data &amp; Limited Use Disclosure</h2>
+              <h2 className="text-xl font-semibold text-white mt-10 mb-4">4. Google User Data &amp; Limited Use Disclosure</h2>
               <div
                 className="rounded-xl px-5 py-4 my-4 text-sm font-medium"
                 style={{ backgroundColor: `${COLORS.primary}0A`, border: `1px solid ${COLORS.primary}25` }}
@@ -151,17 +168,17 @@ export default function Privacy() {
             </section>
 
             <section data-testid="section-privacy-storage">
-              <h2 className="text-xl font-semibold text-white mt-10 mb-4">4. Data Storage and Retention</h2>
+              <h2 className="text-xl font-semibold text-white mt-10 mb-4">5. Data Storage and Retention</h2>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong className="text-slate-200">Local Data:</strong> All decrypted message content stays on your device.</li>
                 <li><strong className="text-slate-200">Backend Metadata:</strong> We store only OAuth refresh tokens and minimal account-link metadata (email address).</li>
                 <li><strong className="text-slate-200">Retention:</strong> OAuth tokens are permanently deleted upon account disconnection or deletion. We do not retain tokens beyond the life of your active integration.</li>
-                <li><strong className="text-slate-200">Third-party processors:</strong> Replit (US) hosts our backend infrastructure. RevenueCat processes subscription receipts.</li>
+                <li><strong className="text-slate-200">Third-party processors:</strong> Replit (US) hosts our backend infrastructure. RevenueCat processes subscription receipts. Google Ireland Limited processes aggregate analytics data via Firebase Analytics.</li>
               </ul>
             </section>
 
             <section data-testid="section-privacy-rights">
-              <h2 className="text-xl font-semibold text-white mt-10 mb-4">5. Your Rights and Account Deletion</h2>
+              <h2 className="text-xl font-semibold text-white mt-10 mb-4">6. Your Rights and Account Deletion</h2>
               <p>
                 Under the <strong className="text-slate-200">UK GDPR</strong>, you have rights including access, rectification, and erasure.
               </p>
@@ -174,21 +191,21 @@ export default function Privacy() {
             </section>
 
             <section data-testid="section-privacy-security">
-              <h2 className="text-xl font-semibold text-white mt-10 mb-4">6. Security</h2>
+              <h2 className="text-xl font-semibold text-white mt-10 mb-4">7. Security</h2>
               <p>
                 We utilise industry-standard TLS for data in transit and OS-level secure storage (Keychain on iOS) for credentials on-device. All user data stored locally is encrypted with AES-256-GCM. No system is perfectly secure; please use a device passcode and keep your operating system up to date.
               </p>
             </section>
 
             <section data-testid="section-privacy-governing-law">
-              <h2 className="text-xl font-semibold text-white mt-10 mb-4">7. Governing Law and Jurisdiction</h2>
+              <h2 className="text-xl font-semibold text-white mt-10 mb-4">8. Governing Law and Jurisdiction</h2>
               <p>
                 This Privacy Policy and any dispute or claim arising out of or in connection with it shall be governed by and construed in accordance with the laws of <strong className="text-slate-200">England and Wales</strong>. You agree that the courts of <strong className="text-slate-200">England and Wales</strong> shall have exclusive jurisdiction to settle any dispute or claim.
               </p>
             </section>
 
             <section data-testid="section-privacy-contact">
-              <h2 className="text-xl font-semibold text-white mt-10 mb-4">8. Contact Us</h2>
+              <h2 className="text-xl font-semibold text-white mt-10 mb-4">9. Contact Us</h2>
               <p>
                 <strong className="text-slate-200">Leviathan Systems Ltd</strong><br />
                 Email: support@leviathan-sys.com
