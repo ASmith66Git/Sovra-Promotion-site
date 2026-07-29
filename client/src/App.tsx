@@ -24,6 +24,7 @@ import MultiLanguage from "@/pages/roadmap/multi-language";
 import UpdatedAiModels from "@/pages/roadmap/updated-ai-models";
 import UnifiedInbox from "@/pages/roadmap/unified-inbox";
 import ContactManagement from "@/pages/roadmap/contact-management";
+import VerticalTimeline from "@/pages/roadmap/vertical-timeline";
 
 function Router() {
   return (
@@ -48,6 +49,7 @@ function Router() {
       <Route path="/roadmap/updated-ai-models" component={UpdatedAiModels} />
       <Route path="/roadmap/unified-inbox" component={UnifiedInbox} />
       <Route path="/roadmap/contact-management" component={ContactManagement} />
+      <Route path="/roadmap/vertical-timeline" component={VerticalTimeline} />
       <Route component={NotFound} />
     </Switch>
   );

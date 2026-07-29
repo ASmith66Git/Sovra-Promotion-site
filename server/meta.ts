@@ -436,6 +436,7 @@ export const ROUTE_META: Record<string, PageMeta> = {
           { "@type": "WebPage", "name": "Updated AI Models", "url": "https://sovra.app/roadmap/updated-ai-models" },
           { "@type": "WebPage", "name": "Unified Inbox", "url": "https://sovra.app/roadmap/unified-inbox" },
           { "@type": "WebPage", "name": "In-App Contact Management", "url": "https://sovra.app/roadmap/contact-management" },
+          { "@type": "WebPage", "name": "Vertical Timeline Infographics", "url": "https://sovra.app/roadmap/vertical-timeline" },
         ],
       },
     ],
@@ -463,6 +464,11 @@ export const ROUTE_META: Record<string, PageMeta> = {
   <span style="background:rgba(16,185,129,0.12);color:#10B981;border:1px solid rgba(16,185,129,0.3);padding:0.2rem 0.6rem;border-radius:999px;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;display:inline-block">Completed July 2025</span>
   <h2 style="font-size:1.2rem;font-weight:700;margin-bottom:0.5rem"><a href="/roadmap/contact-management" style="color:#F8FAFC;text-decoration:none">In-App Contact Management</a></h2>
   <p style="color:#94A3B8;line-height:1.7">People, not contacts. Notes, tasks, emails, events, and documents all link to the people they involve — automatically, privately, on-device.</p>
+</article>
+<article style="border:1px solid rgba(16,185,129,0.2);border-radius:1rem;padding:1.5rem;margin-bottom:1.25rem;background:rgba(16,185,129,0.05)">
+  <span style="background:rgba(16,185,129,0.12);color:#10B981;border:1px solid rgba(16,185,129,0.3);padding:0.2rem 0.6rem;border-radius:999px;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;display:inline-block">Completed April 2025</span>
+  <h2 style="font-size:1.2rem;font-weight:700;margin-bottom:0.5rem"><a href="/roadmap/vertical-timeline" style="color:#F8FAFC;text-decoration:none">Vertical Timeline Infographics</a></h2>
+  <p style="color:#94A3B8;line-height:1.7">Gantt charts don't work on phones. Sovra's vertical timeline shows tasks, progress, and dependencies as readable infographic cards — built for the screen you actually use.</p>
 </article>
 </div>`,
   },
@@ -587,6 +593,46 @@ export const ROUTE_META: Record<string, PageMeta> = {
 <p style="color:#94A3B8;line-height:1.75;margin-bottom:1.25rem">Each generation of Apple's Neural Engine delivers more tokens per second at lower thermal cost. AI operations that today take a noticeable moment will become instantaneous — without draining your battery.</p>
 <h2 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem;margin-top:1.5rem">The principle that doesn't change</h2>
 <p style="color:#94A3B8;line-height:1.75">Better models will never mean your data leaves your device. Every model we ship runs entirely on your iPhone, iPad, or Apple Silicon Mac. Your notes, emails, and documents are the input; your device is the processor; you are the only one who sees the output.</p>
+</div>`,
+  },
+  "/roadmap/vertical-timeline": {
+    title: "Vertical Timeline Infographics — Sovra Roadmap",
+    description: "Gantt charts don't work on phones. Sovra's vertical timeline makes project tasks, progress, and dependencies easy to follow on any screen.",
+    canonical: "https://sovra.app/roadmap/vertical-timeline",
+    ogTitle: "Vertical Timeline Infographics — Sovra Roadmap",
+    ogDesc: "Project tracking designed for the screen you actually use.",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Vertical Timeline Infographics — Sovra Roadmap",
+        "url": "https://sovra.app/roadmap/vertical-timeline",
+        "description": "Gantt charts don't work on phones. Sovra's vertical timeline makes project tasks, progress, and dependencies easy to follow on any screen.",
+        "publisher": ORG,
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sovra.app/" },
+            { "@type": "ListItem", "position": 2, "name": "Roadmap", "item": "https://sovra.app/roadmap" },
+            { "@type": "ListItem", "position": 3, "name": "Vertical Timeline Infographics", "item": "https://sovra.app/roadmap/vertical-timeline" },
+          ],
+        },
+      },
+    ],
+    bodyContent: `<div style="font-family:Inter,sans-serif;background:#0F172A;color:#F8FAFC;padding:2rem;max-width:800px;margin:0 auto">
+<nav style="margin-bottom:2rem"><a href="/roadmap" style="color:#94A3B8;text-decoration:none">← Road Map</a></nav>
+<span style="background:rgba(16,185,129,0.12);color:#10B981;border:1px solid rgba(16,185,129,0.3);padding:0.3rem 0.75rem;border-radius:999px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em">Completed April 2025</span>
+<h1 style="font-size:2.5rem;font-weight:800;margin-top:1rem;margin-bottom:1rem">Vertical Timeline Infographics</h1>
+<p style="color:#94A3B8;font-size:1.1rem;margin-bottom:0.75rem">Project tracking designed for the screen you actually use.</p>
+<p style="color:#64748B;line-height:1.75;margin-bottom:2rem">Gantt charts were built for large monitors and printed project plans. They have never worked on a phone. Sovra's vertical timeline replaces the horizontal grid with an infographic format that follows the natural scroll direction of a mobile device.</p>
+<h2 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem;margin-top:1.5rem">Gantt charts don't belong on a phone</h2>
+<p style="color:#94A3B8;line-height:1.75;margin-bottom:1.25rem">On a phone, the natural direction is vertical. A vertical timeline follows the same axis your thumb already moves, so you can scan from top to bottom without losing your place or fighting the layout.</p>
+<h2 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem;margin-top:1.5rem">Tasks as infographic cards</h2>
+<p style="color:#94A3B8;line-height:1.75;margin-bottom:1.25rem">Each task is a self-contained card showing name, status, assignee, and progress. No horizontal scrolling, no hunting for column headers — just the information, laid out clearly.</p>
+<h2 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem;margin-top:1.5rem">Dependencies visible at a glance</h2>
+<p style="color:#94A3B8;line-height:1.75;margin-bottom:1.25rem">Dependency lines run between cards in the natural direction of reading — top to bottom. Icons reinforce the relationship: a blocked task looks blocked.</p>
+<h2 style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem;margin-top:1.5rem">See the flow of work, not just the list</h2>
+<p style="color:#94A3B8;line-height:1.75">See at a glance whether a project is front-loaded or back-loaded, where the bottlenecks are, and which tasks are on the critical path — without having to calculate it.</p>
 </div>`,
   },
   "/roadmap/contact-management": {

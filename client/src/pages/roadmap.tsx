@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowLeft, ArrowRight, Globe, Cpu, Inbox, Zap, CheckCircle2, Users } from "lucide-react";
+import { ArrowLeft, ArrowRight, Globe, Cpu, Inbox, Zap, CheckCircle2, Users, LayoutList } from "lucide-react";
 import { SiInstagram, SiYoutube } from "react-icons/si";
 
 const fadeUp = {
@@ -32,6 +32,15 @@ const COLORS = {
 };
 
 const features = [
+  {
+    icon: LayoutList,
+    color: "#10B981",
+    title: "Vertical Timeline Infographics",
+    teaser: "Gantt charts don't work on phones. Sovra's vertical timeline shows tasks, progress, and dependencies as readable infographic cards — built for the screen you actually use.",
+    href: "/roadmap/vertical-timeline",
+    completed: true,
+    completedDate: "April 2025",
+  },
   {
     icon: Users,
     color: "#10B981",

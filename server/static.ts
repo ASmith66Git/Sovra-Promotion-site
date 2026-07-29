@@ -23,6 +23,7 @@ const VALID_ROUTES = new Set([
   "/roadmap/updated-ai-models",
   "/roadmap/unified-inbox",
   "/roadmap/contact-management",
+  "/roadmap/vertical-timeline",
   "/voice-samples",
   "/video-plan",
 ]);

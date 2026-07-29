@@ -26,6 +26,7 @@ Sovra is a privacy-first AI second brain for iPhone and iPad. It triages Gmail, 
 - Updated AI Models: https://sovra.app/roadmap/updated-ai-models
 - Unified Inbox: https://sovra.app/roadmap/unified-inbox
 - In-App Contact Management: https://sovra.app/roadmap/contact-management
+- Vertical Timeline Infographics: https://sovra.app/roadmap/vertical-timeline
 
 ## About
 
