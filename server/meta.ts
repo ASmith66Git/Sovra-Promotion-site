@@ -466,7 +466,7 @@ export const ROUTE_META: Record<string, PageMeta> = {
   <p style="color:#94A3B8;line-height:1.7">People, not contacts. Notes, tasks, emails, events, and documents all link to the people they involve — automatically, privately, on-device.</p>
 </article>
 <article style="border:1px solid rgba(16,185,129,0.2);border-radius:1rem;padding:1.5rem;margin-bottom:1.25rem;background:rgba(16,185,129,0.05)">
-  <span style="background:rgba(16,185,129,0.12);color:#10B981;border:1px solid rgba(16,185,129,0.3);padding:0.2rem 0.6rem;border-radius:999px;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;display:inline-block">Completed April 2025</span>
+  <span style="background:rgba(16,185,129,0.12);color:#10B981;border:1px solid rgba(16,185,129,0.3);padding:0.2rem 0.6rem;border-radius:999px;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;display:inline-block">Completed July 2026</span>
   <h2 style="font-size:1.2rem;font-weight:700;margin-bottom:0.5rem"><a href="/roadmap/vertical-timeline" style="color:#F8FAFC;text-decoration:none">Vertical Timeline Infographics</a></h2>
   <p style="color:#94A3B8;line-height:1.7">Gantt charts don't work on phones. Sovra's vertical timeline shows tasks, progress, and dependencies as readable infographic cards — built for the screen you actually use.</p>
 </article>
@@ -621,7 +621,7 @@ export const ROUTE_META: Record<string, PageMeta> = {
     ],
     bodyContent: `<div style="font-family:Inter,sans-serif;background:#0F172A;color:#F8FAFC;padding:2rem;max-width:800px;margin:0 auto">
 <nav style="margin-bottom:2rem"><a href="/roadmap" style="color:#94A3B8;text-decoration:none">← Road Map</a></nav>
-<span style="background:rgba(16,185,129,0.12);color:#10B981;border:1px solid rgba(16,185,129,0.3);padding:0.3rem 0.75rem;border-radius:999px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em">Completed April 2025</span>
+<span style="background:rgba(16,185,129,0.12);color:#10B981;border:1px solid rgba(16,185,129,0.3);padding:0.3rem 0.75rem;border-radius:999px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em">Completed July 2026</span>
 <h1 style="font-size:2.5rem;font-weight:800;margin-top:1rem;margin-bottom:1rem">Vertical Timeline Infographics</h1>
 <p style="color:#94A3B8;font-size:1.1rem;margin-bottom:0.75rem">Project tracking designed for the screen you actually use.</p>
 <p style="color:#64748B;line-height:1.75;margin-bottom:2rem">Gantt charts were built for large monitors and printed project plans. They have never worked on a phone. Sovra's vertical timeline replaces the horizontal grid with an infographic format that follows the natural scroll direction of a mobile device.</p>

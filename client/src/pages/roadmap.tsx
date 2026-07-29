@@ -39,7 +39,7 @@ const features = [
     teaser: "Gantt charts don't work on phones. Sovra's vertical timeline shows tasks, progress, and dependencies as readable infographic cards — built for the screen you actually use.",
     href: "/roadmap/vertical-timeline",
     completed: true,
-    completedDate: "April 2025",
+    completedDate: "July 2026",
   },
   {
     icon: Users,

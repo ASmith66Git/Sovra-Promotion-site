@@ -105,7 +105,7 @@ export default function VerticalTimeline() {
             <motion.div variants={fadeUp} custom={0}>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-6" style={{ backgroundColor: `${featureColor}12`, color: featureColor, border: `1px solid ${featureColor}30` }}>
                 <CheckCircle2 className="w-3.5 h-3.5" />
-                Completed April 2025
+                Completed July 2026
               </div>
             </motion.div>
             <motion.h1 variants={fadeUp} custom={1} className="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-5" data-testid="text-page-title">
