@@ -391,7 +391,7 @@ function HowItWorksSection() {
       title: "From Email to Done.",
       description: "Action item spotted in email → task created with deadline & context → grouped into project → tracked on Gantt chart",
       bullets: [
-        { icon: Mail, label: "AI can surface tasks from emails" },
+        { icon: Mail, label: "AI highlights action items spotted in emails" },
         { icon: FolderOpen, label: "Organise tasks into projects with milestones" },
         { icon: GanttChart, label: "Gantt chart view for project timelines" },
         { icon: Zap, label: "Due dates, priorities & reminders" },
@@ -417,10 +417,10 @@ function HowItWorksSection() {
       icon: CalendarDays,
       badge: "Calendars",
       title: "Your Day, Already Planned.",
-      description: "Meeting mention in email → AI spots the date → event added to your calendar → agenda view shows tasks alongside events",
+      description: "Meeting mention in email → AI highlights the date → you add it to your calendar → agenda view shows tasks alongside events",
       bullets: [
-        { icon: Brain, label: "AI can detect dates and events in emails" },
-        { icon: CalendarCheck, label: "AI can create calendar events from your emails" },
+        { icon: Brain, label: "AI highlights potential dates and meeting mentions" },
+        { icon: CalendarCheck, label: "Create calendar events from email content with one tap" },
         { icon: ListTodo, label: "Agenda view with tasks and events together" },
         { icon: Zap, label: "Never miss a meeting or deadline" },
         { icon: RefreshCw, label: "Syncs across your iPhone, iPad, and Apple Silicon Mac" },
