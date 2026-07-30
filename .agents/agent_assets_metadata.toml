@@ -168,3 +168,21 @@ id = "fri7fEUZ4RdGeDeURiSxJ"
 uri = "file://client/public/ads/sovra-tasks-portrait.png"
 type = "image"
 title = "Tasks & Projects — 900×1600"
+
+[[outputs]]
+id = "X6_JydjJLMEI-IS2oLop4"
+uri = "file://client/public/ads/sovra-calendar-landscape.png"
+type = "image"
+title = "Calendar — 1200×628"
+
+[[outputs]]
+id = "ezabsRGJtCHonTns_jsF4"
+uri = "file://client/public/ads/sovra-calendar-square.png"
+type = "image"
+title = "Calendar — 1200×1200"
+
+[[outputs]]
+id = "78NPHopeuiSjifOLyLfCJ"
+uri = "file://client/public/ads/sovra-calendar-portrait.png"
+type = "image"
+title = "Calendar — 900×1600"
