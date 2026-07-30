@@ -132,3 +132,39 @@ id = "n3lGkFspPe1SyCnN7YYlY"
 uri = "file://client/public/ads/sovra-dashboard-portrait.png"
 type = "image"
 title = "Dashboard — 900×1600"
+
+[[outputs]]
+id = "Gk6BDbSDeFbx40zLhj1wg"
+uri = "file://client/public/ads/sovra-timeline-landscape.png"
+type = "image"
+title = "Timeline — 1200×628"
+
+[[outputs]]
+id = "ZyZIKKhFVqAL-6RJM5G0d"
+uri = "file://client/public/ads/sovra-timeline-square.png"
+type = "image"
+title = "Timeline — 1200×1200"
+
+[[outputs]]
+id = "vRuSHGK_byIPV6YsVzjmm"
+uri = "file://client/public/ads/sovra-timeline-portrait.png"
+type = "image"
+title = "Timeline — 900×1600"
+
+[[outputs]]
+id = "tTwjuHhRPAyVwHb4_yJ1M"
+uri = "file://client/public/ads/sovra-tasks-landscape.png"
+type = "image"
+title = "Tasks & Projects — 1200×628"
+
+[[outputs]]
+id = "GIra5mPADJnMnEE0K7h8O"
+uri = "file://client/public/ads/sovra-tasks-square.png"
+type = "image"
+title = "Tasks & Projects — 1200×1200"
+
+[[outputs]]
+id = "fri7fEUZ4RdGeDeURiSxJ"
+uri = "file://client/public/ads/sovra-tasks-portrait.png"
+type = "image"
+title = "Tasks & Projects — 900×1600"
