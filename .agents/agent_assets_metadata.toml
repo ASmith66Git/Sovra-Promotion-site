@@ -114,3 +114,21 @@ id = "v7drIdS7h_eJa16rAiapk"
 uri = "file://client/public/ads/sovra-notes-portrait.png"
 type = "image"
 title = "Notes — Portrait (fixed)"
+
+[[outputs]]
+id = "78MFNEsLXNbYyAn8uBMEr"
+uri = "file://client/public/ads/sovra-dashboard-landscape.png"
+type = "image"
+title = "Dashboard — 1200×628"
+
+[[outputs]]
+id = "xuoXnzujTqxByLBdQgt0E"
+uri = "file://client/public/ads/sovra-dashboard-square.png"
+type = "image"
+title = "Dashboard — 1200×1200"
+
+[[outputs]]
+id = "n3lGkFspPe1SyCnN7YYlY"
+uri = "file://client/public/ads/sovra-dashboard-portrait.png"
+type = "image"
+title = "Dashboard — 900×1600"
