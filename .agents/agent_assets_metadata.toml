@@ -96,3 +96,21 @@ id = "ygdoMoQCaIFH6RLYWdJCk"
 uri = "file://client/public/ads/sovra-docs-portrait.png"
 type = "image"
 title = "Docs — 900×1600"
+
+[[outputs]]
+id = "migmAOb75mvz-tsVWV6WI"
+uri = "file://client/public/ads/sovra-notes-landscape.png"
+type = "image"
+title = "Notes — 1200×628"
+
+[[outputs]]
+id = "oeKFm3_jYTYTjqUYZa-04"
+uri = "file://client/public/ads/sovra-notes-square.png"
+type = "image"
+title = "Notes — 1200×1200"
+
+[[outputs]]
+id = "v7drIdS7h_eJa16rAiapk"
+uri = "file://client/public/ads/sovra-notes-portrait.png"
+type = "image"
+title = "Notes — 900×1600"
