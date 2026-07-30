@@ -24,3 +24,75 @@ id = "EPHJS9A6T8m92gJcXGbku"
 uri = "file://client/public/music-samples/minimal-piano-pads.mp3"
 type = "audio"
 title = "minimal-piano-pads"
+
+[[outputs]]
+id = "FPQPMRqZV7S2WaxK2i65E"
+uri = "file://client/public/ads/sovra-email-landscape.png"
+type = "image"
+title = "Email — Landscape 1200×628"
+
+[[outputs]]
+id = "gN09tzTnoxlPXc5lnnRGH"
+uri = "file://client/public/ads/sovra-email-square.png"
+type = "image"
+title = "Email — Square 1200×1200"
+
+[[outputs]]
+id = "hmm090vGsZx2NA19U4w5c"
+uri = "file://client/public/ads/sovra-email-portrait.png"
+type = "image"
+title = "Email — Portrait 900×1600"
+
+[[outputs]]
+id = "YLyDdh0CUSd3CthYU-tzc"
+uri = "file://client/public/ads/sovra-privacy-landscape.png"
+type = "image"
+title = "Privacy — Landscape 1200×628"
+
+[[outputs]]
+id = "Bc88owoqnSu6MnZJAWaO3"
+uri = "file://client/public/ads/sovra-privacy-square.png"
+type = "image"
+title = "Privacy — Square 1200×1200"
+
+[[outputs]]
+id = "zSopB1ZTxMDiu-dI6D_pz"
+uri = "file://client/public/ads/sovra-privacy-portrait.png"
+type = "image"
+title = "Privacy — Portrait 900×1600"
+
+[[outputs]]
+id = "m7BPzQzN8YPk2hWEkMK-r"
+uri = "file://client/public/ads/sovra-brain-landscape.png"
+type = "image"
+title = "AI Brain — Landscape 1200×628"
+
+[[outputs]]
+id = "IdZfmE5DOsyrNpmCouoUJ"
+uri = "file://client/public/ads/sovra-brain-square.png"
+type = "image"
+title = "AI Brain — Square 1200×1200"
+
+[[outputs]]
+id = "rDo82jCd153-gjzrLWi3t"
+uri = "file://client/public/ads/sovra-brain-portrait.png"
+type = "image"
+title = "AI Brain — Portrait 900×1600"
+
+[[outputs]]
+id = "XnOtTFjrPEqoo56kXRl8q"
+uri = "file://client/public/ads/sovra-docs-landscape.png"
+type = "image"
+title = "Docs — Landscape 1200×628"
+
+[[outputs]]
+id = "nzg3DNi1shLpdHChYZ3kT"
+uri = "file://client/public/ads/sovra-docs-square.png"
+type = "image"
+title = "Docs — Square 1200×1200"
+
+[[outputs]]
+id = "ygdoMoQCaIFH6RLYWdJCk"
+uri = "file://client/public/ads/sovra-docs-portrait.png"
+type = "image"
+title = "Docs — Portrait 900×1600"
