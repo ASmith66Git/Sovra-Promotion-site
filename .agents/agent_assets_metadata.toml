@@ -234,3 +234,69 @@ id = "_b86_wvre_7VNd6g-aJ6V"
 uri = "file://client/public/ads/sovra-librarian-square.jpg"
 type = "image"
 title = "Librarian Square"
+
+[[outputs]]
+id = "me1aQd20tyWJaaZFa4O94"
+uri = "file://client/public/ads/lib_frame_001.jpg"
+type = "image"
+title = "Frame 1"
+
+[[outputs]]
+id = "ZdqRLDPdlIlwZtzsnhHzc"
+uri = "file://client/public/ads/lib_frame_020.jpg"
+type = "image"
+title = "Frame 20"
+
+[[outputs]]
+id = "jeEyJz_slmwY4xlRbad-1"
+uri = "file://client/public/ads/lib_frame_040.jpg"
+type = "image"
+title = "Frame 40"
+
+[[outputs]]
+id = "mLfmHd9K-V4mQy5pe0iGe"
+uri = "file://client/public/ads/lib_frame_060.jpg"
+type = "image"
+title = "Frame 60"
+
+[[outputs]]
+id = "SLKV36AMIOuEQobipTUgl"
+uri = "file://client/public/ads/lib_portrait_sample.jpg"
+type = "image"
+title = "Portrait frame @ 5s"
+
+[[outputs]]
+id = "j33MuTwl8X3AevcFIv4rI"
+uri = "file://client/public/ads/lib_p_2s.jpg"
+type = "image"
+title = "Portrait 2s"
+
+[[outputs]]
+id = "arrVTBcxCM7W-hugL3AHM"
+uri = "file://client/public/ads/lib_p_8s.jpg"
+type = "image"
+title = "Portrait 8s"
+
+[[outputs]]
+id = "IJSaz61qLfyHN3Xqal_6H"
+uri = "file://client/public/ads/lib_p_15s.jpg"
+type = "image"
+title = "Portrait 15s"
+
+[[outputs]]
+id = "kti1jikUF7BPCW5rgdoGe"
+uri = "file://client/public/ads/lib_p_22s.jpg"
+type = "image"
+title = "Portrait 22s"
+
+[[outputs]]
+id = "ODFyNHJTY1JPdBrhV8axP"
+uri = "file://client/public/ads/lib_sq_new_5s.jpg"
+type = "image"
+title = "New square @ 5s"
+
+[[outputs]]
+id = "m3m_szp0EgfiD4ezaNuLp"
+uri = "file://client/public/ads/lib_sq_new_15s.jpg"
+type = "image"
+title = "New square @ 15s"
