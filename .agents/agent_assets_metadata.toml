@@ -186,3 +186,51 @@ id = "78NPHopeuiSjifOLyLfCJ"
 uri = "file://client/public/ads/sovra-calendar-portrait.png"
 type = "image"
 title = "Calendar — 900×1600"
+
+[[outputs]]
+id = "IeLW_ESfBiPMiFlRkqyEL"
+uri = "file://client/public/ads/sovra-15s-square.jpg"
+type = "image"
+title = "15s Square"
+
+[[outputs]]
+id = "3DE7nCDYWibbPJoglkOpx"
+uri = "file://client/public/ads/sovra-30s-square.jpg"
+type = "image"
+title = "30s Square"
+
+[[outputs]]
+id = "mfiBtYYZ9XrzhV6uB1ltd"
+uri = "file://client/public/ads/sovra-60s-square.jpg"
+type = "image"
+title = "60s Square"
+
+[[outputs]]
+id = "PSXYOFVhLCodN4WFd3zDJ"
+uri = "file://client/public/ads/sovra-docs-square.jpg"
+type = "image"
+title = "Docs Square"
+
+[[outputs]]
+id = "jfQ8hmllyCmopcS2LyCqH"
+uri = "file://client/public/ads/sovra-email-square.jpg"
+type = "image"
+title = "Email Square"
+
+[[outputs]]
+id = "TihDqCEVhX5OofM1dsZFS"
+uri = "file://client/public/ads/sovra-privacy-square.jpg"
+type = "image"
+title = "Privacy Square"
+
+[[outputs]]
+id = "s8MdpGaRuFjbZ9klm6fjG"
+uri = "file://client/public/ads/sovra-security-square.jpg"
+type = "image"
+title = "Security Square"
+
+[[outputs]]
+id = "_b86_wvre_7VNd6g-aJ6V"
+uri = "file://client/public/ads/sovra-librarian-square.jpg"
+type = "image"
+title = "Librarian Square"
