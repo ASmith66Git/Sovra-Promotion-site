@@ -4,3 +4,37 @@ dist
 server/public
 vite.config.ts.*
 *.tar.gz
+
+# Replit-specific config
+.replit
+.cache
+.config
+.local
+.upm
+
+# Python image-generation tooling (not part of the website)
+main.py
+pyproject.toml
+.pythonlibs
+uv.lock
+__pycache__
+
+# Remotion video project (not deployed with the site)
+videos/
+
+# Uploaded source assets (screenshots used for ad generation, not for the site)
+attached_assets/
+
+# Temp render frames / debug images in public/ads
+client/public/ads/lib_frame_*.jpg
+client/public/ads/lib_portrait_sample.jpg
+client/public/ads/lib_p_*.jpg
+client/public/ads/lib_sq_*.jpg
+client/public/ads/sovra-*-square.jpg
+client/public/ads/sovra-*-landscape.jpg
+client/public/ads/sovra-*-portrait.jpg
+
+# Intermediate build step PNGs at root
+video_final.png
+video_step4_resilient.png
+video_step8.png
